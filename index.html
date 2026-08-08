@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Cruise Tycoon v0.11.2</title>
+<title>Cruise Tycoon v0.11.4</title>
 <style>
 :root{
   --navy:#102c46;--navy2:#173e61;--bg:#edf3f7;--card:#fff;--ink:#17324a;
@@ -196,7 +196,7 @@ nav button{white-space:nowrap}
 .saveActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .saveMeta{padding:10px 12px;border-radius:12px;background:#f2f6f9;margin-top:10px;color:var(--muted)}
 
-/* v0.11.2 scheduler/readability and finance UI */
+/* v0.11.4 scheduler/readability and finance UI */
 .weekBtn.active.committed{background:#dfe3e6!important;color:#26343d!important;border:2px solid #53636e!important;box-shadow:0 0 0 3px rgba(83,99,110,.14)!important}
 .weekBtn.active.urgent{background:#f8caca!important;color:#651717!important;border:2px solid #b63636!important;box-shadow:0 0 0 3px rgba(182,54,54,.14)!important}
 .weekBtn.active.future{background:#ffe99a!important;color:#4e3d00!important;border:2px solid #a88300!important;box-shadow:0 0 0 3px rgba(168,131,0,.14)!important}
@@ -208,7 +208,7 @@ nav button{white-space:nowrap}
 .reviewScoreCell{white-space:nowrap}.nextSailingTable td{vertical-align:top}
 
 
-/* v0.11.2 visual refresh */
+/* v0.11.4 visual refresh */
 :root{--navy:#092b46;--navy2:#0d4769;--ocean:#137ea5;--ocean2:#42a6bf;--teal:#16837d;--bg:#f2f6f8;--card:#fff;--ink:#163247;--muted:#6e8290;--line:#dce7ec;--lineStrong:#c8d8e0;--good:#18734c;--bad:#aa3b42;--gold:#b78524;--shadow:0 10px 30px rgba(17,53,75,.075);--shadowStrong:0 18px 46px rgba(13,55,79,.13)}
 html{background:#eaf1f5}
 body{background:radial-gradient(circle at 8% 0%,rgba(54,151,181,.08),transparent 30%),linear-gradient(180deg,#edf4f7 0,#f5f8fa 290px,#f2f6f8 100%);min-height:100vh}
@@ -254,7 +254,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:650px){.title{font-size:20px}.pill{padding:6px 9px}.heroKpi .kpi{font-size:27px}.card{padding:13px;border-radius:15px}}
 
 
-/* v0.11.2 graphics expansion */
+/* v0.11.4 graphics expansion */
 .cruiseHero{
  position:relative;
  overflow:hidden;
@@ -302,7 +302,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 }
 
 
-/* v0.11.2 ship/deck management */
+/* v0.11.4 ship/deck management */
 .shipMgmtHeader{background:linear-gradient(145deg,#fff,#f4fafc)}
 .shipMgmtKpis{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:14px}.shipMgmtKpis>div,.deckSpaceSummary>div,.facilityMetrics>div{border:1px solid #d9e6eb;border-radius:12px;padding:10px;background:#f8fbfc}.shipMgmtKpis span,.deckSpaceSummary span,.facilityMetrics span{display:block;color:#748995;font-size:10px;text-transform:uppercase;letter-spacing:.05em}.shipMgmtKpis b{display:block;margin-top:4px;font-size:17px;color:#12364e}
 .deckSidebar{max-height:760px;overflow:auto}.deckList{display:flex;flex-direction:column;gap:6px;margin-top:10px}.deckListBtn{text-align:left;border:1px solid #d7e3e8;background:#f8fbfc;border-radius:11px;padding:9px 10px;color:#17384f}.deckListBtn span,.deckListBtn small{display:block;color:#718691}.deckListBtn.active{background:#0e5579;color:#fff;border-color:#0e5579}.deckListBtn.active span,.deckListBtn.active small{color:#d5eaf2}
@@ -313,13 +313,13 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:1000px){.shipMgmtKpis{grid-template-columns:repeat(4,1fr)}}@media(max-width:700px){.shipMgmtKpis{grid-template-columns:repeat(2,1fr)}.deckSpaceSummary{grid-template-columns:1fr 1fr}}
 
 
-/* v0.11.2 editable ship planner */
+/* v0.11.4 editable ship planner */
 .deckPlanner{margin-top:14px;padding:13px;border:1px solid #cfe0e7;border-radius:14px;background:linear-gradient(145deg,#f5fafc,#fff)}
 .deckPlannerControls{display:grid;grid-template-columns:2fr 1fr 1.3fr auto;gap:9px;align-items:end;margin-top:10px}.deckPlannerControls label{font-size:11px;font-weight:750;color:#607887}.deckPlannerControls select,.deckPlannerControls input{display:block;width:100%;margin-top:4px}.plannerCost{font-weight:850;color:#0f668b;background:#e9f6fa;padding:7px 10px;border-radius:9px}.removeSpaceBtn{margin-top:14px;width:100%}
 .shipClassCards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.shipClassCard{border:1px solid #d4e2e8;border-radius:14px;padding:13px;background:linear-gradient(155deg,#f8fbfc,#fff)}.shipClassCard>b,.shipClassCard>span,.shipClassCard>small{display:block}.shipClassCard>span{color:#718692;margin:3px 0 10px}.shipClassCard>div{margin-top:5px}.shipClassCard>small{color:#718692;margin-top:7px}.shipClassSilhouette{font-size:15px;letter-spacing:-2px;color:#2a7c9d;opacity:.7;margin-bottom:7px!important}
 @media(max-width:850px){.deckPlannerControls{grid-template-columns:1fr 1fr}.shipClassCards{grid-template-columns:1fr}}
 
-/* v0.11.2 management-sim visual overhaul */
+/* v0.11.4 management-sim visual overhaul */
 @media(min-width:980px){
  body{padding-left:178px}
  header{left:0}
@@ -390,14 +390,44 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .heroTitle{font-size:29px}
 @media(max-width:979px){body{padding-left:0}.facilityArtwork{height:130px}}
 
+
+.shipSubnav{display:flex;gap:7px;padding:10px 18px 0;background:#edf4f7;position:sticky;top:74px;z-index:8}.shipSubBtn{border:1px solid #c7d9e2;background:#f8fbfc;color:#416879;padding:9px 15px;border-radius:10px 10px 0 0;font-weight:800}.shipSubBtn.active{background:#0d5e89;color:#fff;border-color:#0d5e89}
+.deckQualityMini{grid-column:1/-1;display:flex;gap:5px;margin-top:4px;flex-wrap:wrap}.deckQualityMini em{font-style:normal;font-size:9px;padding:2px 5px;border-radius:5px;background:rgba(255,255,255,.11);color:#cce1ea}.deckConditionActions,.shipRefurbActions{display:flex;align-items:center;gap:10px;margin-top:11px;padding-top:10px;border-top:1px solid #dbe6eb}.facilityMetrics{grid-template-columns:repeat(auto-fit,minmax(82px,1fr))}
+
+
+/* v0.11.4 brand corner and capacity economics */
+.brandCorner{display:none}
+@media(min-width:980px){
+ .brandCorner{
+  display:flex;position:fixed;left:0;top:0;width:178px;height:74px;z-index:40;
+  box-sizing:border-box;align-items:center;gap:9px;padding:10px 12px;
+  background:linear-gradient(145deg,#061b2e,#092f49);
+  border-right:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);
+  color:#f0b94e;box-shadow:5px 4px 18px rgba(3,25,40,.14)
+ }
+ .brandLogo{width:37px;height:45px;display:grid;place-items:center;flex:0 0 37px}
+ .brandLogo svg{width:35px;height:43px;stroke:#f0b94e;color:#f0b94e}
+ .brandCorner b{display:block;color:#fff;font-family:Georgia,serif;font-size:16px;line-height:.9;letter-spacing:.02em}
+ .brandCorner span{display:block;color:#e8ad45;font-size:7px;font-weight:900;letter-spacing:.105em;margin-top:6px;white-space:nowrap}
+ header .toprow>.title,header .toprow>div:first-child .title{ }
+}
+.capacityCallout{display:flex;flex-direction:column;gap:3px;padding:9px 10px;margin:9px 14px;border-radius:10px;background:#eaf5f8;border-left:4px solid #1781a5;color:#264c61}
+.capacityCallout b{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#176786}.capacityCallout span{font-size:12px}
+
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
 <header>
+ <div class="brandCorner" aria-label="Cruise Tycoon">
+  <div class="brandLogo" aria-hidden="true">
+   <svg viewBox="0 0 64 64"><circle cx="32" cy="15" r="5" fill="none"/><path d="M32 20v30M16 29h32M20 29c0 14 5 21 12 25M44 29c0 14-5 21-12 25M14 47c5 7 11 10 18 10s13-3 18-10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M26 15h12" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+  </div>
+  <div><b>CRUISE<br>TYCOON</b><span>BUILD YOUR FLEET</span></div>
+ </div>
  <div class="toprow">
-  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.11.2</span></div><div class="sub">One brand. One ship. Build from there.</div></div>
+  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.11.4</span></div><div class="sub">One brand. One ship. Build from there.</div></div>
   <div class="pills">
    <div class="pill">Week <b id="weekPill">1</b></div>
    <div class="pill">Group cash <b id="cashPill">£45.0m</b></div>
@@ -465,15 +495,16 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 </section>
 
 <section id="ships" class="tab">
+ <div class="shipSubnav"><button class="shipSubBtn active" data-shipview="summary">Summary</button><button class="shipSubBtn" data-shipview="crew">Crew & wages</button><button class="shipSubBtn" data-shipview="decks">Build & improve decks</button></div>
  <div class="grid">
-  <div class="card c12 shipMgmtHeader">
+  <div class="card c12 shipMgmtHeader shipViewCard shipView-summary">
    <div class="row" style="justify-content:space-between;align-items:flex-start">
     <div><div class="heroEyebrow" style="color:#2384a5">SHIP MANAGEMENT</div><h2 style="margin:4px 0">Decks, spaces &amp; guest experience</h2><div class="label">Every deck has finite area. 20% is permanently reserved for corridors, lifts, stairs, structure and general circulation.</div></div>
     <select id="myShipsSelect" style="min-width:220px"></select>
    </div>
    <div id="shipMgmtKpis" class="shipMgmtKpis"></div>
   </div>
-  <div class="card c3 deckSidebar">
+  <div class="card c3 deckSidebar shipViewCard shipView-decks">
    <div class="shipSidebarTitle"><div class="shipMark">⚓</div><div><div class="heroEyebrow" style="color:#55bad7">SELECTED SHIP</div><h3 id="shipSidebarName" style="margin:2px 0 0"></h3></div></div>
    <div id="shipSidebarStats" class="shipSidebarStats"></div>
    <h3 style="margin-top:15px">Decks</h3><div class="label">Select a deck to inspect its space.</div><div id="deckList" class="deckList"></div>
@@ -482,6 +513,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
    <div id="deckHeader"></div>
    <div id="deckVisual" class="deckVisual"></div>
    <div id="deckSpaceSummary" class="deckSpaceSummary"></div>
+   <div class="deckConditionActions"><button class="btn" id="refurbDeckBtn">Refurbish entire deck</button><span id="refurbDeckQuote" class="label"></span></div>
    <div class="deckPlanner">
     <div class="row" style="justify-content:space-between;align-items:flex-end"><div><h3 style="margin:0">Deck space planner</h3><div class="label">Add cabins, facilities or crew space. The game will not allow allocations above 80% of deck area.</div></div><div id="deckPlannerCost" class="plannerCost">Select a space to add</div></div>
     <div class="deckPlannerControls">
@@ -495,14 +527,14 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
    <h3 style="margin-top:16px">Allocated spaces</h3>
    <div id="deckAllocationTable"></div>
   </div>
-  <div class="card c3 facilityInspector">
+  <div class="card c3 facilityInspector shipViewCard shipView-decks">
    <div id="facilityInspector"><div class="emptyState"><b>Select a facility or cabin group</b><span>Luxury, condition, location and upgrade choices will appear here.</span></div></div>
   </div>
   <div class="card c6"><h3>Cabins &amp; berths</h3><table id="shipCabinTable"></table></div>
-  <div class="card c6"><h3>Crew &amp; wage policy</h3><table id="shipCrewTable"></table><div id="shipWageControls" style="margin-top:10px"></div></div>
-  <div class="card c6"><h3>Overall ship condition</h3><div id="shipConditionDetail"></div></div>
-  <div class="card c6"><h3>Facility portfolio</h3><table id="shipFacilitiesTable"></table></div>
-  <div class="card c12"><h3>Ship class design reference</h3><div class="label">Different hulls provide different deck counts and physical space. Acquisition will use these class definitions when fleet purchasing is expanded.</div><div id="shipClassCards" class="shipClassCards"></div></div>
+  <div class="card c6 shipViewCard shipView-crew"><h3>Crew &amp; wage policy</h3><table id="shipCrewTable"></table><div id="shipWageControls" style="margin-top:10px"></div></div>
+  <div class="card c6 shipViewCard shipView-summary"><h3>Overall ship condition</h3><div id="shipConditionDetail"></div><div class="shipRefurbActions"><button class="btn good" id="refurbShipBtn">Refurbish whole ship</button><span id="refurbShipQuote" class="label"></span></div></div>
+  <div class="card c6 shipViewCard shipView-summary"><h3>Facility portfolio</h3><table id="shipFacilitiesTable"></table></div>
+  <div class="card c12 shipViewCard shipView-summary"><h3>Ship class design reference</h3><div class="label">Different hulls provide different deck counts and physical space. Acquisition will use these class definitions when fleet purchasing is expanded.</div><div id="shipClassCards" class="shipClassCards"></div></div>
   <table id="shipOverviewTable" style="display:none"></table>
  </div>
 </section>
@@ -1082,7 +1114,7 @@ Object.keys(state.contracts).forEach(n=>{state.contracts[n].excursions=defaultEx
 
 const SAVE_STORAGE_KEY="cruiseTycoon.save.v1";
 const SAVE_SCHEMA_VERSION=1;
-const GAME_VERSION="0.11.2";
+const GAME_VERSION="0.11.4";
 const INITIAL_GAME_STATE=JSON.parse(JSON.stringify(state));
 let saveSystemReady=false;
 let saveTimer=null;
@@ -1696,6 +1728,16 @@ function calcOnboard(passengers,mix,sch){
      sums[k]+=n*s[k]*mult;
    });
  });
+ // Physical ship capacity now constrains the revenue that can actually be served.
+ const fc=facilityCapacityMetrics(activeShip(),passengers);
+ const voyageDays=Math.max(6,sch.days?.length||7);
+ const maxDiningRevenue=fc.specVoyageCovers*38;
+ const maxDrinkUnits=fc.barSeats*voyageDays*10;
+ const maxDrinkRevenue=maxDrinkUnits*9;
+ const maxCasinoRevenue=fc.casinoSeats*voyageDays*110;
+ sums.dining=Math.min(sums.dining,maxDiningRevenue);
+ sums.drinks=Math.min(sums.drinks,maxDrinkRevenue);
+ sums.casino=Math.min(sums.casino,maxCasinoRevenue);
  return sums;
 }
 function randomEvent(){
@@ -1922,7 +1964,7 @@ function showVoyageResult(ev){
  <tr><td>Passenger fares</td><td>${p.pax.toLocaleString()} guests</td><td>${statementMoney(p.fareRevenue)}</td><td></td><td>${statementMoney(p.fareRevenue)}</td></tr>
  <tr><td>Drinks & beverage</td><td>${(p.units?.drinks||0).toLocaleString()} drinks</td><td>${statementMoney(p.drinks)}</td><td>${statementMoney(p.beverage)}</td><td>${statementMoney(p.drinks-p.beverage)}</td></tr>
  <tr><td>Casino</td><td>£${(p.units?.casinoHandle||0).toLocaleString()} handle</td><td>${statementMoney(p.casino)}</td><td>${statementMoney(p.casinoCost)}</td><td>${statementMoney(p.casino-p.casinoCost)}</td></tr>
- <tr><td>Speciality dining</td><td>${(p.units?.diningCovers||0).toLocaleString()} covers</td><td>${statementMoney(p.dining)}</td><td>${statementMoney(p.diningCost)}</td><td>${statementMoney(p.dining-p.diningCost)}</td></tr>
+ <tr><td>Speciality dining</td><td>${(p.units?.diningCovers||0).toLocaleString()} / ${(p.units?.capacityUse?.dining?.capacity||0).toLocaleString()} covers</td><td>${statementMoney(p.dining)}</td><td>${statementMoney(p.diningCost)}</td><td>${statementMoney(p.dining-p.diningCost)}</td></tr>
  <tr><td>Shore excursions</td><td>${(p.units?.excursions||0).toLocaleString()} guests</td><td>${statementMoney(p.excursion)}</td><td>${statementMoney(p.excursionCost)}</td><td>${statementMoney(p.excursion-p.excursionCost)}</td></tr>
  <tr><td>Spa</td><td>${(p.units?.spaTreatments||0).toLocaleString()} treatments</td><td>${statementMoney(p.spa)}</td><td>${statementMoney(p.spaCost)}</td><td>${statementMoney(p.spa-p.spaCost)}</td></tr>
  <tr><td>Retail</td><td>${(p.units?.retailTransactions||0).toLocaleString()} transactions</td><td>${statementMoney(p.retail)}</td><td>${statementMoney(p.retailCost)}</td><td>${statementMoney(p.retail-p.retailCost)}</td></tr>
@@ -2095,7 +2137,7 @@ function routeReviewMetrics(p){
 }
 function guestReviewScore(p,ev){
  const detail=reviewBreakdown(p);
- const weights={"Cabin & hotel service":.20,"Food quality":.13,"Entertainment":.12,"Facilities & public spaces":.12,"Ship condition":.13,"Route / itinerary":.16,"Value for money":.14};
+ const weights={"Cabin & hotel service":.18,"Food quality":.12,"Dining capacity":.10,"Entertainment":.11,"Facilities & public spaces":.11,"Ship condition":.12,"Route / itinerary":.14,"Value for money":.12};
  let score=Object.entries(detail).reduce((a,[k,v])=>a+v*(weights[k]||0),0);
  if(state.weather.rain)score-=.08;
  if(p.actualOcc>.95)score-=.08;
@@ -2105,6 +2147,7 @@ function guestReviewScore(p,ev){
 function reviewBreakdown(p){
  const q=crewQualityEffects(activeShip());
  const sx=shipExperienceEffects(activeShip());
+ const fc=facilityCapacityMetrics(activeShip(),p?.pax||p?.passengers||activeShip().capacity||1);
  const rm=routeReviewMetrics(p);
  const item=state.programme?.[0]||{};
  const foodPpd=item.foodSpendPpd??state.foodSpendPpd??18;
@@ -2117,7 +2160,8 @@ function reviewBreakdown(p){
   "Cabin & hotel service":clamp(5*(.34*q.hotel+.20*roomCondition+.12*hotelSupplies+.20*(sx.cabinLuxury/5)+.14*(sx.cabinCondition/100)),2.3,5),
   "Food quality":foodScore,
   "Entertainment":clamp(5*(.70+.30*q.entertainment),2.5,5),
-  "Facilities & public spaces":clamp(5*(.48+.30*(sx.facilityLuxury/5)+.22*(sx.facilityCondition/100)),2.3,5),
+  "Facilities & public spaces":clamp(5*(.34+.25*(sx.facilityLuxury/5)+.18*(sx.facilityCondition/100)+.13*fc.barAdequacy+.10*fc.casinoAdequacy),2.1,5),
+  "Dining capacity":clamp(5*(.35+.45*fc.mainAdequacy+.20*Math.min(1,fc.specVoyageCovers/Math.max(1,(p?.pax||activeShip().capacity)*.35))),2.0,5),
   "Ship condition":clamp(5*(conditionAverage()/100),2.5,5),
   "Route / itinerary":rm.routeScore,
   "Value for money":clamp(4.35-(p.fareRevenue/p.pax-900)/850,2.5,5)
@@ -2169,10 +2213,12 @@ function sail(){
    ob.excursion=excursionPlan.reduce((a,x)=>a+x.revenue,0);
  }
  let totalRev=fareRevenue+Object.values(ob).reduce((a,b)=>a+b,0);
+ const capacityUse=onboardCapacityUtilisation(activeShip(),pax,sch,ob);
  let units={
    drinks:Math.round(ob.drinks/9),
    casinoHandle:Math.round(ob.casino*6.5),
    diningCovers:Math.round(ob.dining/38),
+   capacityUse:capacityUse,
    excursions:excursionPlan.length?excursionPlan.reduce((a,x)=>a+x.attendance,0):0,
    spaTreatments:Math.round(ob.spa/95),
    retailTransactions:Math.round(ob.retail/42),
@@ -2795,11 +2841,11 @@ const SPACE_TYPES={
  oceanview:{name:"Oceanview cabins",kind:"cabin",area:25,luxury:3.1,maint:115,capex:120000,berths:2},
  balcony:{name:"Balcony cabins",kind:"cabin",area:31,luxury:3.7,maint:145,capex:165000,berths:2},
  suite:{name:"Suites",kind:"cabin",area:52,luxury:4.4,maint:240,capex:315000,berths:2},
- restaurant:{name:"Main restaurant",kind:"facility",area:850,luxury:3.6,maint:28500,capex:5200000},
- speciality:{name:"Speciality restaurant",kind:"facility",area:420,luxury:4.0,maint:14200,capex:3100000},
- lounge:{name:"Bar / lounge",kind:"facility",area:360,luxury:3.7,maint:9800,capex:2200000},
+ restaurant:{name:"Main restaurant",kind:"facility",area:850,luxury:3.6,maint:28500,capex:5200000,capacity:650,turns:2.0},
+ speciality:{name:"Speciality restaurant",kind:"facility",area:420,luxury:4.0,maint:14200,capex:3100000,capacity:170,turns:1.5},
+ lounge:{name:"Bar / lounge",kind:"facility",area:360,luxury:3.7,maint:9800,capex:2200000,capacity:220},
  theatre:{name:"Theatre",kind:"facility",area:1250,luxury:3.5,maint:31000,capex:8500000},
- casino:{name:"Casino",kind:"facility",area:620,luxury:3.6,maint:17500,capex:4600000},
+ casino:{name:"Casino",kind:"facility",area:620,luxury:3.6,maint:17500,capex:4600000,capacity:260},
  spa:{name:"Spa",kind:"facility",area:520,luxury:4.1,maint:16500,capex:3900000},
  pool:{name:"Pool & sun deck",kind:"facility",area:900,luxury:3.8,maint:22500,capex:6500000},
  kids:{name:"Kids club",kind:"facility",area:390,luxury:3.4,maint:10500,capex:2400000},
@@ -2856,6 +2902,13 @@ function deckSvg(d){
  return `<svg viewBox="0 0 ${W} ${H}"><path d="M25 95 Q42 25 125 25 H620 Q685 30 705 95 Q685 165 620 165 H125 Q42 165 25 95Z" fill="#f7fafb" stroke="#9fb6c2" stroke-width="3"/><g clip-path="url(#deckClip)">${blocks}</g><defs><clipPath id="deckClip"><rect x="${x0}" y="${y0}" width="${w}" height="${h}" rx="12"/></clipPath></defs><text x="360" y="181" text-anchor="middle" fill="#6d8290" font-size="11">20% circulation/structure reserve is outside the coloured usable-space blocks</text></svg>`;
 }
 
+
+let shipViewMode="summary";
+function setShipView(mode){shipViewMode=mode;document.querySelectorAll(".shipSubBtn").forEach(b=>b.classList.toggle("active",b.dataset.shipview===mode));document.querySelectorAll("#ships .shipViewCard").forEach(c=>c.style.display=c.classList.contains("shipView-"+mode)?"":"none")}
+function deckQuality(d){const spaces=d?.spaces||[];if(!spaces.length)return {condition:100,luxury:0};const den=spaces.reduce((a,s)=>a+Math.max(1,s.area||1),0),weighted=k=>spaces.reduce((a,s)=>a+(s[k]||0)*Math.max(1,s.area||1),0)/den;return {condition:weighted("condition"),luxury:weighted("luxury")}}
+function refurbCostForSpaces(spaces){return Math.round(spaces.reduce((sum,s)=>sum+Math.max(5000,(SPACE_TYPES[s.type]?.capex||50000)*(s.count||1)*.11*(1-(s.condition||80)/115)),0))}
+function refurbSpaces(spaces,label){const cost=refurbCostForSpaces(spaces);if(!spaces.length)return alert("There are no spaces to refurbish.");if(state.cash<cost)return alert("Insufficient cash for this refurbishment.");if(!confirm(`${label} will cost ${statementMoney(cost)}. Continue?`))return;state.cash-=cost;spaces.forEach(s=>{s.condition=100;s.lastRefurbWeek=state.week;s.items=s.items||[];s.items.push({name:label,week:state.week,cost:Math.round(cost/spaces.length)})});queueAutoSave();renderAll()}
+function facilityCapacityMetrics(s,pax){const spaces=ensureShipSpaceModel(s).decks.flatMap(d=>d.spaces),sum=t=>spaces.filter(x=>x.type===t).reduce((a,x)=>a+(SPACE_TYPES[t].capacity||0)*(x.count||1),0),mainSeats=sum("restaurant"),specSeats=sum("speciality"),barSeats=sum("lounge"),casinoSeats=sum("casino"),mainDinnerCovers=mainSeats*(SPACE_TYPES.restaurant.turns||2),specVoyageCovers=specSeats*(SPACE_TYPES.speciality.turns||1.5)*7;return {mainSeats,specSeats,barSeats,casinoSeats,mainDinnerCovers,specVoyageCovers,mainAdequacy:pax?clamp(mainDinnerCovers/pax,.35,1.15):1,barAdequacy:pax?clamp(barSeats/(pax*.12),.4,1.15):1,casinoAdequacy:pax?clamp(casinoSeats/(pax*.07),.4,1.15):1}}
 function syncShipFromSpaceModel(s){
  if(!s.spaceModel)return;
  const totals={inside:0,oceanview:0,balcony:0,suite:0},facilities={};
@@ -2863,6 +2916,15 @@ function syncShipFromSpaceModel(s){
  s.cabins={...totals};s.berths=Object.fromEntries(Object.entries(totals).map(([k,v])=>[k,v*(SPACE_TYPES[k].berths||2)]));s.capacity=Object.values(s.berths).reduce((a,b)=>a+b,0);
  s.facilities=Object.entries(facilities).map(([type,count])=>({name:SPACE_TYPES[type].name,count,quality:3}));
 }
+function onboardCapacityUtilisation(s,pax,sch,ob){
+ const fc=facilityCapacityMetrics(s,pax),days=Math.max(6,sch?.days?.length||7);
+ return {
+  dining:{used:Math.round((ob?.dining||0)/38),capacity:Math.round(fc.specVoyageCovers),label:"Speciality dining covers"},
+  bars:{used:Math.round((ob?.drinks||0)/9),capacity:Math.round(fc.barSeats*days*10),label:"Bar drink service capacity"},
+  casino:{used:Math.round((ob?.casino||0)/110),capacity:Math.round(fc.casinoSeats*days),label:"Casino seat-days"}
+ };
+}
+
 function plannerBuildCost(type,count){const d=SPACE_TYPES[type];return d?Math.round((d.capex||0)*Math.max(1,count)):0}
 function plannerSpaceArea(type,count){const d=SPACE_TYPES[type];return d?Math.round(d.area*Math.max(1,count)):0}
 function selectedDeckModel(){const s=activeShip(),m=ensureShipSpaceModel(s);return m.decks.find(d=>d.number===m.selectedDeck)||m.decks[0]}
@@ -2916,6 +2978,7 @@ function renderFacilityInspector(sp){
  <div class="facilityMetrics"><div><span>Area</span><b>${sp.area.toLocaleString()} m²</b></div><div><span>Luxury</span><b>${sp.luxury.toFixed(1)}/5</b></div><div><span>Condition</span><b>${sp.condition.toFixed(0)}%</b></div><div><span>Location</span><b>${sp.location.toFixed(1)}/5</b></div></div>
  <div class="conditionBar"><div class="conditionFill" style="width:${sp.condition}%"></div></div>
  <div class="label" style="margin:10px 0">Maintenance ${statementMoney(sp.maintenance)}/week · ${sp.count||1} unit(s)</div>
+ ${SPACE_TYPES[sp.type]?.capacity?`<div class="capacityCallout"><b>Operational capacity</b><span>${sp.type==="speciality"?"Approx. "+Math.round(SPACE_TYPES[sp.type].capacity*(sp.count||1)*(SPACE_TYPES[sp.type].turns||1.5)*7).toLocaleString()+" covers per 7-night voyage":sp.type==="restaurant"?Math.round(SPACE_TYPES[sp.type].capacity*(sp.count||1)*(SPACE_TYPES[sp.type].turns||2)).toLocaleString()+" dinner covers per sitting cycle":sp.type==="lounge"?(SPACE_TYPES[sp.type].capacity*(sp.count||1)).toLocaleString()+" seats":(SPACE_TYPES[sp.type].capacity*(sp.count||1)).toLocaleString()+" seats"}</span></div>`:""}
  <h3>Improve luxury</h3><div class="upgradeGrid"><button onclick="shipUpgrade('${sp.id}','decor')">Art & decoration<br><small>£22k · +Luxury</small></button><button onclick="shipUpgrade('${sp.id}','furniture')">Premium furniture<br><small>£45k · +Luxury</small></button><button onclick="shipUpgrade('${sp.id}','lighting')">Lighting<br><small>£18k · +Luxury</small></button></div>
  <h3>Improve condition</h3><div class="upgradeGrid"><button onclick="shipUpgrade('${sp.id}','refresh')">Refresh finishes<br><small>£32k · +12%</small></button><button onclick="shipUpgrade('${sp.id}','refurb')">Full refurbishment<br><small>£120k · +28%</small></button></div>
  <h3>Installed / works history</h3><div class="label">${sp.items.length?sp.items.slice(-5).reverse().map(i=>`${i.name} · W${i.week} · ${statementMoney(i.cost)}`).join("<br>"):"No upgrades yet."}</div>
@@ -2928,7 +2991,7 @@ function renderMyShips(){
  const ssn=document.getElementById("shipSidebarName");if(ssn)ssn.textContent=ship.name;
  const sss=document.getElementById("shipSidebarStats");if(sss)sss.innerHTML=`<div><span>Class</span><b>${ship.className||"—"}</b></div><div><span>Berths</span><b>${Object.values(ship.berths||{}).reduce((a,b)=>a+b,0).toLocaleString()}</b></div><div><span>Decks</span><b>${m.decks.length}</b></div><div><span>Condition</span><b>${stats.cond.toFixed(0)}%</b></div>`;
  document.getElementById("shipMgmtKpis").innerHTML=`<div><span>Decks</span><b>${m.decks.length}</b></div><div><span>Total area</span><b>${Math.round(stats.area).toLocaleString()} m²</b></div><div><span>Usable after 20% reserve</span><b>${Math.round(stats.usable).toLocaleString()} m²</b></div><div><span>Allocated</span><b>${pct(stats.used/Math.max(1,stats.usable))}</b></div><div><span>Luxury</span><b>${stats.lux.toFixed(1)}/5</b></div><div><span>Condition</span><b>${stats.cond.toFixed(0)}%</b></div><div><span>Maintenance</span><b>${statementMoney(stats.maint)}/wk</b></div>`;
- document.getElementById("deckList").innerHTML=m.decks.slice().reverse().map(d=>`<button class="deckListBtn ${d.number===m.selectedDeck?"active":""}" data-deck="${d.number}"><b>Deck ${d.number}</b><span>${d.name}</span><small>${Math.round(d.area*.8).toLocaleString()} m² usable</small></button>`).join("");
+ document.getElementById("deckList").innerHTML=m.decks.slice().reverse().map(d=>{const dq=deckQuality(d);return `<button class="deckListBtn ${d.number===m.selectedDeck?"active":""}" onclick="selectShipDeck(${d.number})"><b>${d.number}</b><span>${d.name}</span><small>${Math.round(deckUsed(d)/d.area*100)}% used</small><div class="deckQualityMini"><em>Condition ${dq.condition.toFixed(0)}%</em><em>Luxury ${dq.luxury.toFixed(1)}</em></div></button>`}).join("");
  const d=m.decks.find(x=>x.number===m.selectedDeck)||m.decks[0],used=deckUsed(d),usable=d.area*.8;
  document.getElementById("deckHeader").innerHTML=`<div class="row" style="justify-content:space-between"><div><div class="heroEyebrow" style="color:#2384a5">DECK ${d.number}</div><h3>${d.name}</h3></div><div style="text-align:right"><b>${d.area.toLocaleString()} m²</b><div class="label">${Math.round(usable).toLocaleString()} m² usable after reserve</div></div></div>`;
  document.getElementById("deckVisual").innerHTML=deckSvg(d);
@@ -2950,6 +3013,10 @@ function renderMyShips(){
  const all=m.decks.flatMap(d=>d.spaces).filter(x=>SPACE_TYPES[x.type]?.kind==="facility");
  document.getElementById("shipFacilitiesTable").innerHTML=`<tr><th>Facility</th><th>Deck</th><th>Luxury</th><th>Condition</th></tr>${all.map(sp=>{const dd=m.decks.find(d=>d.spaces.includes(sp));return `<tr><td>${sp.label}</td><td>${dd.number}</td><td>${sp.luxury.toFixed(1)}</td><td>${sp.condition.toFixed(0)}%</td></tr>`}).join("")}`;
  const cc=document.getElementById("shipClassCards");if(cc)cc.innerHTML=Object.values(SHIP_CLASSES).map(c=>`<div class="shipClassCard"><div class="shipClassSilhouette">▰▰▰▰▰</div><b>${c.name}</b><span>${c.positioning}</span><div><strong>${c.decks}</strong> decks · <strong>${c.grossTonnage.toLocaleString()}</strong> GT · <strong>${c.lengthM}m</strong></div><small>Approx. physical deck area ${(c.grossTonnage*c.deckAreaFactor).toLocaleString(undefined,{maximumFractionDigits:0})} m²</small></div>`).join("");
+ const deckSpaces=d.spaces||[],allSpaces=m.decks.flatMap(x=>x.spaces||[]);
+ const rd=document.getElementById("refurbDeckBtn"),rq=document.getElementById("refurbDeckQuote");if(rd){const cost=refurbCostForSpaces(deckSpaces);rq.textContent=`Restore all spaces to 100% · ${statementMoney(cost)}`;rd.onclick=()=>refurbSpaces(deckSpaces,`Deck ${d.number} refurbishment`)}
+ const rs=document.getElementById("refurbShipBtn"),rsq=document.getElementById("refurbShipQuote");if(rs){const cost=refurbCostForSpaces(allSpaces);rsq.textContent=`Restore all decks to 100% · ${statementMoney(cost)}`;rs.onclick=()=>refurbSpaces(allSpaces,"Whole ship refurbishment")}
+ document.querySelectorAll(".shipSubBtn").forEach(b=>b.onclick=()=>setShipView(b.dataset.shipview));setShipView(shipViewMode);
 }
 
 function ensureSixWeekProgramme(){
