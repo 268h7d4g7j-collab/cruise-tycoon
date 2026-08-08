@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Cruise Tycoon v0.12.2</title>
+<title>Cruise Tycoon v0.12.8</title>
 <style>
 :root{
   --navy:#102c46;--navy2:#173e61;--bg:#edf3f7;--card:#fff;--ink:#17324a;
@@ -196,7 +196,7 @@ nav button{white-space:nowrap}
 .saveActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .saveMeta{padding:10px 12px;border-radius:12px;background:#f2f6f9;margin-top:10px;color:var(--muted)}
 
-/* v0.12.2 scheduler/readability and finance UI */
+/* v0.12.8 scheduler/readability and finance UI */
 .weekBtn.active.committed{background:#dfe3e6!important;color:#26343d!important;border:2px solid #53636e!important;box-shadow:0 0 0 3px rgba(83,99,110,.14)!important}
 .weekBtn.active.urgent{background:#f8caca!important;color:#651717!important;border:2px solid #b63636!important;box-shadow:0 0 0 3px rgba(182,54,54,.14)!important}
 .weekBtn.active.future{background:#ffe99a!important;color:#4e3d00!important;border:2px solid #a88300!important;box-shadow:0 0 0 3px rgba(168,131,0,.14)!important}
@@ -208,7 +208,7 @@ nav button{white-space:nowrap}
 .reviewScoreCell{white-space:nowrap}.nextSailingTable td{vertical-align:top}
 
 
-/* v0.12.2 visual refresh */
+/* v0.12.8 visual refresh */
 :root{--navy:#092b46;--navy2:#0d4769;--ocean:#137ea5;--ocean2:#42a6bf;--teal:#16837d;--bg:#f2f6f8;--card:#fff;--ink:#163247;--muted:#6e8290;--line:#dce7ec;--lineStrong:#c8d8e0;--good:#18734c;--bad:#aa3b42;--gold:#b78524;--shadow:0 10px 30px rgba(17,53,75,.075);--shadowStrong:0 18px 46px rgba(13,55,79,.13)}
 html{background:#eaf1f5}
 body{background:radial-gradient(circle at 8% 0%,rgba(54,151,181,.08),transparent 30%),linear-gradient(180deg,#edf4f7 0,#f5f8fa 290px,#f2f6f8 100%);min-height:100vh}
@@ -254,7 +254,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:650px){.title{font-size:20px}.pill{padding:6px 9px}.heroKpi .kpi{font-size:27px}.card{padding:13px;border-radius:15px}}
 
 
-/* v0.12.2 graphics expansion */
+/* v0.12.8 graphics expansion */
 .cruiseHero{
  position:relative;
  overflow:hidden;
@@ -302,7 +302,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 }
 
 
-/* v0.12.2 ship/deck management */
+/* v0.12.8 ship/deck management */
 .shipMgmtHeader{background:linear-gradient(145deg,#fff,#f4fafc)}
 .shipMgmtKpis{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:14px}.shipMgmtKpis>div,.deckSpaceSummary>div,.facilityMetrics>div{border:1px solid #d9e6eb;border-radius:12px;padding:10px;background:#f8fbfc}.shipMgmtKpis span,.deckSpaceSummary span,.facilityMetrics span{display:block;color:#748995;font-size:10px;text-transform:uppercase;letter-spacing:.05em}.shipMgmtKpis b{display:block;margin-top:4px;font-size:17px;color:#12364e}
 .deckSidebar{max-height:760px;overflow:auto}.deckList{display:flex;flex-direction:column;gap:6px;margin-top:10px}.deckListBtn{text-align:left;border:1px solid #d7e3e8;background:#f8fbfc;border-radius:11px;padding:9px 10px;color:#17384f}.deckListBtn span,.deckListBtn small{display:block;color:#718691}.deckListBtn.active{background:#0e5579;color:#fff;border-color:#0e5579}.deckListBtn.active span,.deckListBtn.active small{color:#d5eaf2}
@@ -313,13 +313,13 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:1000px){.shipMgmtKpis{grid-template-columns:repeat(4,1fr)}}@media(max-width:700px){.shipMgmtKpis{grid-template-columns:repeat(2,1fr)}.deckSpaceSummary{grid-template-columns:1fr 1fr}}
 
 
-/* v0.12.2 editable ship planner */
+/* v0.12.8 editable ship planner */
 .deckPlanner{margin-top:14px;padding:13px;border:1px solid #cfe0e7;border-radius:14px;background:linear-gradient(145deg,#f5fafc,#fff)}
 .deckPlannerControls{display:grid;grid-template-columns:2fr 1fr 1.3fr auto;gap:9px;align-items:end;margin-top:10px}.deckPlannerControls label{font-size:11px;font-weight:750;color:#607887}.deckPlannerControls select,.deckPlannerControls input{display:block;width:100%;margin-top:4px}.plannerCost{font-weight:850;color:#0f668b;background:#e9f6fa;padding:7px 10px;border-radius:9px}.removeSpaceBtn{margin-top:14px;width:100%}
 .shipClassCards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.shipClassCard{border:1px solid #d4e2e8;border-radius:14px;padding:13px;background:linear-gradient(155deg,#f8fbfc,#fff)}.shipClassCard>b,.shipClassCard>span,.shipClassCard>small{display:block}.shipClassCard>span{color:#718692;margin:3px 0 10px}.shipClassCard>div{margin-top:5px}.shipClassCard>small{color:#718692;margin-top:7px}.shipClassSilhouette{font-size:15px;letter-spacing:-2px;color:#2a7c9d;opacity:.7;margin-bottom:7px!important}
 @media(max-width:850px){.deckPlannerControls{grid-template-columns:1fr 1fr}.shipClassCards{grid-template-columns:1fr}}
 
-/* v0.12.2 management-sim visual overhaul */
+/* v0.12.8 management-sim visual overhaul */
 @media(min-width:980px){
  body{padding-left:178px}
  header{left:0}
@@ -395,7 +395,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .deckQualityMini{grid-column:1/-1;display:flex;gap:5px;margin-top:4px;flex-wrap:wrap}.deckQualityMini em{font-style:normal;font-size:9px;padding:2px 5px;border-radius:5px;background:rgba(255,255,255,.11);color:#cce1ea}.deckConditionActions,.shipRefurbActions{display:flex;align-items:center;gap:10px;margin-top:11px;padding-top:10px;border-top:1px solid #dbe6eb}.facilityMetrics{grid-template-columns:repeat(auto-fit,minmax(82px,1fr))}
 
 
-/* v0.12.2 brand corner and capacity economics */
+/* v0.12.8 brand corner and capacity economics */
 .brandCorner{display:none}
 @media(min-width:980px){
  .brandCorner{
@@ -415,7 +415,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .capacityCallout b{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#176786}.capacityCallout span{font-size:12px}
 
 
-/* v0.12.2 ship summary, luxury catalogue, landmark ports */
+/* v0.12.8 ship summary, luxury catalogue, landmark ports */
 .shipSummaryHero{display:grid;grid-template-columns:minmax(330px,42%) 1fr;min-height:275px;border-radius:17px;overflow:hidden;background:#082b45}
 .shipSummaryPhoto{position:relative;background-image:var(--ship-photo);background-size:cover;background-position:center;min-height:275px}
 .shipSummaryPhotoShade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,30,47,.72),transparent 58%)}
@@ -426,7 +426,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .upgradeCatalogue button:hover{border-color:#5ca8c1;background:#f5fbfd}.upgradeCatalogue button b,.upgradeCatalogue button small{display:block}.upgradeCatalogue button small{color:#718691;margin-top:3px}.upgradeCatalogue button:after{content:"＋";position:absolute;right:9px;top:50%;transform:translateY(-50%);width:25px;height:25px;border-radius:8px;background:#e7f3f8;display:grid;place-items:center;color:#11658a;font-weight:900}
 @media(max-width:900px){.shipSummaryHero{grid-template-columns:1fr}.shipSummaryPhoto{min-height:220px}.shipSummaryIntro .shipMgmtKpis{grid-template-columns:repeat(2,1fr)}}
 
-/* v0.12.2 deck picker and technical condition */
+/* v0.12.8 deck picker and technical condition */
 .deckListBtn{display:block;width:100%;position:relative;z-index:1;pointer-events:auto;cursor:pointer}
 .deckListBtn>*{pointer-events:none}
 .deckSidebar{position:relative;z-index:3}
@@ -438,7 +438,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:720px){.technicalConditionActions{grid-template-columns:1fr}}
 
 
-/* v0.12.2 deck planner disabled-state clarity */
+/* v0.12.8 deck planner disabled-state clarity */
 #addSpaceBtn:disabled,#addSpaceBtn.disabledBuild{
  opacity:.48;
  cursor:not-allowed;
@@ -451,7 +451,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 #addSpaceBtn:disabled:hover{filter:grayscale(.35)}
 
 
-/* v0.12.2 facility capacity summary */
+/* v0.12.8 facility capacity summary */
 .facilityCapacitySummary{display:flex;flex-direction:column;gap:8px;margin-top:12px}
 .capacityRow{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 11px;border:1px solid #d7e4e9;border-radius:11px;background:linear-gradient(180deg,#fbfdfe,#f6fafb)}
 .capacityRow b,.capacityRow span,.capacityRow small{display:block}
@@ -460,11 +460,11 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .capacityRow strong{font-size:14px;color:#0d5e83;text-align:right}
 
 .fuelTitle{display:flex;justify-content:space-between;gap:10px;align-items:center}.fuelTitle span{display:block;font-size:10px;color:#718792}.fuelGauge{height:12px;background:#dce7eb;border-radius:99px;overflow:hidden;margin:10px 0}.fuelGauge div{height:100%;background:#167aa4}.fuelNumbers{font-size:11px;color:#536d79}.shipMarketGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}.marketShip{padding:13px;border:1px solid #d5e2e7;border-radius:13px;background:#fbfdfe}.marketShipHead{display:flex;justify-content:space-between;gap:10px}.marketShipHead span{display:block;font-size:10px;color:#718590}.marketShip p{font-size:11px;color:#607985}.marketSpecs{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}.marketSpecs span{font-size:9px;padding:4px 6px;border-radius:99px;background:#edf4f6}@media(max-width:760px){.shipMarketGrid{grid-template-columns:1fr}}
-/* v0.12.2 render isolation */
+/* v0.12.8 render isolation */
 .renderErrorNotice{margin:12px;padding:12px 14px;border:1px solid #e0b7b7;border-radius:12px;background:#fff1f1;color:#873b3f}
 .renderErrorNotice b,.renderErrorNotice span{display:block}.renderErrorNotice span{font-size:11px;margin-top:4px;color:#8d5b5e}
 
-</style>
+.marketBuyActions{display:grid;grid-template-columns:1fr 1fr;gap:7px}.marketBuyActions button{width:100%}#selectedRouteWarning small{opacity:.78}</style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
@@ -477,7 +477,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
   <div><b>CRUISE<br>TYCOON</b><span>BUILD YOUR FLEET</span></div>
  </div>
  <div class="toprow">
-  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.12.2</span></div><div class="sub">One brand. One ship. Build from there.</div></div>
+  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.12.8</span></div><div class="sub">One brand. One ship. Build from there.</div></div>
   <div class="pills">
    <div class="pill">Week <b id="weekPill">1</b></div>
    <div class="pill">Group cash <b id="cashPill">£45.0m</b></div>
@@ -1203,7 +1203,7 @@ const state = {
    decks:3
   }
  },
- week:1,cash:45000000,debt:80000000,loanRate:.062,scheduledLoanRepayment:350000,debtHistory:[],shipBook:115000000,otherAssets:5000000,
+ week:1,cash:45000000,debt:22000000,loanRate:.062,scheduledLoanRepayment:125000,debtHistory:[],shipBook:18000000,otherAssets:5000000,
  customerDeposits:7000000,payables:3500000,equity:74500000,rep:55,
  fuelUSD:690,fare:899,service:3,marketing:90000,speed:17.5,foodSpendPpd:18,hotelConsumablesPpd:7,
  weather:{temp:27,kind:"Sunny",icon:"☀️",rain:false,snow:false},
@@ -1231,7 +1231,7 @@ Object.keys(state.contracts).forEach(n=>{state.contracts[n].excursions=defaultEx
 
 const SAVE_STORAGE_KEY="cruiseTycoon.save.v1";
 const SAVE_SCHEMA_VERSION=1;
-const GAME_VERSION="0.12.2";
+const GAME_VERSION="0.12.8";
 
 function makeStarterProgramme(){
  return [
@@ -1763,6 +1763,38 @@ function gameYearInfo(weekNo){
  const weekOfYear=((gameWeek-1)%24)+1;
  return {gameWeek,year,weekOfYear};
 }
+
+function generateWeather(season){
+ const profiles={
+  Winter:[
+   {kind:"Cold & clear",icon:"☀️",temp:[4,10],rain:false,snow:false},
+   {kind:"Cloudy",icon:"☁️",temp:[5,11],rain:false,snow:false},
+   {kind:"Wet & windy",icon:"🌧️",temp:[6,11],rain:true,snow:false},
+   {kind:"Wintry showers",icon:"🌨️",temp:[1,7],rain:true,snow:true}
+  ],
+  Spring:[
+   {kind:"Bright",icon:"🌤️",temp:[10,17],rain:false,snow:false},
+   {kind:"Showers",icon:"🌦️",temp:[9,16],rain:true,snow:false},
+   {kind:"Sunny",icon:"☀️",temp:[12,19],rain:false,snow:false},
+   {kind:"Cloudy",icon:"☁️",temp:[9,16],rain:false,snow:false}
+  ],
+  Summer:[
+   {kind:"Sunny",icon:"☀️",temp:[19,28],rain:false,snow:false},
+   {kind:"Warm & bright",icon:"🌤️",temp:[18,25],rain:false,snow:false},
+   {kind:"Summer showers",icon:"🌦️",temp:[17,23],rain:true,snow:false}
+  ],
+  Autumn:[
+   {kind:"Bright",icon:"🌤️",temp:[11,18],rain:false,snow:false},
+   {kind:"Cloudy",icon:"☁️",temp:[10,17],rain:false,snow:false},
+   {kind:"Wet & windy",icon:"🌧️",temp:[9,16],rain:true,snow:false}
+  ]
+ };
+ const choices=profiles[season]||profiles.Spring;
+ const p=choices[Math.floor(Math.random()*choices.length)];
+ const temp=Math.round(p.temp[0]+Math.random()*(p.temp[1]-p.temp[0]));
+ return {temp,kind:p.kind,icon:p.icon,rain:p.rain,snow:p.snow};
+}
+
 function seasonForGameWeek(weekNo){
  const n=gameYearInfo(weekNo).weekOfYear;
  // Exactly six weeks per season. Winter spans year-end: W1-3 and W22-24.
@@ -1793,27 +1825,30 @@ function seasonForWeek(weeksAhead){
 
 function programmeStartPort(idx){
  const item=state.programme[idx]||{};
- if(item.startPort)return item.startPort;
- if(item.route?.length)return item.route[0];
- if(idx===0)return state.route?.[state.route.length-1]||"Southampton";
+ if(idx===0)return item.startPort||item.route?.[0]||state.route?.[0]||"Southampton";
+ // The next sailing should start where the nearest earlier planned sailing finishes.
  for(let i=idx-1;i>=0;i--){
    const prev=state.programme[i];
    if(prev?.planned && prev.route?.length>1)return prev.route[prev.route.length-1];
-   if(prev?.startPort)return prev.startPort;
  }
- return state.route?.[state.route.length-1]||"Southampton";
+ return item.startPort||item.route?.[0]||"Southampton";
 }
 function enforceProgrammeContinuity(){
  for(let i=0;i<state.programme.length;i++){
-   const item=state.programme[i],start=programmeStartPort(i),old=item.route||[];
+   const item=state.programme[i],start=programmeStartPort(i),old=Array.isArray(item.route)?[...item.route]:[];
    item.startPort=start;
    if(!item.planned){
      item.route=[];
      item.booked=0;
      item.lastBooked=0;
    }else{
-     item.route=[start,...old.filter((p,j)=>j>0 || p!==start).slice(old[0]===start?1:0)];
-     if(item.route.length<2){item.planned=false;item.committed=false;item.route=[];item.booked=0;item.lastBooked=0}
+     // Remove only the existing first/start entry. Later calls to the start port are valid
+     // and must be preserved so round-trip cruises can return to their turnaround port.
+     const rest=(old[0]===start)?old.slice(1):old;
+     item.route=[start,...rest];
+     if(item.route.length<2){
+       item.planned=false;item.committed=false;item.route=[];item.booked=0;item.lastBooked=0;
+     }
    }
  }
 }
@@ -2277,6 +2312,18 @@ const industryCostBenchmarks={
  onboardDirect:{low:.055,high:.106,mid:.080}, otherShipOperating:{low:.079,high:.147,mid:.115},
  headOfficeSalesAdmin:{low:.124,high:.151,mid:.135}, depreciation:{low:.096,high:.110,mid:.103}
 };
+
+function shipCostScale(ship=activeShip()){
+ const gt=Math.max(12000,ship.grossTonnage||26000),cap=Math.max(300,ship.capacity||600);
+ const fixed=clamp(Math.pow(gt/90000,.88),.20,2.60);
+ const complexity=1+Math.max(0,cap-600)/7000;
+ return {gt,cap,fixed,complexity};
+}
+function shipSystemsCost(ship=activeShip()){
+ const s=shipCostScale(ship);
+ return Math.max(0,s.cap-800)*80+s.gt*.40;
+}
+
 function weeklyCrewWages(ship=activeShip(),serviceLevel=state.service){
  const c=ship.crew||{},r=c.weeklyRates||{},wp=c.wagePolicy||{};
  const serviceFactor={1:.90,2:.95,3:1.00,4:1.10,5:1.22}[serviceLevel]||1;
@@ -2430,33 +2477,35 @@ function sail(){
  };
 
  let fuelGBP=fuelTonnes()*state.fuelUSD*.79;
- let crew=weeklyCrewWages(activeShip(),state.service);
+ let sc=shipCostScale(activeShip());
+ let crew=weeklyCrewWages(activeShip(),state.service)*(1+.45*(sc.complexity-1));
  let facilityMaintenance=activeShip().spaceModel?shipSpaceStats(activeShip()).maint:0;
  let foodPpd=currentItem.foodSpendPpd??state.foodSpendPpd??18;
  let hotelPpd=currentItem.hotelConsumablesPpd??state.hotelConsumablesPpd??7;
- let food=pax*foodPpd*Math.max(6,sch.days.length);
- let beverage=ob.drinks*.26;
- let portFees=buildSchedule().days.filter(d=>d.type==="port").reduce((a,d)=>a+(demandAdjustedDockFee(d.name,((state.contracts[d.name]?.dockFee)??(ports[d.name]?.fee||0)))+contractExtraServiceCost(d.name)),0);
+ let food=pax*foodPpd*Math.max(6,sch.days.length)*(1+.30*(sc.complexity-1));
+ let beverage=ob.drinks*(.26+.025*(sc.complexity-1));
+ let portFees=buildSchedule().days.filter(d=>d.type==="port").reduce((a,d)=>a+(demandAdjustedDockFee(d.name,((state.contracts[d.name]?.dockFee)??(ports[d.name]?.fee||0)))+contractExtraServiceCost(d.name)),0)*clamp(.38+.45*sc.fixed,.38,1.70);
  let commissions=fareRevenue*.095;
- let entertainment=70000+(state.service-3)*18000;
- let hotel=pax*hotelPpd*Math.max(6,sch.days.length);
+ let entertainment=(70000+(state.service-3)*18000)*sc.fixed*(1+.75*(sc.complexity-1));
+ let hotel=pax*hotelPpd*Math.max(6,sch.days.length)*(1+.35*(sc.complexity-1));
  let qfx=crewQualityEffects(activeShip());
  let conditionSurcharge=Math.max(0,(75-conditionAverage()))*8500;
- let repairs=(72000+ev.cost+conditionSurcharge)*(1.14-qfx.marine*.14);
- let insurance=34000;
- let marketing=state.marketing;
+ let repairs=(50000+ev.cost+Math.max(0,(75-conditionAverage()))*4200)*Math.max(.40,sc.fixed)*(1+.70*(sc.complexity-1))*(1.14-qfx.marine*.14);
+ let insurance=26000*sc.fixed*(1+.40*(sc.complexity-1));
+ let marketing=state.marketing*.50*clamp(.55+.40*sc.fixed,.40,1.50);
  let casinoCost=ob.casino*.18;
  let excursionCost=excursionPlan.length?excursionPlan.reduce((a,x)=>a+x.supplierCost,0):0;
  let retailCost=ob.retail*.48;
  let spaCost=ob.spa*.32;
  let wifiCost=ob.wifi*.17;
  let diningCost=ob.dining*.35;
- let ho=50000+totalRev*.050; // allocated central office + selling/admin; recalibrated for multi-ship scalability
+ let utilities=shipSystemsCost(activeShip());
+ let ho=18000*sc.fixed+totalRev*(.055+.035*(sc.complexity-1));
 
- let costs={crew,food,beverage,fuel:fuelGBP,portFees,commissions,entertainment,hotel,facilityMaintenance,repairs,insurance,marketing,casinoCost,excursionCost,retailCost,spaCost,wifiCost,diningCost,ho};
+ let costs={crew,food,beverage,fuel:fuelGBP,portFees,commissions,entertainment,hotel,facilityMaintenance,utilities,repairs,insurance,marketing,casinoCost,excursionCost,retailCost,spaCost,wifiCost,diningCost,ho};
  let opex=Object.values(costs).reduce((a,b)=>a+b,0);
  let ebitda=totalRev-opex;
- let depreciation=115000000/(20*52);
+ let depreciation=Math.max(12000000,activeShip().purchasePrice||state.shipBook||18000000)/(22*52);
  let operating=ebitda-depreciation;
  let interest=state.debt*(state.loanRate??.062)/52;
  let pbt=operating-interest;
@@ -2848,17 +2897,18 @@ function estimateVoyageEconomics(item, forcedOcc=null){
  const rc=routeCosts(item.route,item.speed??17.5);
  const foodPpd=item.foodSpendPpd??state.foodSpendPpd??18;
  const hotelPpd=item.hotelConsumablesPpd??state.hotelConsumablesPpd??7;
- const food=pax*foodPpd*days,hotel=pax*hotelPpd*days;
- const crew=weeklyCrewWages(activeShip(),item.service??3);
+ const sc=shipCostScale(activeShip());
+ const food=pax*foodPpd*days*(1+.30*(sc.complexity-1)),hotel=pax*hotelPpd*days*(1+.35*(sc.complexity-1));
+ const crew=weeklyCrewWages(activeShip(),item.service??3)*(1+.45*(sc.complexity-1));
  const cp=item.cabinPrices||{};
  const berthTotal=Object.values(activeShip().berths).reduce((a,b)=>a+b,0)||1;
  const weightedFare=Object.entries(activeShip().berths).reduce((a,[k,b])=>a+b*(cp[k]||item.fare||0),0)/berthTotal;
  const fareRev=pax*weightedFare;
  const commissions=fareRev*.095;
- const entertainment=70000+((item.service??3)-3)*18000;
+ const entertainment=(70000+((item.service??3)-3)*18000)*sc.fixed*(1+.75*(sc.complexity-1));
  const qfx=crewQualityEffects(activeShip());
- const repairs=(72000+Math.max(0,(75-conditionAverage()))*8500)*(1.14-qfx.marine*.14);
- const beverage=ob.drinks*.26,casinoCost=ob.casino*.18,retailCost=ob.retail*.48,spaCost=ob.spa*.32,wifiCost=ob.wifi*.17,diningCost=ob.dining*.35;
+ const repairs=(50000+Math.max(0,(75-conditionAverage()))*4200)*Math.max(.40,sc.fixed)*(1+.70*(sc.complexity-1))*(1.14-qfx.marine*.14);
+ const beverage=ob.drinks*(.26+.025*(sc.complexity-1)),casinoCost=ob.casino*.18,retailCost=ob.retail*.48,spaCost=ob.spa*.32,wifiCost=ob.wifi*.17,diningCost=ob.dining*.35;
  let exRevenue=0,excursionCost=0;
  try{
    const xp=scheduledExcursionsForWeek(item,"prebook");
@@ -2868,13 +2918,14 @@ function estimateVoyageEconomics(item, forcedOcc=null){
  }catch(e){}
  const onboardRev=Object.values(ob).reduce((a,b)=>a+b,0)+exRevenue;
  const facilityMaintenance=activeShip().spaceModel?shipSpaceStats(activeShip()).maint:0;
- const insurance=34000,marketing=item.marketing??0;
+ const insurance=26000*sc.fixed*(1+.40*(sc.complexity-1)),marketing=(item.marketing??0)*.50*clamp(.55+.40*sc.fixed,.40,1.50);
  const totalRev=fareRev+onboardRev;
- const ho=50000+totalRev*.050;
- const costs={crew,food,beverage,fuel:rc.fuel,portFees:rc.ports,commissions,entertainment,hotel,facilityMaintenance,repairs,insurance,marketing,casinoCost,excursionCost,retailCost,spaCost,wifiCost,diningCost,ho};
+ const utilities=shipSystemsCost(activeShip());
+ const ho=18000*sc.fixed+totalRev*(.055+.035*(sc.complexity-1));
+ const costs={crew,food,beverage,fuel:rc.fuel,portFees:rc.ports*clamp(.38+.45*sc.fixed,.38,1.70),commissions,entertainment,hotel,facilityMaintenance,utilities,repairs,insurance,marketing,casinoCost,excursionCost,retailCost,spaCost,wifiCost,diningCost,ho};
  const opex=Object.values(costs).reduce((a,b)=>a+b,0);
  const ebitda=totalRev-opex;
- return {pax,occ,fc,weightedFare,fareRev,onboardRev,totalRev,costs,food,hotel,routeCost:rc.fuel+rc.ports,fuel:rc.fuel,ports:rc.ports,opex,ebitda};
+ return {pax,occ,fc,weightedFare,fareRev,onboardRev,totalRev,costs,food,hotel,routeCost:costs.fuel+costs.portFees,fuel:costs.fuel,ports:costs.portFees,opex,ebitda};
 }
 
 let selectedScheduleSubPage="itinerary";
@@ -2891,7 +2942,26 @@ function selectedProgrammeSnapshot(){
  return item?cloneJson(item):null;
 }
 
+
 function renderSelectedPlan(){
+ try{
+   renderSelectedPlanCore();
+ }catch(err){
+   console.error("Scheduler selected-week render failed:",err);
+   const item=state.programme?.[selectedPlanWeek],gameWeek=state.week+selectedPlanWeek;
+   const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v};
+   set("planTitle",`${calendarWeekLabel(gameWeek)} · Game week ${gameWeek}`);
+   set("planStatus",item?.committed?"COMMITTED":item?.planned?"Flexible plan":"Not planned");
+   set("selBookings",pct(item?.booked||0));set("selGrowth","—");set("selForecast",item?.planned?"Saved plan":"Not planned");
+   set("selStartPort",programmeStartPort(selectedPlanWeek));
+   const holder=document.getElementById("selectedPortSelectors");
+   if(holder){const r=Array.isArray(item?.route)?item.route:[];holder.innerHTML=`<div class="notice">${r.length>1?`Saved itinerary: ${r.join(" → ")}`:"No itinerary planned."}</div>`}
+   const w=document.getElementById("selectedRouteWarning");
+   if(w)w.innerHTML=`The scheduler recovered this week after a detail-panel error. Your saved itinerary has not been changed.<br><small>${String(err?.message||err)}</small>`;
+ }
+}
+
+function renderSelectedPlanCore(){
  const item=state.programme[selectedPlanWeek]; if(!item)return;
  bindScheduleSubTabs();
  const season=seasonForWeek(selectedPlanWeek+1);
@@ -2996,7 +3066,7 @@ function renderSelectedPlan(){
   <tr><td>Crew wages</td><td>${statementMoney(cb.crew)}</td></tr><tr><td>Food</td><td>${statementMoney(cb.food)}</td></tr><tr><td>Beverage supplies</td><td>${statementMoney(cb.beverage)}</td></tr>
   <tr><td>Fuel</td><td>${statementMoney(cb.fuel)}</td></tr><tr><td>Port &amp; pilotage</td><td>${statementMoney(cb.portFees)}</td></tr><tr><td>Travel-agent commissions</td><td>${statementMoney(cb.commissions)}</td></tr>
   <tr><td>Entertainment</td><td>${statementMoney(cb.entertainment)}</td></tr><tr><td>Hotel &amp; housekeeping consumables</td><td>${statementMoney(cb.hotel)}</td></tr><tr><td>Repairs &amp; maintenance</td><td>${statementMoney(cb.repairs)}</td></tr>
-  <tr><td>Insurance</td><td>${statementMoney(cb.insurance)}</td></tr><tr><td>Marketing</td><td>${statementMoney(cb.marketing)}</td></tr><tr><td>Onboard &amp; excursion direct costs</td><td>${statementMoney(cb.casinoCost+cb.excursionCost+cb.retailCost+cb.spaCost+cb.wifiCost+cb.diningCost)}</td></tr>
+  <tr><td>Utilities &amp; technical systems</td><td>${statementMoney(cb.utilities||0)}</td></tr><tr><td>Insurance</td><td>${statementMoney(cb.insurance)}</td></tr><tr><td>Marketing</td><td>${statementMoney(cb.marketing)}</td></tr><tr><td>Onboard &amp; excursion direct costs</td><td>${statementMoney(cb.casinoCost+cb.excursionCost+cb.retailCost+cb.spaCost+cb.wifiCost+cb.diningCost)}</td></tr>
   <tr><td>Allocated head office</td><td>${statementMoney(cb.ho)}</td></tr><tr class="total"><td>Total estimated operating cost</td><td>${statementMoney(econ.opex)}</td></tr></table>`;
  const occs=[.60,.70,.80,.90,1.00];
  document.getElementById("occupancyProfitTable").innerHTML=`<table><tr><th>Occupancy</th><th>Guests</th><th>Fare revenue</th><th>Onboard revenue</th><th>Total revenue</th><th>Operating cost</th><th>Potential EBITDA</th><th>Margin</th></tr>`+occs.map(o=>{const x=estimateVoyageEconomics(previewItem,o);return `<tr><td>${pct(o)}</td><td>${x.pax.toLocaleString()}</td><td>${statementMoney(x.fareRev)}</td><td>${statementMoney(x.onboardRev)}</td><td>${statementMoney(x.totalRev)}</td><td>${statementMoney(x.opex)}</td><td class="${x.ebitda<0?"neg":""}">${statementMoney(x.ebitda)}</td><td>${x.totalRev?pct(x.ebitda/x.totalRev):"—"}</td></tr>`}).join("")+`</table>`;
@@ -3006,7 +3076,7 @@ function renderSelectedPlan(){
  const inner=previewItem.route.slice(1);while(inner.length<5)inner.push("");
  inner.forEach((p,j)=>{
    const d=document.createElement("div");d.className="span4";
-   d.innerHTML=`<label class="label">Port ${j+1}</label><select id="selPort${j}" style="width:100%"><option value="">— none —</option>${availablePortNames().filter(x=>x!==programmeStartPort(selectedPlanWeek)).map(x=>`<option ${x===p?"selected":""}>${x}</option>`).join("")}</select>`;
+   d.innerHTML=`<label class="label">Port ${j+1}</label><select id="selPort${j}" style="width:100%"><option value="">— none —</option>${availablePortNames().map(x=>`<option ${x===p?"selected":""}>${x}</option>`).join("")}</select>`;
    holder.appendChild(d);
  });
  if(item.committed){ for(let j=0;j<5;j++){const e=document.getElementById(`selPort${j}`);if(e)e.disabled=true;} }
@@ -3071,10 +3141,10 @@ const SHIP_CLASSES={
 
 const SHIP_MARKET=[
  {id:"coaster",name:"MV Meridian",className:"Coastal Veteran",age:38,decks:3,capacity:600,gt:26000,lengthM:178,price:18000000,tankTonnes:1150,fuelTPerNm:.105,hotelFuelTDay:9,condition:66,desc:"Old, cheap and thirsty. Built for short Northern Europe work."},
- {id:"classic",name:"MV Atlantic Crown",className:"Classic Cruiser",age:24,decks:7,capacity:1450,gt:55000,lengthM:235,price:65000000,tankTonnes:2100,fuelTPerNm:.135,hotelFuelTDay:15,condition:76,desc:"A conventional small cruise ship with substantially more guest space."},
- {id:"modern",name:"MV Horizon",className:"Modern Mid-size",age:10,decks:11,capacity:2850,gt:115000,lengthM:300,price:210000000,tankTonnes:3400,fuelTPerNm:.19,hotelFuelTDay:26,condition:91,desc:"Modern mid-size tonnage with strong efficiency and resort facilities."},
- {id:"resort",name:"MV Grand Voyager",className:"Large Resort",age:5,decks:16,capacity:4800,gt:180000,lengthM:340,price:520000000,tankTonnes:5200,fuelTPerNm:.285,hotelFuelTDay:43,condition:96,desc:"Large resort ship with major dining, entertainment and onboard revenue potential."},
- {id:"mega",name:"MV Colossus",className:"Mega Resort",age:1,decks:20,capacity:7600,gt:250000,lengthM:365,price:1100000000,tankTonnes:7200,fuelTPerNm:.41,hotelFuelTDay:68,condition:99,desc:"Mega-resort scale: huge capacity, capex and operating exposure."}
+ {id:"classic",name:"MV Atlantic Crown",className:"Classic Cruiser",age:24,decks:7,capacity:1450,gt:55000,lengthM:235,price:52000000,tankTonnes:2100,fuelTPerNm:.135,hotelFuelTDay:15,condition:76,desc:"A conventional small cruise ship with substantially more guest space."},
+ {id:"modern",name:"MV Horizon",className:"Modern Mid-size",age:10,decks:11,capacity:2850,gt:115000,lengthM:300,price:175000000,tankTonnes:3400,fuelTPerNm:.19,hotelFuelTDay:26,condition:91,desc:"Modern mid-size tonnage with strong efficiency and resort facilities."},
+ {id:"resort",name:"MV Grand Voyager",className:"Large Resort",age:5,decks:16,capacity:4800,gt:180000,lengthM:340,price:430000000,tankTonnes:5200,fuelTPerNm:.285,hotelFuelTDay:43,condition:96,desc:"Large resort ship with major dining, entertainment and onboard revenue potential."},
+ {id:"mega",name:"MV Colossus",className:"Mega Resort",age:1,decks:20,capacity:7600,gt:250000,lengthM:365,price:900000000,tankTonnes:7200,fuelTPerNm:.41,hotelFuelTDay:68,condition:99,desc:"Mega-resort scale: huge capacity, capex and operating exposure."}
 ];
 function shipMarketSpec(s){return SHIP_MARKET.find(x=>x.id===s.marketClass)||SHIP_MARKET[0]}
 function ensureFuelModel(s){
@@ -3099,10 +3169,8 @@ function refuelShip(s=activeShip()){
  const cost=qty*(state.fuelUSD||690)*.79;if(state.cash<cost)return alert("Insufficient cash to bunker to full.");
  state.cash-=cost;f.currentTonnes=f.tankTonnes;queueAutoSave();renderAll();
 }
-function buyMarketShip(id){
- const x=SHIP_MARKET.find(v=>v.id===id);if(!x||state.cash<x.price)return alert("You cannot afford this ship.");
- if(!confirm(`Buy ${x.name} for ${statementMoney(x.price)}?`))return;
- state.cash-=x.price;const id2=`ship_${Date.now()}`,cab=Math.floor(x.capacity/2);
+function createPurchasedShip(x){
+ const id2=`ship_${Date.now()}_${Math.floor(Math.random()*1000)}`,cab=Math.floor(x.capacity/2);
  state.fleet[id2]={id:id2,name:x.name,className:x.className,marketClass:x.id,capacity:x.capacity,status:"In service",
  cabins:{inside:Math.round(cab*.34),oceanview:Math.round(cab*.18),balcony:Math.round(cab*.38),suite:Math.round(cab*.10)},
  berths:{inside:Math.round(x.capacity*.34),oceanview:Math.round(x.capacity*.18),balcony:Math.round(x.capacity*.38),suite:Math.round(x.capacity*.10)},
@@ -3111,13 +3179,43 @@ function buyMarketShip(id){
  fuelTankTonnes:x.tankTonnes,fuelTPerNm:x.fuelTPerNm,hotelFuelTDay:x.hotelFuelTDay,
  fuel:{tankTonnes:x.tankTonnes,currentTonnes:x.tankTonnes,fuelTPerNm:x.fuelTPerNm,hotelFuelTDay:x.hotelFuelTDay},
  condition:{machinery:x.condition,hull:x.condition,hotel:x.condition,interiors:x.condition},spaceModel:null};
- state.activeShipId=id2;queueAutoSave();renderAll();
+ state.activeShipId=id2;return id2;
+}
+function buyMarketShip(id,finance=false){
+ const x=SHIP_MARKET.find(v=>v.id===id);if(!x)return;
+ const cashNeed=finance?x.price*.25:x.price,loan=finance?x.price*.75:0;
+ if(state.cash<cashNeed)return alert(`You need ${statementMoney(cashNeed)} cash for this purchase.`);
+ const wording=finance?`${statementMoney(cashNeed)} deposit plus ${statementMoney(loan)} new debt`:`${statementMoney(x.price)} cash`;
+ if(!confirm(`Buy ${x.name} using ${wording}?`))return;
+ state.cash-=cashNeed;
+ if(loan>0){
+   state.debt+=loan;
+   state.scheduledLoanRepayment=(state.scheduledLoanRepayment||125000)+loan/(7*52);
+   state.debtHistory=state.debtHistory||[];
+   state.debtHistory.push({week:state.week,type:`Ship finance — ${x.name}`,amount:loan,debt:state.debt,rate:state.loanRate??.062});
+ }
+ createPurchasedShip(x);queueAutoSave();renderAll();
 }
 
 function shipClassFor(s){
  const key=Object.keys(SHIP_CLASSES).find(k=>SHIP_CLASSES[k].name===s.className);
  return SHIP_CLASSES[key]||{name:s.className||"Custom class",decks:s.decks||10,grossTonnage:s.grossTonnage||90000,lengthM:s.lengthM||280,deckAreaFactor:.55,positioning:"Custom",designLuxury:3.5};
 }
+
+function syncShipFromSpaceModel(s){
+ if(!s?.spaceModel?.decks)return;
+ const totals={inside:0,oceanview:0,balcony:0,suite:0},facilities={};
+ s.spaceModel.decks.forEach(d=>(d.spaces||[]).forEach(sp=>{
+   const def=SPACE_TYPES[sp.type];
+   if(def?.kind==="cabin" && sp.type in totals)totals[sp.type]+=sp.count||0;
+   if(def?.kind==="facility")facilities[sp.type]=(facilities[sp.type]||0)+(sp.count||1);
+ }));
+ s.cabins={...totals};
+ s.berths=Object.fromEntries(Object.entries(totals).map(([k,v])=>[k,v*(SPACE_TYPES[k]?.berths||2)]));
+ s.capacity=Object.values(s.berths).reduce((a,b)=>a+b,0);
+ s.facilities=Object.entries(facilities).map(([type,count])=>({name:SPACE_TYPES[type]?.name||type,count,quality:3}));
+}
+
 function ensureShipSpaceModel(s){
  const cls=shipClassFor(s),deckCount=Math.max(3,s.decks||cls.decks||10);
  const totalDeckArea=(s.grossTonnage||cls.grossTonnage||90000)*(cls.deckAreaFactor||.55),base=totalDeckArea/deckCount;
@@ -3428,7 +3526,7 @@ function renderMyShips(){
  document.getElementById("shipFacilitiesTable").innerHTML=`<tr><th>Facility</th><th>Deck</th><th>Luxury</th><th>Condition</th></tr>${all.map(sp=>{const dd=m.decks.find(d=>d.spaces.includes(sp));return `<tr><td>${sp.label}</td><td>${dd.number}</td><td>${sp.luxury.toFixed(1)}</td><td>${sp.condition.toFixed(0)}%</td></tr>`}).join("")}`;
  const fm=ensureFuelModel(ship),fh=document.getElementById("shipFuelPanel");
  if(fh){const age=2026-(ship.yearBuilt||2026);let rf=null;try{rf=state.programme?.[0]?.route?.length>1?routeFuelEstimate(state.programme[0],ship):null}catch(e){console.error("Fuel estimate failed",e)}fh.innerHTML=`<div class="fuelTitle"><div><b>${Math.round(fm.currentTonnes).toLocaleString()} / ${fm.tankTonnes.toLocaleString()} tonnes fuel</b><span>${age} years old · ${ship.grossTonnage.toLocaleString()} GT</span></div><button class="btn" id="bunkerFullBtn">Bunker to full</button></div><div class="fuelGauge"><div style="width:${100*fm.currentTonnes/fm.tankTonnes}%"></div></div><div class="fuelNumbers">Sea burn ${fm.fuelTPerNm.toFixed(3)} t/nm · hotel load ${fm.hotelFuelTDay} t/day${rf?`<br>This week's route: ${Math.round(rf.nm).toLocaleString()} nm · ${Math.round(rf.tonnes)} t (${rf.tankPct.toFixed(0)}% tank) ${rf.valid===false?"✕ route data error":rf.rangeOk?"✓":"✕ insufficient fuel"}`:""}</div>`;document.getElementById("bunkerFullBtn").onclick=()=>refuelShip(ship);}
- const mg=document.getElementById("shipMarketGrid");if(mg){mg.innerHTML=SHIP_MARKET.map(x=>`<div class="marketShip"><div class="marketShipHead"><div><b>${x.name}</b><span>${x.className}</span></div><strong>${statementMoney(x.price)}</strong></div><p>${x.desc}</p><div class="marketSpecs"><span>${x.decks} decks</span><span>${x.capacity.toLocaleString()} guests</span><span>${x.gt.toLocaleString()} GT</span><span>${x.tankTonnes.toLocaleString()}t tank</span><span>${x.age} yrs</span></div><button class="btn good buyMarketShipBtn" data-market-id="${x.id}" ${state.cash<x.price?"disabled":""}>${state.cash<x.price?"Cannot afford":"Buy ship"}</button></div>`).join("");document.querySelectorAll(".buyMarketShipBtn").forEach(b=>b.onclick=()=>buyMarketShip(b.dataset.marketId));}
+ const mg=document.getElementById("shipMarketGrid");if(mg){mg.innerHTML=SHIP_MARKET.map(x=>`<div class="marketShip"><div class="marketShipHead"><div><b>${x.name}</b><span>${x.className}</span></div><strong>${statementMoney(x.price)}</strong></div><p>${x.desc}</p><div class="marketSpecs"><span>${x.decks} decks</span><span>${x.capacity.toLocaleString()} guests</span><span>${x.gt.toLocaleString()} GT</span><span>${x.tankTonnes.toLocaleString()}t tank</span><span>${x.age} yrs</span></div><div class="marketBuyActions"><button class="btn buyMarketCashBtn" data-market-id="${x.id}" ${state.cash<x.price?"disabled":""}>Buy cash</button><button class="btn good buyMarketFinanceBtn" data-market-id="${x.id}" ${state.cash<x.price*.25?"disabled":""}>Finance · 25% deposit</button></div></div>`).join("");document.querySelectorAll(".buyMarketCashBtn").forEach(b=>b.onclick=()=>buyMarketShip(b.dataset.marketId,false));document.querySelectorAll(".buyMarketFinanceBtn").forEach(b=>b.onclick=()=>buyMarketShip(b.dataset.marketId,true));}
  const cap=facilityCapacityMetrics(ship,ship.capacity||Object.values(ship.berths||{}).reduce((a,b)=>a+b,0));
  const capHost=document.getElementById("facilityCapacitySummary");
  if(capHost){
@@ -3539,7 +3637,7 @@ function renderSchedule(){
    });
    list.appendChild(b);
  });
- renderSelectedPlan();
+ try{renderSelectedPlan();}catch(e){console.error("Scheduler detail error",e)}
 
  const cash=forwardCashReceipts();
  const t=document.getElementById("scheduleCashTable");
