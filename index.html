@@ -4,117 +4,2802 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Cruise Tycoon — iPad</title>
+<title>Cruise Tycoon v0.10.0g</title>
 <style>
-:root{--navy:#102c46;--navy2:#173e61;--sea:#dff2fb;--card:#fff;--ink:#16324a;--muted:#63788a;--line:#d7e1e8;--good:#147247;--bad:#a62d2d;--gold:#d8a73a;--bg:#edf3f7}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,system-ui,sans-serif;overscroll-behavior:none}
-body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
-button,input,select{font:inherit}.app{min-height:100vh;display:grid;grid-template-rows:auto 1fr auto}
-.topbar{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:14px 20px;display:flex;align-items:center;gap:18px;box-shadow:0 2px 12px #0002;position:sticky;top:0;z-index:5}
-.brand{min-width:190px}.brand h1{font-size:20px;letter-spacing:.08em;margin:0}.brand small{opacity:.72}.topstats{display:grid;grid-template-columns:repeat(5,minmax(110px,1fr));gap:8px;flex:1}.pill{background:#ffffff14;border:1px solid #ffffff22;border-radius:12px;padding:8px 11px}.pill span{display:block;font-size:11px;opacity:.7;text-transform:uppercase;letter-spacing:.04em}.pill b{font-size:17px;white-space:nowrap}
-.main{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(310px,.75fr);gap:14px;padding:14px;min-height:0}.left,.right{display:grid;gap:14px;align-content:start}.card{background:var(--card);border:1px solid #e5ebef;border-radius:18px;box-shadow:0 4px 18px #17324d0c;overflow:hidden}.cardhead{padding:13px 16px;border-bottom:1px solid #eef2f5;display:flex;align-items:center;justify-content:space-between;gap:12px}.cardhead h2{font-size:15px;margin:0}.sub{font-size:12px;color:var(--muted)}
-.market{padding:12px 14px;display:flex;gap:10px;align-items:flex-start;background:#f8fbfd}.market .icon{font-size:22px}.market b{display:block;margin-bottom:2px}.market p{margin:0;color:var(--muted);font-size:13px;line-height:1.35}
-.mapwrap{padding:12px}.map{height:min(46vh,430px);min-height:300px;background:linear-gradient(180deg,#cceafb,#eaf7fc 65%,#c8e4ee);border-radius:14px;position:relative;overflow:hidden;border:1px solid #c8dce7;touch-action:manipulation}.land{position:absolute;background:#d5dfbb;border:1px solid #bcc99c;opacity:.88;filter:drop-shadow(0 2px 1px #0001)}.land.a{width:46%;height:34%;left:-8%;top:-7%;border-radius:40% 50% 55% 45%}.land.b{width:38%;height:28%;right:-8%;top:-3%;border-radius:55% 40% 55% 45%}.land.c{width:48%;height:25%;right:-4%;bottom:-11%;border-radius:50% 40% 0 0}.sea-label{position:absolute;left:40%;top:47%;font-size:22px;font-weight:800;letter-spacing:.12em;color:#3c789544;transform:rotate(-7deg);pointer-events:none}.port{position:absolute;transform:translate(-50%,-50%);border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:999px;padding:7px 10px;min-width:64px;min-height:36px;font-weight:700;font-size:12px;box-shadow:0 3px 8px #0002;cursor:pointer;touch-action:manipulation}.port:active{transform:translate(-50%,-50%) scale(.96)}.port.sel{background:var(--navy);color:#fff}.port.home{background:var(--gold);color:#fff;border-color:#a47a1f}.ship{position:absolute;left:48%;top:55%;font-size:40px;filter:drop-shadow(0 4px 4px #0003);pointer-events:none}.routebar{margin-top:10px;padding:10px 12px;background:#f5f8fa;border-radius:12px;font-size:13px;display:flex;gap:8px;align-items:center;min-height:44px;overflow-x:auto;white-space:nowrap}.route-chip{background:#e7eef3;border-radius:999px;padding:5px 9px}.route-chip.home{background:#f4e5b7}.arrow{color:#8aa0b1}
-.controls{padding:14px;display:grid;gap:13px}.control-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px}.control-row label{font-weight:700;font-size:13px}.control-row .hint{display:block;color:var(--muted);font-size:11px;font-weight:400;margin-top:2px}.value{font-size:18px;font-weight:800}.slider{width:100%;accent-color:var(--navy);height:34px}.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.seg button{border:1px solid var(--line);background:#f6f9fb;padding:9px 6px;border-radius:10px;font-size:12px;font-weight:700;color:var(--ink)}.seg button.active{background:var(--navy);border-color:var(--navy);color:white}.choice{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.choice button{border:1px solid var(--line);background:#f6f9fb;padding:10px 6px;border-radius:10px;font-size:12px;font-weight:700}.choice button.active{background:#dcecf6;border-color:#93b8cf}
-.action{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:4px}.btn{border:0;border-radius:13px;padding:14px 16px;font-weight:800;min-height:50px;cursor:pointer}.primary{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff}.secondary{background:#e8eef2;color:var(--ink)}.btn:disabled{opacity:.45}.btn:active{transform:scale(.985)}
-.result{padding:14px}.headline{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.headline h3{margin:0 0 3px;font-size:16px}.profit{font-size:23px;font-weight:900}.good{color:var(--good)}.bad{color:var(--bad)}.resultgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.metric{background:#f6f9fb;border-radius:12px;padding:10px}.metric span{display:block;font-size:11px;color:var(--muted);text-transform:uppercase}.metric b{font-size:16px}.event{margin-top:10px;border-left:4px solid var(--gold);background:#fff8e7;padding:9px 10px;border-radius:8px;font-size:12px;line-height:1.35}.history{padding:6px 14px 12px}.histrow{display:grid;grid-template-columns:54px 1fr auto;gap:8px;padding:9px 0;border-bottom:1px solid #eef2f5;font-size:12px}.histrow:last-child{border-bottom:0}.empty{color:var(--muted);padding:10px 0}.footer{padding:8px 14px 12px;text-align:center;color:var(--muted);font-size:11px}
-.toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(120px);background:#132d43;color:white;padding:12px 16px;border-radius:12px;box-shadow:0 8px 24px #0004;transition:.25s;z-index:20;font-weight:700;font-size:13px}.toast.show{transform:translateX(-50%) translateY(0)}
-@media (orientation:portrait){.main{grid-template-columns:1fr}.map{height:42vh}.right{grid-template-columns:1fr 1fr}.right .card:first-child{grid-column:1/-1}.topstats{grid-template-columns:repeat(3,1fr)}.pill:nth-child(4),.pill:nth-child(5){display:none}}
-@media (max-width:760px){.brand{min-width:auto}.brand small{display:none}.topbar{padding:10px 12px}.topstats{gap:5px}.pill{padding:6px 8px}.pill span{font-size:9px}.pill b{font-size:14px}.main{padding:8px;gap:8px}.left,.right{gap:8px}.right{grid-template-columns:1fr}.map{min-height:280px}.resultgrid{grid-template-columns:repeat(2,1fr)}}
-@media (min-width:1000px) and (orientation:landscape){.main{height:calc(100vh - 92px);overflow:hidden}.left,.right{overflow:auto;padding-bottom:20px}.map{height:390px}}
+:root{
+  --navy:#102c46;--navy2:#173e61;--bg:#edf3f7;--card:#fff;--ink:#17324a;
+  --muted:#687b89;--line:#dbe5eb;--good:#137148;--bad:#a73535;--gold:#bb8b22;
+  --blue:#e8f2f8;--warn:#fff5d7;--shadow:0 8px 24px rgba(16,44,70,.08)
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+button,select,input{font:inherit}
+header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:white;padding:14px 18px;position:sticky;top:0;z-index:20}
+.toprow{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.title{font-weight:800;font-size:22px}
+.sub{opacity:.82;font-size:12px;margin-top:2px}
+.pills{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.pill{background:rgba(255,255,255,.13);padding:7px 10px;border-radius:999px;font-size:12px}
+nav{display:flex;gap:6px;overflow:auto;padding:9px 12px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:70px;z-index:19}
+nav button{border:0;background:#eef3f6;color:var(--ink);padding:10px 13px;border-radius:10px;font-weight:700;white-space:nowrap}
+nav button.active{background:var(--navy);color:#fff}
+main{padding:12px;max-width:1300px;margin:auto}
+.tab{display:none}.tab.active{display:block}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 10px;font-size:16px}
+.kpi{font-size:26px;font-weight:800}.label{font-size:12px;color:var(--muted)}
+.c3{grid-column:span 3}.c4{grid-column:span 4}.c5{grid-column:span 5}.c6{grid-column:span 6}.c7{grid-column:span 7}.c8{grid-column:span 8}.c12{grid-column:span 12}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn{border:0;border-radius:12px;padding:11px 14px;font-weight:800;background:var(--navy);color:#fff}
+.btn.secondary{background:#e8eef2;color:var(--ink)} .btn.good{background:var(--good)} .btn.warn{background:var(--gold)}
+.btn:active{transform:scale(.99)}
+input[type=range]{width:100%}
+select,input[type=number]{border:1px solid var(--line);border-radius:10px;padding:9px;background:#fff}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 7px;border-bottom:1px solid var(--line);text-align:right}
+th:first-child,td:first-child{text-align:left}
+th{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.total{font-weight:800;background:#f7fafc}.goodtxt{color:var(--good);font-weight:800}.badtxt{color:var(--bad);font-weight:800}
+.notice{background:var(--warn);border:1px solid #ead89b;padding:10px 12px;border-radius:12px;font-size:13px}
+.portchips{display:flex;gap:8px;flex-wrap:wrap}
+.portchip{padding:9px 11px;border-radius:999px;background:#eef3f6;border:1px solid var(--line);font-weight:700}
+.timeline{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.day{min-width:110px;border:1px solid var(--line);border-radius:12px;padding:10px;background:#fff}
+.day.sea{background:#e9f5fb}.day .n{font-size:11px;color:var(--muted)}.day .p{font-weight:800;margin-top:3px}.day .small{font-size:11px;color:var(--muted);margin-top:4px}
+.segbar{display:flex;height:18px;border-radius:9px;overflow:hidden;background:#e8eef2}.segbar span{display:block;height:100%}
+.fam{background:#7db5d8}.couple{background:#68a47b}.senior{background:#c9a45e}.young{background:#b387c9}.lux{background:#6d7ea8}
+.metricrow{display:grid;grid-template-columns:1fr 100px;gap:10px;margin:8px 0;align-items:center}
+.bigaction{display:flex;justify-content:center;padding:12px}
+#eventBox{min-height:56px}
+
+.scheduleSubTabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 14px}.scheduleSubTabs button{border:1px solid #bdd0df;background:#f4f8fb;color:#24465d;border-radius:999px;padding:8px 13px;font-weight:700;cursor:pointer}.scheduleSubTabs button.active{background:#0b5d87;color:#fff;border-color:#0b5d87}.scheduleSubPage{display:none}.scheduleSubPage.active{display:block}.costIndicator{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:7px}.costPill{display:inline-block;border-radius:999px;padding:5px 10px;background:#e9f2f7;font-weight:800}.costMeter{height:10px;background:#e5edf2;border-radius:999px;overflow:hidden;min-width:180px;flex:1}.costMeter>span{display:block;height:100%;background:linear-gradient(90deg,#76b8d8,#d6aa4f,#c55a5a)}
+@media(max-width:900px){
+ .c3,.c4,.c5,.c6,.c7,.c8{grid-column:span 12}
+ header{position:static} nav{top:0}
+ .title{font-size:18px}.pills{justify-content:flex-start}
+}
+@media(orientation:portrait){.grid{grid-template-columns:1fr}.grid>*{grid-column:1!important}}
+
+.routeMap{width:100%;height:auto;border:1px solid var(--line);border-radius:14px;background:#eaf4f8;margin-top:12px}
+.routeMap .sea{fill:#eaf4f8}.routeMap .land{fill:#dfe8dd;stroke:#bdcbb9;stroke-width:1}
+.routeMap .route{fill:none;stroke:#173e61;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.routeMap .dot{fill:#fff;stroke:#173e61;stroke-width:2.5}.routeMap .start{fill:#bb8b22}
+.routeMap text{font-size:10px;fill:#17324a;font-weight:700}
+.modal{display:none;position:fixed;inset:0;background:rgba(10,25,40,.58);z-index:100;padding:22px;overflow:auto}
+.modal.show{display:flex;align-items:center;justify-content:center}
+.modalCard{background:#fff;border-radius:18px;width:min(860px,100%);max-height:92vh;overflow:auto;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.modalHead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.resultKpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}
+.resultKpis>div{background:#f3f7fa;border-radius:12px;padding:10px}
+@media(max-width:700px){.resultKpis{grid-template-columns:repeat(2,1fr)}}
+
+
+.scheduleShell{display:grid;grid-template-columns:220px 1fr;gap:12px;align-items:start}
+.weekList{display:flex;flex-direction:column;gap:8px}
+.weekBtn{width:100%;text-align:left;border:1px solid var(--line);background:#fff;border-radius:12px;padding:11px;color:var(--ink)}
+.weekBtn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.weekBtn .wk{font-weight:800}.weekBtn .season{font-size:11px;opacity:.75;margin-top:2px}
+.weekBtn .book{font-size:12px;margin-top:5px}
+.planGrid{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}
+.planGrid .span4{grid-column:span 4}.planGrid .span6{grid-column:span 6}.planGrid .span12{grid-column:span 12}
+.financeDetail td:first-child{padding-left:14px}.financeDetail .subline td:first-child{padding-left:28px;color:var(--muted)}
+@media(max-width:900px){
+ .scheduleShell{grid-template-columns:1fr}
+ .weekList{display:grid;grid-template-columns:repeat(3,1fr)}
+ .planGrid .span4,.planGrid .span6{grid-column:span 12}
+}
+
+
+.realMap{width:100%;height:330px;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:12px;background:#eaf4f8}
+.leaflet-container{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+@media(max-width:700px){.realMap{height:280px}}
+
+.portCard{grid-column:span 4;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.portPhoto{width:100%;aspect-ratio:16/9;object-fit:cover;background:#dfe8ed}
+.portBody{padding:12px}
+.contractActive{color:var(--good);font-weight:800}.contractInactive{color:var(--muted);font-weight:700}
+.excursionRow{display:flex;justify-content:space-between;gap:8px;font-size:12px;padding:5px 0;border-bottom:1px solid var(--line)}
+@media(max-width:900px){.portCard{grid-column:span 6}}@media(max-width:600px){.portCard{grid-column:span 12}}
+
+
+
+.shipSelectorPill select{background:transparent;border:0;color:inherit;font-weight:800;font:inherit;padding:0 2px;opacity:1}
+.shipSelectorPill select:disabled{-webkit-text-fill-color:currentColor;color:inherit;opacity:1}
+.shipContext{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.shipBadge{font-size:12px;font-weight:800;padding:5px 9px;border-radius:999px;background:#e9f0f5;color:#173e61}
+
+
+.resultPages{display:flex;gap:8px;margin:10px 0}
+.resultPages button{border:1px solid var(--line);background:#eef3f6;color:var(--ink);padding:8px 12px;border-radius:10px;font-weight:800}
+.resultPages button.active{background:var(--navy);color:#fff}
+.resultPage{display:none}.resultPage.active{display:block}
+.pieGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.pieWrap{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.pieSvg{width:240px;max-width:100%;height:auto}
+.pieLegend{font-size:12px}
+.pieLegend div{margin:4px 0}
+@media(max-width:700px){.pieGrid{grid-template-columns:1fr}}
+
+
+.occRow{display:grid;grid-template-columns:100px 1fr 58px;gap:8px;align-items:center;margin:10px 0}
+.occTrack{height:16px;background:#e7edf1;border-radius:999px;overflow:hidden}
+.occFill{height:100%;background:#173e61;border-radius:999px}
+
+
+.qualityDots{letter-spacing:2px}
+.conditionBar{height:14px;background:#e7edf1;border-radius:999px;overflow:hidden;margin-top:5px}
+.conditionFill{height:100%;background:#173e61;border-radius:999px}
+
+
+#pnlTable,#resultPnl{min-width:760px}
+#pnl .card,#resultPagePnl .card,#resultPageCash .card,#resultPageBalance .card{overflow-x:auto}
+
+/* v0.9.9 layout hardening */
+nav{display:flex;flex-wrap:wrap;gap:6px;overflow:visible}
+nav button{white-space:nowrap}
+#schedule .card,#ports .card{min-width:0;overflow-x:auto}
+#schedule table,#ports table{width:100%;max-width:100%}
+#schedule input,#schedule select,#ports input,#ports select{max-width:100%}
+#selectedRouteMap{width:100%;max-width:100%}
+@media(max-width:760px){#schedule .span12,#ports .span12{grid-column:1/-1}}
+
+
+
+
+.portCard{min-width:0}
+@media(max-width:700px){
+ .scheduleShell{grid-template-columns:1fr!important}
+ 
+}
+
+
+/* Stable schedule/ports responsive layout */
+.scheduleShell{display:grid;grid-template-columns:220px minmax(0,1fr);gap:12px;align-items:start}
+.weekList{display:flex;flex-direction:column;gap:8px}
+.weekBtn{display:block;width:100%;text-align:left;border:1px solid var(--line);background:#fff;border-radius:12px;padding:11px;color:var(--ink);min-height:64px}
+.weekBtn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+#portsGrid{align-items:start}
+.portCard{min-width:0}
+@media(max-width:900px){
+ .scheduleShell{grid-template-columns:190px minmax(0,1fr)}
+ .portCard{grid-column:span 6}
+}
+@media(max-width:650px){
+ .scheduleShell{grid-template-columns:1fr}
+ .weekList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .portCard{grid-column:span 12}
+}
+
+/* v0.10.0g voyage animation, compact dashboard and history charts */
+.shipSummaryGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
+.shipSummaryGrid>div{background:#f5f8fa;border:1px solid var(--line);border-radius:10px;padding:10px}
+.shipSummaryGrid .kpi{font-size:20px}
+.trendChart{width:100%;overflow-x:auto}.trendChart svg{width:100%;min-width:520px;height:220px;display:block}
+.trendLegend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:8px}
+.legendMark{display:inline-block;width:18px;height:3px;background:currentColor;vertical-align:middle;margin-right:5px}
+.reviewComment{font-size:12px;color:var(--muted);margin-top:4px}
+.voyageOverlay{position:fixed;inset:0;background:rgba(8,27,44,.88);z-index:100;display:none;align-items:center;justify-content:center;padding:18px;color:#fff}
+.voyageOverlay.show{display:flex}.voyageCard{width:min(920px,96vw);background:#102c46;border-radius:18px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.voyageMeta{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 14px}.voyageMeta span{background:rgba(255,255,255,.12);padding:7px 10px;border-radius:999px}
+.voyageTrack{height:72px;position:relative;border-top:3px dashed rgba(255,255,255,.35);margin:24px 14px 10px}.voyageShip{position:absolute;top:-28px;left:0;font-size:42px;animation:voyageSail 1.8s ease-in-out forwards}
+@keyframes voyageSail{0%{left:0;transform:translateX(0)}100%{left:calc(100% - 46px);transform:translateX(0)}}
+.voyagePhotos{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.voyagePhoto{position:relative;min-height:115px;border-radius:12px;overflow:hidden;background:#173e61}
+.voyagePhoto img{width:100%;height:115px;object-fit:cover;display:block}.voyagePhoto b{position:absolute;left:0;right:0;bottom:0;padding:7px 9px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#fff}
+@media(max-width:700px){.shipSummaryGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.voyagePhotos{grid-template-columns:repeat(2,1fr)}}
+
+.saveStatus{font-size:11px;opacity:.82;white-space:nowrap}
+.saveBtn{border:1px solid rgba(255,255,255,.32);background:rgba(255,255,255,.10);color:#fff;border-radius:10px;padding:7px 10px;font-weight:800}
+.saveBtn:active{transform:translateY(1px)}
+.saveActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.saveMeta{padding:10px 12px;border-radius:12px;background:#f2f6f9;margin-top:10px;color:var(--muted)}
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
-<div class="app">
-<header class="topbar">
-  <div class="brand"><h1>CRUISE TYCOON</h1><small>iPad prototype · 26-week season</small></div>
-  <div class="topstats">
-    <div class="pill"><span>Week</span><b><span id="week" style="display:inline;font:inherit;opacity:1">1</span> / 26</b></div>
-    <div class="pill"><span>Cash</span><b id="cash">£100.0m</b></div>
-    <div class="pill"><span>Reputation</span><b id="rep">70</b></div>
-    <div class="pill"><span>Ship</span><b>MV Horizon</b></div>
-    <div class="pill"><span>Capacity</span><b>2,200</b></div>
+<header>
+ <div class="toprow">
+  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.10.0i</span></div><div class="sub">One brand. One ship. Build from there.</div></div>
+  <div class="pills">
+   <div class="pill">Week <b id="weekPill">1</b></div>
+   <div class="pill">Group cash <b id="cashPill">£45.0m</b></div>
+   <div class="pill shipSelectorPill">Ship <select id="activeShipSelect" aria-label="Active ship"><option value="meridian">MV Meridian</option></select></div>
+   <div class="pill">Brand <b id="repPill">55</b>/100</div>
+   <div class="pill">Season <b id="seasonPill">Summer</b></div>
+   <div class="pill">Weather <b id="weatherPill">24°C · ☀️ Dry</b></div>
+   <div class="pill">Week fuel <b id="weekFuelPill">—</b></div>
+   <div class="pill"><span id="saveStatus" class="saveStatus">Not saved yet</span></div>
+   <button class="saveBtn" id="manualSaveBtn" type="button">Save</button>
+   <button class="saveBtn" id="saveToolsBtn" type="button">Save / Load</button>
   </div>
+ </div>
 </header>
-<main class="main">
-  <section class="left">
-    <div class="card">
-      <div class="market"><div class="icon">📰</div><div><b>This week's market</b><p id="news">Mediterranean bookings are steady. Competitor pricing looks rational.</p></div></div>
+<nav>
+ <button data-tab="dashboard" class="active">Dashboard</button><button data-tab="ships">My Ships</button>
+ <button data-tab="schedule">6-Week Schedule</button>
+ <button data-tab="bookings">Bookings</button><button data-tab="ports">Ports</button><button data-tab="market">Market</button>
+ <button data-tab="pnl">Weekly P&amp;L</button>
+ <button data-tab="pnlHistory">P&amp;L History</button>
+ <button data-tab="cashflow">Weekly Cash</button>
+ <button data-tab="balance">Balance Sheet</button>
+ <button data-tab="reviewHistory">Review History</button>
+</nav>
+<main>
+<section id="dashboard" class="tab active">
+ <div class="grid">
+  <div class="card c3"><div class="label">Fleet size</div><div class="kpi" id="fleetSizeKpi">1</div><div class="label">Ships in service</div></div>
+  <div class="card c3"><div class="label">Fleet occupancy</div><div class="kpi" id="fleetOccKpi">—</div><div class="label">Latest completed week</div></div>
+  <div class="card c3"><div class="label">Fleet EBITDA</div><div class="kpi" id="fleetEbitdaKpi">—</div><div class="label">Latest completed week</div></div>
+  <div class="card c3"><div class="label">Group cash</div><div class="kpi" id="groupCashKpi">£45.0m</div><div class="label">Company level</div></div>
+  <div class="card c6">
+   <div class="row" style="justify-content:space-between">
+    <div><h3 style="margin:0">Selected ship summary</h3><div class="label">Current operating picture for one ship.</div></div>
+    <select id="dashboardShipSelect" style="min-width:220px"></select>
+   </div>
+   <div class="shipSummaryGrid">
+    <div><div class="label">Ship</div><div class="kpi" id="shipName">MV Meridian</div><div class="label" id="shipSummaryMeta"></div></div>
+    <div><div class="label">Forward bookings</div><div class="kpi" id="forwardBookings">—</div><div class="label">Next sailing</div></div>
+    <div><div class="label">Last occupancy</div><div class="kpi" id="lastOccKpi">—</div><div class="label">Completed sailing</div></div>
+    <div><div class="label">Avg fare / guest</div><div class="kpi" id="avgFareKpi">—</div></div>
+    <div><div class="label">Onboard spend / guest</div><div class="kpi" id="onboardSpendKpi">—</div></div>
+    <div><div class="label">EBITDA margin</div><div class="kpi" id="ebitdaMarginKpi">—</div></div>
+    <div><div class="label">Guest review</div><div class="kpi" id="reviewKpi">—</div></div>
+    <div><div class="label">Current location</div><div class="kpi" id="shipLocationKpi" style="font-size:17px">—</div></div>
+    <div><div class="label">Condition</div><div class="kpi" id="shipConditionKpi">—</div></div>
+   </div>
+   <div class="label" style="margin-top:12px">Condition detail: Machinery <b id="condMachinery">82%</b> · Hull <b id="condHull">88%</b> · Hotel <b id="condHotel">80%</b> · Interiors <b id="condInteriors">76%</b></div>
+  </div>
+  <div class="card c6">
+   <h3>Group — last 6 completed weeks</h3>
+   <div class="label">Weekly profit, closing cash and average guest review across the fleet.</div>
+   <div id="groupTrendChart" class="trendChart"></div>
+  </div>
+
+  <div class="card c12">
+   <h3>Next sailing</h3>
+   <div id="routeSummary" class="notice"></div>
+   <div class="timeline" id="dashTimeline" style="margin-top:10px"></div>
+   <div class="bigaction"><button class="btn good" id="sailBtn">SAIL THIS WEEK →</button></div>
+  </div>
+  </div>
+<div><b id="serviceLabel">3 / 5</b></div></div>
+   <div><b id="marketingLabel">£90k</b></div></div>
+   <div><b id="speedLabel">17.5 kn</b></div></div>
+   
+
+  <div class="card c6">
+   <h3>Last week — passenger occupancy by segment</h3>
+   <div class="segbar" id="lastSegBar"></div>
+   <table id="lastSegmentTable"></table>
+  </div>
+  <div class="card c6">
+   <h3>This week's market</h3>
+   <div id="eventBox" class="notice"></div>
+   <table id="marketMini"></table>
+  </div>
+ </div>
+</section>
+
+
+
+<section id="ships" class="tab">
+ <div class="grid">
+  <div class="card c12">
+   <div class="row" style="justify-content:space-between">
+    <div>
+     <h3>My Ships</h3>
+     <div class="label">Owned fleet details. More ships can be added later without changing this layout.</div>
     </div>
-    <div class="card">
-      <div class="cardhead"><div><h2>Build this week's itinerary</h2><div class="sub">Tap 3–5 ports · Barcelona is your home port</div></div><div class="sub" id="portCount">0 / 5 selected</div></div>
-      <div class="mapwrap">
-        <div class="map" id="map"><div class="land a"></div><div class="land b"></div><div class="land c"></div><div class="sea-label">MEDITERRANEAN</div><div class="ship">🚢</div></div>
-        <div class="routebar" id="routebar"></div>
+    <select id="myShipsSelect" style="min-width:220px"></select>
+   </div>
+  </div>
+
+  <div class="card c4">
+   <h3>Ship overview</h3>
+   <table id="shipOverviewTable"></table>
+  </div>
+
+  <div class="card c4">
+   <h3>Cabins & berths</h3>
+   <table id="shipCabinTable"></table>
+  </div>
+
+  <div class="card c4">
+   <h3>Crew & wage policy</h3>
+   <table id="shipCrewTable"></table>
+   <div id="shipWageControls" style="margin-top:10px"></div>
+  </div>
+
+  <div class="card c6">
+   <h3>Condition</h3>
+   <div id="shipConditionDetail"></div>
+  </div>
+
+  <div class="card c6">
+   <h3>Facilities</h3>
+   <table id="shipFacilitiesTable"></table>
+  </div>
+ </div>
+</section>
+
+<section id="schedule" class="tab">
+ <div class="scheduleShell">
+  <div class="card">
+   <div id="scheduleShipContext" class="shipContext"></div>
+   <label class="label" for="scheduleShipSelect">Select ship</label>
+   <select id="scheduleShipSelect" style="width:100%;margin:6px 0 10px">
+     <option value="meridian">MV Meridian</option>
+   </select>
+   <h3>Next 6 weeks</h3>
+   <div class="label" style="margin-bottom:8px">Select a ship, then select a week to view or plan that sailing.</div>
+   <div id="weekList" class="weekList"></div>
+  </div>
+  <div>
+   <div class="card">
+    <div class="row" style="justify-content:space-between">
+      <div>
+       <h3 id="planTitle" style="margin-bottom:4px">Week 1 plan</h3>
+       <div class="label" id="planStatus"></div>
+       <div class="label">Fare, service, marketing and speed are set per sailing here.</div>
+      </div>
+      <div class="row">
+        <button class="btn secondary" id="applyWeekRoute">Apply route & preview</button>
+        <button class="btn good" id="saveCommitWeek">Commit itinerary</button>
       </div>
     </div>
-    <div class="card">
-      <div class="cardhead"><h2>Last voyage</h2><div class="sub">Results are revealed after you sail</div></div>
-      <div id="result" class="result"><div class="empty">Choose an itinerary and commit your first voyage.</div></div>
+    <div class="scheduleSubTabs" id="scheduleSubTabs">
+      <button type="button" data-schedule-page="itinerary" class="active">Itinerary</button>
+      <button type="button" data-schedule-page="pricing">Pricing &amp; demand</button>
+      <button type="button" data-schedule-page="options">Onboard options</button>
+      <button type="button" data-schedule-page="costs">Operating costs</button>
     </div>
-  </section>
-  <aside class="right">
-    <div class="card">
-      <div class="cardhead"><h2>Commercial decisions</h2><div class="sub">Set before sailing</div></div>
-      <div class="controls">
-        <div class="control-row"><label>Average cabin fare<span class="hint">Higher yield, lower demand</span></label><div class="value" id="fareVal">£900</div></div>
-        <input id="fare" class="slider" type="range" min="550" max="1600" value="900" step="25">
-        <div><div class="control-row"><label>Service level<span class="hint">Cost vs guest satisfaction</span></label><span></span></div><div class="seg" id="serviceSeg"><button data-v="1">Lean</button><button data-v="2">Standard</button><button data-v="3" class="active">Premium</button><button data-v="4">Luxury</button></div></div>
-        <div><div class="control-row"><label>Marketing<span class="hint">Boost bookings this week</span></label><span></span></div><div class="choice" id="marketingSeg"><button data-v="0">£0</button><button data-v="100000" class="active">£100k</button><button data-v="250000">£250k</button></div></div>
-        <div class="action"><button class="btn primary" id="sail">SAIL THIS WEEK →</button><button class="btn secondary" id="reset">↻</button></div>
+
+    <div id="schedulePageItinerary" class="scheduleSubPage active">
+      <div class="planGrid">
+        <div class="span12"><div id="routeApplyStatus" class="notice">Choose the route, then press Apply route & preview to calculate costs and forecast demand before committing.</div></div>
+        <div class="span12"><h3 style="margin-top:8px">Itinerary</h3><div class="label">Start port is fixed by where the previous sailing ends.</div></div>
+        <div class="span4"><div class="label">Start port</div><div class="kpi" id="selStartPort" style="font-size:20px"></div></div>
+        <div id="selectedPortSelectors" class="span12 planGrid"></div>
+        <div class="span12"><div id="selectedRouteMap" class="realMap" aria-label="Selected cruise route map"></div></div>
+        <div class="span12"><div class="timeline" id="selectedTimeline"></div></div>
+        <div class="span12"><div id="selectedRouteWarning" class="notice"></div></div>
       </div>
     </div>
-    <div class="card">
-      <div class="cardhead"><h2>Season history</h2><div class="sub">Last 6 voyages</div></div>
-      <div id="history" class="history"><div class="empty">No voyages yet.</div></div>
+
+    <div id="schedulePagePricing" class="scheduleSubPage">
+      <div class="planGrid">
+        <div class="span12"><div class="label">Cabin pricing</div></div>
+        <div class="span4"><label class="label">Inside fare (£ per guest)</label><input id="selInsideFare" type="number" min="299" max="1999" step="25" style="width:100%"></div>
+        <div class="span4"><label class="label">Oceanview fare (£ per guest)</label><input id="selOceanFare" type="number" min="399" max="2499" step="25" style="width:100%"></div>
+        <div class="span4"><label class="label">Balcony fare (£ per guest)</label><input id="selBalconyFare" type="number" min="499" max="3499" step="25" style="width:100%"></div>
+        <div class="span4"><label class="label">Suite fare (£ per guest)</label><input id="selSuiteFare" type="number" min="899" max="5999" step="50" style="width:100%"></div>
+        <div class="span4"><label class="label">Marketing / week</label><input id="selMarketing" type="number" min="0" max="500000" step="10000" style="width:100%"></div>
+        <div class="span4"><div class="label">Bookings now</div><div class="kpi" id="selBookings" style="font-size:22px"></div><div class="label" id="selGrowth"></div></div>
+        <div class="span4"><div class="label">Forecast booked</div><div class="kpi" id="selForecast" style="font-size:22px"></div></div>
+        <div class="span12"><h3 style="margin-top:8px">Pre-bookings by passenger segment</h3><div id="weekSegmentPie"></div></div>
+        <div class="span12"><h3 style="margin-top:8px">Pre-book cabin occupancy</h3><div id="weekCabinOccupancy"></div></div>
+      </div>
     </div>
-  </aside>
+
+    <div id="schedulePageOptions" class="scheduleSubPage">
+      <div class="planGrid">
+        <div class="span4"><label class="label">Service level</label><select id="selService" style="width:100%"></select></div>
+        <div class="span4"><label class="label">Food spend (£ / guest / day)</label><input id="selFoodSpend" type="number" min="8" max="45" step="1" style="width:100%"><div class="label">Provisioning cost. Higher spend improves food reviews with diminishing returns.</div></div>
+        <div class="span4"><label class="label">Hotel &amp; housekeeping consumables (£ / guest / day)</label><input id="selHotelSpend" type="number" min="3" max="25" step="1" style="width:100%"><div class="label">Linen, toiletries, cleaning and guest-room supplies. Affects hotel-service reviews.</div></div>
+        <div class="span12"><h3 style="margin-top:8px">Excursions offered this week</h3><div class="label">Tick the excursions you want to sell on this sailing. Selection and guest price are specific to this week.</div><div id="weekExcursions"></div></div>
+      </div>
+    </div>
+
+    <div id="schedulePageCosts" class="scheduleSubPage">
+      <div class="planGrid">
+        <div class="span4"><label class="label">Planned speed</label><select id="selSpeed" style="width:100%"></select></div>
+        <div class="span4"><div class="label">Estimated fuel</div><div class="kpi" id="selFuel" style="font-size:20px"></div></div>
+        <div class="span4"><div class="label">Port cost</div><div class="kpi" id="selPortCost" style="font-size:20px"></div></div>
+        <div class="span4"><div class="label">Crew cost</div><div class="kpi" id="selCrewCost" style="font-size:20px"></div></div>
+        <div class="span12"><div id="routeEconomicsBox" class="notice"></div></div>
+      </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+
+<section id="bookings" class="tab">
+ <div class="grid">
+  <div class="card c12">
+   <h3>Forward bookings</h3><div id="bookingsShipContext" class="shipContext"></div>
+   <div class="label">Booking growth, deposits and final balances for the next six departures.</div>
+   <table id="scheduleCashTable"></table>
+  </div>
+ </div>
+</section>
+
+
+<section id="ports" class="tab">
+ <div class="grid">
+  <div class="card c12">
+   <div class="row" style="justify-content:space-between">
+    <div><h3>Port contracts</h3><div id="portsShipContext" class="shipContext"></div><div class="label">Only contracted ports can be used in your itineraries. Contracts expire after a limited number of weeks.</div></div>
+    <div class="row">
+      <select id="portFilter"><option value="all">All ports</option><option value="active">Contracted</option><option value="available">Available to contract</option></select>
+      <select id="portSort" aria-label="Sort ports">
+        <option value="name">Sort: Name</option>
+        <option value="popularityDesc">Popularity: high to low</option>
+        <option value="costAsc">Cost: low to high</option>
+        <option value="costDesc">Cost: high to low</option>
+      </select>
+    </div>
+   </div>
+   <div id="portsGrid" class="grid" style="margin-top:12px"></div>
+  </div>
+ </div>
+</section>
+
+<section id="market" class="tab">
+ <div class="grid">
+  <div class="card c12">
+   <h3>Demand segments</h3>
+   <p class="label">Each passenger group values destinations, sea days, price and onboard experience differently. Wealth tiers change price sensitivity and onboard spend.</p>
+   <table id="demandTable"></table>
+  </div>
+  <div class="card c6">
+   <h3>Wealth mix</h3>
+   <table id="wealthTable"></table>
+  </div>
+  <div class="card c6">
+   <h3>Brand reputation</h3>
+   <div class="kpi" id="repBig">55 / 100</div>
+   <p id="repText" class="label"></p>
+  </div>
+ </div>
+</section>
+
+<section id="pnl" class="tab">
+ <div class="grid">
+  <div class="card c12">
+   <h3>Weekly P&amp;L</h3>
+   <div class="label">Selected ship, latest completed sailing. Revenue, direct cost and contribution/profit are shown separately.</div>
+   <div id="pnlShipContext" class="shipContext"></div><table id="pnlTable" class="financeDetail"></table>
+<h3 style="margin-top:18px">Cost mix sanity check</h3>
+<div class="label">Actual latest-week costs as % of revenue versus broad 2025 listed cruise-company ranges. This is a benchmark, not a target.</div>
+<table id="costBenchmarkTable"></table>
+  </div>
+ </div>
+</section>
+
+
+<section id="pnlHistory" class="tab">
+ <div class="grid">
+  <div class="card c12">
+   <div class="row" style="justify-content:space-between">
+    <div><h2 style="margin:0">Weekly P&amp;L history</h2><div class="label">Full weekly P&amp;L by ship. Income is shown first, then the complete cost base and profit lines below.</div></div>
+    <select id="pnlHistoryShip" style="min-width:220px"></select>
+   </div>
+  </div>
+  <div class="card c12"><div style="overflow-x:auto"><table id="pnlHistoryTable" class="financeDetail"></table></div></div>
+ </div>
+</section>
+
+<section id="cashflow" class="tab">
+ <div class="grid">
+  <div class="card c12">
+   <h3>Weekly Cash</h3><div id="cashflowShipContext" class="shipContext"></div>
+   <div class="label">Company-level weekly cash movement. Customer deposits and final balances are separated from ship P&L revenue recognition.</div>
+   <table id="cfTable"></table>
+  </div>
+ </div>
+</section>
+
+<section id="balance" class="tab">
+ <div class="grid">
+  <div class="card c7">
+   <h3>Company balance sheet</h3><div id="balanceShipContext" class="shipContext"></div>
+   <table id="bsTable"></table>
+  </div>
+  <div class="card c5">
+   <h3>Starting company</h3>
+   <table>
+    <tr><td>Brand</td><td><b>Harbour Line</b></td></tr>
+    <tr><td>Brand reputation</td><td>55 / 100</td></tr>
+    <tr><td>Ship</td><td>MV Meridian</td></tr>
+    <tr><td>Age</td><td>18 years</td></tr>
+    <tr><td>Guest capacity</td><td>1,840</td></tr>
+    <tr><td>Ship book value</td><td>£115m</td></tr>
+    <tr><td>Opening debt</td><td>£80m</td></tr>
+    <tr><td>Opening cash</td><td>£45m</td></tr>
+   </table>
+  </div>
+ </div>
+</section>
+
+<section id="reviewHistory" class="tab">
+ <div class="grid">
+  <div class="card c12">
+   <div class="row" style="justify-content:space-between">
+    <div><h2 style="margin:0">Guest review history</h2><div class="label">Completed sailings by ship and week, including the main review drivers and representative passenger comments.</div></div>
+    <select id="reviewHistoryShip" style="min-width:220px"><option value="all">All ships</option></select>
+   </div>
+  </div>
+  <div class="card c12"><div id="reviewHistoryTrend" class="trendChart"></div></div>
+  <div class="card c12"><table id="reviewHistoryTable"></table></div>
+ </div>
+</section>
 </main>
-<div class="footer">Tip: on iPad, landscape gives the best two-panel layout. Your game state is saved automatically on this device.</div>
+
+
+<div id="saveModal" class="modal" aria-live="polite">
+ <div class="modalCard" style="width:min(620px,100%)">
+  <div class="modalHead">
+   <div><h2 style="margin:0">Game save</h2><div class="label">Progress is stored on this device. Export a save file for backup or to move the game to another device.</div></div>
+   <button class="btn secondary" id="closeSaveModal" type="button">Close</button>
+  </div>
+  <div id="saveMeta" class="saveMeta">No saved game found on this device.</div>
+  <div class="saveActions">
+   <button class="btn good" id="saveNowBtn" type="button">Save now</button>
+   <button class="btn" id="exportSaveBtn" type="button">Export save</button>
+   <button class="btn" id="importSaveBtn" type="button">Import save</button>
+   <button class="btn bad" id="newGameBtn" type="button">New game</button>
+  </div>
+  <input id="importSaveInput" type="file" accept="application/json,.json" style="display:none">
+ </div>
 </div>
-<div class="toast" id="toast"></div>
+
+<div id="continueModal" class="modal" aria-live="polite">
+ <div class="modalCard" style="width:min(560px,100%)">
+  <h2 style="margin-top:0">Continue Cruise Tycoon?</h2>
+  <div class="label" id="continueSaveMeta">A saved game was found on this device.</div>
+  <div class="saveActions">
+   <button class="btn good" id="continueGameBtn" type="button">Continue game</button>
+   <button class="btn secondary" id="startNewGameBtn" type="button">Start new game</button>
+  </div>
+ </div>
+</div>
+
+<div id="resultModal" class="modal" aria-live="polite">
+ <div class="modalCard">
+  <div class="modalHead">
+   <div><h2 style="margin:0">Weekly ship results</h2><div class="label" id="resultSubtitle"></div></div>
+  </div>
+  <div class="resultPages">
+   <button id="resultTabReviews" class="active">1 · Guest reviews</button>
+   <button id="resultTabSummary">2 · Operating summary</button>
+   <button id="resultTabPnl">3 · P&amp;L</button>
+   <button id="resultTabCash">4 · Cash</button>
+   <button id="resultTabBalance">5 · Balance sheet</button>
+  </div>
+
+  <div id="resultPageSummary" class="resultPage">
+   <div class="card" style="margin-bottom:12px">
+    <div class="row" style="justify-content:space-between">
+     <div><div class="label">Ship</div><div class="kpi" id="resultShipName" style="font-size:22px">MV Meridian</div></div>
+     <div><div class="label">Brand</div><div id="resultBrandName"><b>Harbour Line</b></div></div>
+     <div><div class="label">Voyage</div><div id="resultVoyageRoute"></div></div>
+    </div>
+   </div>
+   <div class="resultKpis">
+    <div><div class="label">Occupancy</div><div class="kpi" id="resOcc"></div></div>
+    <div><div class="label">Revenue</div><div class="kpi" id="resRevenue"></div></div>
+    <div><div class="label">EBITDA</div><div class="kpi" id="resEbitda"></div></div>
+    <div><div class="label">Net profit</div><div class="kpi" id="resNet"></div></div>
+   </div>
+   <div class="pieGrid">
+    <div class="card"><h3>Occupancy by passenger segment</h3><div id="resultSegmentPie"></div></div>
+    <div class="card"><h3>Occupancy by cabin type</h3><div id="resultCabinOccupancy"></div></div>
+   </div>
+   <div class="card" style="margin-top:12px"><h3>Shore excursion uptake</h3><table id="resultExcursions"></table></div>
+   <div class="notice" id="resultEvent" style="margin-top:12px"></div>
+  </div>
+
+  <div id="resultPagePnl" class="resultPage">
+   <div class="card"><h3>Ship P&amp;L</h3><div class="label">Selected ship only.</div><table id="resultPnl"></table>
+   <h3 style="margin-top:16px">Finance KPIs</h3><table id="resultFinanceKpis"></table></div>
+  </div>
+  <div id="resultPageCash" class="resultPage">
+   <div class="card"><h3>Company cash flow — Money In / Money Out</h3><table id="resultCash"></table></div>
+  </div>
+  <div id="resultPageBalance" class="resultPage">
+   <div class="card"><h3>Company balance sheet snapshot</h3><table id="resultBalance"></table></div>
+  </div>
+
+  <div id="resultPageReviews" class="resultPage active">
+   <div class="grid">
+    <div class="card c4"><div class="label">Overall guest review</div><div class="kpi" id="resultReviewScore">—</div><div class="label">out of 5.0</div></div>
+    <div class="card c8"><h3>Review drivers</h3><table id="resultReviewDrivers"></table></div>
+    <div class="card c12"><h3>What affected the score</h3><div id="resultReviewCommentary" class="notice"></div></div>
+   </div>
+  </div>
+
+  <div class="bigaction"><button class="btn good" id="confirmWeekBtn">OK — CONTINUE TO NEXT WEEK →</button></div>
+ </div>
+</div>
+
+
+<div id="voyageOverlay" class="voyageOverlay" aria-live="polite">
+ <div class="voyageCard">
+  <h2 id="voyageAnimTitle" style="margin:0">Sailing week</h2>
+  <div class="voyageMeta"><span id="voyageAnimWeek"></span><span id="voyageAnimSeason"></span><span id="voyageAnimWeather"></span><span id="voyageAnimLocation"></span></div>
+  <div class="voyageTrack"><div class="voyageShip">🚢</div></div>
+  <div id="voyageAnimRoute" class="label" style="color:#d7e6f1;margin-bottom:12px"></div>
+  <div id="voyageAnimPhotos" class="voyagePhotos"></div>
+ </div>
+</div>
+
 <script>
-const ports=[
- ['Palma',18,63,8.5],['Marseille',34,25,7.0],['Genoa',49,28,6.5],['Rome',61,43,9.5],['Naples',64,58,8.6],['Valletta',53,76,8.4],['Messina',61,68,7.2],['Corfu',76,59,8.2],['Dubrovnik',83,40,9.1],['Kotor',86,47,8.8],['Split',79,32,7.9]
-];
-const events=[
- ['Fuel prices jump 14%.',-90000,0,-.02],['A rival launches a flash sale from Barcelona.',0,0,-.07],['Excellent social-media reviews boost interest.',0,3,.06],['A port strike disrupts regional schedules.',-70000,-1,-.04],['A Mediterranean heatwave lifts late bookings.',0,0,.07],['An engine inspection adds an unexpected cost.',-150000,-1,0],['Travel demand softens after weak economic news.',0,0,-.06],['A celebrity travel feature boosts cruise searches.',0,2,.05],['Markets are quiet this week.',0,0,0]
-];
-let state={week:1,cash:100000000,rep:70,route:[],history:[],service:3,marketing:100000,fare:900};
-try{const saved=localStorage.getItem('cruiseTycoonIpad');if(saved)state={...state,...JSON.parse(saved)}}catch(e){}
-const $=id=>document.getElementById(id); const money=x=>'£'+(x/1e6).toFixed(2)+'m';
-function save(){try{localStorage.setItem('cruiseTycoonIpad',JSON.stringify(state))}catch(e){}}
-function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1800)}
-function setActive(group,value){document.querySelectorAll('#'+group+' button').forEach(b=>b.classList.toggle('active',+b.dataset.v===+value))}
-function render(){
- $('week').textContent=state.week;$('cash').textContent=money(state.cash);$('rep').textContent=Math.round(state.rep);$('fare').value=state.fare;$('fareVal').textContent='£'+state.fare;setActive('serviceSeg',state.service);setActive('marketingSeg',state.marketing);
- document.querySelectorAll('.port').forEach(el=>el.classList.toggle('sel',state.route.some(p=>p[0]===el.dataset.name)));
- $('portCount').textContent=state.route.length+' / 5 selected';
- $('routebar').innerHTML='<span class="route-chip home">Barcelona</span>'+state.route.map(p=>'<span class="arrow">→</span><span class="route-chip">'+p[0]+'</span>').join('');
- $('history').innerHTML=state.history.length?state.history.slice(-6).reverse().map(x=>'<div class="histrow"><b>W'+x.w+'</b><span>'+x.route+'</span><b class="'+(x.p>=0?'good':'bad')+'">'+(x.p>=0?'+':'')+money(x.p)+'</b></div>').join(''):'<div class="empty">No voyages yet.</div>';
- $('sail').disabled=state.week>26; save();
-}
-ports.forEach(p=>{const d=document.createElement('button');d.className='port';d.dataset.name=p[0];d.textContent=p[0];d.style.left=p[1]+'%';d.style.top=p[2]+'%';d.onclick=()=>{const ix=state.route.findIndex(x=>x[0]===p[0]);if(ix>=0)state.route.splice(ix,1);else if(state.route.length<5)state.route.push(p);else return toast('Maximum 5 ports');render()};$('map').appendChild(d)});
-$('fare').oninput=e=>{state.fare=+e.target.value;$('fareVal').textContent='£'+state.fare;save()};
-document.querySelectorAll('#serviceSeg button').forEach(b=>b.onclick=()=>{state.service=+b.dataset.v;render()});
-document.querySelectorAll('#marketingSeg button').forEach(b=>b.onclick=()=>{state.marketing=+b.dataset.v;render()});
-function marketText(){const bits=['Late bookings are strengthening.','Families are booking earlier than usual.','Premium cabins are selling well.','Competitor capacity is rising.','Fuel markets are volatile.','Shoulder-season demand looks soft.'];return bits[Math.floor(Math.random()*bits.length)]+' '+(Math.random()>.5?'Competitor fares are firm.':'A rival is discounting selected sailings.')}
-$('sail').onclick=()=>{
- if(state.route.length<3)return toast('Choose at least 3 ports');
- const ev=events[Math.floor(Math.random()*events.length)],season=.9+Math.sin((state.week-4)/26*Math.PI*2)*.16,appeal=state.route.reduce((a,p)=>a+p[3],0)/state.route.length;
- const demand=.92*season*(appeal/8.2)*(900/state.fare)**.85*(.82+state.rep/390)*(1+Math.min(.12,state.marketing/3000000))+ev[3]+(Math.random()-.5)*.10;
- const occ=Math.max(.38,Math.min(1,demand)),pax=2200*occ,fareRev=pax/2*state.fare,onboard=pax*(250+state.service*25),revenue=fareRev+onboard,cost=520000+pax*(95+state.service*16)+state.marketing+state.route.length*65000+ev[1],profit=revenue-cost;
- state.cash+=profit;state.rep=Math.max(25,Math.min(100,state.rep+(state.service-2)*.7+ev[2]+(occ>.97?-1:0)+(Math.random()-.5)*1.5));
- const routeName='Barcelona → '+state.route.map(x=>x[0]).join(' → ');
- $('result').innerHTML='<div class="headline"><div><h3>'+routeName+'</h3><div class="sub">Week '+state.week+' voyage complete</div></div><div class="profit '+(profit>=0?'good':'bad')+'">'+(profit>=0?'+':'')+money(profit)+'</div></div><div class="resultgrid"><div class="metric"><span>Passengers</span><b>'+Math.round(pax).toLocaleString()+'</b></div><div class="metric"><span>Occupancy</span><b>'+Math.round(occ*100)+'%</b></div><div class="metric"><span>Revenue</span><b>'+money(revenue)+'</b></div><div class="metric"><span>Fare revenue</span><b>'+money(fareRev)+'</b></div><div class="metric"><span>Onboard</span><b>'+money(onboard)+'</b></div><div class="metric"><span>Reputation</span><b>'+Math.round(state.rep)+'/100</b></div></div><div class="event"><b>Voyage event:</b> '+ev[0]+'</div>';
- state.history.push({w:state.week,p:profit,occ,route:state.route.map(x=>x[0]).join(' · ')});state.week++;$('news').textContent=marketText();
- if(state.week>26){toast('Season complete · '+money(state.cash)+' cash');}
- render();
+const ports = {
+ "Southampton": {lat:50.9, lon:-1.4, fee:78000, culture:8, beach:5, family:6, nightlife:6, scenic:6, luxury:7, excursion:7},
+ "Le Havre": {lat:49.49, lon:0.11, fee:62000, culture:8, beach:4, family:6, nightlife:4, scenic:6, luxury:6, excursion:8},
+ "Hamburg": {lat:53.55, lon:9.99, fee:85000, culture:8, beach:3, family:6, nightlife:8, scenic:6, luxury:7, excursion:7},
+ "Rotterdam": {lat:51.92, lon:4.48, fee:72000, culture:7, beach:3, family:6, nightlife:7, scenic:6, luxury:6, excursion:7},
+ "Bruges (Zeebrugge)": {lat:51.33, lon:3.2, fee:66000, culture:9, beach:4, family:7, nightlife:5, scenic:7, luxury:7, excursion:8},
+ "Barcelona": {lat:41.385, lon:2.173, fee:95000, culture:8, beach:6, family:8, nightlife:8, scenic:6, luxury:7, excursion:8},
+ "Palma": {lat:39.57, lon:2.65, fee:68000, culture:6, beach:10, family:9, nightlife:8, scenic:8, luxury:7, excursion:7},
+ "Marseille": {lat:43.3, lon:5.37, fee:60000, culture:7, beach:5, family:6, nightlife:6, scenic:6, luxury:5, excursion:6},
+ "Genoa": {lat:44.41, lon:8.93, fee:52000, culture:7, beach:4, family:5, nightlife:5, scenic:6, luxury:6, excursion:6},
+ "Civitavecchia (Rome)": {lat:42.09, lon:11.8, fee:90000, culture:10, beach:3, family:6, nightlife:7, scenic:7, luxury:8, excursion:10},
+ "Naples": {lat:40.85, lon:14.27, fee:70000, culture:9, beach:6, family:7, nightlife:8, scenic:9, luxury:8, excursion:10},
+ "Valletta": {lat:35.9, lon:14.51, fee:62000, culture:9, beach:5, family:7, nightlife:6, scenic:9, luxury:8, excursion:8},
+ "Corfu": {lat:39.62, lon:19.92, fee:58000, culture:7, beach:9, family:9, nightlife:6, scenic:10, luxury:8, excursion:8},
+ "Dubrovnik": {lat:42.65, lon:18.09, fee:82000, culture:10, beach:6, family:7, nightlife:6, scenic:10, luxury:9, excursion:9},
+ "Kotor": {lat:42.42, lon:18.77, fee:55000, culture:8, beach:5, family:6, nightlife:4, scenic:10, luxury:9, excursion:8},
+ "Split": {lat:43.51, lon:16.44, fee:54000, culture:8, beach:8, family:8, nightlife:7, scenic:9, luxury:7, excursion:8},
+ "Santorini": {lat:36.39, lon:25.46, fee:76000, culture:7, beach:7, family:6, nightlife:6, scenic:10, luxury:10, excursion:9},
+ "Piraeus (Athens)": {lat:37.94, lon:23.64, fee:88000, culture:10, beach:5, family:6, nightlife:8, scenic:7, luxury:8, excursion:9},
+ "Mykonos": {lat:37.45, lon:25.33, fee:74000, culture:6, beach:9, family:6, nightlife:9, scenic:9, luxury:10, excursion:8},
+ "Istanbul": {lat:41.01, lon:28.97, fee:93000, culture:10, beach:3, family:7, nightlife:9, scenic:9, luxury:9, excursion:10},
+ "Lisbon": {lat:38.72, lon:-9.14, fee:70000, culture:9, beach:6, family:7, nightlife:8, scenic:9, luxury:8, excursion:9},
+ "Cadiz": {lat:36.53, lon:-6.29, fee:52000, culture:8, beach:8, family:7, nightlife:6, scenic:8, luxury:7, excursion:8},
+ "Madeira": {lat:32.65, lon:-16.91, fee:56000, culture:7, beach:6, family:7, nightlife:5, scenic:10, luxury:8, excursion:9},
+ "Las Palmas": {lat:28.12, lon:-15.43, fee:61000, culture:6, beach:9, family:9, nightlife:7, scenic:8, luxury:7, excursion:8},
+ "Santa Cruz de Tenerife": {lat:28.46, lon:-16.25, fee:59000, culture:6, beach:9, family:9, nightlife:7, scenic:9, luxury:7, excursion:8},
+ "Reykjavik": {lat:64.15, lon:-21.94, fee:82000, culture:7, beach:2, family:5, nightlife:6, scenic:10, luxury:9, excursion:10},
+ "Bergen": {lat:60.39, lon:5.32, fee:72000, culture:8, beach:2, family:6, nightlife:5, scenic:10, luxury:9, excursion:9},
+ "Geiranger": {lat:62.1, lon:7.21, fee:68000, culture:6, beach:1, family:5, nightlife:2, scenic:10, luxury:10, excursion:10},
+ "Copenhagen": {lat:55.68, lon:12.57, fee:78000, culture:9, beach:3, family:7, nightlife:8, scenic:8, luxury:8, excursion:8},
+ "Stockholm": {lat:59.33, lon:18.07, fee:82000, culture:9, beach:3, family:7, nightlife:8, scenic:10, luxury:9, excursion:8},
+ "Helsinki": {lat:60.17, lon:24.94, fee:70000, culture:8, beach:2, family:6, nightlife:7, scenic:8, luxury:8, excursion:7},
+ "Tallinn": {lat:59.44, lon:24.75, fee:56000, culture:9, beach:2, family:6, nightlife:6, scenic:8, luxury:7, excursion:8},
+ "New York": {lat:40.71, lon:-74.01, fee:140000, culture:10, beach:3, family:8, nightlife:10, scenic:8, luxury:10, excursion:10},
+ "Miami": {lat:25.76, lon:-80.19, fee:120000, culture:7, beach:10, family:10, nightlife:10, scenic:8, luxury:9, excursion:9},
+ "Nassau": {lat:25.08, lon:-77.34, fee:78000, culture:5, beach:10, family:10, nightlife:8, scenic:8, luxury:8, excursion:9},
+ "Cozumel": {lat:20.42, lon:-86.92, fee:69000, culture:5, beach:10, family:9, nightlife:7, scenic:9, luxury:7, excursion:10},
+ "San Juan": {lat:18.47, lon:-66.11, fee:76000, culture:9, beach:9, family:8, nightlife:8, scenic:9, luxury:8, excursion:9},
+ "Vancouver": {lat:49.28, lon:-123.12, fee:98000, culture:8, beach:5, family:8, nightlife:8, scenic:10, luxury:9, excursion:10},
+ "Juneau": {lat:58.3, lon:-134.42, fee:72000, culture:6, beach:2, family:7, nightlife:4, scenic:10, luxury:9, excursion:10},
+ "Sydney": {lat:-33.87, lon:151.21, fee:110000, culture:10, beach:9, family:9, nightlife:10, scenic:10, luxury:10, excursion:10},
+ "Auckland": {lat:-36.85, lon:174.76, fee:86000, culture:8, beach:8, family:8, nightlife:8, scenic:10, luxury:9, excursion:9},
+ "Singapore": {lat:1.29, lon:103.85, fee:105000, culture:9, beach:4, family:9, nightlife:10, scenic:8, luxury:10, excursion:10},
+ "Hong Kong": {lat:22.32, lon:114.17, fee:108000, culture:9, beach:5, family:8, nightlife:10, scenic:9, luxury:10, excursion:10},
+ "Yokohama": {lat:35.44, lon:139.64, fee:95000, culture:9, beach:5, family:8, nightlife:8, scenic:9, luxury:9, excursion:9},
+ "Dubai": {lat:25.2, lon:55.27, fee:115000, culture:7, beach:8, family:9, nightlife:10, scenic:8, luxury:10, excursion:9}
 };
-$('reset').onclick=()=>{if(confirm('Start a new 26-week season?')){localStorage.removeItem('cruiseTycoonIpad');location.reload()}};
-$('news').textContent=marketText();render();
+const excursionCatalog={
+ culture:[
+  {name:"Historic city highlights",basePrice:79,flatCost:4200,perPaxCost:28,maxPax:180,appeal:{segment:{Seniors:1.15,Couples:1.08,Luxury:1.05},wealth:{Budget:.92,Mainstream:1.00,Affluent:1.10,Luxury:1.15}}},
+  {name:"Museum & heritage tour",basePrice:69,flatCost:2600,perPaxCost:24,maxPax:120,appeal:{segment:{Seniors:1.18,Couples:1.05},wealth:{Budget:.96,Mainstream:1.03,Affluent:1.08,Luxury:1.08}}}
+ ],
+ scenic:[
+  {name:"Panoramic coach & viewpoints",basePrice:89,flatCost:5200,perPaxCost:31,maxPax:160,appeal:{segment:{Seniors:1.10,Couples:1.10,Luxury:1.12},wealth:{Budget:.90,Mainstream:1.00,Affluent:1.12,Luxury:1.20}}},
+  {name:"Premium small-group scenery",basePrice:149,flatCost:3800,perPaxCost:69,maxPax:48,appeal:{segment:{Luxury:1.30,Couples:1.10},wealth:{Budget:.55,Mainstream:.78,Affluent:1.18,Luxury:1.45}}}
+ ],
+ family:[
+  {name:"Family discovery day",basePrice:72,flatCost:3600,perPaxCost:27,maxPax:140,appeal:{segment:{Families:1.28},wealth:{Budget:1.05,Mainstream:1.08,Affluent:1.00,Luxury:.88}}},
+  {name:"Aquarium / attraction transfer",basePrice:65,flatCost:2800,perPaxCost:23,maxPax:120,appeal:{segment:{Families:1.25},wealth:{Budget:1.08,Mainstream:1.06,Affluent:.96,Luxury:.85}}}
+ ],
+ beach:[
+  {name:"Beach transfer & lounger",basePrice:59,flatCost:2500,perPaxCost:21,maxPax:180,appeal:{segment:{Families:1.18,Young:1.20,Couples:1.08},wealth:{Budget:1.08,Mainstream:1.05,Affluent:.98,Luxury:.90}}},
+  {name:"Premium beach club",basePrice:119,flatCost:3200,perPaxCost:52,maxPax:90,appeal:{segment:{Luxury:1.18,Couples:1.12},wealth:{Budget:.62,Mainstream:.86,Affluent:1.18,Luxury:1.35}}}
+ ],
+ nightlife:[
+  {name:"Evening city experience",basePrice:82,flatCost:3000,perPaxCost:29,maxPax:100,appeal:{segment:{Young:1.25,Couples:1.08},wealth:{Budget:.92,Mainstream:1.03,Affluent:1.08,Luxury:1.00}}},
+  {name:"Bar & entertainment crawl",basePrice:74,flatCost:2200,perPaxCost:26,maxPax:80,appeal:{segment:{Young:1.30},wealth:{Budget:1.02,Mainstream:1.08,Affluent:1.00,Luxury:.88}}}
+ ]
+};
+function defaultExcursionsForPort(name){
+ const p=ports[name]; if(!p)return [];
+ const dims=["culture","scenic","family","beach","nightlife"].sort((a,b)=>(p[b]||0)-(p[a]||0)).slice(0,3);
+ return dims.map((d,i)=>({...excursionCatalog[d][0],type:d,selected:i<2,sellPrice:excursionCatalog[d][0].basePrice,attendancePct:0}));
+}
+
+function excursionTakeup(exc,portName,item,passengerMix,stage="prebook"){
+ const p=ports[portName];
+ const priceRatio=exc.basePrice/Math.max(1,exc.sellPrice||exc.basePrice);
+ let segmentBoost=0;
+ Object.entries(passengerMix).forEach(([seg,share])=>{
+   segmentBoost+=share*((exc.appeal?.segment?.[seg])||1);
+ });
+ let wealthBoost=0;
+ Object.entries(wealth).forEach(([tier,w])=>{
+   wealthBoost+=w.share*((exc.appeal?.wealth?.[tier])||1);
+ });
+ const portAppeal=(["Families","Couples","Seniors","Young","Luxury"].reduce((a,s)=>a+currentPortAppeal(portName,s),0)/5)/7.5;
+ let take=.115*segmentBoost*wealthBoost*portAppeal*Math.pow(priceRatio,1.15);
+ if(stage==="final"){
+   const onboardLateBook=1.10 + Math.random()*.18;
+   take*=onboardLateBook;
+ }
+ return clamp(take,.01,.58);
+}
+function scheduledExcursionsForWeek(item,stage="prebook"){
+ if(!item?.planned)return [];
+ const mix=forecastMix();
+ const forecastPax=Math.round(activeShip().capacity*(programmeForecast(item,selectedPlanWeek+1)||0));
+ const calls=buildSchedule(item.route,item.speed??17.5).days.filter(d=>d.type==="port");
+ const rows=[];
+ calls.forEach(d=>{
+   const c=state.contracts[d.name]; if(!c)return;
+   (c.excursions||[]).forEach((exc,idx)=>{
+     const weekChoice=item.excursionSelection?.[d.name]?.[idx];
+     const offered=(typeof weekChoice==="boolean")?weekChoice:!!exc.selected;
+     if(!offered)return;
+     const override=item.excursionPricing?.[d.name]?.[idx];
+     const sellPrice=override?.sellPrice ?? exc.sellPrice ?? exc.basePrice;
+     const x={...exc,sellPrice};
+     const take=excursionTakeup(x,d.name,item,mix,stage);
+     const attendance=Math.min(exc.maxPax,Math.round(forecastPax*take));
+     const attendancePct=exc.maxPax?attendance/exc.maxPax:0;
+     const revenue=attendance*sellPrice;
+     const supplierCost=exc.flatCost+attendance*exc.perPaxCost;
+     rows.push({port:d.name,index:idx,name:exc.name,sellPrice,maxPax:exc.maxPax,attendance,attendancePct,revenue,supplierCost,contribution:revenue-supplierCost});
+   });
+ });
+ return rows;
+}
+
+function portImageUrl(name){
+ return `https://loremflickr.com/640/360/${encodeURIComponent(name)},harbour,cruise?lock=${Math.abs([...name].reduce((a,c)=>a+c.charCodeAt(0),0))}`;
+}
+
+
+const segmentDefs = {
+ Families:{base:.29, seaPref:.45, priceSens:1.15, weights:{family:.35,beach:.25,excursion:.15,scenic:.10,culture:.05,nightlife:.05,luxury:.05}, spend:{drinks:95,casino:22,dining:48,excursion:165,spa:25,retail:65,wifi:42}},
+ Couples:{base:.27, seaPref:.58, priceSens:.95, weights:{culture:.22,scenic:.22,beach:.15,nightlife:.12,luxury:.12,excursion:.12,family:.05}, spend:{drinks:155,casino:70,dining:95,excursion:205,spa:70,retail:85,wifi:38}},
+ Seniors:{base:.24, seaPref:.75, priceSens:.88, weights:{culture:.30,scenic:.24,excursion:.20,luxury:.10,beach:.06,family:.05,nightlife:.05}, spend:{drinks:105,casino:95,dining:72,excursion:245,spa:55,retail:72,wifi:25}},
+ Young:{base:.12, seaPref:.35, priceSens:1.28, weights:{nightlife:.28,beach:.24,scenic:.14,excursion:.12,culture:.08,family:.04,luxury:.10}, spend:{drinks:205,casino:88,dining:75,excursion:130,spa:30,retail:68,wifi:58}},
+ Luxury:{base:.08, seaPref:.82, priceSens:.48, weights:{luxury:.30,scenic:.25,culture:.18,excursion:.12,beach:.07,nightlife:.04,family:.04}, spend:{drinks:285,casino:160,dining:220,excursion:330,spa:190,retail:230,wifi:35}}
+};
+const wealth = {
+ Budget:{share:.24,fareFactor:.68,priceSens:1.35,spendFactor:.66},
+ Mainstream:{share:.42,fareFactor:1.00,priceSens:1.00,spendFactor:1.00},
+ Affluent:{share:.26,fareFactor:1.42,priceSens:.72,spendFactor:1.45},
+ Luxury:{share:.08,fareFactor:2.30,priceSens:.40,spendFactor:2.25}
+};
+const state = {
+ activeShipId:"meridian",
+ fleet:{
+  meridian:{
+   id:"meridian",
+   name:"MV Meridian",
+   className:"Meridian Class",
+   capacity:1840,
+   status:"In service",
+   cabins:{inside:360,oceanview:180,balcony:300,suite:80},
+   berths:{inside:720,oceanview:360,balcony:600,suite:160},
+   crew:{
+    total:620,hotel:360,marine:145,entertainment:55,officers:60,
+    weeklyRates:{hotel:360,marine:560,entertainment:480,officers:900},
+    wagePolicy:{hotel:1.00,marine:1.00,entertainment:1.00,officers:1.00}
+   },
+   facilities:[
+    {name:"Main dining rooms",count:2,quality:3},
+    {name:"Speciality restaurants",count:3,quality:3},
+    {name:"Bars & lounges",count:8,quality:3},
+    {name:"Main theatre",count:1,quality:3},
+    {name:"Casino",count:1,quality:3},
+    {name:"Spa",count:1,quality:3},
+    {name:"Pools",count:2,quality:3},
+    {name:"Kids club",count:1,quality:3},
+    {name:"Gym",count:1,quality:3}
+   ],
+   yearBuilt:2008,
+   lengthM:286,
+   grossTonnage:90000,
+   decks:12
+  }
+ },
+ week:1,cash:45000000,debt:80000000,shipBook:115000000,otherAssets:5000000,
+ customerDeposits:7000000,payables:3500000,equity:74500000,rep:55,
+ fuelUSD:690,fare:899,service:3,marketing:90000,speed:17.5,foodSpendPpd:18,hotelConsumablesPpd:7,
+ weather:{temp:27,kind:"Sunny",icon:"☀️",rain:false,snow:false},
+ condition:{machinery:82,hull:88,hotel:80,interiors:76},
+ contracts:{
+  "Southampton":{active:true,weeksLeft:26,signingFee:0,dockFee:78000,tier:"standard",services:[],excursions:[]},
+  "Le Havre":{active:true,weeksLeft:26,signingFee:0,dockFee:62000,tier:"standard",services:[],excursions:[]},
+  "Hamburg":{active:true,weeksLeft:26,signingFee:0,dockFee:85000,tier:"standard",services:[],excursions:[]},
+  "Rotterdam":{active:true,weeksLeft:26,signingFee:0,dockFee:72000,tier:"standard",services:[],excursions:[]},
+  "Bruges (Zeebrugge)":{active:true,weeksLeft:26,signingFee:0,dockFee:66000,tier:"standard",services:[],excursions:[]}
+ },
+ route:["Southampton","Le Havre","Bruges (Zeebrugge)","Rotterdam"],
+ programme:[
+  {route:["Southampton","Le Havre","Bruges (Zeebrugge)","Rotterdam"],fare:899,cabinPrices:{inside:719,oceanview:899,balcony:1159,suite:1749},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,marketing:90000,speed:17.5,booked:.72,lastBooked:.66,committed:true,planned:true},
+  {route:["Rotterdam","Hamburg","Southampton","Le Havre"],fare:925,cabinPrices:{inside:745,oceanview:925,balcony:1185,suite:1775},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,marketing:90000,speed:17.5,booked:.63,lastBooked:.57,committed:true,planned:true},
+  {route:["Le Havre","Bruges (Zeebrugge)","Rotterdam","Southampton"],fare:915,cabinPrices:{inside:735,oceanview:915,balcony:1175,suite:1765},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,marketing:95000,speed:17.5,booked:.54,lastBooked:.47,committed:true,planned:true},
+  {route:["Southampton"],fare:0,cabinPrices:{inside:399,oceanview:0,balcony:260,suite:850},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,marketing:0,speed:17.5,booked:0,lastBooked:0,committed:false,planned:false},
+  {route:["Southampton"],fare:0,cabinPrices:{inside:399,oceanview:0,balcony:260,suite:850},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,marketing:0,speed:17.5,booked:0,lastBooked:0,committed:false,planned:false},
+  {route:["Southampton"],fare:0,cabinPrices:{inside:399,oceanview:0,balcony:260,suite:850},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,marketing:0,speed:17.5,booked:0,lastBooked:0,committed:false,planned:false}
+ ],
+ lastPnl:null,lastCf:null,performanceHistory:[],lastEvent:"North European launch season is underway. Your first three sailings are committed."
+};
+Object.keys(state.contracts).forEach(n=>{state.contracts[n].excursions=defaultExcursionsForPort(n)});
+
+
+const SAVE_STORAGE_KEY="cruiseTycoon.save.v1";
+const SAVE_SCHEMA_VERSION=1;
+const GAME_VERSION="0.10.0h";
+const INITIAL_GAME_STATE=JSON.parse(JSON.stringify(state));
+let saveSystemReady=false;
+let saveTimer=null;
+
+function cloneJson(v){return JSON.parse(JSON.stringify(v));}
+function mergeSaveDefaults(base,incoming){
+ if(Array.isArray(base)) return Array.isArray(incoming)?cloneJson(incoming):cloneJson(base);
+ if(base && typeof base==="object"){
+   const out=cloneJson(base);
+   if(incoming && typeof incoming==="object" && !Array.isArray(incoming)){
+     Object.keys(incoming).forEach(k=>{
+       out[k]=(k in base)?mergeSaveDefaults(base[k],incoming[k]):cloneJson(incoming[k]);
+     });
+   }
+   return out;
+ }
+ return incoming===undefined?base:incoming;
+}
+function makeSavePayload(){
+ return {saveSchemaVersion:SAVE_SCHEMA_VERSION,gameVersion:GAME_VERSION,savedAt:new Date().toISOString(),state:cloneJson(state)};
+}
+function setSaveStatus(text){const el=document.getElementById("saveStatus");if(el)el.textContent=text;}
+function formatSavedAt(iso){
+ try{return new Date(iso).toLocaleString([], {dateStyle:"medium",timeStyle:"short"});}catch(e){return iso||"Unknown";}
+}
+function readStoredPayload(){
+ try{
+   const raw=localStorage.getItem(SAVE_STORAGE_KEY);
+   if(!raw)return null;
+   const parsed=JSON.parse(raw);
+   if(!parsed || !parsed.state)return null;
+   return parsed;
+ }catch(e){return null;}
+}
+function hydrateFromPayload(payload){
+ if(!payload || !payload.state)throw new Error("This is not a valid Cruise Tycoon save file.");
+ const merged=mergeSaveDefaults(INITIAL_GAME_STATE,payload.state);
+ Object.keys(state).forEach(k=>delete state[k]);
+ Object.assign(state,merged);
+ // Defensive normalization for older saves.
+ state.performanceHistory=Array.isArray(state.performanceHistory)?state.performanceHistory:[];
+ state.fleet=state.fleet||cloneJson(INITIAL_GAME_STATE.fleet);
+ if(!state.fleet[state.activeShipId])state.activeShipId=Object.keys(state.fleet)[0];
+ if(!state.programme || !state.programme.length)state.programme=cloneJson(INITIAL_GAME_STATE.programme);
+ Object.keys(state.contracts||{}).forEach(n=>{
+   if(!Array.isArray(state.contracts[n].excursions))state.contracts[n].excursions=defaultExcursionsForPort(n);
+ });
+}
+function saveProgress(showFeedback=false){
+ if(!saveSystemReady)return false;
+ try{
+   const payload=makeSavePayload();
+   localStorage.setItem(SAVE_STORAGE_KEY,JSON.stringify(payload));
+   setSaveStatus("Saved " + new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"}));
+   updateSaveMeta();
+   if(showFeedback)state.lastEvent="Game progress saved on this device.";
+   return true;
+ }catch(e){
+   setSaveStatus("Local save unavailable");
+   if(showFeedback)alert("This browser could not store the game locally. Use Export save to keep a backup file.");
+   return false;
+ }
+}
+function queueAutoSave(){
+ if(!saveSystemReady)return;
+ clearTimeout(saveTimer);
+ saveTimer=setTimeout(()=>saveProgress(false),180);
+}
+function updateSaveMeta(){
+ const payload=readStoredPayload();
+ const meta=document.getElementById("saveMeta");
+ if(meta)meta.innerHTML=payload
+   ?`<b>Saved game:</b> Week ${payload.state?.week??"—"} · ${formatSavedAt(payload.savedAt)}<br><span class="label">Save format ${payload.saveSchemaVersion||1} · game ${payload.gameVersion||"older version"}</span>`
+   :"No saved game found on this device.";
+}
+function exportSave(){
+ const payload=makeSavePayload();
+ const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+ const url=URL.createObjectURL(blob);
+ const a=document.createElement("a");
+ a.href=url;
+ a.download=`Cruise_Tycoon_Save_Week_${state.week}.json`;
+ document.body.appendChild(a);a.click();a.remove();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
+ setSaveStatus("Backup exported");
+}
+function importSaveFile(file){
+ const reader=new FileReader();
+ reader.onload=()=>{
+   try{
+     const payload=JSON.parse(String(reader.result||""));
+     hydrateFromPayload(payload);
+     saveSystemReady=true;
+     saveProgress(false);
+     renderAll();
+     document.getElementById("saveModal")?.classList.remove("show");
+     state.lastEvent="Saved game imported successfully.";
+     renderAll();
+   }catch(e){alert("Could not import that save file. " + (e.message||e));}
+ };
+ reader.readAsText(file);
+}
+function resetToNewGame(){
+ const fresh=cloneJson(INITIAL_GAME_STATE);
+ Object.keys(state).forEach(k=>delete state[k]);
+ Object.assign(state,fresh);
+ try{localStorage.removeItem(SAVE_STORAGE_KEY);}catch(e){}
+ saveSystemReady=true;
+ renderAll();
+ saveProgress(false);
+}
+function openSaveTools(){updateSaveMeta();document.getElementById("saveModal")?.classList.add("show");}
+function initialiseSaveSystem(){
+ const saved=readStoredPayload();
+ const continueModal=document.getElementById("continueModal");
+ if(saved){
+   const meta=document.getElementById("continueSaveMeta");
+   if(meta)meta.innerHTML=`Saved at <b>${formatSavedAt(saved.savedAt)}</b> · Week <b>${saved.state?.week??"—"}</b> · ${saved.state?.fleet?Object.keys(saved.state.fleet).length:1} ship(s).`;
+   continueModal?.classList.add("show");
+ }else{
+   saveSystemReady=true;
+   renderAll();
+   saveProgress(false);
+ }
+}
+
+
+
+function fleetShips(){return Object.values(state.fleet||{});}
+function fleetSize(){return fleetShips().length;}
+function fleetLatestOccupancy(){
+ // Until multiple ships have separate result stores, use available completed ship results.
+ const vals=[];
+ if(state.lastPnl?.actualOcc!==undefined)vals.push(state.lastPnl.actualOcc);
+ return vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:null;
+}
+function fleetLatestEbitda(){
+ const vals=[];
+ if(state.lastPnl?.ebitda!==undefined)vals.push(state.lastPnl.ebitda);
+ return vals.length?vals.reduce((a,b)=>a+b,0):null;
+}
+
+function activeShip(){
+ return state.fleet[state.activeShipId];
+}
+function shipContextHtml(){
+ const s=activeShip();
+ return `<div class="shipContext"><span class="shipBadge">${s.name}</span><span class="label">${s.className} · ${s.capacity.toLocaleString()} guests · ${s.status}</span></div>`;
+}
+
+function hasPortContract(name){
+ const c=state.contracts[name];
+ return !!(c&&c.active&&c.weeksLeft>0);
+}
+function availablePortNames(){
+ return Object.keys(ports).filter(hasPortContract);
+}
+
+const contractPackages={
+ flexible:{label:"Flexible",signingMult:.55,dockMult:1.22,termMult:.65,luxury:0,serviceCost:0},
+ standard:{label:"Standard",signingMult:1.00,dockMult:1.00,termMult:1.00,luxury:0,serviceCost:0},
+ strategic:{label:"Strategic",signingMult:1.55,dockMult:.82,termMult:1.45,luxury:0,serviceCost:0},
+ premium:{label:"Premium terminal",signingMult:1.30,dockMult:1.18,termMult:1.00,luxury:1.5,serviceCost:18000}
+};
+const portServices={
+ priority:{label:"Priority berth",cost:12000,luxury:.25},
+ welcome:{label:"Premium welcome",cost:9000,luxury:.35},
+ lounge:{label:"Terminal lounge",cost:22000,luxury:.60},
+ concierge:{label:"Pier concierge",cost:15000,luxury:.45}
+};
+function contractPackageOffer(name,tier){
+ const base=contractOffer(name),p=contractPackages[tier]||contractPackages.standard;
+ return {
+  signing:Math.round(base.signing*p.signingMult),
+  dock:Math.round(base.dock*p.dockMult),
+  term:Math.max(8,Math.round(base.term*p.termMult)),
+  luxury:p.luxury||0,
+  serviceCost:p.serviceCost||0
+ };
+}
+
+function seasonalPortFactor(name,segment){
+ const season=seasonForGameWeek(state.week);
+ const p=ports[name];
+ let f=1;
+ if(season==="Summer"){
+   if(segment==="Families"||segment==="Young")f*=1+((p.beach||0)-5)*.025;
+   if(segment==="Seniors")f*=.97;
+ }
+ if(season==="Winter"){
+   if(segment==="Seniors"||segment==="Couples")f*=1+((p.culture||0)-5)*.018;
+   if(segment==="Families"||segment==="Young")f*=.92;
+ }
+ if(season==="Spring"||season==="Autumn"){
+   if(segment==="Couples"||segment==="Seniors")f*=1.04;
+ }
+ return f;
+}
+function weatherPortFactor(name,segment){
+ const p=ports[name],w=state.weather||{};
+ let f=1;
+ if(w.rain){
+   if(segment==="Families"||segment==="Young")f*=.90;
+   if(segment==="Seniors")f*=.96;
+   if((p.culture||0)>=8)f*=1.04;
+ }
+ if(w.snow){
+   if(segment==="Seniors")f*=.92;
+   if((p.scenic||0)>=9)f*=1.05;
+ }
+ if((w.temp||20)>=26){
+   if(segment==="Families"||segment==="Young")f*=1+((p.beach||0)-5)*.018;
+   if(segment==="Seniors")f*=.96;
+ }
+ if((w.temp||20)<=10){
+   if(segment==="Families")f*=.93;
+   if((p.culture||0)>=8)f*=1.03;
+ }
+ return f;
+}
+function currentPortAppeal(name,segment){
+ const p=ports[name]; if(!p)return 0;
+ const def=segmentDefs[segment];
+ let weighted=0,wt=0;
+ Object.entries(def.weights).forEach(([k,w])=>{
+   let val=p[k]||0;
+   if(k==="luxury")val+=contractLuxuryBoost(name);
+   weighted+=val*w;wt+=w;
+ });
+ let score=(weighted/Math.max(.01,wt))*seasonalPortFactor(name,segment)*weatherPortFactor(name,segment);
+ return clamp(score,1,10);
+}
+
+
+function portDemandIndex(name){
+ const p=ports[name]; if(!p)return 1;
+ // Popular ports command higher berth/pilotage prices. Season moves demand too.
+ const base=((p.culture||5)+(p.scenic||5)+(p.family||5)+(p.luxury||5)+(p.beach||5))/50;
+ const season=seasonForGameWeek(state.week);
+ let seasonal=1;
+ if(season==="Summer") seasonal+=((p.beach||5)-5)*.035+((p.scenic||5)-5)*.015;
+ if(season==="Winter") seasonal+=((p.culture||5)-5)*.018-((p.beach||5)-5)*.012;
+ if(season==="Spring"||season==="Autumn") seasonal+=((p.culture||5)+(p.scenic||5)-10)*.012;
+ return clamp(.72+base*.62, .78, 1.42)*clamp(seasonal,.82,1.22);
+}
+function demandAdjustedDockFee(name,baseFee){
+ return baseFee*portDemandIndex(name);
+}
+
+function contractLuxuryBoost(name){
+ const c=state.contracts[name]; if(!c)return 0;
+ let b=(contractPackages[c.tier||"standard"]?.luxury)||0;
+ (c.services||[]).forEach(k=>b+=(portServices[k]?.luxury)||0);
+ return b;
+}
+function contractExtraServiceCost(name){
+ const c=state.contracts[name]; if(!c)return 0;
+ let cost=(contractPackages[c.tier||"standard"]?.serviceCost)||0;
+ (c.services||[]).forEach(k=>cost+=(portServices[k]?.cost)||0);
+ return cost;
+}
+
+function contractOffer(name){
+ const base=ports[name].fee;
+ const seed=[...name].reduce((a,c)=>a+c.charCodeAt(0),0);
+ const signing=1500000+(seed%9)*250000;
+ const dock=Math.round(base*(0.88+(seed%15)/100));
+ const term=18+(seed%27);
+ return {signing,dock,term};
+}
+function signPortContract(name,tier="standard"){
+ if(hasPortContract(name))return;
+ const o=contractPackageOffer(name,tier);
+ if(state.cash<o.signing){alert("Not enough cash for this signing fee.");return;}
+ state.cash-=o.signing;
+ state.contracts[name]={active:true,weeksLeft:o.term,signingFee:o.signing,dockFee:o.dock,tier,services:[],excursions:defaultExcursionsForPort(name)};
+ renderAll();renderPorts();
+}
+function renegotiatePortContract(name,tier){
+ const c=state.contracts[name];if(!c)return;
+ const o=contractPackageOffer(name,tier);
+ const renegotiationFee=Math.round(o.signing*.18);
+ if(state.cash<renegotiationFee){alert("Not enough cash to renegotiate.");return;}
+ state.cash-=renegotiationFee;
+ c.tier=tier;c.dockFee=o.dock;c.weeksLeft=Math.max(c.weeksLeft,o.term);c.signingFee+=renegotiationFee;
+ renderAll();renderPorts();
+}
+function tickPortContracts(){
+ Object.values(state.contracts).forEach(c=>{if(c.active)c.weeksLeft=Math.max(0,c.weeksLeft-1);});
+}
+
+function exactMoney(x){
+ if(x===null||x===undefined||Number.isNaN(+x))return "—";
+ const n=+x,abs=Math.abs(n);
+ const s="£"+Math.round(abs).toLocaleString("en-GB");
+ return n<0?`(${s})`:s;
+}
+function statementMoney(x){
+ if(x===null||x===undefined||Number.isNaN(+x))return "—";
+ const n=+x,abs=Math.abs(n);
+ let s;
+ if(abs>=1000000)s=`£${(abs/1000000).toFixed(abs>=10000000?1:2)}m`;
+ else if(abs>=1000)s=`£${(abs/1000).toFixed(abs>=100000?0:1)}k`;
+ else s=`£${Math.round(abs).toLocaleString("en-GB")}`;
+ return n<0?`(${s})`:s;
+}
+function money(x){return statementMoney(x)}
+function priceMoney(x){return exactMoney(x)}
+function clamp(x,a,b){return Math.max(a,Math.min(b,x))}
+
+function pct(x){return `${(x*100).toFixed(1)}%`}
+
+function nm(a,b){
+ let A=ports[a],B=ports[b],R=3440.065,toRad=Math.PI/180;
+ let dlat=(B.lat-A.lat)*toRad,dlon=(B.lon-A.lon)*toRad;
+ let q=Math.sin(dlat/2)**2+Math.cos(A.lat*toRad)*Math.cos(B.lat*toRad)*Math.sin(dlon/2)**2;
+ return 2*R*Math.asin(Math.sqrt(q));
+}
+
+function buildSchedule(route=state.route, speedOverride=null){
+ const speed=speedOverride??state.speed;
+ if(!route || route.length<2){
+   return {days:[],totalNm:0,seaDays:0,portDays:0,maxLeg:0,voyageDays:0,valid:false,reason:"Plan at least one destination."};
+ }
+ const legs=[];
+ let totalNm=0,maxLeg=0;
+ for(let i=0;i<route.length-1;i++){
+   const from=route[i],to=route[i+1],dist=nm(from,to);
+   const sailingHours=dist/speed;
+   const minimumTravelDays=Math.max(1,Math.ceil(sailingHours/18));
+   legs.push({from,to,dist,sailingHours,travelDays:minimumTravelDays});
+   totalNm+=dist; maxLeg=Math.max(maxLeg,dist);
+ }
+
+ // Base day count = embarkation port + one arrival day per leg + required extra sea days.
+ let baseDays=1;
+ legs.forEach(l=>baseDays+=l.travelDays);
+ if(baseDays>7){
+   return {
+     days:[],totalNm,seaDays:0,portDays:route.length,maxLeg,voyageDays:baseDays,valid:false,
+     reason:`This itinerary needs at least ${baseDays} days at ${speed} knots. A voyage must be 7 days.`
+   };
+ }
+
+ // Distribute spare days as sea days across the longest sailing legs.
+ let spare=7-baseDays;
+ const ranked=[...legs.keys()].sort((a,b)=>legs[b].dist-legs[a].dist);
+ let k=0;
+ while(spare>0 && ranked.length){
+   legs[ranked[k%ranked.length]].travelDays++;
+   spare--; k++;
+ }
+
+ const days=[{type:"port",name:route[0],where:`In port: ${route[0]}`}];
+ legs.forEach(leg=>{
+   for(let d=1;d<leg.travelDays;d++){
+     days.push({type:"sea",name:"SEA DAY",from:leg.from,to:leg.to,where:`At sea: ${leg.from} → ${leg.to}`});
+   }
+   days.push({type:"port",name:leg.to,from:leg.from,dist:Math.round(leg.dist),where:`In port: ${leg.to}`});
+ });
+
+ return {
+   days,totalNm,
+   seaDays:days.filter(x=>x.type==="sea").length,
+   portDays:days.filter(x=>x.type==="port").length,
+   maxLeg,voyageDays:days.length,valid:days.length===7,
+   reason:days.length===7?"":`This itinerary produces ${days.length} days rather than 7.`
+ };
+}
+function routeAppeal(seg){
+ const sch=buildSchedule(), def=segmentDefs[seg]; let score=0,n=0;
+ sch.days.filter(d=>d.type==="port").forEach(d=>{
+   let p=ports[d.name]; if(!p)return;
+   let s=currentPortAppeal(d.name,seg);
+   score+=s;n++;
+ });
+ let avg=n?score/n:5;
+ let seaRatio=sch.seaDays/Math.max(1,sch.days.length);
+ let seaFit=1-Math.abs(seaRatio-def.seaPref*.22)*1.7;
+ return clamp((avg/8.2)*seaFit,.65,1.25);
+}
+function forecastMix(){
+ let raw={},sum=0;
+ Object.keys(segmentDefs).forEach(k=>{
+  let d=segmentDefs[k];
+  let score=d.base*routeAppeal(k)*(0.80+state.rep/250)*(1+Math.min(.10,state.marketing/2500000));
+  raw[k]=score;sum+=score;
+ });
+ Object.keys(raw).forEach(k=>raw[k]/=sum);
+ return raw;
+}
+
+function cabinDemand(item){
+ const ship=activeShip(),cp=item.cabinPrices||{inside:699,oceanview:899,balcony:1159,suite:1749};
+ const refs={inside:699,oceanview:899,balcony:1149,suite:1899};
+ const elasticity={inside:1.18,oceanview:1.02,balcony:.86,suite:.58};
+ const base=programmeForecast(item,selectedPlanWeek+1)||bookingForecastCore().mid;
+ const out={};
+ Object.keys(ship.berths).forEach(k=>{
+   const priceEffect=Math.pow(refs[k]/Math.max(1,cp[k]),elasticity[k]);
+   const occ=clamp(base*priceEffect*(k==="suite"?(0.92+state.rep/400):1),.18,1);
+   out[k]={occ,booked:Math.round(ship.berths[k]*occ),share:0};
+ });
+ const totalBooked=Object.values(out).reduce((a,x)=>a+x.booked,0);
+ Object.values(out).forEach(x=>x.share=totalBooked?x.booked/totalBooked:0);
+ return out;
+}
+function passengerMarketShare(item){
+ const mix=forecastMix();
+ const fc=programmeForecast(item,selectedPlanWeek+1);
+ const totalMarket=5200*(.85+selectedPlanWeek*.03);
+ const booked=Math.round(activeShip().capacity*fc);
+ const out={};
+ Object.entries(mix).forEach(([k,v])=>{
+   const our=Math.round(booked*v);
+   const market=Math.max(our,Math.round(totalMarket*(segmentDefs[k].base||.1)));
+   out[k]={booked:our,market,share:market?our/market:0};
+ });
+ return out;
+}
+
+function weightedPriceSensitivity(){
+ const mix=forecastMix(); let x=0;
+ Object.keys(mix).forEach(k=>x+=mix[k]*segmentDefs[k].priceSens); return x;
+}
+
+function programmeForecast(item, weeksAhead){
+ if(!item?.planned) return 0;
+ const old={route:state.route,fare:state.fare,service:state.service,marketing:state.marketing,speed:state.speed};
+ state.route=item.route; state.fare=item.fare; state.service=item.service??3; state.marketing=item.marketing??90000; state.speed=item.speed??17.5;
+ let f=bookingForecastCore();
+ Object.assign(state,old);
+ let build=clamp(.22 + (6-weeksAhead)*.085, .18, .88);
+ return clamp(Math.max(item.booked||0, f.mid*build), .15, .99);
+}
+function bookingForecastCore(){
+ const sch=buildSchedule(), mix=forecastMix();
+ let appeal=0;Object.keys(mix).forEach(k=>appeal+=mix[k]*routeAppeal(k));
+ let refFare=930*(1+(state.service-3)*.07)*(0.82+state.rep/180);
+ let pSens=weightedPriceSensitivity();
+ let priceEffect=Math.pow(refFare/state.fare,pSens);
+ let season=1+0.07*Math.sin((state.week-6)/52*2*Math.PI);
+ let base=.78*appeal*priceEffect*season*(1+Math.min(.09,state.marketing/1800000));
+ let mid=clamp(base,.43,.99);
+ return {mid,lo:clamp(mid-.07,.30,.98),hi:clamp(mid+.06,.36,1.00)};
+}
+function expectedFareRevenue(item, occ){
+ return activeShip().capacity*occ*item.fare;
+}
+
+function sameRoute(a,b){return JSON.stringify(a)===JSON.stringify(b)}
+
+
+function seasonForGameWeek(weekNo){
+ const n=((weekNo-1)%52)+1;
+ if(n<=8 || n>=49) return "Winter";
+ if(n<=21) return "Spring";
+ if(n<=35) return "Summer";
+ return "Autumn";
+}
+function generateWeather(season){
+ const r=Math.random();
+ if(season==="Winter"){
+   if(r<.08)return {temp:4+Math.round(Math.random()*4),kind:"Snow showers",icon:"🌨️",rain:false,snow:true};
+   if(r<.48)return {temp:9+Math.round(Math.random()*5),kind:"Rain",icon:"🌧️",rain:true,snow:false};
+   return {temp:11+Math.round(Math.random()*6),kind:"Cloudy",icon:"☁️",rain:false,snow:false};
+ }
+ if(season==="Spring"){
+   if(r<.35)return {temp:14+Math.round(Math.random()*6),kind:"Showers",icon:"🌦️",rain:true,snow:false};
+   return {temp:17+Math.round(Math.random()*7),kind:"Bright",icon:"🌤️",rain:false,snow:false};
+ }
+ if(season==="Summer"){
+   if(r<.12)return {temp:24+Math.round(Math.random()*5),kind:"Thunderstorms",icon:"⛈️",rain:true,snow:false};
+   return {temp:25+Math.round(Math.random()*8),kind:"Dry",icon:"☀️",rain:false,snow:false};
+ }
+ if(r<.38)return {temp:15+Math.round(Math.random()*6),kind:"Rain",icon:"🌧️",rain:true,snow:false};
+ return {temp:17+Math.round(Math.random()*7),kind:"Fair",icon:"🌤️",rain:false,snow:false};
+}
+
+function seasonForWeek(weeksAhead){
+ const n=((state.week + weeksAhead - 2)%52)+1;
+ if(n<=8 || n>=49) return "Winter";
+ if(n<=21) return "Spring";
+ if(n<=35) return "Summer";
+ return "Autumn";
+}
+
+function programmeStartPort(idx){
+ if(idx===0) return state.programme[0]?.route?.[0] || "Barcelona";
+ const prev=state.programme[idx-1]?.route || [];
+ return prev[prev.length-1] || "Barcelona";
+}
+function enforceProgrammeContinuity(){
+ for(let i=1;i<state.programme.length;i++){
+   const start=programmeStartPort(i);
+   const old=state.programme[i].route||[];
+   if(!state.programme[i].planned){
+     state.programme[i].route=[start];
+   }else{
+     state.programme[i].route=[start,...old.slice(1)];
+   }
+ }
+}
+function changePenalty(oldItem,newRoute,newFare,newService,newMarketing,newSpeed,newCabinPrices=null){
+ if(!oldItem.committed) return 0;
+ let changed=!sameRoute(oldItem.route,newRoute) || Math.abs((oldItem.fare||0)-newFare)>1 ||
+   Math.abs((oldItem.service??3)-newService)>.1 || Math.abs((oldItem.marketing??90000)-newMarketing)>1000 ||
+   Math.abs((oldItem.speed??17.5)-newSpeed)>.1 ||
+   (newCabinPrices && JSON.stringify(oldItem.cabinPrices||{})!==JSON.stringify(newCabinPrices));
+ if(!changed) return 0;
+ let booked=oldItem.booked||0;
+ let passengerValue=activeShip().capacity*booked*(oldItem.fare||899);
+ // Refund already-collected money plus disruption compensation.
+ return passengerValue*(0.36 + booked*.22);
+}
+function bookingGrowthForItem(item,weeksAhead){
+ if(!item?.planned) return 0;
+ let fc=programmeForecast(item,weeksAhead);
+ let current=item.booked||0;
+ // Growth slows as sailing fills and accelerates as departure approaches.
+ let urgency=0.055 + (7-weeksAhead)*0.018;
+ let headroom=Math.max(0,1-current);
+ let increment=Math.min(headroom, Math.max(0,(fc-current)*0.48 + urgency*headroom*0.22));
+ return clamp(current+increment,current,0.995);
+}
+function forwardCashReceipts(){
+ // Deposits arise only from new bookings this week. Final balances are collected 2 weeks before departure.
+ let dep=0,final=0,rows=[];
+ state.programme.forEach((item,idx)=>{
+   let weeksAhead=idx+1;
+   let prev=item.booked||0;
+   let next=item.planned?bookingGrowthForItem(item,weeksAhead):0;
+   let newlyBooked=Math.max(0,next-prev);
+   let grossAtFull=expectedFareRevenue(item,1);
+   let depositCash=grossAtFull*newlyBooked*.20;
+   let finalCash=(weeksAhead===2)?grossAtFull*next*.70:0;
+   dep+=depositCash; final+=finalCash;
+   rows.push({week:weeksAhead,item,forecast:next,prior:prev,newlyBooked,depositCash,finalCash,growth:next-prev});
+ });
+ return {dep,final,rows};
+}
+
+function bookingForecast(){ return bookingForecastCore(); }
+
+function fuelForLegNm(distanceNm, speed, durationHours){
+ const baseTpd=62;
+ const speedFactor=Math.pow(speed/17.5,3);
+ const sailingDays=distanceNm/(speed*24);
+ const hotelDays=Math.max(0,durationHours/24-sailingDays);
+ return sailingDays*baseTpd*speedFactor+hotelDays*13;
+}
+function dailyScheduleCosts(route, speed){
+ const items=[];
+ for(let i=0;i<route.length-1;i++){
+   const from=route[i],to=route[i+1],dist=nm(from,to);
+   const hours=dist/speed;
+   const seaDays=Math.max(0,Math.ceil((hours-14)/24));
+   if(i===0){
+     items.push({type:"port",name:from,portCost:ports[from]?.fee||0,fuelCost:0,where:`In port: ${from}`});
+   }
+   // spread sailing fuel across travel days
+   const travelDays=Math.max(1,seaDays+1);
+   const tonnes=fuelForLegNm(dist,speed,travelDays*24);
+   const legFuelCost=tonnes*state.fuelUSD*.79;
+   for(let d=0;d<seaDays;d++){
+     items.push({type:"sea",name:"SEA DAY",portCost:0,fuelCost:legFuelCost/travelDays,where:`At sea: ${from} → ${to}`});
+   }
+   items.push({type:"port",name:to,portCost:ports[to]?.fee||0,fuelCost:legFuelCost/travelDays,where:`Arrive: ${to}`});
+ }
+ return items;
+}
+function routeCosts(route,speed){
+ const sch=buildSchedule(route,speed);
+ const totalFuel=fuelTonnes(route,speed)*state.fuelUSD*.79;
+ const portNames=sch.days.filter(d=>d.type==="port").map(d=>d.name);
+ const portsTotal=portNames.reduce((a,n)=>a+(demandAdjustedDockFee(n,((state.contracts[n]?.dockFee)??(ports[n]?.fee||0)))+contractExtraServiceCost(n)),0);
+ const perDayFuel=sch.days.length?totalFuel/sch.days.length:0;
+ const days=sch.days.map((d,i)=>({
+   ...d,
+   fuelCost:perDayFuel,
+   portCost:d.type==="port"?(demandAdjustedDockFee(d.name,((state.contracts[d.name]?.dockFee)??(ports[d.name]?.fee||0)))+contractExtraServiceCost(d.name)):0,
+   where:d.type==="port"?`In port: ${d.name}`:`At sea${d.from&&d.to?`: ${d.from} → ${d.to}`:""}`
+ }));
+ return {fuel:totalFuel,ports:portsTotal,days};
+}
+
+function fuelTonnes(routeOverride=null,speedOverride=null){
+ const route=routeOverride||state.route;
+ const speed=speedOverride??state.speed;
+ const sch=buildSchedule(route,speed);
+ if(!sch.totalNm)return 7*13;
+ const propulsionTpdAt175=96; // calibrated upward: sector fuel commonly ~6-7% of revenue at fleet level
+ const propulsionRatePerDay=propulsionTpdAt175*Math.pow(speed/17.5,3);
+ const sailingDays=sch.totalNm/(speed*24);
+ const hotelDays=Math.max(0,7-sailingDays);
+ return sailingDays*propulsionRatePerDay+hotelDays*24;
+}
+function expectedPassengerCount(occ){return Math.round(activeShip().capacity*occ)}
+function calcOnboard(passengers,mix,sch){
+ let seaMult=1+sch.seaDays*.055;
+ let sums={drinks:0,casino:0,dining:0,excursion:0,spa:0,retail:0,wifi:0};
+ Object.entries(mix).forEach(([seg,share])=>{
+   let n=passengers*share, s=segmentDefs[seg].spend;
+   Object.keys(sums).forEach(k=>{
+     let mult=(k==="casino"||k==="drinks"||k==="spa"||k==="retail")?seaMult:1;
+     if(k==="excursion") mult=Math.max(.65,sch.portDays/6);
+     sums[k]+=n*s[k]*mult;
+   });
+ });
+ return sums;
+}
+function randomEvent(){
+ const r=Math.random();
+ if(r<.13)return {txt:"Fuel markets jump after refinery disruption.",fuel:1.10,demand:-.01,cost:0,rep:0};
+ if(r<.24)return {txt:"Excellent guest reviews go viral in your target market.",fuel:1,demand:.045,cost:0,rep:2};
+ if(r<.34)return {txt:"A competitor heavily discounts a similar sailing.",fuel:1,demand:-.055,cost:0,rep:0};
+ if(r<.42)return {txt:"Technical maintenance issue requires additional parts.",fuel:1,demand:-.01,cost:145000,rep:-1};
+ if(r<.50)return {txt:"Strong school-holiday bookings lift family demand.",fuel:1,demand:.035,cost:0,rep:0};
+ if(r<.57)return {txt:"Poor weather forecast softens late bookings.",fuel:1,demand:-.03,cost:0,rep:0};
+ return {txt:"No major market disruption this week.",fuel:1,demand:0,cost:0,rep:0};
+}
+
+
+function seaCorridor(a,b){
+ const A=ports[a],B=ports[b]; if(!A||!B)return [];
+ const pts=[[A.lat,A.lon]];
+ const pair=[a,b].sort().join("|");
+ const corridors={
+   "Barcelona|Palma":[[40.9,2.8],[40.2,2.6]],
+   "Barcelona|Marseille":[[41.2,3.4],[42.0,4.6]],
+   "Genoa|Marseille":[[43.1,6.3],[43.5,7.7]],
+   "Civitavecchia (Rome)|Genoa":[[42.2,10.4],[42.0,11.2]],
+   "Civitavecchia (Rome)|Naples":[[41.2,12.2],[40.8,13.2]],
+   "Naples|Palma":[[39.7,12.0],[39.1,9.0],[39.3,6.0]],
+   "Palma|Valletta":[[38.5,4.0],[37.4,8.0],[36.5,12.0]],
+   "Naples|Valletta":[[39.4,14.7],[37.6,14.8]],
+   "Messina|Valletta":[[37.4,15.1],[36.5,14.8]],
+   "Corfu|Messina":[[37.5,17.0],[38.2,18.3]],
+   "Corfu|Kotor":[[40.2,19.1],[41.2,18.8]],
+   "Dubrovnik|Kotor":[[42.3,18.2],[42.0,18.4]],
+   "Dubrovnik|Split":[[43.0,17.8],[43.2,17.0]],
+   "Civitavecchia (Rome)|Valletta":[[40.0,12.5],[38.0,13.0],[36.4,14.0]]
+ };
+ const way=corridors[pair];
+ if(way){
+   // Reverse waypoint order if route is opposite alphabetical storage.
+   const direct=(a<b);
+   pts.push(...(direct?way:[...way].reverse()));
+ }else{
+   // Generic offshore midpoint with small seaward bias.
+   const midLat=(A.lat+B.lat)/2, midLon=(A.lon+B.lon)/2;
+   pts.push([midLat-0.25,midLon]);
+ }
+ pts.push([B.lat,B.lon]);
+ return pts;
+}
+function fullSeaRoute(route){
+ const out=[];
+ for(let i=0;i<route.length-1;i++){
+   const leg=seaCorridor(route[i],route[i+1]);
+   if(i>0)leg.shift();
+   out.push(...leg);
+ }
+ return out;
+}
+
+const mapInstances={};
+function drawRouteMap(id, routeOverride=null){
+ const el=document.getElementById(id); if(!el) return;
+ if(typeof L==="undefined"){
+   el.innerHTML='<div style="padding:18px;color:var(--muted)">Map unavailable — route data is still valid. Check internet connection.</div>';
+   return;
+ }
+ const route=routeOverride || state.route;
+ if(mapInstances[id]){
+   mapInstances[id].remove();
+   delete mapInstances[id];
+ }
+ const map=L.map(id,{zoomControl:true,attributionControl:true});
+ mapInstances[id]=map;
+ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
+   maxZoom:10,
+   attribution:"&copy; OpenStreetMap contributors"
+ }).addTo(map);
+
+ const latlngs=fullSeaRoute(route);
+ route.forEach((name,idx)=>{
+   const p=ports[name]; if(!p)return;
+   const ll=[p.lat,p.lon];
+   const marker=L.circleMarker(ll,{
+     radius:idx===0?7:6,
+     weight:2,
+     color:"#173e61",
+     fillColor:idx===0?"#bb8b22":"#ffffff",
+     fillOpacity:1
+   }).addTo(map);
+   marker.bindTooltip(name,{permanent:true,direction:"top",offset:[0,-6],className:"route-label"});
+ });
+ if(latlngs.length>1){
+   L.polyline(latlngs,{color:"#173e61",weight:4,opacity:.9}).addTo(map);
+   map.fitBounds(L.latLngBounds(latlngs).pad(.18),{maxZoom:7});
+ }else if(latlngs.length===1){
+   map.setView(latlngs[0],7);
+ }else{
+   map.setView([39.5,12.5],5);
+ }
+ setTimeout(()=>map.invalidateSize(),50);
+}
+
+function pieSvg(data,title){
+ const entries=Object.entries(data).filter(([,v])=>v>0);
+ const total=entries.reduce((a,[,v])=>a+v,0)||1;
+ const cx=120,cy=120,r=88;
+ let start=-Math.PI/2,paths="",labels="",legend="";
+ const colors=["#4e79a7","#59a14f","#f28e2b","#af7aa1","#e15759","#76b7b2"];
+ entries.forEach(([name,val],i)=>{
+   const frac=val/total,end=start+frac*Math.PI*2;
+   const x1=cx+r*Math.cos(start),y1=cy+r*Math.sin(start),x2=cx+r*Math.cos(end),y2=cy+r*Math.sin(end);
+   const large=frac>.5?1:0;
+   paths+=`<path d="M ${cx} ${cy} L ${x1} ${y1} A ${r} ${r} 0 ${large} 1 ${x2} ${y2} Z" fill="${colors[i%colors.length]}"></path>`;
+   const mid=(start+end)/2,lx=cx+(r*.64)*Math.cos(mid),ly=cy+(r*.64)*Math.sin(mid);
+   if(frac>.055)labels+=`<text x="${lx}" y="${ly}" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="11" font-weight="700">${Math.round(frac*100)}%</text>`;
+   legend+=`<div><span style="display:inline-block;width:10px;height:10px;background:${colors[i%colors.length]};margin-right:5px"></span>${name}: ${val.toLocaleString()} (${Math.round(frac*100)}%)</div>`;
+   start=end;
+ });
+ return `<div class="pieWrap"><svg class="pieSvg" viewBox="0 0 240 240" role="img" aria-label="${title}">${paths}${labels}</svg><div class="pieLegend">${legend}</div></div>`;
+}
+
+
+function passengerComments(reviewDetail,routeMetrics){
+ const entries=Object.entries(reviewDetail||{}).sort((a,b)=>b[1]-a[1]);
+ const best=entries[0]?.[0]||"service";
+ const worst=entries[entries.length-1]?.[0]||"value";
+ const goodMap={
+  "Cabin & hotel service":"The cabin team were friendly and everything felt well looked after.",
+  "Food quality":"The food quality was consistently good and there was plenty of choice.",
+  "Entertainment":"We really enjoyed the evening entertainment and there was plenty going on.",
+  "Ship condition":"The ship felt smart and well maintained throughout the cruise.",
+  "Route / itinerary":"The itinerary had a great mix of ports and suited us really well.",
+  "Value for money":"For what was included, the cruise felt like very good value."
+ };
+ const badMap={
+  "Cabin & hotel service":"Service could be slow at busy times and the room supplies felt basic.",
+  "Food quality":"The food felt a little too budget-focused and could use better ingredients and variety.",
+  "Entertainment":"We would have liked more variety in the entertainment programme.",
+  "Ship condition":"A few areas of the ship are starting to look tired and need attention.",
+  "Route / itinerary":routeMetrics?.repeatPenalty>.2?"The ports were enjoyable, but the itinerary felt too similar to recent cruises.":"Some of the ports did not feel like the best match for this type of cruise.",
+  "Value for money":"The overall experience was enjoyable, but the price felt high for what we received."
+ };
+ return {good:goodMap[best]||"We had a very enjoyable cruise overall.",bad:badMap[worst]||"There were a few areas that could have been stronger."};
+}
+function simpleTrendSvg(rows){
+ if(!rows.length)return '<div class="notice">No completed weeks yet.</div>';
+ const W=760,H=190,pad=34;
+ const xs=rows.map((_,i)=>pad+(rows.length===1?(W-2*pad)/2:i*(W-2*pad)/(rows.length-1)));
+ const profits=rows.map(r=>r.profit||0), cash=rows.map(r=>r.cash||0), reviews=rows.map(r=>r.review||0);
+ const pmin=Math.min(0,...profits),pmax=Math.max(1,...profits),cmin=Math.min(...cash),cmax=Math.max(...cash,1);
+ const sy=(v,min,max)=>H-pad-(v-min)/Math.max(1,max-min)*(H-2*pad);
+ const reviewY=v=>H-pad-(v-2.5)/2.5*(H-2*pad);
+ const pts=(arr,min,max)=>arr.map((v,i)=>`${xs[i].toFixed(1)},${sy(v,min,max).toFixed(1)}`).join(' ');
+ const revPts=reviews.map((v,i)=>`${xs[i].toFixed(1)},${reviewY(v).toFixed(1)}`).join(' ');
+ const labels=rows.map((r,i)=>`<text x="${xs[i]}" y="${H-8}" text-anchor="middle" font-size="11">W${r.week}</text>`).join('');
+ return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Six week group performance trend">
+ <line x1="${pad}" y1="${H-pad}" x2="${W-pad}" y2="${H-pad}" stroke="#b8c7d1"/>
+ <polyline points="${pts(profits,pmin,pmax)}" fill="none" stroke="#173e61" stroke-width="4"/>
+ <polyline points="${pts(cash,cmin,cmax)}" fill="none" stroke="#637b8d" stroke-width="3" stroke-dasharray="7 5"/>
+ <polyline points="${revPts}" fill="none" stroke="#8b5e34" stroke-width="3"/>
+ ${labels}</svg>
+ <div class="trendLegend"><span style="color:#173e61"><span class="legendMark"></span>Profit</span><span style="color:#637b8d"><span class="legendMark"></span>Closing cash</span><span style="color:#8b5e34"><span class="legendMark"></span>Average review</span></div>
+ <div style="overflow-x:auto;margin-top:8px"><table><tr><th>Week</th>${rows.map(r=>`<th>W${r.week}</th>`).join("")}</tr><tr><td>Profit</td>${rows.map(r=>`<td>${statementMoney(r.profit)}</td>`).join("")}</tr><tr><td>Cash</td>${rows.map(r=>`<td>${statementMoney(r.cash)}</td>`).join("")}</tr><tr><td>Avg review</td>${rows.map(r=>`<td>${r.review.toFixed(1)} ★</td>`).join("")}</tr></table></div>`;
+}
+function groupHistoryRows(){
+ const hist=state.performanceHistory||[];
+ const weeks=[...new Set(hist.map(x=>x.week))].sort((a,b)=>a-b).slice(-6);
+ return weeks.map(w=>{
+  const rr=hist.filter(x=>x.week===w);
+  const pax=rr.reduce((a,x)=>a+(x.pax||0),0);
+  return {week:w,profit:rr.reduce((a,x)=>a+(x.net||0),0),cash:rr.length?rr[rr.length-1].cashClosing:state.cash,review:pax?rr.reduce((a,x)=>a+(x.reviewScore||0)*(x.pax||0),0)/pax:(rr.reduce((a,x)=>a+(x.reviewScore||0),0)/Math.max(1,rr.length))};
+ });
+}
+function renderGroupTrend(){
+ const el=document.getElementById("groupTrendChart");if(el)el.innerHTML=simpleTrendSvg(groupHistoryRows());
+}
+function renderReviewHistory(){
+ const sel=document.getElementById("reviewHistoryShip");
+ if(sel){
+  const current=sel.value||"all";
+  sel.innerHTML='<option value="all">All ships</option>'+fleetShips().map(x=>`<option value="${x.id}">${x.name}</option>`).join('');
+  sel.value=[...sel.options].some(o=>o.value===current)?current:"all";
+ }
+ const shipId=sel?.value||"all";
+ const rows=(state.performanceHistory||[]).filter(x=>shipId==="all"||x.shipId===shipId).slice().reverse();
+ const chartRows=[...rows].reverse().slice(-12).map(x=>({week:x.week,profit:x.net,cash:x.cashClosing,review:x.reviewScore}));
+ const chart=document.getElementById("reviewHistoryTrend");if(chart)chart.innerHTML=simpleTrendSvg(chartRows);
+ const tbl=document.getElementById("reviewHistoryTable");if(!tbl)return;
+ tbl.innerHTML=rows.length?`<tr><th>Week</th><th>Ship</th><th>Route</th><th>Review</th><th>Best / weakest</th><th>Passenger comments</th></tr>`+rows.map(x=>{
+  const ent=Object.entries(x.reviewDetail||{}).sort((a,b)=>b[1]-a[1]);
+  return `<tr><td>W${x.week}<br><span class="label">${x.season} · ${x.weather}</span></td><td>${x.shipName}</td><td>${(x.route||[]).join(" → ")}</td><td><b>${x.reviewScore.toFixed(1)} ★</b></td><td>${ent[0]?.[0]||"—"}<br><span class="label">Weakest: ${ent[ent.length-1]?.[0]||"—"}</span></td><td>“${x.comments?.good||""}”<div class="reviewComment">“${x.comments?.bad||""}”</div></td></tr>`;
+ }).join(''):'<tr><td>No completed sailings yet.</td></tr>';
+}
+function showVoyageAnimation(done){
+ const overlay=document.getElementById("voyageOverlay");
+ if(!overlay){done();return;}
+ const season=seasonForGameWeek(state.week),w=state.weather;
+ document.getElementById("voyageAnimTitle").textContent=`${activeShip().name} is sailing`;
+ document.getElementById("voyageAnimWeek").textContent=`Week ${state.week}`;
+ document.getElementById("voyageAnimSeason").textContent=season;
+ document.getElementById("voyageAnimWeather").textContent=`${w.temp}°C · ${w.icon} ${w.kind}`;
+ const end=state.route[state.route.length-1]||state.route[0]||"At sea";
+ document.getElementById("voyageAnimLocation").textContent=`Destination: ${end}`;
+ document.getElementById("voyageAnimRoute").textContent=state.route.join(" → ");
+ document.getElementById("voyageAnimPhotos").innerHTML=state.route.slice(0,4).map(n=>`<div class="voyagePhoto"><img src="${portImageUrl(n)}" alt="${n}" onerror="this.style.display='none'"><b>${n}</b></div>`).join('');
+ overlay.classList.add("show");
+ setTimeout(()=>{overlay.classList.remove("show");done();},2100);
+}
+
+function showVoyageResult(ev){
+ const p=state.lastPnl,c=state.lastCf;
+ document.getElementById("resultSubtitle").textContent=`${activeShip().name} · Week ${state.week} · ${seasonForGameWeek(state.week)} · ${state.weather.temp}°C ${state.weather.icon} ${state.weather.kind} · ${state.route.join(" → ")}`;
+ const rsn=document.getElementById("resultShipName");if(rsn)rsn.textContent=activeShip().name;
+ const rbn=document.getElementById("resultBrandName");if(rbn)rbn.innerHTML="<b>Harbour Line</b>";
+ const rvr=document.getElementById("resultVoyageRoute");if(rvr)rvr.textContent=state.route.join(" → ");
+ document.getElementById("resOcc").textContent=pct(p.actualOcc);
+ document.getElementById("resRevenue").textContent=money(p.totalRev);
+ document.getElementById("resEbitda").textContent=money(p.ebitda);
+ document.getElementById("resNet").textContent=money(p.net);
+ document.getElementById("resultPnl").innerHTML=`
+ <tr><th>Ship P&L</th><th>Volume</th><th>Revenue</th><th>Cost</th><th>Profit</th></tr>
+ <tr><td>Passenger fares</td><td>${p.pax.toLocaleString()} guests</td><td>${statementMoney(p.fareRevenue)}</td><td></td><td>${statementMoney(p.fareRevenue)}</td></tr>
+ <tr><td>Drinks & beverage</td><td>${(p.units?.drinks||0).toLocaleString()} drinks</td><td>${statementMoney(p.drinks)}</td><td>${statementMoney(p.beverage)}</td><td>${statementMoney(p.drinks-p.beverage)}</td></tr>
+ <tr><td>Casino</td><td>£${(p.units?.casinoHandle||0).toLocaleString()} handle</td><td>${statementMoney(p.casino)}</td><td>${statementMoney(p.casinoCost)}</td><td>${statementMoney(p.casino-p.casinoCost)}</td></tr>
+ <tr><td>Speciality dining</td><td>${(p.units?.diningCovers||0).toLocaleString()} covers</td><td>${statementMoney(p.dining)}</td><td>${statementMoney(p.diningCost)}</td><td>${statementMoney(p.dining-p.diningCost)}</td></tr>
+ <tr><td>Shore excursions</td><td>${(p.units?.excursions||0).toLocaleString()} guests</td><td>${statementMoney(p.excursion)}</td><td>${statementMoney(p.excursionCost)}</td><td>${statementMoney(p.excursion-p.excursionCost)}</td></tr>
+ <tr><td>Spa</td><td>${(p.units?.spaTreatments||0).toLocaleString()} treatments</td><td>${statementMoney(p.spa)}</td><td>${statementMoney(p.spaCost)}</td><td>${statementMoney(p.spa-p.spaCost)}</td></tr>
+ <tr><td>Retail</td><td>${(p.units?.retailTransactions||0).toLocaleString()} transactions</td><td>${statementMoney(p.retail)}</td><td>${statementMoney(p.retailCost)}</td><td>${statementMoney(p.retail-p.retailCost)}</td></tr>
+ <tr><td>Wi‑Fi & other</td><td>${(p.units?.wifiPackages||0).toLocaleString()} packages</td><td>${statementMoney(p.wifi)}</td><td>${statementMoney(p.wifiCost)}</td><td>${statementMoney(p.wifi-p.wifiCost)}</td></tr>
+ <tr class="total"><td>EBITDA</td><td>${pct(p.ebitda/p.totalRev)} margin</td><td>${statementMoney(p.totalRev)}</td><td>${statementMoney(p.opex)}</td><td>${statementMoney(p.ebitda)}</td></tr>
+ <tr><td>Depreciation</td><td></td><td></td><td>${statementMoney(p.depreciation)}</td><td>${statementMoney(-p.depreciation)}</td></tr>
+ <tr class="total"><td>Operating profit</td><td></td><td>${statementMoney(p.totalRev)}</td><td>${statementMoney(p.opex+p.depreciation)}</td><td>${statementMoney(p.operating)}</td></tr>
+ <tr><td>Interest</td><td></td><td></td><td>${statementMoney(p.interest)}</td><td>${statementMoney(-p.interest)}</td></tr>
+ <tr><td>Tax</td><td></td><td></td><td>${statementMoney(p.tax)}</td><td>${statementMoney(-p.tax)}</td></tr>
+ <tr class="total"><td>Net profit</td><td></td><td>${statementMoney(p.totalRev)}</td><td>${statementMoney(p.totalRev-p.net)}</td><td>${statementMoney(p.net)}</td></tr>`;
+ const modalIn=[
+ ["Customer deposits received",c.newDeposits],
+ ["Final balances received",c.finalBalances],
+ ["Onboard cash receipts",c.onboardCash]
+];
+const msd=c.supplierDetail||{};
+const modalOut=[
+ ["Food",-msd.food],
+ ["Beverage supplies",-msd.beverage],
+ ["Port & pilotage fees",-msd.portFees],
+ ["Entertainment suppliers",-msd.entertainment],
+ ["Hotel & housekeeping suppliers",-msd.hotel],
+ ["Repairs & maintenance",-msd.repairs],
+ ["Insurance",-msd.insurance],
+ ["Casino direct costs",-msd.casinoCost],
+ ["Excursion operators",-msd.excursionCost],
+ ["Retail cost of sales",-msd.retailCost],
+ ["Spa direct costs",-msd.spaCost],
+ ["Wi‑Fi direct costs",-msd.wifiCost],
+ ["Speciality dining direct costs",-msd.diningCost],
+ ["Payroll",-c.payroll],
+ ["Fuel paid",-c.fuelCash],
+ ["Commissions paid",-c.commissionsCash],
+ ["Marketing paid",-c.marketingCash],
+ ["Head-office cash costs",-c.hoCash],
+ ["Tax paid",-c.taxCash],
+ ["Debt principal repayment",-c.principal],
+ ["Interest paid",-c.interestCash]
+];
+const modalTotalIn=modalIn.reduce((a,x)=>a+x[1],0);
+const modalTotalOut=modalOut.reduce((a,x)=>a+x[1],0);
+document.getElementById("resultCash").innerHTML=`
+ <tr class="total"><td>Opening cash</td><td>${statementMoney(c.opening)}</td></tr>
+ <tr class="total"><td>MONEY IN</td><td>${statementMoney(modalTotalIn)}</td></tr>
+ ${modalIn.map(x=>`<tr class="subline"><td>${x[0]}</td><td>${statementMoney(x[1])}</td></tr>`).join("")}
+ <tr class="total"><td>MONEY OUT</td><td>${statementMoney(-modalTotalOut)}</td></tr>
+ ${modalOut.map(x=>`<tr class="subline"><td>${x[0]}</td><td class="badtxt">${statementMoney(-x[1])}</td></tr>`).join("")}
+ <tr class="total"><td>Net cash movement</td><td>${statementMoney(c.closing-c.opening)}</td></tr>
+ <tr class="total"><td>Closing cash</td><td>${statementMoney(c.closing)}</td></tr>`;
+ document.getElementById("resultEvent").textContent=ev.txt+` Actual occupancy was ${pct(p.actualOcc)} with ${p.pax.toLocaleString()} guests.`;
+ const assets=state.cash+state.shipBook+state.otherAssets;
+ const liabilities=state.debt+state.customerDeposits+state.payables;
+ const equity=assets-liabilities;
+ document.getElementById("resultBalance").innerHTML=`
+  <tr><th>Balance sheet</th><th>£</th></tr>
+  <tr><td>Cash</td><td>${statementMoney(state.cash)}</td></tr>
+  <tr><td>Ship — net book value</td><td>${statementMoney(state.shipBook)}</td></tr>
+  <tr><td>Other assets</td><td>${statementMoney(state.otherAssets)}</td></tr>
+  <tr class="total"><td>Total assets</td><td>${statementMoney(assets)}</td></tr>
+  <tr><td>Bank debt</td><td>${statementMoney(state.debt)}</td></tr>
+  <tr><td>Customer deposits</td><td>${statementMoney(state.customerDeposits)}</td></tr>
+  <tr><td>Trade payables</td><td>${statementMoney(state.payables)}</td></tr>
+  <tr class="total"><td>Total liabilities</td><td>${statementMoney(liabilities)}</td></tr>
+  <tr class="total"><td>Shareholders' equity</td><td>${statementMoney(equity)}</td></tr>`;
+ document.getElementById("resultFinanceKpis").innerHTML=`
+  <tr><th>KPI</th><th>Value</th></tr>
+  <tr><td>Ship average fare / guest</td><td>${priceMoney(p.fareRevenue/p.pax)}</td></tr>
+  <tr><td>Ship onboard spend / guest</td><td>${priceMoney((p.totalRev-p.fareRevenue)/p.pax)}</td></tr>
+  <tr><td>Ship EBITDA margin</td><td>${pct(p.ebitda/p.totalRev)}</td></tr>
+  <tr><td>Ship net profit margin</td><td>${pct(p.net/p.totalRev)}</td></tr>
+  <tr><td>Company closing cash</td><td>${statementMoney(c.closing)}</td></tr>
+  <tr><td>Company debt</td><td>${statementMoney(state.debt)}</td></tr>`;
+ document.getElementById("resultReviewScore").textContent=(p.reviewScore||0).toFixed(1)+" ★";
+ const rd=p.reviewDetail||{};
+ document.getElementById("resultReviewDrivers").innerHTML="<tr><th>Area</th><th>Score</th></tr>"+
+   Object.entries(rd).map(([k,v])=>`<tr><td>${k}</td><td>${v.toFixed(1)} / 5</td></tr>`).join("");
+ const q=crewQualityEffects(activeShip());
+ const drivers=[];
+ if(q.hotel<.96)drivers.push("Hotel/guest-service wage policy is suppressing service quality.");
+ if((state.programme?.[0]?.foodSpendPpd??state.foodSpendPpd??18)<14)drivers.push("Low food provisioning spend is reducing food-quality reviews.");
+ if((state.programme?.[0]?.hotelConsumablesPpd??state.hotelConsumablesPpd??7)<5)drivers.push("Low hotel and housekeeping consumables spend is reducing cabin-service reviews.");
+ if(q.marine<.96)drivers.push("Marine/technical wage policy is increasing maintenance pressure.");
+ if(q.entertainment<.96)drivers.push("Entertainment wage policy is weakening onboard experience.");
+ if(conditionAverage()<75)drivers.push("Ship condition is now noticeably affecting guest perception.");
+ if(p.actualOcc>.95)drivers.push("Very high occupancy reduced comfort and service headroom.");
+ const rm=routeReviewMetrics(p);
+ if(rm.repeatPenalty>.18)drivers.push("Repeated destination ports are beginning to reduce itinerary satisfaction.");
+ if((p.reviewDetail?.["Route / itinerary"]||5)<3.8)drivers.push("The itinerary was not an especially strong match for the guest mix this week.");
+ if(!drivers.length)drivers.push("Service levels, staffing quality and ship condition were broadly supportive.");
+ document.getElementById("resultReviewCommentary").textContent=drivers.join(" ");
+ document.getElementById("resultSegmentPie").innerHTML=pieSvg(p.segmentPax||{},"Passenger segment occupancy");
+ const cabinOcc=p.cabinActual||{},shipBerths=activeShip().berths;
+ document.getElementById("resultCabinOccupancy").innerHTML=Object.keys(shipBerths).map(k=>{
+   const occ=shipBerths[k]?((cabinOcc[k]||0)/shipBerths[k]):0;
+   const label=k[0].toUpperCase()+k.slice(1);
+   return `<div class="occRow"><div>${label}</div><div class="occTrack"><div class="occFill" style="width:${Math.min(100,occ*100)}%"></div></div><div><b>${pct(occ)}</b></div></div>`;
+ }).join("");
+ const ex=p.excursionPlan||[];
+ document.getElementById("resultExcursions").innerHTML=ex.length?
+   `<tr><th>Port / excursion</th><th>Final attendance</th><th>Capacity</th><th>Final uptake</th><th>Revenue</th><th>Supplier cost</th><th>Contribution</th></tr>`+
+   ex.map(x=>`<tr><td>${x.port}<br><span class="label">${x.name}</span></td><td>${x.attendance}</td><td>${x.maxPax}</td><td>${pct(x.attendancePct)}</td><td>${money(x.revenue)}</td><td>${money(x.supplierCost)}</td><td>${money(x.contribution)}</td></tr>`).join("")
+   :'<tr><td>No excursions sold.</td></tr>';
+ showResultPage("Reviews");
+ const sm=document.getElementById("selectedRouteMap"); if(sm)sm.style.display="none";
+ document.getElementById("resultModal").classList.add("show");
+}
+
+
+
+// 2025 listed cruise company cost ratios, used as calibration reference (% of revenue).
+const industryCostBenchmarks={
+ // 2025 Carnival/NCLH published group ratios are used only as calibration anchors, not forced outcomes.
+ shipPayroll:{low:.076,high:.143,mid:.115}, fuel:{low:.064,high:.073,mid:.069},
+ food:{low:.056,high:.057,mid:.056}, commissionsTransport:{low:.125,high:.181,mid:.145},
+ onboardDirect:{low:.055,high:.106,mid:.080}, otherShipOperating:{low:.079,high:.147,mid:.115},
+ headOfficeSalesAdmin:{low:.124,high:.151,mid:.135}, depreciation:{low:.096,high:.110,mid:.103}
+};
+function weeklyCrewWages(ship=activeShip(),serviceLevel=state.service){
+ const c=ship.crew||{},r=c.weeklyRates||{},wp=c.wagePolicy||{};
+ const serviceFactor={1:.90,2:.95,3:1.00,4:1.10,5:1.22}[serviceLevel]||1;
+ const hotel=(c.hotel||0)*(r.hotel||0)*(wp.hotel||1)*serviceFactor;
+ const marine=(c.marine||0)*(r.marine||0)*(wp.marine||1);
+ const entertainment=(c.entertainment||0)*(r.entertainment||0)*(wp.entertainment||1);
+ const officers=(c.officers||0)*(r.officers||0)*(wp.officers||1);
+ return hotel+marine+entertainment+officers;
+}
+function crewWageBreakdown(ship=activeShip(),serviceLevel=state.service){
+ const c=ship.crew||{},r=c.weeklyRates||{},wp=c.wagePolicy||{};
+ const serviceFactor={1:.90,2:.95,3:1.00,4:1.10,5:1.22}[serviceLevel]||1;
+ return {
+  hotel:(c.hotel||0)*(r.hotel||0)*(wp.hotel||1)*serviceFactor,
+  marine:(c.marine||0)*(r.marine||0)*(wp.marine||1),
+  entertainment:(c.entertainment||0)*(r.entertainment||0)*(wp.entertainment||1),
+  officers:(c.officers||0)*(r.officers||0)*(wp.officers||1),
+  total:weeklyCrewWages(ship,serviceLevel)
+ };
+}
+
+
+function crewQualityEffects(ship=activeShip()){
+ const wp=ship.crew?.wagePolicy||{};
+ return {
+  hotel:clamp(.78+(wp.hotel||1)*.22,.72,1.16),
+  marine:clamp(.78+(wp.marine||1)*.22,.72,1.16),
+  entertainment:clamp(.78+(wp.entertainment||1)*.22,.72,1.16),
+  officers:clamp(.78+(wp.officers||1)*.22,.72,1.16)
+ };
+}
+function routeReviewMetrics(p){
+ const destinations=(state.route||[]).slice(1);
+ const mix=p?.mix||forecastMix();
+ let fit=0,share=0;
+ Object.entries(mix).forEach(([seg,w])=>{
+   if(!segmentDefs[seg])return;
+   fit+=w*routeAppeal(seg);share+=w;
+ });
+ fit=share?fit/share:1;
+ const recent=(state.routeHistory||[]).slice(-6);
+ let repeatHits=0,exactRepeats=0;
+ recent.forEach(h=>{
+   const rr=h.routeArray||h.route||[];
+   const hist=Array.isArray(rr)?rr:(typeof rr==="string"?rr.split(/\s*→\s*/):[]);
+   const histDest=hist.slice(1);
+   destinations.forEach(d=>{if(histDest.includes(d))repeatHits++;});
+   if(destinations.length&&histDest.length&&destinations.join("|")===histDest.join("|"))exactRepeats++;
+ });
+ const repeatPenalty=Math.min(.85,repeatHits*.055+exactRepeats*.16);
+ const fitScore=clamp(3.9+(fit-1)*3.0,2.4,5.0);
+ return {fit,repeatHits,exactRepeats,repeatPenalty,routeScore:clamp(fitScore-repeatPenalty,2.3,5.0)};
+}
+function guestReviewScore(p,ev){
+ const detail=reviewBreakdown(p);
+ const weights={"Cabin & hotel service":.23,"Food quality":.15,"Entertainment":.14,"Ship condition":.16,"Route / itinerary":.17,"Value for money":.15};
+ let score=Object.entries(detail).reduce((a,[k,v])=>a+v*(weights[k]||0),0);
+ if(state.weather.rain)score-=.08;
+ if(p.actualOcc>.95)score-=.08;
+ if(ev?.rep<0)score-=.06;
+ return clamp(score,2.4,5.0);
+}
+function reviewBreakdown(p){
+ const q=crewQualityEffects(activeShip());
+ const rm=routeReviewMetrics(p);
+ const item=state.programme?.[0]||{};
+ const foodPpd=item.foodSpendPpd??state.foodSpendPpd??18;
+ const hotelPpd=item.hotelConsumablesPpd??state.hotelConsumablesPpd??7;
+ const ac=activeCondition();
+ const roomCondition=((ac.hotel||0)+(ac.interiors||0))/200;
+ const hotelSupplies=clamp(.76+(hotelPpd-4)*.028,.76,1.10);
+ const foodScore=clamp(3.15+(foodPpd-12)*.095+((state.service||3)-3)*.08,2.5,4.9);
+ return {
+  "Cabin & hotel service":clamp(5*(.47*q.hotel+.33*roomCondition+.20*hotelSupplies),2.5,5),
+  "Food quality":foodScore,
+  "Entertainment":clamp(5*(.70+.30*q.entertainment),2.5,5),
+  "Ship condition":clamp(5*(conditionAverage()/100),2.5,5),
+  "Route / itinerary":rm.routeScore,
+  "Value for money":clamp(4.35-(p.fareRevenue/p.pax-900)/850,2.5,5)
+ };
+}
+
+function deteriorateCondition(){
+ const c=activeCondition(),q=crewQualityEffects(activeShip());
+ const weatherPenalty=state.weather.rain?0.18:0;
+ c.machinery=clamp(c.machinery-(0.55+Math.max(0,state.speed-17.5)*0.18+weatherPenalty)*((1.18-q.marine*.18)),20,100);
+ c.hull=clamp(c.hull-(0.20+weatherPenalty*0.5)*((1.15-q.officers*.15)),20,100);
+ c.hotel=clamp(c.hotel-(0.30+state.service*0.035)*((1.18-q.hotel*.18)),20,100);
+ c.interiors=clamp(c.interiors-(0.24+state.service*0.045)*((1.15-q.hotel*.10-q.entertainment*.05)),20,100);
+}
+function activeCondition(){
+ const s=activeShip();
+ if(!s.condition)s.condition={...(state.condition||{machinery:82,hull:88,hotel:80,interiors:76})};
+ return s.condition;
+}
+function conditionAverage(){
+ const c=activeCondition(); return (c.machinery+c.hull+c.hotel+c.interiors)/4;
+}
+
+function sail(){
+ const sch=buildSchedule();
+ if(!sch.valid){
+   selectedPlanWeek=0;
+   tab("schedule");
+   renderSchedule();
+   document.getElementById("selectedRouteWarning").textContent=`ITINERARY TOO LONG: this schedule needs ${sch.voyageDays} days. A weekly sailing may use a maximum of 8 schedule days. Shorten the route or increase speed.`;
+   return;
+ }
+ const fc=bookingForecast(), ev=randomEvent();
+ let actualOcc=clamp(fc.mid+(Math.random()-.5)*.11+ev.demand,.30,1);
+ let pax=expectedPassengerCount(actualOcc), mix=forecastMix();
+
+ // fares split by wealth mix while keeping user's average as headline average
+ const currentItem=state.programme[0];
+ const cdSail=cabinDemand(currentItem);
+ const cpSail=currentItem.cabinPrices||{inside:699,oceanview:899,balcony:1159,suite:1749};
+ let fareRevenue=Object.entries(cdSail).reduce((a,[k,v])=>a+v.booked*cpSail[k],0);
+ pax=Object.values(cdSail).reduce((a,v)=>a+v.booked,0);
+ actualOcc=pax/activeShip().capacity;
+ const cabinActual={};Object.entries(cdSail).forEach(([k,v])=>cabinActual[k]=v.booked);
+ let ob=calcOnboard(pax,mix,sch);
+ let excursionPlan=scheduledExcursionsForWeek(state.programme[0],"final");
+ if(excursionPlan.length){
+   ob.excursion=excursionPlan.reduce((a,x)=>a+x.revenue,0);
+ }
+ let totalRev=fareRevenue+Object.values(ob).reduce((a,b)=>a+b,0);
+ let units={
+   drinks:Math.round(ob.drinks/9),
+   casinoHandle:Math.round(ob.casino*6.5),
+   diningCovers:Math.round(ob.dining/38),
+   excursions:excursionPlan.length?excursionPlan.reduce((a,x)=>a+x.attendance,0):0,
+   spaTreatments:Math.round(ob.spa/95),
+   retailTransactions:Math.round(ob.retail/42),
+   wifiPackages:Math.round(ob.wifi/35)
+ };
+
+ let fuelGBP=fuelTonnes()*state.fuelUSD*.79;
+ let crew=weeklyCrewWages(activeShip(),state.service);
+ let foodPpd=currentItem.foodSpendPpd??state.foodSpendPpd??18;
+ let hotelPpd=currentItem.hotelConsumablesPpd??state.hotelConsumablesPpd??7;
+ let food=pax*foodPpd*Math.max(6,sch.days.length);
+ let beverage=ob.drinks*.26;
+ let portFees=buildSchedule().days.filter(d=>d.type==="port").reduce((a,d)=>a+(demandAdjustedDockFee(d.name,((state.contracts[d.name]?.dockFee)??(ports[d.name]?.fee||0)))+contractExtraServiceCost(d.name)),0);
+ let commissions=fareRevenue*.095;
+ let entertainment=70000+(state.service-3)*18000;
+ let hotel=pax*hotelPpd*Math.max(6,sch.days.length);
+ let qfx=crewQualityEffects(activeShip());
+ let conditionSurcharge=Math.max(0,(75-conditionAverage()))*8500;
+ let repairs=(72000+ev.cost+conditionSurcharge)*(1.14-qfx.marine*.14);
+ let insurance=34000;
+ let marketing=state.marketing;
+ let casinoCost=ob.casino*.18;
+ let excursionCost=excursionPlan.length?excursionPlan.reduce((a,x)=>a+x.supplierCost,0):0;
+ let retailCost=ob.retail*.48;
+ let spaCost=ob.spa*.32;
+ let wifiCost=ob.wifi*.17;
+ let diningCost=ob.dining*.35;
+ let ho=50000+totalRev*.050; // allocated central office + selling/admin; recalibrated for multi-ship scalability
+
+ let costs={crew,food,beverage,fuel:fuelGBP,portFees,commissions,entertainment,hotel,repairs,insurance,marketing,casinoCost,excursionCost,retailCost,spaCost,wifiCost,diningCost,ho};
+ let opex=Object.values(costs).reduce((a,b)=>a+b,0);
+ let ebitda=totalRev-opex;
+ let depreciation=115000000/(20*52);
+ let operating=ebitda-depreciation;
+ let interest=state.debt*.062/52;
+ let pbt=operating-interest;
+ let tax=Math.max(0,pbt*.25);
+ let net=pbt-tax;
+
+ let segmentPax={}; Object.entries(mix).forEach(([k,v])=>segmentPax[k]=Math.round(pax*v));
+ const reviewScore=guestReviewScore({fareRevenue,totalRev,actualOcc,pax,mix},ev);
+ const reviewDetail=reviewBreakdown({fareRevenue,totalRev,actualOcc,pax,mix});
+ state.lastPnl={fareRevenue,...ob,totalRev,...costs,opex,ebitda,depreciation,operating,interest,pbt,tax,net,actualOcc,pax,mix,segmentPax,units,cabinActual,excursionPlan,reviewScore,reviewDetail};
+ state.routeHistory=state.routeHistory||[];
+ state.routeHistory.push({week:state.week,shipId:state.activeShipId,routeArray:[...(state.route||[])]});
+ if(state.routeHistory.length>24)state.routeHistory=state.routeHistory.slice(-24);
+
+ // Cash flow: deposits/final balances received for future sailings are distinct from current-week revenue
+ let fwd=forwardCashReceipts();
+ let newDeposits=fwd.dep;
+ let finalBalances=fwd.final;
+ fwd.rows.forEach((r,idx)=>{ state.programme[idx].lastBooked=state.programme[idx].booked||0; state.programme[idx].booked=r.forecast; });
+ let onboardCash=Object.values(ob).reduce((a,b)=>a+b,0);
+ let supplierDetail={
+   food:-food,
+   beverage:-beverage,
+   portFees:-portFees,
+   entertainment:-entertainment,
+   hotel:-hotel,
+   repairs:-repairs,
+   insurance:-insurance,
+   casinoCost:-casinoCost,
+   excursionCost:-excursionCost,
+   retailCost:-retailCost,
+   spaCost:-spaCost,
+   wifiCost:-wifiCost,
+   diningCost:-diningCost
+ };
+ let supplierCash=Object.values(supplierDetail).reduce((a,b)=>a+b,0);
+ let payroll=-crew, fuelCash=-fuelGBP, commissionsCash=-commissions, marketingCash=-marketing, hoCash=-ho;
+ let taxCash=state.week%13===0?-Math.max(0,tax*10):0;
+ let operatingCF=newDeposits+finalBalances+onboardCash+supplierCash+payroll+fuelCash+commissionsCash+marketingCash+hoCash+taxCash;
+
+ let principal=-Math.min(state.debt,350000);
+ let interestCash=-interest;
+ let financing=principal+interestCash;
+ state.debt+=principal;
+ let investing=0;
+ let opening=state.cash;
+ state.cash+=operatingCF+investing+financing;
+ state.customerDeposits=Math.max(0,state.customerDeposits+newDeposits+finalBalances-fareRevenue);
+ state.payables=Math.max(2000000,state.payables+(opex*0.08)-(opex*0.075));
+ state.shipBook=Math.max(0,state.shipBook-depreciation);
+ state.equity+=net;
+ state.lastCf={opening,newDeposits,finalBalances,onboardCash,supplierCash,supplierDetail,payroll,fuelCash,commissionsCash,marketingCash,hoCash,taxCash,operatingCF,investing,principal,interestCash,financing,closing:state.cash};
+ const routeMetrics=routeReviewMetrics(state.lastPnl);
+ const comments=passengerComments(reviewDetail,routeMetrics);
+ state.performanceHistory=state.performanceHistory||[];
+ state.performanceHistory.push({week:state.week,shipId:state.activeShipId,shipName:activeShip().name,season:seasonForGameWeek(state.week),weather:`${state.weather.icon} ${state.weather.kind}`,route:[...(state.route||[])],reviewScore,reviewDetail:{...reviewDetail},comments,pax,actualOcc,ebitda,net,cashClosing:state.cash,pnl:JSON.parse(JSON.stringify(state.lastPnl))});
+ if(state.performanceHistory.length>156)state.performanceHistory=state.performanceHistory.slice(-156);
+
+ state.rep=clamp(state.rep+ev.rep+(state.service-3)*.7+(actualOcc>.96?-1.2:0)+(actualOcc<.65?-0.7:0),20,95);
+ state.fuelUSD=Math.round(clamp(state.fuelUSD*ev.fuel*(.97+Math.random()*.06),520,980));
+ // Mark next programme sailing as the one just sailed; roll forward after results are accepted.
+ deteriorateCondition();
+ state.lastEvent=ev.txt+` Actual occupancy was ${pct(actualOcc)} with ${pax.toLocaleString()} guests. Ship condition is now ${conditionAverage().toFixed(0)}%.`;
+ renderAll();
+ showVoyageAnimation(()=>showVoyageResult(ev));
+}
+function tab(name){
+ document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x.id===name));
+ document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("active",x.dataset.tab===name));
+}
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{tab(b.dataset.tab); if(b.dataset.tab==="ports")renderPorts(); if(b.dataset.tab==="ships")renderMyShips(); if(b.dataset.tab==="reviewHistory")renderReviewHistory(); if(b.dataset.tab==="pnlHistory")renderPnlHistory();});
+setTimeout(()=>{
+ const topShip=document.getElementById("activeShipSelect");
+ const schedShip=document.getElementById("scheduleShipSelect");
+ const switchShip=(id)=>{
+   if(!state.fleet[id])return;
+   state.activeShipId=id;
+   selectedPlanWeek=0;
+   renderAll();
+ };
+ if(topShip) topShip.addEventListener("change",()=>switchShip(topShip.value));
+ if(schedShip) schedShip.addEventListener("change",()=>switchShip(schedShip.value));
+ const rhs=document.getElementById("reviewHistoryShip"); if(rhs)rhs.addEventListener("change",renderReviewHistory);
+ const dashShip=document.getElementById("dashboardShipSelect");
+ if(dashShip)dashShip.addEventListener("change",()=>switchShip(dashShip.value));
+ const myShipsSel=document.getElementById("myShipsSelect");
+ if(myShipsSel)myShipsSel.addEventListener("change",()=>switchShip(myShipsSel.value));
+},0);
+setTimeout(()=>{
+ const pf=document.getElementById("portFilter");if(pf)pf.addEventListener("change",renderPorts);
+ const ps=document.getElementById("portSort");if(ps)ps.addEventListener("change",renderPorts);
+},0);
+
+function renderTimeline(id){
+ const sch=buildSchedule(), el=document.getElementById(id); el.innerHTML="";
+ sch.days.forEach((d,i)=>{
+  let x=document.createElement("div");x.className="day "+(d.type==="sea"?"sea":"");
+  x.innerHTML=`<div class="n">Day ${i+1}</div><div class="p">${d.name}</div><div class="small">${d.type==="sea"?"At sea":(d.dist?d.dist+" nm from prior port":"Embarkation")}</div>`;
+  el.appendChild(x);
+ });
+}
+
+
+
+
+
+function renderPorts(){
+ const host=document.getElementById("portsGrid");if(!host)return;
+ const filter=document.getElementById("portFilter")?.value||"all";
+ host.innerHTML="";
+ const sortMode=document.getElementById("portSort")?.value||"name";
+ const portPopularityScore=(name)=>portDemandIndex(name);
+ const effectivePortCost=(name)=>{
+   const c=state.contracts?.[name];
+   const base=hasPortContract(name)?(c?.dockFee??ports[name]?.fee??0):contractOffer(name).dock;
+   return demandAdjustedDockFee(name,base)+(hasPortContract(name)?contractExtraServiceCost(name):0);
+ };
+ const names=Object.keys(ports).sort((a,b)=>{
+   if(sortMode==="popularityDesc") return portPopularityScore(b)-portPopularityScore(a) || a.localeCompare(b);
+   if(sortMode==="costAsc") return effectivePortCost(a)-effectivePortCost(b) || a.localeCompare(b);
+   if(sortMode==="costDesc") return effectivePortCost(b)-effectivePortCost(a) || a.localeCompare(b);
+   return a.localeCompare(b);
+ });
+ names.forEach(name=>{
+   const active=hasPortContract(name);
+   if(filter==="active"&&!active)return;
+   if(filter==="available"&&active)return;
+   const p=ports[name], c=state.contracts[name], offer=contractOffer(name);
+   const card=document.createElement("div");card.className="portCard";
+   card.dataset.port=name;
+   card.dataset.cost=String(effectivePortCost(name));
+   card.dataset.popularity=String(portPopularityScore(name));
+   const excursions=(c?.excursions||defaultExcursionsForPort(name));
+   card.innerHTML=`
+    <img class="portPhoto" src="${portImageUrl(name)}" alt="${name} port" onerror="this.style.display='none'">
+    <div class="portBody">
+      <div class="row" style="justify-content:space-between"><h3 style="margin:0">${name}</h3><span class="${active?"contractActive":"contractInactive"}">${active?`${c.weeksLeft} wks left`:"No contract"}</span></div>
+      <div class="label" style="margin-top:5px">Culture ${p.culture}/10 · Scenic ${p.scenic}/10 · Family ${p.family}/10 · Luxury ${p.luxury}/10</div>
+      <div class="label" style="margin-top:8px">Current appeal · ${seasonForGameWeek(state.week)} · ${state.weather.icon} ${state.weather.kind}</div><div class="label">Port demand index: <b>${portDemandIndex(name).toFixed(2)}×</b></div>
+      <table>
+       <tr><th>Segment</th><th>Appeal</th></tr>
+       ${["Families","Couples","Seniors","Young","Luxury"].map(seg=>`<tr><td>${seg}</td><td>${currentPortAppeal(name,seg).toFixed(1)} / 10</td></tr>`).join("")}
+      </table>
+      <table style="margin-top:8px">
+       <tr><td>Signing fee</td><td>${active?statementMoney(c.signingFee):statementMoney(offer.signing)}</td></tr>
+       <tr><td>Dock fee / call</td><td>${statementMoney(active?demandAdjustedDockFee(name,c.dockFee):demandAdjustedDockFee(name,offer.dock))}</td></tr>
+       <tr><td>Total current call cost</td><td><b>${statementMoney(effectivePortCost(name))}</b></td></tr>
+       <tr><td>Contract term</td><td>${active?c.weeksLeft:offer.term} weeks</td></tr>
+      </table>
+      <div class="label" style="margin-top:8px">Excursions</div>
+      ${excursions.map((e,i)=>`<label class="excursionRow"><span><input type="checkbox" data-port="${name}" data-ex="${i}" ${e.selected?"checked":""} ${active?"":"disabled"}> ${e.name}</span><span>Flat ${statementMoney(e.flatCost)} + ${priceMoney(e.perPaxCost)}/guest · max ${e.maxPax}</span></label>`).join("")}
+      ${active?`<div class="label" style="margin-top:8px">Port services</div>
+      ${Object.entries(portServices).map(([k,s])=>`<label class="excursionRow"><span><input type="checkbox" class="portService" data-port="${name}" data-service="${k}" ${(c.services||[]).includes(k)?"checked":""}> ${s.label}</span><span>+${statementMoney(s.cost)}/call · luxury +${s.luxury.toFixed(2)}</span></label>`).join("")}`:""}
+      <div class="row" style="margin-top:10px">
+        ${active?`
+ <select class="portTier" data-port="${name}">
+  ${Object.entries(contractPackages).map(([k,v])=>`<option value="${k}" ${(c.tier||"standard")===k?"selected":""}>${v.label}</option>`).join("")}
+ </select>
+ <button class="btn secondary portRenegotiate" data-port="${name}">Renegotiate package</button>`
+ :`<select class="portNewTier" data-port="${name}">
+  ${Object.entries(contractPackages).map(([k,v])=>{const o=contractPackageOffer(name,k);return `<option value="${k}">${v.label} · sign ${statementMoney(o.signing)} · dock ${statementMoney(demandAdjustedDockFee(name,o.dock))} · ${o.term} wks</option>`}).join("")}
+ </select>
+ <button class="btn portSign" data-port="${name}">Sign contract</button>`}
+      </div>
+    </div>`;
+   host.appendChild(card);
+ });
+ host.querySelectorAll(".portSign").forEach(b=>b.addEventListener("click",()=>{
+   const sel=[...host.querySelectorAll(".portNewTier")].find(x=>x.dataset.port===b.dataset.port);
+   signPortContract(b.dataset.port,sel?.value||"standard");
+ }));
+ host.querySelectorAll(".portRenegotiate").forEach(b=>b.addEventListener("click",()=>{
+   const sel=[...host.querySelectorAll(".portTier")].find(x=>x.dataset.port===b.dataset.port);
+   renegotiatePortContract(b.dataset.port,sel?.value||"standard");
+ }));
+ host.querySelectorAll(".portService").forEach(cb=>cb.addEventListener("change",()=>{
+   const c=state.contracts[cb.dataset.port];if(!c)return;
+   c.services=c.services||[];
+   if(cb.checked&&!c.services.includes(cb.dataset.service))c.services.push(cb.dataset.service);
+   if(!cb.checked)c.services=c.services.filter(x=>x!==cb.dataset.service);
+   renderPorts();
+ }));
+ host.querySelectorAll('input[data-ex]').forEach(cb=>cb.addEventListener("change",()=>{
+   const c=state.contracts[cb.dataset.port]; if(c)c.excursions[+cb.dataset.ex].selected=cb.checked;
+ }));
+}
+
+function renderMarket(){
+ let mix=forecastMix();
+ const cls={Families:"fam",Couples:"couple",Seniors:"senior",Young:"young",Luxury:"lux"};
+ let rows="<tr><th>Segment</th><th>Forecast mix</th><th>Route fit</th><th>Sea-day preference</th></tr>";
+ Object.entries(mix).forEach(([k,v])=>rows+=`<tr><td>${k}</td><td>${pct(v)}</td><td>${routeAppeal(k).toFixed(2)}x</td><td>${Math.round(segmentDefs[k].seaPref*100)} / 100</td></tr>`);
+ document.getElementById("demandTable").innerHTML=rows;
+ let wr="<tr><th>Wealth tier</th><th>Market share</th><th>Fare tolerance</th><th>Onboard spend</th></tr>";
+ Object.entries(wealth).forEach(([k,w])=>wr+=`<tr><td>${k}</td><td>${pct(w.share)}</td><td>${w.fareFactor.toFixed(2)}x</td><td>${w.spendFactor.toFixed(2)}x</td></tr>`);
+ document.getElementById("wealthTable").innerHTML=wr;
+ document.getElementById("repBig").textContent=Math.round(state.rep)+" / 100";
+ document.getElementById("repText").textContent=state.rep<45?"Weak reputation is making customers more price-sensitive.":state.rep<70?"A credible mainstream brand, but not yet strong enough to command a material premium.":"Strong brand equity supports pricing and affluent demand.";
+ document.getElementById("marketMini").innerHTML=`<tr><th>Indicator</th><th>Value</th></tr><tr><td>Forecast occupancy</td><td>${pct(bookingForecast().lo)}–${pct(bookingForecast().hi)}</td></tr><tr><td>Brand reputation</td><td>${Math.round(state.rep)}/100</td></tr><tr><td>Fuel price</td><td>$${state.fuelUSD}/t</td></tr>`;
+}
+function pnlHistoryRows(p){
+ if(!p)return [];
+ return [
+  ["INCOME",null,"section"],["Passenger fares",p.fareRevenue],["Drinks & beverage",p.drinks],["Casino",p.casino],["Speciality dining",p.dining],["Shore excursions",p.excursion],["Spa",p.spa],["Retail",p.retail],["Wi‑Fi & other",p.wifi],["Total revenue",p.totalRev,"total"],
+  ["COSTS",null,"section"],["Crew wages",-p.crew],["Food",-p.food],["Beverage supplies",-p.beverage],["Fuel",-p.fuel],["Port & pilotage fees",-p.portFees],["Travel-agent commissions",-p.commissions],["Entertainment",-p.entertainment],["Hotel & housekeeping consumables",-p.hotel],["Repairs & maintenance",-p.repairs],["Insurance",-p.insurance],["Marketing",-p.marketing],["Casino direct costs",-p.casinoCost],["Excursion operators",-p.excursionCost],["Retail cost of sales",-p.retailCost],["Spa supplies",-p.spaCost],["Wi‑Fi costs",-p.wifiCost],["Dining cost of sales",-p.diningCost],["Head-office costs",-p.ho],["Total operating costs",-p.opex,"total"],
+  ["EBITDA",p.ebitda,"total"],["Depreciation",-p.depreciation],["Operating profit",p.operating,"total"],["Interest",-p.interest],["Profit before tax",p.pbt,"total"],["Tax",-p.tax],["Net profit",p.net,"total"]
+ ];
+}
+function renderPnlHistory(){
+ const sel=document.getElementById("pnlHistoryShip"),tbl=document.getElementById("pnlHistoryTable");if(!sel||!tbl)return;
+ const cur=sel.value||state.activeShipId;sel.innerHTML=fleetShips().map(s=>`<option value="${s.id}">${s.name}</option>`).join("");sel.value=[...sel.options].some(o=>o.value===cur)?cur:state.activeShipId;
+ const ship=fleetShips().find(s=>s.id===sel.value)||activeShip();
+ const hist=(state.performanceHistory||[]).filter(x=>x.shipId===sel.value&&x.pnl).sort((a,b)=>a.week-b.week);
+ if(!hist.length){tbl.innerHTML='<tr><td>No full P&amp;L history yet. New completed sailings will be stored here in full detail.</td></tr>';return;}
+ const kpis=[
+  ["Overall occupancy",h=>pct(h.pnl.actualOcc||0)],
+  ["Inside occupancy",h=>pct((h.pnl.cabinActual?.inside||0)/(ship.berths?.inside||1))],
+  ["Oceanview occupancy",h=>pct((h.pnl.cabinActual?.oceanview||0)/(ship.berths?.oceanview||1))],
+  ["Balcony occupancy",h=>pct((h.pnl.cabinActual?.balcony||0)/(ship.berths?.balcony||1))],
+  ["Suite occupancy",h=>pct((h.pnl.cabinActual?.suite||0)/(ship.berths?.suite||1))],
+  ["Guests",h=>(h.pnl.pax||0).toLocaleString()],
+  ["Average fare / guest",h=>priceMoney((h.pnl.fareRevenue||0)/Math.max(1,h.pnl.pax||0))],
+  ["Onboard spend / guest",h=>priceMoney(((h.pnl.totalRev||0)-(h.pnl.fareRevenue||0))/Math.max(1,h.pnl.pax||0))],
+  ["Guest review",h=>(h.pnl.reviewScore||0).toFixed(1)+" ★"],
+  ["EBITDA margin",h=>pct((h.pnl.ebitda||0)/Math.max(1,h.pnl.totalRev||0))]
+ ];
+ const lines=pnlHistoryRows(hist[0].pnl);
+ tbl.innerHTML=`<tr><th>P&amp;L / KPI</th>${hist.map(h=>`<th>Week ${h.week}<br><span class="label">${h.season}</span></th>`).join("")}</tr>`+
+ `<tr class="total"><td colspan="${hist.length+1}">OPERATING KPIs</td></tr>`+
+ kpis.map(([label,fn])=>`<tr><td>${label}</td>${hist.map(h=>`<td>${fn(h)}</td>`).join("")}</tr>`).join("")+
+ lines.map((line,idx)=>{
+   if(line[2]==="section")return `<tr class="total"><td colspan="${hist.length+1}">${line[0]}</td></tr>`;
+   return `<tr class="${line[2]||""}"><td>${line[0]}</td>${hist.map(h=>{const row=pnlHistoryRows(h.pnl)[idx];const v=row?.[1];return `<td class="${v<0?"badtxt":v>0&&line[2]==="total"?"goodtxt":""}">${v===null||v===undefined?"—":statementMoney(v)}</td>`}).join("")}</tr>`;
+ }).join("");
+}
+
+function renderPnl(){
+ let p=state.lastPnl;
+ if(!p){
+   document.getElementById("pnlTable").innerHTML="<tr><td>No completed sailing yet. Sail Week 1 to produce the first P&L.</td></tr>";
+   return;
+ }
+ const u=p.units||{};
+ const rows=[
+  ["Passenger fares",`${p.pax.toLocaleString()} guests`,p.fareRevenue,0,p.fareRevenue,""],
+  ["Drinks & beverage",`${(u.drinks||0).toLocaleString()} drinks`,p.drinks,p.beverage,p.drinks-p.beverage,"subline"],
+  ["Casino",`£${(u.casinoHandle||0).toLocaleString()} handle`,p.casino,p.casinoCost,p.casino-p.casinoCost,"subline"],
+  ["Speciality dining",`${(u.diningCovers||0).toLocaleString()} covers`,p.dining,p.diningCost,p.dining-p.diningCost,"subline"],
+  ["Shore excursions",`${(u.excursions||0).toLocaleString()} guests`,p.excursion,p.excursionCost,p.excursion-p.excursionCost,"subline"],
+  ["Spa",`${(u.spaTreatments||0).toLocaleString()} treatments`,p.spa,p.spaCost,p.spa-p.spaCost,"subline"],
+  ["Retail",`${(u.retailTransactions||0).toLocaleString()} transactions`,p.retail,p.retailCost,p.retail-p.retailCost,"subline"],
+  ["Wi‑Fi & other",`${(u.wifiPackages||0).toLocaleString()} packages`,p.wifi,p.wifiCost,p.wifi-p.wifiCost,"subline"],
+  ["Total revenue / direct contribution","",p.totalRev,
+    p.beverage+p.casinoCost+p.diningCost+p.excursionCost+p.spaCost+p.retailCost+p.wifiCost,
+    p.totalRev-(p.beverage+p.casinoCost+p.diningCost+p.excursionCost+p.spaCost+p.retailCost+p.wifiCost),"total"],
+
+  ["Crew wages",`${activeShip().crew.total.toLocaleString()} crew`,0,p.crew,-p.crew,""],
+  ["Food","",0,p.food,-p.food,""],
+  ["Fuel","",0,p.fuel,-p.fuel,""],
+  ["Port & pilotage fees","",0,p.portFees,-p.portFees,""],
+  ["Travel-agent commissions","",0,p.commissions,-p.commissions,""],
+  ["Entertainment","",0,p.entertainment,-p.entertainment,""],
+  ["Hotel & housekeeping","",0,p.hotel,-p.hotel,""],
+  ["Repairs & maintenance","",0,p.repairs,-p.repairs,""],
+  ["Insurance","",0,p.insurance,-p.insurance,""],
+  ["Marketing","",0,p.marketing,-p.marketing,""],
+  ["Head-office costs","",0,p.ho,-p.ho,""],
+
+  ["EBITDA",pct(p.ebitda/p.totalRev)+" margin",p.totalRev,p.opex,p.ebitda,"total"],
+  ["Depreciation","",0,p.depreciation,-p.depreciation,""],
+  ["Operating profit","",p.totalRev,p.opex+p.depreciation,p.operating,"total"],
+  ["Interest","",0,p.interest,-p.interest,""],
+  ["Profit before tax","",p.totalRev,p.opex+p.depreciation+p.interest,p.pbt,"total"],
+  ["Tax","",0,p.tax,-p.tax,""],
+  ["Net profit","",p.totalRev,p.totalRev-p.net,p.net,"total"]
+ ];
+ document.getElementById("pnlTable").innerHTML=
+   "<tr><th>Weekly P&L</th><th>Volume / KPI</th><th>Revenue</th><th>Cost</th><th>Profit / contribution</th></tr>"+
+   rows.map(x=>`<tr class="${x[5]||""}">
+     <td>${x[0]}</td>
+     <td>${x[1]||""}</td>
+     <td>${x[2]?statementMoney(x[2]):""}</td>
+     <td class="${x[3]>0?"badtxt":""}">${x[3]?statementMoney(x[3]):""}</td>
+     <td class="${x[4]<0?"badtxt":(x[4]>0?"goodtxt":"")}">${statementMoney(x[4])}</td>
+   </tr>`).join("");
+ const rev=Math.max(1,p.totalRev);
+ const otherShip=p.portFees+p.entertainment+p.hotel+p.repairs+p.insurance;
+ const onboardDirect=p.beverage+p.casinoCost+p.diningCost+p.excursionCost+p.spaCost+p.retailCost+p.wifiCost;
+ const bm=[
+  ["Ship payroll",p.crew/rev,industryCostBenchmarks.shipPayroll],
+  ["Fuel",p.fuel/rev,industryCostBenchmarks.fuel],
+  ["Food",p.food/rev,industryCostBenchmarks.food],
+  ["Commissions / transport",p.commissions/rev,industryCostBenchmarks.commissionsTransport],
+  ["Onboard direct costs",onboardDirect/rev,industryCostBenchmarks.onboardDirect],
+  ["Other ship operating",otherShip/rev,industryCostBenchmarks.otherShipOperating],
+  ["Head office / selling & admin",p.ho/rev,industryCostBenchmarks.headOfficeSalesAdmin],
+  ["Depreciation",p.depreciation/rev,industryCostBenchmarks.depreciation]
+ ];
+ const bmt=document.getElementById("costBenchmarkTable");
+ if(bmt)bmt.innerHTML="<tr><th>Cost category</th><th>Game</th><th>Listed-company range</th></tr>"+
+   bm.map(([n,a,b])=>`<tr><td>${n}</td><td>${pct(a)}</td><td>${pct(b.low)}–${pct(b.high)}</td></tr>`).join("");
+}
+function renderCf(){
+ let c=state.lastCf;
+ if(!c){document.getElementById("cfTable").innerHTML="<tr><td>No completed sailing yet. Sail Week 1 to produce the first cash flow.</td></tr>";return}
+ const moneyIn=[
+   ["Customer deposits received",c.newDeposits],
+   ["Final balances received",c.finalBalances],
+   ["Onboard cash receipts",c.onboardCash]
+ ];
+ const sd=c.supplierDetail||{};
+ const moneyOut=[
+   ["Food",-sd.food],
+   ["Beverage supplies",-sd.beverage],
+   ["Port & pilotage fees",-sd.portFees],
+   ["Entertainment suppliers",-sd.entertainment],
+   ["Hotel & housekeeping suppliers",-sd.hotel],
+   ["Repairs & maintenance",-sd.repairs],
+   ["Insurance",-sd.insurance],
+   ["Casino direct costs",-sd.casinoCost],
+   ["Excursion operators",-sd.excursionCost],
+   ["Retail cost of sales",-sd.retailCost],
+   ["Spa direct costs",-sd.spaCost],
+   ["Wi‑Fi direct costs",-sd.wifiCost],
+   ["Speciality dining direct costs",-sd.diningCost],
+   ["Payroll",-c.payroll],
+   ["Fuel paid",-c.fuelCash],
+   ["Commissions paid",-c.commissionsCash],
+   ["Marketing paid",-c.marketingCash],
+   ["Head-office cash costs",-c.hoCash],
+   ["Tax paid",-c.taxCash],
+   ["Debt principal repayment",-c.principal],
+   ["Interest paid",-c.interestCash]
+ ];
+ const totalIn=moneyIn.reduce((a,x)=>a+x[1],0);
+ const totalOut=moneyOut.reduce((a,x)=>a+x[1],0);
+ document.getElementById("cfTable").innerHTML=
+ `<tr><th>Weekly cash flow</th><th>£</th></tr>
+  <tr class="total"><td>Opening cash</td><td>${statementMoney(c.opening)}</td></tr>
+  <tr class="total"><td>MONEY IN</td><td>${statementMoney(totalIn)}</td></tr>`+
+  moneyIn.map(x=>`<tr class="subline"><td>${x[0]}</td><td>${statementMoney(x[1])}</td></tr>`).join("")+
+  `<tr class="total"><td>MONEY OUT</td><td>${statementMoney(-totalOut)}</td></tr>`+
+  moneyOut.map(x=>`<tr class="subline"><td>${x[0]}</td><td class="badtxt">${statementMoney(-x[1])}</td></tr>`).join("")+
+  `<tr class="total"><td>Net operating cash flow</td><td>${statementMoney(c.operatingCF)}</td></tr>
+   <tr class="total"><td>Investing cash flow</td><td>${statementMoney(c.investing)}</td></tr>
+   <tr class="total"><td>Financing cash flow</td><td>${statementMoney(c.financing)}</td></tr>
+   <tr class="total"><td>Net cash movement</td><td>${statementMoney(c.closing-c.opening)}</td></tr>
+   <tr class="total"><td>Closing cash</td><td>${statementMoney(c.closing)}</td></tr>`;
+}
+function renderBs(){
+ let assets=state.cash+state.shipBook+state.otherAssets;
+ let liab=state.debt+state.customerDeposits+state.payables;
+ let equity=assets-liab;
+ state.equity=equity;
+ document.getElementById("bsTable").innerHTML=`
+ <tr><th>Balance sheet</th><th>£</th></tr>
+ <tr><td>Cash</td><td>${statementMoney(state.cash)}</td></tr>
+ <tr><td>Ship — net book value</td><td>${statementMoney(state.shipBook)}</td></tr>
+ <tr><td>Other assets</td><td>${statementMoney(state.otherAssets)}</td></tr>
+ <tr class="total"><td>Total assets</td><td>${statementMoney(assets)}</td></tr>
+ <tr><td>Bank debt</td><td>${statementMoney(state.debt)}</td></tr>
+ <tr><td>Customer deposits</td><td>${statementMoney(state.customerDeposits)}</td></tr>
+ <tr><td>Trade payables</td><td>${statementMoney(state.payables)}</td></tr>
+ <tr class="total"><td>Total liabilities</td><td>${statementMoney(liab)}</td></tr>
+ <tr class="total"><td>Shareholders' equity</td><td>${statementMoney(equity)}</td></tr>`;
+}
+
+
+let selectedPlanWeek=0;
+function planScheduleForItem(item){
+ const old={route:state.route,fare:state.fare,service:state.service,marketing:state.marketing,speed:state.speed};
+ state.route=item.route; state.fare=item.fare; state.service=item.service??3; state.marketing=item.marketing??90000; state.speed=item.speed??17.5;
+ const sch=buildSchedule(), fuel=money(fuelTonnes()*state.fuelUSD*.79), fc=programmeForecast(item,selectedPlanWeek+1);
+ Object.assign(state,old);
+ return {sch,fuel,fc};
+}
+function estimateVoyageEconomics(item){
+ const info=planScheduleForItem(item);
+ const fc=programmeForecast(item,selectedPlanWeek+1);
+ const pax=Math.max(1,Math.round(activeShip().capacity*fc));
+ const days=Math.max(6,info.sch.days.length);
+ const old={route:state.route,fare:state.fare,service:state.service,marketing:state.marketing,speed:state.speed};
+ state.route=item.route;state.fare=item.fare;state.service=item.service??3;state.marketing=item.marketing??0;state.speed=item.speed??17.5;
+ const mix=forecastMix(),ob=calcOnboard(pax,mix,info.sch);
+ Object.assign(state,old);
+ const rc=routeCosts(item.route,item.speed??17.5);
+ const foodPpd=item.foodSpendPpd??state.foodSpendPpd??18;
+ const hotelPpd=item.hotelConsumablesPpd??state.hotelConsumablesPpd??7;
+ const food=pax*foodPpd*days,hotel=pax*hotelPpd*days;
+ const crew=weeklyCrewWages(activeShip(),item.service??3);
+ const fareRev=pax*(item.fare||0);
+ const commissions=fareRev*.095;
+ const entertainment=70000+((item.service??3)-3)*18000;
+ const qfx=crewQualityEffects(activeShip());
+ const repairs=(72000+Math.max(0,(75-conditionAverage()))*8500)*(1.14-qfx.marine*.14);
+ const direct=ob.drinks*.26+ob.casino*.18+ob.retail*.48+ob.spa*.32+ob.wifi*.17+ob.dining*.35;
+ const onboardRev=Object.values(ob).reduce((a,b)=>a+b,0);
+ const insurance=34000,marketing=item.marketing??0;
+ const ho=50000+(fareRev+onboardRev)*.050;
+ const opex=crew+food+hotel+rc.fuel+rc.ports+commissions+entertainment+repairs+insurance+marketing+direct+ho;
+ const onboardContribution=onboardRev-direct;
+ const breakEvenFare=Math.max(0,(opex-onboardContribution)/pax);
+ const expectedEbitda=fareRev+onboardRev-opex;
+ return {pax,fc,food,hotel,routeCost:rc.fuel+rc.ports,fuel:rc.fuel,ports:rc.ports,opex,onboardContribution,breakEvenFare,expectedEbitda,avgFare:item.fare||0};
+}
+
+let selectedScheduleSubPage="itinerary";
+function showScheduleSubPage(page){
+ selectedScheduleSubPage=page||"itinerary";
+ document.querySelectorAll(".scheduleSubPage").forEach(x=>x.classList.toggle("active",x.id==="schedulePage"+selectedScheduleSubPage[0].toUpperCase()+selectedScheduleSubPage.slice(1)));
+ document.querySelectorAll("#scheduleSubTabs button").forEach(b=>b.classList.toggle("active",b.dataset.schedulePage===selectedScheduleSubPage));
+}
+function bindScheduleSubTabs(){document.querySelectorAll("#scheduleSubTabs button").forEach(b=>b.onclick=()=>showScheduleSubPage(b.dataset.schedulePage));showScheduleSubPage(selectedScheduleSubPage);}
+
+function renderSelectedPlan(){
+ const item=state.programme[selectedPlanWeek]; if(!item)return;
+ bindScheduleSubTabs();
+ const season=seasonForWeek(selectedPlanWeek+1);
+ document.getElementById("planTitle").textContent=`Week ${selectedPlanWeek+1} · ${season}`;
+ document.getElementById("planStatus").textContent=item.committed?"COMMITTED — route and operating settings are locked":"Flexible — itinerary and commercial settings can still be changed";
+ const actionBtn=document.getElementById("saveCommitWeek");
+ const applyBtn=document.getElementById("applyWeekRoute");
+ if(actionBtn){
+   actionBtn.disabled=!item.committed && !item.routeApplied;
+   actionBtn.textContent=item.committed?"Save excursion prices":"Commit itinerary";
+ }
+ if(applyBtn){
+   applyBtn.style.display=item.committed?"none":"inline-block";
+   applyBtn.disabled=!!item.committed;
+ }
+ const applyStatus=document.getElementById("routeApplyStatus");
+ if(applyStatus){
+   applyStatus.textContent=item.committed
+     ?"Itinerary committed. Excursion pricing remains editable."
+     :(item.routeApplied
+       ?"Route applied. Review the map, schedule, costs and forecast before committing."
+       :"Draft only — press Apply route & preview to calculate this route before committing.");
+ }
+ const previewItem=(!item.committed && item.routeApplied && item.appliedDraft)?item.appliedDraft:item;
+ const cp=previewItem.cabinPrices||{inside:Math.max(399,(previewItem.fare||899)-180),oceanview:previewItem.fare||899,balcony:(previewItem.fare||899)+260,suite:(previewItem.fare||899)+850};
+ document.getElementById("selInsideFare").value=cp.inside;
+ document.getElementById("selOceanFare").value=cp.oceanview;
+ document.getElementById("selBalconyFare").value=cp.balcony;
+ document.getElementById("selSuiteFare").value=cp.suite;
+ document.getElementById("selMarketing").value=previewItem.marketing??90000;
+ document.getElementById("selFoodSpend").value=previewItem.foodSpendPpd??state.foodSpendPpd??18;
+ document.getElementById("selHotelSpend").value=previewItem.hotelConsumablesPpd??state.hotelConsumablesPpd??7;
+ document.getElementById("selService").innerHTML=[1,2,3,4,5].map(v=>`<option value="${v}" ${(previewItem.service??3)===v?"selected":""}>${v} / 5</option>`).join("");
+ document.getElementById("selSpeed").innerHTML=[15,15.5,16,16.5,17,17.5,18,18.5,19,19.5,20,20.5,21].map(v=>`<option value="${v}" ${(previewItem.speed??17.5)===v?"selected":""}>${v} kn</option>`).join("");
+ const locked=!!item.committed;
+ ["selInsideFare","selOceanFare","selBalconyFare","selSuiteFare","selService","selFoodSpend","selHotelSpend","selMarketing","selSpeed"].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=locked;});
+
+ const growth=(item.booked||0)-(item.lastBooked||0), info=planScheduleForItem(previewItem);
+ document.getElementById("selBookings").textContent=pct(item.booked||0);
+ document.getElementById("selGrowth").textContent=growth>0?`+${pct(growth)} since last week`:"No growth recorded yet";
+ document.getElementById("selForecast").textContent=item.planned?pct(info.fc):"Not planned";
+ const rc=routeCosts(previewItem.route,previewItem.speed??17.5);
+ document.getElementById("selFuel").textContent=`${info.sch.voyageDays} schedule days · ${info.sch.seaDays} sea days · est. fuel ${money(rc.fuel)}`;
+ document.getElementById("selPortCost").textContent=`Total trip port costs ${money(rc.ports)}`;
+ const ms=passengerMarketShare(previewItem);
+ const segmentBooked={};Object.entries(ms).forEach(([k,v])=>segmentBooked[k]=v.booked);
+ document.getElementById("weekSegmentPie").innerHTML=pieSvg(segmentBooked,"Pre-bookings by passenger segment");
+ const cd=cabinDemand(previewItem),prices=previewItem.cabinPrices||{};
+ document.getElementById("weekCabinOccupancy").innerHTML=Object.keys(activeShip().berths).map(k=>{
+   const occ=cd[k]?.occ||0;
+   const label=k[0].toUpperCase()+k.slice(1);
+   return `<div class="occRow"><div>${label}</div><div class="occTrack"><div class="occFill" style="width:${Math.min(100,occ*100)}%"></div></div><div><b>${pct(occ)}</b></div></div>
+   <div class="label" style="margin:-6px 0 8px 108px">${(cd[k]?.booked||0).toLocaleString()} of ${activeShip().berths[k].toLocaleString()} berths · ${priceMoney(prices[k]||0)}</div>`;
+ }).join("");
+ const exHost=document.getElementById("weekExcursions");
+ const exItem=item.committed?item:previewItem;
+ if(!item.routeApplied && !item.committed){
+   exHost.innerHTML='<div class="notice">Apply the route first, then choose the excursions to offer on this sailing.</div>';
+ }else{
+   exItem.excursionSelection=exItem.excursionSelection||{};
+   exItem.excursionPricing=exItem.excursionPricing||{};
+   const calls=[...new Set(buildSchedule(exItem.route,exItem.speed??17.5).days.filter(d=>d.type==="port").map(d=>d.name))];
+   const rows=[];
+   calls.forEach(port=>{
+     const c=state.contracts[port]; if(!c)return;
+     (c.excursions||[]).forEach((exc,idx)=>{
+       const explicit=exItem.excursionSelection?.[port]?.[idx];
+       const offered=(typeof explicit==="boolean")?explicit:!!exc.selected;
+       const price=exItem.excursionPricing?.[port]?.[idx]?.sellPrice??exc.sellPrice??exc.basePrice;
+       const temp={...exItem,excursionSelection:{...(exItem.excursionSelection||{}),[port]:{...(exItem.excursionSelection?.[port]||{}),[idx]:true}},excursionPricing:{...(exItem.excursionPricing||{}),[port]:{...(exItem.excursionPricing?.[port]||{}),[idx]:{sellPrice:price}}}};
+       const calc=scheduledExcursionsForWeek(temp,"prebook").find(x=>x.port===port&&x.index===idx);
+       rows.push({port,idx,exc,offered,price,calc});
+     });
+   });
+   exHost.innerHTML=rows.length?`<table><tr><th>Offer</th><th>Port / excursion</th><th>Guest price</th><th>Supplier cost</th><th>Max</th><th>Expected pre-book</th><th>Contribution</th></tr>`+rows.map(r=>`<tr><td><input type="checkbox" class="weekExcOffer" data-port="${r.port}" data-index="${r.idx}" ${r.offered?"checked":""}></td><td>${r.port}<br><span class="label">${r.exc.name}</span></td><td><input type="number" class="excPriceInput" data-port="${r.port}" data-index="${r.idx}" value="${r.price}" min="10" max="500" step="5" style="width:90px"></td><td>${money(r.exc.flatCost||0)} + ${money(r.exc.perPaxCost||0)}/guest</td><td>${r.exc.maxPax}</td><td>${r.offered?(r.calc?.attendance||0):"—"}</td><td>${r.offered?money(r.calc?.contribution||0):"—"}</td></tr>`).join("")+`</table>`:'<div class="notice">No excursions configured for the ports on this route.</div>';
+   exHost.querySelectorAll(".weekExcOffer").forEach(cb=>cb.addEventListener("change",()=>{
+     const target=item.committed?item:(item.appliedDraft||item);
+     target.excursionSelection=target.excursionSelection||{};target.excursionSelection[cb.dataset.port]=target.excursionSelection[cb.dataset.port]||{};target.excursionSelection[cb.dataset.port][+cb.dataset.index]=cb.checked;renderSelectedPlan();
+   }));
+   exHost.querySelectorAll(".excPriceInput").forEach(inp=>inp.addEventListener("change",()=>{
+     const target=item.committed?item:(item.appliedDraft||item);
+     target.excursionPricing=target.excursionPricing||{};target.excursionPricing[inp.dataset.port]=target.excursionPricing[inp.dataset.port]||{};target.excursionPricing[inp.dataset.port][+inp.dataset.index]={sellPrice:+inp.value||0};renderSelectedPlan();
+   }));
+ }
+
+ document.getElementById("selCrewCost").textContent=`Estimated weekly crew wages ${statementMoney(weeklyCrewWages(activeShip(),previewItem.service??3))}`;
+ const econ=estimateVoyageEconomics(previewItem);
+ const costPerGuest=econ.routeCost/Math.max(1,econ.pax);
+ const intensity=costPerGuest<120?"Low":costPerGuest<180?"Moderate":costPerGuest<250?"High":"Very high";
+ const meter=Math.min(100,Math.round(costPerGuest/3));
+ document.getElementById("routeEconomicsBox").innerHTML=`<b>Route cost indicator</b><div class="costIndicator"><span class="costPill">${intensity}</span><div class="costMeter"><span style="width:${meter}%"></span></div></div>
+ <div class="label" style="margin-top:7px">Fuel + port cost <b>${statementMoney(econ.routeCost)}</b> · about <b>${priceMoney(costPerGuest)}</b> per expected guest. This is a cost guide only; the game will not reveal expected profit or a recommended fare before sailing.</div>`;
+
+ document.getElementById("selStartPort").textContent=programmeStartPort(selectedPlanWeek);
+ const holder=document.getElementById("selectedPortSelectors");holder.innerHTML="";
+ const inner=previewItem.route.slice(1);while(inner.length<5)inner.push("");
+ inner.forEach((p,j)=>{
+   const d=document.createElement("div");d.className="span4";
+   d.innerHTML=`<label class="label">Port ${j+1}</label><select id="selPort${j}" style="width:100%"><option value="">— none —</option>${availablePortNames().filter(x=>x!==programmeStartPort(selectedPlanWeek)).map(x=>`<option ${x===p?"selected":""}>${x}</option>`).join("")}</select>`;
+   holder.appendChild(d);
+ });
+ if(item.committed){ for(let j=0;j<5;j++){const e=document.getElementById(`selPort${j}`);if(e)e.disabled=true;} }
+ if(!item.committed){
+   const invalidate=()=>{
+     const cur=state.programme[selectedPlanWeek];
+     if(cur?.routeApplied){cur.routeApplied=false;cur.appliedDraft=null; const b=document.getElementById("saveCommitWeek");if(b)b.disabled=true; const st=document.getElementById("routeApplyStatus");if(st)st.textContent="Draft changed — apply the route again to refresh costs and forecast before committing.";}
+   };
+   ["selInsideFare","selOceanFare","selBalconyFare","selSuiteFare","selService","selFoodSpend","selHotelSpend","selMarketing","selSpeed",...Array.from({length:5},(_,j)=>`selPort${j}`)].forEach(id=>document.getElementById(id)?.addEventListener("change",invalidate));
+ }
+
+ drawRouteMap("selectedRouteMap",previewItem.route);
+ const tl=document.getElementById("selectedTimeline");tl.innerHTML="";
+ const dayCosts=routeCosts(previewItem.route,previewItem.speed??17.5).days;
+ dayCosts.forEach((d,i)=>{
+   let x=document.createElement("div");x.className="day "+(d.type==="sea"?"sea":"");
+   x.innerHTML=`<div class="n">Day ${i+1}</div>
+   <div class="p">${d.name}</div>
+   <div class="small">${d.where}</div>
+   <div class="small">Fuel ${money(d.fuelCost)}</div>
+   <div class="small">Port ${money(d.portCost)}</div>`;
+   tl.appendChild(x);
+ });
+ document.getElementById("selectedRouteWarning").textContent=!info.sch.valid?(info.sch.reason||"Voyage must be exactly 7 days."):`Valid 7-day voyage · ${info.sch.portDays} port days · ${info.sch.seaDays} sea days`;
+}
+
+function renderMyShips(){
+ const sel=document.getElementById("myShipsSelect"); if(!sel)return;
+ const ships=fleetShips();
+ sel.innerHTML=ships.map(s=>`<option value="${s.id}" ${s.id===state.activeShipId?"selected":""}>${s.name}</option>`).join("");
+ const s=activeShip();
+ const cabins=s.cabins||{},berths=s.berths||{},crew=s.crew||{};
+ document.getElementById("shipOverviewTable").innerHTML=`
+  <tr><td>Name</td><td><b>${s.name}</b></td></tr>
+  <tr><td>Class</td><td>${s.className||"—"}</td></tr>
+  <tr><td>Status</td><td>${s.status||"—"}</td></tr>
+  <tr><td>Year built</td><td>${s.yearBuilt||"—"}</td></tr>
+  <tr><td>Age</td><td>${s.yearBuilt?(2026-s.yearBuilt)+" years":"—"}</td></tr>
+  <tr><td>Gross tonnage</td><td>${(s.grossTonnage||0).toLocaleString()}</td></tr>
+  <tr><td>Length</td><td>${s.lengthM||"—"} m</td></tr>
+  <tr><td>Passenger decks</td><td>${s.decks||"—"}</td></tr>
+  <tr><td>Guest capacity</td><td>${(s.capacity||0).toLocaleString()}</td></tr>`;
+
+ document.getElementById("shipCabinTable").innerHTML=`
+  <tr><th>Cabin type</th><th>Cabins</th><th>Berths</th></tr>
+  <tr><td>Inside</td><td>${(cabins.inside||0).toLocaleString()}</td><td>${(berths.inside||0).toLocaleString()}</td></tr>
+  <tr><td>Oceanview</td><td>${(cabins.oceanview||0).toLocaleString()}</td><td>${(berths.oceanview||0).toLocaleString()}</td></tr>
+  <tr><td>Balcony</td><td>${(cabins.balcony||0).toLocaleString()}</td><td>${(berths.balcony||0).toLocaleString()}</td></tr>
+  <tr><td>Suite</td><td>${(cabins.suite||0).toLocaleString()}</td><td>${(berths.suite||0).toLocaleString()}</td></tr>
+  <tr class="total"><td>Total</td><td>${Object.values(cabins).reduce((a,b)=>a+b,0).toLocaleString()}</td><td>${Object.values(berths).reduce((a,b)=>a+b,0).toLocaleString()}</td></tr>`;
+
+ document.getElementById("shipCrewTable").innerHTML=`
+  <tr><td>Hotel & guest services</td><td>${(crew.hotel||0).toLocaleString()}</td></tr>
+  <tr><td>Marine / technical</td><td>${(crew.marine||0).toLocaleString()}</td></tr>
+  <tr><td>Entertainment</td><td>${(crew.entertainment||0).toLocaleString()}</td></tr>
+  <tr><td>Officers / senior crew</td><td>${(crew.officers||0).toLocaleString()}</td></tr>
+  <tr class="total"><td>Total crew</td><td>${(crew.total||0).toLocaleString()}</td></tr>
+  <tr><td>Guests per crew member</td><td>${crew.total?((s.capacity||0)/crew.total).toFixed(1):"—"}</td></tr>
+  <tr class="total"><td>Base weekly crew wages</td><td>${statementMoney(weeklyCrewWages(s,3))}</td></tr>`;
+ const wb=crewWageBreakdown(s,3);
+ document.getElementById("shipCrewTable").innerHTML+=`
+  <tr><td>Hotel wage base</td><td>${statementMoney(wb.hotel)}</td></tr>
+  <tr><td>Marine wage base</td><td>${statementMoney(wb.marine)}</td></tr>
+  <tr><td>Entertainment wage base</td><td>${statementMoney(wb.entertainment)}</td></tr>
+  <tr><td>Officer wage base</td><td>${statementMoney(wb.officers)}</td></tr>`;
+
+ const cond=activeCondition();
+ document.getElementById("shipConditionDetail").innerHTML=Object.entries({
+   "Machinery":cond.machinery,
+   "Hull":cond.hull,
+   "Hotel systems":cond.hotel,
+   "Interiors":cond.interiors
+ }).map(([k,v])=>`<div style="margin-bottom:12px"><div class="row" style="justify-content:space-between"><span>${k}</span><b>${(v??0).toFixed(0)}%</b></div><div class="conditionBar"><div class="conditionFill" style="width:${Math.max(0,Math.min(100,v??0))}%"></div></div></div>`).join("");
+
+  const wp=s.crew.wagePolicy||{};
+ document.getElementById("shipWageControls").innerHTML=`
+  <div class="label">Department wage policy</div>
+  ${["hotel","marine","entertainment","officers"].map(k=>`<label class="label" style="display:block;margin-top:8px">${k[0].toUpperCase()+k.slice(1)} · <b>${Math.round((wp[k]||1)*100)}%</b>
+   <input type="range" class="wagePolicySlider" data-dept="${k}" min="85" max="120" step="1" value="${Math.round((wp[k]||1)*100)}" style="width:100%">
+  </label>`).join("")}
+  <div class="label" style="margin-top:8px">Lower wages save cash but reduce service quality, maintenance effectiveness and review scores.</div>`;
+ document.querySelectorAll(".wagePolicySlider").forEach(sl=>sl.addEventListener("change",()=>{
+   s.crew.wagePolicy[sl.dataset.dept]=(+sl.value)/100;
+   renderAll();
+ }));
+document.getElementById("shipFacilitiesTable").innerHTML=`
+  <tr><th>Facility</th><th>Count</th><th>Quality</th></tr>`+
+  (s.facilities||[]).map(f=>`<tr><td>${f.name}</td><td>${f.count}</td><td><span class="qualityDots">${"●".repeat(f.quality||0)}${"○".repeat(Math.max(0,5-(f.quality||0)))}</span></td></tr>`).join("");
+}
+
+
+function ensureSixWeekProgramme(){
+ while(state.programme.length<6){
+   const prev=state.programme[state.programme.length-1];
+   const start=prev?.route?.[prev.route.length-1]||state.route?.[state.route.length-1]||"Southampton";
+   state.programme.push({
+     route:[start],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},
+     service:3,foodSpendPpd:18,hotelConsumablesPpd:7,marketing:0,speed:17.5,booked:0,lastBooked:0,committed:false,planned:false
+   });
+ }
+ if(state.programme.length>6)state.programme=state.programme.slice(0,6);
+}
+function renderSchedule(){
+ ensureSixWeekProgramme();
+ const schedShip=document.getElementById("scheduleShipSelect");
+ if(schedShip && schedShip.value!==state.activeShipId)schedShip.value=state.activeShipId;
+ const list=document.getElementById("weekList"); if(!list)return;
+ if(selectedPlanWeek<0||selectedPlanWeek>5)selectedPlanWeek=0;
+ list.innerHTML="";
+ state.programme.forEach((item,idx)=>{
+   const growth=(item.booked||0)-(item.lastBooked||0);
+   const b=document.createElement("button");
+   b.type="button";
+   b.className="weekBtn"+(idx===selectedPlanWeek?" active":"");
+   const status=item.committed?"Launch committed":(item.planned?"Planned":"Open");
+   const detail=item.planned?`${pct(item.booked||0)} booked ${growth>0?`· +${pct(growth)}`:""}`:"Not planned";
+   b.innerHTML=`<div class="wk">Week ${idx+1}</div><div class="season">${seasonForWeek(idx+1)} · ${status}</div><div class="book">${detail}</div>`;
+   b.addEventListener("click",()=>{
+     selectedPlanWeek=idx;
+     renderSchedule();
+   });
+   list.appendChild(b);
+ });
+ renderSelectedPlan();
+
+ const cash=forwardCashReceipts();
+ const t=document.getElementById("scheduleCashTable");
+ if(t){
+   t.innerHTML=`<tr><th>Departure</th><th>Season</th><th>Booked last week</th><th>Booked now</th><th>Growth</th><th>Deposits this week</th><th>Final balances</th></tr>`+
+   cash.rows.map(r=>`<tr><td>Week ${r.week}</td><td>${seasonForWeek(r.week)}</td><td>${pct(r.prior)}</td><td>${pct(r.forecast)}</td><td>${r.growth>=0?"+":""}${pct(r.growth)}</td><td>${money(r.depositCash)}</td><td>${money(r.finalCash)}</td></tr>`).join("")+
+   `<tr class="total"><td>Total</td><td></td><td></td><td></td><td></td><td>${money(cash.dep)}</td><td>${money(cash.final)}</td></tr>`;
+ }
+}
+
+function collectSelectedWeekDraft(){
+ const i=selectedPlanWeek,old=state.programme[i];
+ let route=[programmeStartPort(i)];
+ for(let j=0;j<5;j++){
+   const v=document.getElementById(`selPort${j}`)?.value||"";
+   if(v)route.push(v);
+ }
+ if(route.length<2) throw new Error("Add at least one destination port.");
+ if(route.some(p=>!hasPortContract(p))) throw new Error("Every port on the itinerary must have an active contract.");
+ const cabinPrices={
+  inside:+document.getElementById("selInsideFare").value||699,
+  oceanview:+document.getElementById("selOceanFare").value||899,
+  balcony:+document.getElementById("selBalconyFare").value||1159,
+  suite:+document.getElementById("selSuiteFare").value||1749
+ };
+ const ship=activeShip();
+ const totalBerths=Object.values(ship.berths).reduce((a,b)=>a+b,0);
+ const fare=(cabinPrices.inside*ship.berths.inside+cabinPrices.oceanview*ship.berths.oceanview+cabinPrices.balcony*ship.berths.balcony+cabinPrices.suite*ship.berths.suite)/totalBerths;
+ return {...old,route,cabinPrices,fare,
+   service:+document.getElementById("selService").value||3,
+   foodSpendPpd:+document.getElementById("selFoodSpend").value||18,
+   hotelConsumablesPpd:+document.getElementById("selHotelSpend").value||7,
+   marketing:+document.getElementById("selMarketing").value||0,
+   speed:+document.getElementById("selSpeed").value||17.5,
+   planned:true,committed:false};
+}
+
+document.getElementById("applyWeekRoute").onclick=()=>{
+ const old=state.programme[selectedPlanWeek];
+ if(old.committed)return;
+ try{
+   const draft=collectSelectedWeekDraft();
+   const test=planScheduleForItem(draft);
+   if(!test.sch.valid){
+     alert(test.sch.reason||"This itinerary does not fit a valid 7-day sailing.");
+     return;
+   }
+   old.appliedDraft=draft;
+   old.routeApplied=true;
+   renderSelectedPlan();
+ }catch(e){ alert(e.message||String(e)); }
+};
+
+document.getElementById("saveCommitWeek").onclick=()=>{
+ const i=selectedPlanWeek,old=state.programme[i];
+
+ if(old.committed){
+   // Only excursion prices remain editable after commitment.
+   old.excursionPricing=old.excursionPricing||{};
+   document.querySelectorAll(".excPriceInput").forEach(inp=>{
+     const p=inp.dataset.port,idx=+inp.dataset.index;
+     old.excursionPricing[p]=old.excursionPricing[p]||{};
+     old.excursionPricing[p][idx]={sellPrice:+inp.value||0};
+   });
+   renderAll();
+   alert("Excursion prices saved.");
+   return;
+ }
+
+ if(!old.routeApplied || !old.appliedDraft){
+   alert("Apply the route first so you can review costs and forecast performance before committing.");
+   return;
+ }
+ const applied=old.appliedDraft;
+ const route=[...applied.route];
+ const cabinPrices={...applied.cabinPrices};
+ const fare=applied.fare;
+ const service=applied.service;
+ const foodSpendPpd=applied.foodSpendPpd??18;
+ const hotelConsumablesPpd=applied.hotelConsumablesPpd??7;
+ const marketing=applied.marketing;
+ const speed=applied.speed;
+
+ const os=state.speed;state.speed=speed;const sch=buildSchedule(route);state.speed=os;
+ if(!sch.valid){alert(sch.reason||"Itinerary must fit exactly 7 days.");return;}
+
+ if(!confirm(`Save and commit Week ${i+1}? Route, cabin prices and operating settings will lock. Excursion prices can still be changed afterwards.`))return;
+
+ state.programme[i]={...old,route,fare,cabinPrices,excursionPricing:applied.excursionPricing||{},excursionSelection:applied.excursionSelection||{},service,foodSpendPpd,hotelConsumablesPpd,marketing,speed,planned:true,committed:true,routeApplied:false,appliedDraft:null};
+ enforceProgrammeContinuity();
+ if(i===0){
+   state.route=[...state.programme[0].route];
+   state.fare=fare;state.service=service;state.foodSpendPpd=foodSpendPpd;state.hotelConsumablesPpd=hotelConsumablesPpd;state.marketing=marketing;state.speed=speed;
+ }
+ renderAll();
+};
+function renderLastWeekDashboard(){
+ const p=state.lastPnl, bar=document.getElementById("lastSegBar"), tbl=document.getElementById("lastSegmentTable");
+ const cls={Families:"fam",Couples:"couple",Seniors:"senior",Young:"young",Luxury:"lux"};
+ if(!p){
+   bar.innerHTML="";
+   tbl.innerHTML="<tr><td>No completed sailing yet.</td></tr>";
+   document.getElementById("lastOccKpi").textContent="—";
+   document.getElementById("avgFareKpi").textContent="—";
+   document.getElementById("onboardSpendKpi").textContent="—";
+   document.getElementById("ebitdaMarginKpi").textContent="—";
+   return;
+ }
+ bar.innerHTML="";
+ Object.entries(p.mix||{}).forEach(([k,v])=>{let s=document.createElement("span");s.className=cls[k];s.style.width=(v*100)+"%";bar.appendChild(s)});
+ let r="<tr><th>Segment</th><th>Guests</th><th>Share of guests</th><th>Share of ship capacity</th></tr>";
+ Object.entries(p.segmentPax||{}).forEach(([k,n])=>r+=`<tr><td>${k}</td><td>${n.toLocaleString()}</td><td>${pct(n/p.pax)}</td><td>${pct(n/activeShip().capacity)}</td></tr>`);
+ tbl.innerHTML=r;
+ document.getElementById("lastOccKpi").textContent=pct(p.actualOcc);
+ document.getElementById("avgFareKpi").textContent=money(p.fareRevenue/p.pax).replace("k","");
+ document.getElementById("onboardSpendKpi").textContent=money((p.totalRev-p.fareRevenue)/p.pax).replace("k","");
+ document.getElementById("ebitdaMarginKpi").textContent=pct(p.ebitda/p.totalRev);
+}
+
+function renderAll(){
+ document.getElementById("weekPill").textContent=state.week;
+ document.getElementById("cashPill").textContent=money(state.cash);
+ document.getElementById("repPill").textContent=Math.round(state.rep);
+ const fleetCount=fleetSize();
+ const fOcc=fleetLatestOccupancy(),fEbitda=fleetLatestEbitda();
+ const fsk=document.getElementById("fleetSizeKpi");if(fsk)fsk.textContent=fleetCount;
+ const fok=document.getElementById("fleetOccKpi");if(fok)fok.textContent=fOcc===null?"—":pct(fOcc);
+ const fek=document.getElementById("fleetEbitdaKpi");if(fek)fek.textContent=fEbitda===null?"—":statementMoney(fEbitda);
+ const gck=document.getElementById("groupCashKpi");if(gck)gck.textContent=statementMoney(state.cash);
+ const dss=document.getElementById("dashboardShipSelect");
+ if(dss){
+   dss.innerHTML=fleetShips().map(s=>`<option value="${s.id}" ${s.id===state.activeShipId?"selected":""}>${s.name}</option>`).join("");
+ }
+ const ship=activeShip();
+ const shipSel=document.getElementById("activeShipSelect"); if(shipSel)shipSel.value=state.activeShipId;
+ const schedSel=document.getElementById("scheduleShipSelect"); if(schedSel)schedSel.value=state.activeShipId;
+ const csn=document.getElementById("conditionShipName"); if(csn)csn.textContent=ship.name;
+ ["scheduleShipContext","bookingsShipContext","portsShipContext","pnlShipContext","cashflowShipContext","balanceShipContext"].forEach(id=>{
+   const el=document.getElementById(id); if(el)el.innerHTML=shipContextHtml();
+ });
+ document.getElementById("seasonPill").textContent=seasonForGameWeek(state.week);
+ document.getElementById("weatherPill").textContent=`${state.weather.temp}°C · ${state.weather.icon} ${state.weather.kind}`;
+ const ac=activeCondition();
+ document.getElementById("condMachinery").textContent=`${ac.machinery.toFixed(0)}%`;
+ document.getElementById("condHull").textContent=`${ac.hull.toFixed(0)}%`;
+ document.getElementById("condHotel").textContent=`${ac.hotel.toFixed(0)}%`;
+ document.getElementById("condInteriors").textContent=`${ac.interiors.toFixed(0)}%`;
+ const weekFuel=document.getElementById("weekFuelPill"); if(weekFuel)weekFuel.textContent=money(routeCosts(state.route,state.speed).fuel);
+ const sn=document.getElementById("shipName");if(sn)sn.textContent=ship.name;
+ const smeta=document.getElementById("shipSummaryMeta");if(smeta)smeta.textContent=`${ship.capacity.toLocaleString()} guests · ${ship.crew.total.toLocaleString()} crew · ${ship.status}`;
+ const sloc=document.getElementById("shipLocationKpi");if(sloc)sloc.textContent=(state.route?.[0]||"—");
+ const scond=document.getElementById("shipConditionKpi");if(scond)scond.textContent=conditionAverage().toFixed(0)+"%";
+ const revk=document.getElementById("reviewKpi");if(revk)revk.textContent=state.lastPnl?.reviewScore?state.lastPnl.reviewScore.toFixed(1)+" ★":"—";
+ let f=bookingForecast();
+ document.getElementById("forwardBookings").textContent=pct(state.programme[0].booked||0);
+ document.getElementById("eventBox").textContent=state.lastEvent;
+ const sch=buildSchedule();
+ document.getElementById("routeSummary").textContent=`${state.route.join(" → ")} · ${Math.round(sch.totalNm)} nm · ${sch.seaDays} sea day${sch.seaDays===1?"":"s"} inserted`;
+ renderTimeline("dashTimeline"); renderMyShips(); renderSchedule(); renderMarket(); renderPnl(); renderPnlHistory(); renderCf(); renderBs(); renderLastWeekDashboard(); renderPorts(); renderGroupTrend(); renderReviewHistory();
+ queueAutoSave();
+}
+document.getElementById("pnlHistoryShip")?.addEventListener("change",renderPnlHistory);
+ document.getElementById("sailBtn").onclick=sail;
+function showResultPage(page){
+ ["Summary","Pnl","Cash","Balance","Reviews"].forEach(k=>{
+   document.getElementById("resultPage"+k)?.classList.toggle("active",k===page);
+   document.getElementById("resultTab"+k)?.classList.toggle("active",k===page);
+ });
+}
+document.getElementById("resultTabSummary")?.addEventListener("click",()=>showResultPage("Summary"));
+document.getElementById("resultTabPnl")?.addEventListener("click",()=>showResultPage("Pnl"));
+document.getElementById("resultTabCash")?.addEventListener("click",()=>showResultPage("Cash"));
+document.getElementById("resultTabBalance")?.addEventListener("click",()=>showResultPage("Balance"));
+document.getElementById("resultTabReviews")?.addEventListener("click",()=>showResultPage("Reviews"));
+document.getElementById("confirmWeekBtn").onclick=()=>{
+ document.getElementById("resultModal").classList.remove("show");
+ const sm=document.getElementById("selectedRouteMap"); if(sm)sm.style.display="block";
+ state.week++;
+ state.weather=generateWeather(seasonForGameWeek(state.week));
+ tickPortContracts();
+ state.programme.shift();
+ let last=state.programme[state.programme.length-1];
+ state.programme.forEach((x,idx)=>{ if(idx<=2) x.committed=true; });
+ const newStart=last.route[last.route.length-1];
+ const templateRest=last.route.slice(1);
+ state.programme.push({route:[newStart],fare:0,cabinPrices:{inside:399,oceanview:0,balcony:260,suite:850},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,marketing:0,speed:17.5,booked:0,lastBooked:0,committed:false,planned:false});
+ enforceProgrammeContinuity();
+ state.route=[...state.programme[0].route];
+ state.fare=state.programme[0].fare;
+ state.service=state.programme[0].service??3;
+ state.foodSpendPpd=state.programme[0].foodSpendPpd??state.foodSpendPpd??18;
+ state.hotelConsumablesPpd=state.programme[0].hotelConsumablesPpd??state.hotelConsumablesPpd??7;
+ state.marketing=state.programme[0].marketing??90000;
+ state.speed=state.programme[0].speed??17.5;
+ state.lastEvent="Bookings are now open for the next sailing. Review the market, pricing and six-week programme before committing.";
+ renderAll();
+};
+
+document.getElementById("manualSaveBtn")?.addEventListener("click",()=>{saveProgress(true);renderAll();});
+document.getElementById("saveToolsBtn")?.addEventListener("click",openSaveTools);
+document.getElementById("closeSaveModal")?.addEventListener("click",()=>document.getElementById("saveModal")?.classList.remove("show"));
+document.getElementById("saveNowBtn")?.addEventListener("click",()=>{saveProgress(false);updateSaveMeta();});
+document.getElementById("exportSaveBtn")?.addEventListener("click",exportSave);
+document.getElementById("importSaveBtn")?.addEventListener("click",()=>document.getElementById("importSaveInput")?.click());
+document.getElementById("importSaveInput")?.addEventListener("change",e=>{const f=e.target.files?.[0];if(f)importSaveFile(f);e.target.value="";});
+document.getElementById("newGameBtn")?.addEventListener("click",()=>{
+ if(confirm("Start a new game? This will replace the autosave on this device. Export your current save first if you want to keep it.")){
+   resetToNewGame();document.getElementById("saveModal")?.classList.remove("show");
+ }
+});
+document.getElementById("continueGameBtn")?.addEventListener("click",()=>{
+ const payload=readStoredPayload();
+ try{hydrateFromPayload(payload);saveSystemReady=true;document.getElementById("continueModal")?.classList.remove("show");renderAll();saveProgress(false);}
+ catch(e){alert("The saved game could not be loaded. You can start a new game or import a backup.");}
+});
+document.getElementById("startNewGameBtn")?.addEventListener("click",()=>{
+ if(confirm("Start a new game instead of continuing the saved game? The existing autosave will be replaced.")){
+   document.getElementById("continueModal")?.classList.remove("show");resetToNewGame();
+ }
+});
+window.addEventListener("pagehide",()=>saveProgress(false));
+window.addEventListener("visibilitychange",()=>{if(document.visibilityState==="hidden")saveProgress(false);});
+
+initialiseSaveSystem();
 </script>
-</body>
-</html>
+</body></html>
