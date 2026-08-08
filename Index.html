@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Cruise Tycoon — iPad</title>
+<style>
+:root{--navy:#102c46;--navy2:#173e61;--sea:#dff2fb;--card:#fff;--ink:#16324a;--muted:#63788a;--line:#d7e1e8;--good:#147247;--bad:#a62d2d;--gold:#d8a73a;--bg:#edf3f7}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Inter,system-ui,sans-serif;overscroll-behavior:none}
+body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+button,input,select{font:inherit}.app{min-height:100vh;display:grid;grid-template-rows:auto 1fr auto}
+.topbar{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:14px 20px;display:flex;align-items:center;gap:18px;box-shadow:0 2px 12px #0002;position:sticky;top:0;z-index:5}
+.brand{min-width:190px}.brand h1{font-size:20px;letter-spacing:.08em;margin:0}.brand small{opacity:.72}.topstats{display:grid;grid-template-columns:repeat(5,minmax(110px,1fr));gap:8px;flex:1}.pill{background:#ffffff14;border:1px solid #ffffff22;border-radius:12px;padding:8px 11px}.pill span{display:block;font-size:11px;opacity:.7;text-transform:uppercase;letter-spacing:.04em}.pill b{font-size:17px;white-space:nowrap}
+.main{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(310px,.75fr);gap:14px;padding:14px;min-height:0}.left,.right{display:grid;gap:14px;align-content:start}.card{background:var(--card);border:1px solid #e5ebef;border-radius:18px;box-shadow:0 4px 18px #17324d0c;overflow:hidden}.cardhead{padding:13px 16px;border-bottom:1px solid #eef2f5;display:flex;align-items:center;justify-content:space-between;gap:12px}.cardhead h2{font-size:15px;margin:0}.sub{font-size:12px;color:var(--muted)}
+.market{padding:12px 14px;display:flex;gap:10px;align-items:flex-start;background:#f8fbfd}.market .icon{font-size:22px}.market b{display:block;margin-bottom:2px}.market p{margin:0;color:var(--muted);font-size:13px;line-height:1.35}
+.mapwrap{padding:12px}.map{height:min(46vh,430px);min-height:300px;background:linear-gradient(180deg,#cceafb,#eaf7fc 65%,#c8e4ee);border-radius:14px;position:relative;overflow:hidden;border:1px solid #c8dce7;touch-action:manipulation}.land{position:absolute;background:#d5dfbb;border:1px solid #bcc99c;opacity:.88;filter:drop-shadow(0 2px 1px #0001)}.land.a{width:46%;height:34%;left:-8%;top:-7%;border-radius:40% 50% 55% 45%}.land.b{width:38%;height:28%;right:-8%;top:-3%;border-radius:55% 40% 55% 45%}.land.c{width:48%;height:25%;right:-4%;bottom:-11%;border-radius:50% 40% 0 0}.sea-label{position:absolute;left:40%;top:47%;font-size:22px;font-weight:800;letter-spacing:.12em;color:#3c789544;transform:rotate(-7deg);pointer-events:none}.port{position:absolute;transform:translate(-50%,-50%);border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:999px;padding:7px 10px;min-width:64px;min-height:36px;font-weight:700;font-size:12px;box-shadow:0 3px 8px #0002;cursor:pointer;touch-action:manipulation}.port:active{transform:translate(-50%,-50%) scale(.96)}.port.sel{background:var(--navy);color:#fff}.port.home{background:var(--gold);color:#fff;border-color:#a47a1f}.ship{position:absolute;left:48%;top:55%;font-size:40px;filter:drop-shadow(0 4px 4px #0003);pointer-events:none}.routebar{margin-top:10px;padding:10px 12px;background:#f5f8fa;border-radius:12px;font-size:13px;display:flex;gap:8px;align-items:center;min-height:44px;overflow-x:auto;white-space:nowrap}.route-chip{background:#e7eef3;border-radius:999px;padding:5px 9px}.route-chip.home{background:#f4e5b7}.arrow{color:#8aa0b1}
+.controls{padding:14px;display:grid;gap:13px}.control-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px}.control-row label{font-weight:700;font-size:13px}.control-row .hint{display:block;color:var(--muted);font-size:11px;font-weight:400;margin-top:2px}.value{font-size:18px;font-weight:800}.slider{width:100%;accent-color:var(--navy);height:34px}.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.seg button{border:1px solid var(--line);background:#f6f9fb;padding:9px 6px;border-radius:10px;font-size:12px;font-weight:700;color:var(--ink)}.seg button.active{background:var(--navy);border-color:var(--navy);color:white}.choice{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.choice button{border:1px solid var(--line);background:#f6f9fb;padding:10px 6px;border-radius:10px;font-size:12px;font-weight:700}.choice button.active{background:#dcecf6;border-color:#93b8cf}
+.action{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:4px}.btn{border:0;border-radius:13px;padding:14px 16px;font-weight:800;min-height:50px;cursor:pointer}.primary{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff}.secondary{background:#e8eef2;color:var(--ink)}.btn:disabled{opacity:.45}.btn:active{transform:scale(.985)}
+.result{padding:14px}.headline{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.headline h3{margin:0 0 3px;font-size:16px}.profit{font-size:23px;font-weight:900}.good{color:var(--good)}.bad{color:var(--bad)}.resultgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.metric{background:#f6f9fb;border-radius:12px;padding:10px}.metric span{display:block;font-size:11px;color:var(--muted);text-transform:uppercase}.metric b{font-size:16px}.event{margin-top:10px;border-left:4px solid var(--gold);background:#fff8e7;padding:9px 10px;border-radius:8px;font-size:12px;line-height:1.35}.history{padding:6px 14px 12px}.histrow{display:grid;grid-template-columns:54px 1fr auto;gap:8px;padding:9px 0;border-bottom:1px solid #eef2f5;font-size:12px}.histrow:last-child{border-bottom:0}.empty{color:var(--muted);padding:10px 0}.footer{padding:8px 14px 12px;text-align:center;color:var(--muted);font-size:11px}
+.toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(120px);background:#132d43;color:white;padding:12px 16px;border-radius:12px;box-shadow:0 8px 24px #0004;transition:.25s;z-index:20;font-weight:700;font-size:13px}.toast.show{transform:translateX(-50%) translateY(0)}
+@media (orientation:portrait){.main{grid-template-columns:1fr}.map{height:42vh}.right{grid-template-columns:1fr 1fr}.right .card:first-child{grid-column:1/-1}.topstats{grid-template-columns:repeat(3,1fr)}.pill:nth-child(4),.pill:nth-child(5){display:none}}
+@media (max-width:760px){.brand{min-width:auto}.brand small{display:none}.topbar{padding:10px 12px}.topstats{gap:5px}.pill{padding:6px 8px}.pill span{font-size:9px}.pill b{font-size:14px}.main{padding:8px;gap:8px}.left,.right{gap:8px}.right{grid-template-columns:1fr}.map{min-height:280px}.resultgrid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px) and (orientation:landscape){.main{height:calc(100vh - 92px);overflow:hidden}.left,.right{overflow:auto;padding-bottom:20px}.map{height:390px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand"><h1>CRUISE TYCOON</h1><small>iPad prototype · 26-week season</small></div>
+  <div class="topstats">
+    <div class="pill"><span>Week</span><b><span id="week" style="display:inline;font:inherit;opacity:1">1</span> / 26</b></div>
+    <div class="pill"><span>Cash</span><b id="cash">£100.0m</b></div>
+    <div class="pill"><span>Reputation</span><b id="rep">70</b></div>
+    <div class="pill"><span>Ship</span><b>MV Horizon</b></div>
+    <div class="pill"><span>Capacity</span><b>2,200</b></div>
+  </div>
+</header>
+<main class="main">
+  <section class="left">
+    <div class="card">
+      <div class="market"><div class="icon">📰</div><div><b>This week's market</b><p id="news">Mediterranean bookings are steady. Competitor pricing looks rational.</p></div></div>
+    </div>
+    <div class="card">
+      <div class="cardhead"><div><h2>Build this week's itinerary</h2><div class="sub">Tap 3–5 ports · Barcelona is your home port</div></div><div class="sub" id="portCount">0 / 5 selected</div></div>
+      <div class="mapwrap">
+        <div class="map" id="map"><div class="land a"></div><div class="land b"></div><div class="land c"></div><div class="sea-label">MEDITERRANEAN</div><div class="ship">🚢</div></div>
+        <div class="routebar" id="routebar"></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardhead"><h2>Last voyage</h2><div class="sub">Results are revealed after you sail</div></div>
+      <div id="result" class="result"><div class="empty">Choose an itinerary and commit your first voyage.</div></div>
+    </div>
+  </section>
+  <aside class="right">
+    <div class="card">
+      <div class="cardhead"><h2>Commercial decisions</h2><div class="sub">Set before sailing</div></div>
+      <div class="controls">
+        <div class="control-row"><label>Average cabin fare<span class="hint">Higher yield, lower demand</span></label><div class="value" id="fareVal">£900</div></div>
+        <input id="fare" class="slider" type="range" min="550" max="1600" value="900" step="25">
+        <div><div class="control-row"><label>Service level<span class="hint">Cost vs guest satisfaction</span></label><span></span></div><div class="seg" id="serviceSeg"><button data-v="1">Lean</button><button data-v="2">Standard</button><button data-v="3" class="active">Premium</button><button data-v="4">Luxury</button></div></div>
+        <div><div class="control-row"><label>Marketing<span class="hint">Boost bookings this week</span></label><span></span></div><div class="choice" id="marketingSeg"><button data-v="0">£0</button><button data-v="100000" class="active">£100k</button><button data-v="250000">£250k</button></div></div>
+        <div class="action"><button class="btn primary" id="sail">SAIL THIS WEEK →</button><button class="btn secondary" id="reset">↻</button></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardhead"><h2>Season history</h2><div class="sub">Last 6 voyages</div></div>
+      <div id="history" class="history"><div class="empty">No voyages yet.</div></div>
+    </div>
+  </aside>
+</main>
+<div class="footer">Tip: on iPad, landscape gives the best two-panel layout. Your game state is saved automatically on this device.</div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const ports=[
+ ['Palma',18,63,8.5],['Marseille',34,25,7.0],['Genoa',49,28,6.5],['Rome',61,43,9.5],['Naples',64,58,8.6],['Valletta',53,76,8.4],['Messina',61,68,7.2],['Corfu',76,59,8.2],['Dubrovnik',83,40,9.1],['Kotor',86,47,8.8],['Split',79,32,7.9]
+];
+const events=[
+ ['Fuel prices jump 14%.',-90000,0,-.02],['A rival launches a flash sale from Barcelona.',0,0,-.07],['Excellent social-media reviews boost interest.',0,3,.06],['A port strike disrupts regional schedules.',-70000,-1,-.04],['A Mediterranean heatwave lifts late bookings.',0,0,.07],['An engine inspection adds an unexpected cost.',-150000,-1,0],['Travel demand softens after weak economic news.',0,0,-.06],['A celebrity travel feature boosts cruise searches.',0,2,.05],['Markets are quiet this week.',0,0,0]
+];
+let state={week:1,cash:100000000,rep:70,route:[],history:[],service:3,marketing:100000,fare:900};
+try{const saved=localStorage.getItem('cruiseTycoonIpad');if(saved)state={...state,...JSON.parse(saved)}}catch(e){}
+const $=id=>document.getElementById(id); const money=x=>'£'+(x/1e6).toFixed(2)+'m';
+function save(){try{localStorage.setItem('cruiseTycoonIpad',JSON.stringify(state))}catch(e){}}
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1800)}
+function setActive(group,value){document.querySelectorAll('#'+group+' button').forEach(b=>b.classList.toggle('active',+b.dataset.v===+value))}
+function render(){
+ $('week').textContent=state.week;$('cash').textContent=money(state.cash);$('rep').textContent=Math.round(state.rep);$('fare').value=state.fare;$('fareVal').textContent='£'+state.fare;setActive('serviceSeg',state.service);setActive('marketingSeg',state.marketing);
+ document.querySelectorAll('.port').forEach(el=>el.classList.toggle('sel',state.route.some(p=>p[0]===el.dataset.name)));
+ $('portCount').textContent=state.route.length+' / 5 selected';
+ $('routebar').innerHTML='<span class="route-chip home">Barcelona</span>'+state.route.map(p=>'<span class="arrow">→</span><span class="route-chip">'+p[0]+'</span>').join('');
+ $('history').innerHTML=state.history.length?state.history.slice(-6).reverse().map(x=>'<div class="histrow"><b>W'+x.w+'</b><span>'+x.route+'</span><b class="'+(x.p>=0?'good':'bad')+'">'+(x.p>=0?'+':'')+money(x.p)+'</b></div>').join(''):'<div class="empty">No voyages yet.</div>';
+ $('sail').disabled=state.week>26; save();
+}
+ports.forEach(p=>{const d=document.createElement('button');d.className='port';d.dataset.name=p[0];d.textContent=p[0];d.style.left=p[1]+'%';d.style.top=p[2]+'%';d.onclick=()=>{const ix=state.route.findIndex(x=>x[0]===p[0]);if(ix>=0)state.route.splice(ix,1);else if(state.route.length<5)state.route.push(p);else return toast('Maximum 5 ports');render()};$('map').appendChild(d)});
+$('fare').oninput=e=>{state.fare=+e.target.value;$('fareVal').textContent='£'+state.fare;save()};
+document.querySelectorAll('#serviceSeg button').forEach(b=>b.onclick=()=>{state.service=+b.dataset.v;render()});
+document.querySelectorAll('#marketingSeg button').forEach(b=>b.onclick=()=>{state.marketing=+b.dataset.v;render()});
+function marketText(){const bits=['Late bookings are strengthening.','Families are booking earlier than usual.','Premium cabins are selling well.','Competitor capacity is rising.','Fuel markets are volatile.','Shoulder-season demand looks soft.'];return bits[Math.floor(Math.random()*bits.length)]+' '+(Math.random()>.5?'Competitor fares are firm.':'A rival is discounting selected sailings.')}
+$('sail').onclick=()=>{
+ if(state.route.length<3)return toast('Choose at least 3 ports');
+ const ev=events[Math.floor(Math.random()*events.length)],season=.9+Math.sin((state.week-4)/26*Math.PI*2)*.16,appeal=state.route.reduce((a,p)=>a+p[3],0)/state.route.length;
+ const demand=.92*season*(appeal/8.2)*(900/state.fare)**.85*(.82+state.rep/390)*(1+Math.min(.12,state.marketing/3000000))+ev[3]+(Math.random()-.5)*.10;
+ const occ=Math.max(.38,Math.min(1,demand)),pax=2200*occ,fareRev=pax/2*state.fare,onboard=pax*(250+state.service*25),revenue=fareRev+onboard,cost=520000+pax*(95+state.service*16)+state.marketing+state.route.length*65000+ev[1],profit=revenue-cost;
+ state.cash+=profit;state.rep=Math.max(25,Math.min(100,state.rep+(state.service-2)*.7+ev[2]+(occ>.97?-1:0)+(Math.random()-.5)*1.5));
+ const routeName='Barcelona → '+state.route.map(x=>x[0]).join(' → ');
+ $('result').innerHTML='<div class="headline"><div><h3>'+routeName+'</h3><div class="sub">Week '+state.week+' voyage complete</div></div><div class="profit '+(profit>=0?'good':'bad')+'">'+(profit>=0?'+':'')+money(profit)+'</div></div><div class="resultgrid"><div class="metric"><span>Passengers</span><b>'+Math.round(pax).toLocaleString()+'</b></div><div class="metric"><span>Occupancy</span><b>'+Math.round(occ*100)+'%</b></div><div class="metric"><span>Revenue</span><b>'+money(revenue)+'</b></div><div class="metric"><span>Fare revenue</span><b>'+money(fareRev)+'</b></div><div class="metric"><span>Onboard</span><b>'+money(onboard)+'</b></div><div class="metric"><span>Reputation</span><b>'+Math.round(state.rep)+'/100</b></div></div><div class="event"><b>Voyage event:</b> '+ev[0]+'</div>';
+ state.history.push({w:state.week,p:profit,occ,route:state.route.map(x=>x[0]).join(' · ')});state.week++;$('news').textContent=marketText();
+ if(state.week>26){toast('Season complete · '+money(state.cash)+' cash');}
+ render();
+};
+$('reset').onclick=()=>{if(confirm('Start a new 26-week season?')){localStorage.removeItem('cruiseTycoonIpad');location.reload()}};
+$('news').textContent=marketText();render();
+</script>
+</body>
+</html>
