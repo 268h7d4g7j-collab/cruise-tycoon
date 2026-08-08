@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Cruise Tycoon v0.11.8</title>
+<title>Cruise Tycoon v0.11.10</title>
 <style>
 :root{
   --navy:#102c46;--navy2:#173e61;--bg:#edf3f7;--card:#fff;--ink:#17324a;
@@ -196,7 +196,7 @@ nav button{white-space:nowrap}
 .saveActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .saveMeta{padding:10px 12px;border-radius:12px;background:#f2f6f9;margin-top:10px;color:var(--muted)}
 
-/* v0.11.8 scheduler/readability and finance UI */
+/* v0.11.10 scheduler/readability and finance UI */
 .weekBtn.active.committed{background:#dfe3e6!important;color:#26343d!important;border:2px solid #53636e!important;box-shadow:0 0 0 3px rgba(83,99,110,.14)!important}
 .weekBtn.active.urgent{background:#f8caca!important;color:#651717!important;border:2px solid #b63636!important;box-shadow:0 0 0 3px rgba(182,54,54,.14)!important}
 .weekBtn.active.future{background:#ffe99a!important;color:#4e3d00!important;border:2px solid #a88300!important;box-shadow:0 0 0 3px rgba(168,131,0,.14)!important}
@@ -208,7 +208,7 @@ nav button{white-space:nowrap}
 .reviewScoreCell{white-space:nowrap}.nextSailingTable td{vertical-align:top}
 
 
-/* v0.11.8 visual refresh */
+/* v0.11.10 visual refresh */
 :root{--navy:#092b46;--navy2:#0d4769;--ocean:#137ea5;--ocean2:#42a6bf;--teal:#16837d;--bg:#f2f6f8;--card:#fff;--ink:#163247;--muted:#6e8290;--line:#dce7ec;--lineStrong:#c8d8e0;--good:#18734c;--bad:#aa3b42;--gold:#b78524;--shadow:0 10px 30px rgba(17,53,75,.075);--shadowStrong:0 18px 46px rgba(13,55,79,.13)}
 html{background:#eaf1f5}
 body{background:radial-gradient(circle at 8% 0%,rgba(54,151,181,.08),transparent 30%),linear-gradient(180deg,#edf4f7 0,#f5f8fa 290px,#f2f6f8 100%);min-height:100vh}
@@ -254,7 +254,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:650px){.title{font-size:20px}.pill{padding:6px 9px}.heroKpi .kpi{font-size:27px}.card{padding:13px;border-radius:15px}}
 
 
-/* v0.11.8 graphics expansion */
+/* v0.11.10 graphics expansion */
 .cruiseHero{
  position:relative;
  overflow:hidden;
@@ -302,7 +302,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 }
 
 
-/* v0.11.8 ship/deck management */
+/* v0.11.10 ship/deck management */
 .shipMgmtHeader{background:linear-gradient(145deg,#fff,#f4fafc)}
 .shipMgmtKpis{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:14px}.shipMgmtKpis>div,.deckSpaceSummary>div,.facilityMetrics>div{border:1px solid #d9e6eb;border-radius:12px;padding:10px;background:#f8fbfc}.shipMgmtKpis span,.deckSpaceSummary span,.facilityMetrics span{display:block;color:#748995;font-size:10px;text-transform:uppercase;letter-spacing:.05em}.shipMgmtKpis b{display:block;margin-top:4px;font-size:17px;color:#12364e}
 .deckSidebar{max-height:760px;overflow:auto}.deckList{display:flex;flex-direction:column;gap:6px;margin-top:10px}.deckListBtn{text-align:left;border:1px solid #d7e3e8;background:#f8fbfc;border-radius:11px;padding:9px 10px;color:#17384f}.deckListBtn span,.deckListBtn small{display:block;color:#718691}.deckListBtn.active{background:#0e5579;color:#fff;border-color:#0e5579}.deckListBtn.active span,.deckListBtn.active small{color:#d5eaf2}
@@ -313,13 +313,13 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:1000px){.shipMgmtKpis{grid-template-columns:repeat(4,1fr)}}@media(max-width:700px){.shipMgmtKpis{grid-template-columns:repeat(2,1fr)}.deckSpaceSummary{grid-template-columns:1fr 1fr}}
 
 
-/* v0.11.8 editable ship planner */
+/* v0.11.10 editable ship planner */
 .deckPlanner{margin-top:14px;padding:13px;border:1px solid #cfe0e7;border-radius:14px;background:linear-gradient(145deg,#f5fafc,#fff)}
 .deckPlannerControls{display:grid;grid-template-columns:2fr 1fr 1.3fr auto;gap:9px;align-items:end;margin-top:10px}.deckPlannerControls label{font-size:11px;font-weight:750;color:#607887}.deckPlannerControls select,.deckPlannerControls input{display:block;width:100%;margin-top:4px}.plannerCost{font-weight:850;color:#0f668b;background:#e9f6fa;padding:7px 10px;border-radius:9px}.removeSpaceBtn{margin-top:14px;width:100%}
 .shipClassCards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.shipClassCard{border:1px solid #d4e2e8;border-radius:14px;padding:13px;background:linear-gradient(155deg,#f8fbfc,#fff)}.shipClassCard>b,.shipClassCard>span,.shipClassCard>small{display:block}.shipClassCard>span{color:#718692;margin:3px 0 10px}.shipClassCard>div{margin-top:5px}.shipClassCard>small{color:#718692;margin-top:7px}.shipClassSilhouette{font-size:15px;letter-spacing:-2px;color:#2a7c9d;opacity:.7;margin-bottom:7px!important}
 @media(max-width:850px){.deckPlannerControls{grid-template-columns:1fr 1fr}.shipClassCards{grid-template-columns:1fr}}
 
-/* v0.11.8 management-sim visual overhaul */
+/* v0.11.10 management-sim visual overhaul */
 @media(min-width:980px){
  body{padding-left:178px}
  header{left:0}
@@ -395,7 +395,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .deckQualityMini{grid-column:1/-1;display:flex;gap:5px;margin-top:4px;flex-wrap:wrap}.deckQualityMini em{font-style:normal;font-size:9px;padding:2px 5px;border-radius:5px;background:rgba(255,255,255,.11);color:#cce1ea}.deckConditionActions,.shipRefurbActions{display:flex;align-items:center;gap:10px;margin-top:11px;padding-top:10px;border-top:1px solid #dbe6eb}.facilityMetrics{grid-template-columns:repeat(auto-fit,minmax(82px,1fr))}
 
 
-/* v0.11.8 brand corner and capacity economics */
+/* v0.11.10 brand corner and capacity economics */
 .brandCorner{display:none}
 @media(min-width:980px){
  .brandCorner{
@@ -415,7 +415,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .capacityCallout b{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#176786}.capacityCallout span{font-size:12px}
 
 
-/* v0.11.8 ship summary, luxury catalogue, landmark ports */
+/* v0.11.10 ship summary, luxury catalogue, landmark ports */
 .shipSummaryHero{display:grid;grid-template-columns:minmax(330px,42%) 1fr;min-height:275px;border-radius:17px;overflow:hidden;background:#082b45}
 .shipSummaryPhoto{position:relative;background-image:var(--ship-photo);background-size:cover;background-position:center;min-height:275px}
 .shipSummaryPhotoShade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,30,47,.72),transparent 58%)}
@@ -426,7 +426,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .upgradeCatalogue button:hover{border-color:#5ca8c1;background:#f5fbfd}.upgradeCatalogue button b,.upgradeCatalogue button small{display:block}.upgradeCatalogue button small{color:#718691;margin-top:3px}.upgradeCatalogue button:after{content:"＋";position:absolute;right:9px;top:50%;transform:translateY(-50%);width:25px;height:25px;border-radius:8px;background:#e7f3f8;display:grid;place-items:center;color:#11658a;font-weight:900}
 @media(max-width:900px){.shipSummaryHero{grid-template-columns:1fr}.shipSummaryPhoto{min-height:220px}.shipSummaryIntro .shipMgmtKpis{grid-template-columns:repeat(2,1fr)}}
 
-/* v0.11.8 deck picker and technical condition */
+/* v0.11.10 deck picker and technical condition */
 .deckListBtn{display:block;width:100%;position:relative;z-index:1;pointer-events:auto;cursor:pointer}
 .deckListBtn>*{pointer-events:none}
 .deckSidebar{position:relative;z-index:3}
@@ -436,6 +436,19 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .technicalAction span{font-size:10px;color:#718691;margin-top:2px}
 .technicalAction small{grid-column:2;font-weight:850;color:#0e6589;text-align:right}
 @media(max-width:720px){.technicalConditionActions{grid-template-columns:1fr}}
+
+
+/* v0.11.10 deck planner disabled-state clarity */
+#addSpaceBtn:disabled,#addSpaceBtn.disabledBuild{
+ opacity:.48;
+ cursor:not-allowed;
+ filter:grayscale(.35);
+ box-shadow:none!important;
+ background:#dfe7eb!important;
+ color:#6f8089!important;
+ border-color:#ccd7dc!important;
+}
+#addSpaceBtn:disabled:hover{filter:grayscale(.35)}
 
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
@@ -450,7 +463,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
   <div><b>CRUISE<br>TYCOON</b><span>BUILD YOUR FLEET</span></div>
  </div>
  <div class="toprow">
-  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.11.8</span></div><div class="sub">One brand. One ship. Build from there.</div></div>
+  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.11.10</span></div><div class="sub">One brand. One ship. Build from there.</div></div>
   <div class="pills">
    <div class="pill">Week <b id="weekPill">1</b></div>
    <div class="pill">Group cash <b id="cashPill">£45.0m</b></div>
@@ -589,7 +602,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
        <div class="label">Fare, service, marketing and speed are set per sailing here.</div>
       </div>
       <div class="row">
-        <button class="btn secondary" id="applyWeekRoute">Apply route & preview</button>
+        <button class="btn secondary" id="applyWeekRoute">Apply & save route</button>
         <button class="btn good" id="saveCommitWeek">Commit itinerary</button>
       </div>
     </div>
@@ -1198,7 +1211,7 @@ Object.keys(state.contracts).forEach(n=>{state.contracts[n].excursions=defaultEx
 
 const SAVE_STORAGE_KEY="cruiseTycoon.save.v1";
 const SAVE_SCHEMA_VERSION=1;
-const GAME_VERSION="0.11.8";
+const GAME_VERSION="0.11.10";
 const INITIAL_GAME_STATE=JSON.parse(JSON.stringify(state));
 let saveSystemReady=false;
 let saveTimer=null;
@@ -1245,6 +1258,24 @@ function hydrateFromPayload(payload){
  state.fleet=state.fleet||cloneJson(INITIAL_GAME_STATE.fleet);
  if(!state.fleet[state.activeShipId])state.activeShipId=Object.keys(state.fleet)[0];
  if(!state.programme || !state.programme.length)state.programme=cloneJson(INITIAL_GAME_STATE.programme);
+ // Recover valid routes from old saves before scheduler normalisation runs.
+ state.programme.forEach(item=>{
+   const savedRoute=Array.isArray(item.route)&&item.route.length>1;
+   const draftRoute=Array.isArray(item.appliedDraft?.route)&&item.appliedDraft.route.length>1;
+   if(savedRoute)item.planned=true;
+   else if(draftRoute){
+     const d=item.appliedDraft;
+     item.route=[...d.route];
+     item.cabinPrices={...(d.cabinPrices||item.cabinPrices||{})};
+     item.fare=d.fare??item.fare??0;
+     item.service=d.service??item.service??3;
+     item.foodSpendPpd=d.foodSpendPpd??item.foodSpendPpd??18;
+     item.hotelConsumablesPpd=d.hotelConsumablesPpd??item.hotelConsumablesPpd??7;
+     item.marketing=d.marketing??item.marketing??0;
+     item.speed=d.speed??item.speed??17.5;
+     item.planned=true;item.routeApplied=true;
+   }
+ });
  Object.keys(state.contracts||{}).forEach(n=>{
    if(!Array.isArray(state.contracts[n].excursions))state.contracts[n].excursions=defaultExcursionsForPort(n);
  });
@@ -2814,8 +2845,8 @@ function renderSelectedPlan(){
    applyStatus.textContent=item.committed
      ?"Itinerary committed. Excursion pricing remains editable."
      :(item.routeApplied
-       ?"Route applied. Review the map, schedule, costs and forecast before committing."
-       :"Draft only — press Apply route & preview to calculate this route before committing.");
+       ?"Route saved as a flexible plan. Review the map, schedule and costs before committing."
+       :"Draft only — press Apply & save route to keep this flexible schedule before committing.");
  }
  const previewItem=(!item.committed && item.routeApplied && item.appliedDraft)?item.appliedDraft:item;
  const cp=previewItem.cabinPrices||{inside:Math.max(399,(previewItem.fare||899)-180),oceanview:previewItem.fare||899,balcony:(previewItem.fare||899)+260,suite:(previewItem.fare||899)+850};
@@ -3053,11 +3084,36 @@ function plannerBuildCost(type,count){const d=SPACE_TYPES[type];return d?Math.ro
 function plannerSpaceArea(type,count){const d=SPACE_TYPES[type];return d?Math.round(d.area*Math.max(1,count)):0}
 function selectedDeckModel(){const s=activeShip(),m=ensureShipSpaceModel(s);return m.decks.find(d=>d.number===m.selectedDeck)||m.decks[0]}
 function updateDeckPlannerPreview(){
- const type=document.getElementById("addSpaceType")?.value,count=Math.max(1,+document.getElementById("addSpaceCount")?.value||1),d=selectedDeckModel();if(!type||!d)return;
- const area=plannerSpaceArea(type,count),cost=plannerBuildCost(type,count),free=Math.max(0,d.area*.8-deckUsed(d)),ok=area<=free;
- document.getElementById("deckPlannerCost").textContent=`${statementMoney(cost)} capex`;
- document.getElementById("deckPlannerPreview").innerHTML=`Needs <b>${area.toLocaleString()} m²</b> · Free usable space <b>${Math.round(free).toLocaleString()} m²</b> · <span class="${ok?"pos":"neg"}">${ok?"Fits on this deck":"Does not fit"}</span>`;
- document.getElementById("addSpaceBtn").disabled=!ok||state.cash<cost;
+ const type=document.getElementById("addSpaceType")?.value,
+       count=Math.max(1,+document.getElementById("addSpaceCount")?.value||1),
+       d=selectedDeckModel();
+ if(!type||!d)return;
+ const area=plannerSpaceArea(type,count),
+       cost=plannerBuildCost(type,count),
+       free=Math.max(0,d.area*.8-deckUsed(d)),
+       fits=area<=free,
+       affordable=state.cash>=cost;
+ const pc=document.getElementById("deckPlannerCost");
+ if(pc)pc.innerHTML=`${statementMoney(cost)} capex`;
+ const pv=document.getElementById("deckPlannerPreview");
+ if(pv){
+   const fitTxt=fits
+     ? `<span class="pos">Fits on this deck</span>`
+     : `<span class="neg">Does not fit — ${Math.ceil(area-free).toLocaleString()} m² more usable space required</span>`;
+   const cashTxt=affordable
+     ? `<span class="pos">Cash available</span>`
+     : `<span class="neg">Insufficient cash — short by ${statementMoney(cost-state.cash)}</span>`;
+   pv.innerHTML=`Needs <b>${area.toLocaleString()} m²</b> · Free usable space <b>${Math.round(free).toLocaleString()} m²</b><br>${fitTxt} · ${cashTxt}`;
+ }
+ const btn=document.getElementById("addSpaceBtn");
+ if(btn){
+   btn.disabled=!fits||!affordable;
+   btn.classList.toggle("disabledBuild",btn.disabled);
+   if(!fits)btn.textContent="Does not fit on this deck";
+   else if(!affordable)btn.textContent="Insufficient cash";
+   else btn.textContent="Build on this deck";
+   btn.setAttribute("aria-disabled",btn.disabled?"true":"false");
+ }
 }
 function addSpaceToSelectedDeck(){
  const s=activeShip(),m=ensureShipSpaceModel(s),d=selectedDeckModel(),type=document.getElementById("addSpaceType")?.value,count=Math.max(1,+document.getElementById("addSpaceCount")?.value||1),location=+document.getElementById("addSpaceLocation")?.value||3.8,def=SPACE_TYPES[type];if(!def)return;
@@ -3238,10 +3294,32 @@ function renderMyShips(){
 function ensureSixWeekProgramme(){
  state.programme=state.programme||[];
  state.programme.forEach((item,idx)=>{
+   const hasRealRoute=Array.isArray(item.route)&&item.route.length>1;
+   const hasAppliedRoute=Array.isArray(item.appliedDraft?.route)&&item.appliedDraft.route.length>1;
+   // Recover schedules created by older builds where Apply Route did not persist planned=true.
+   if(hasRealRoute || hasAppliedRoute){
+     if(!hasRealRoute && hasAppliedRoute){
+       const d=item.appliedDraft;
+       Object.assign(item,{
+         route:[...d.route],
+         cabinPrices:{...(d.cabinPrices||item.cabinPrices||{})},
+         fare:d.fare??item.fare??0,
+         service:d.service??item.service??3,
+         foodSpendPpd:d.foodSpendPpd??item.foodSpendPpd??18,
+         hotelConsumablesPpd:d.hotelConsumablesPpd??item.hotelConsumablesPpd??7,
+         marketing:d.marketing??item.marketing??0,
+         speed:d.speed??item.speed??17.5,
+         excursionSelection:d.excursionSelection||item.excursionSelection||{},
+         excursionPricing:d.excursionPricing||item.excursionPricing||{}
+       });
+     }
+     item.planned=true;
+   }
    if(!item.planned){
      item.startPort=item.startPort||programmeStartPort(idx);
      item.route=[];item.booked=0;item.lastBooked=0;item.fare=0;
      item.cabinPrices={inside:0,oceanview:0,balcony:0,suite:0};
+     item.routeApplied=false;item.appliedDraft=null;
    }
  });
  while(state.programme.length<6){
@@ -3338,9 +3416,27 @@ document.getElementById("applyWeekRoute").onclick=()=>{
      alert(test.sch.reason||"This itinerary does not fit a valid 7-day sailing.");
      return;
    }
-   old.appliedDraft=draft;
-   old.routeApplied=true;
-   renderSelectedPlan();
+   // Apply = save a flexible planned week. Commit is still a separate lock action.
+   Object.assign(old,{
+     route:[...draft.route],
+     cabinPrices:{...draft.cabinPrices},
+     fare:draft.fare,
+     service:draft.service,
+     foodSpendPpd:draft.foodSpendPpd,
+     hotelConsumablesPpd:draft.hotelConsumablesPpd,
+     marketing:draft.marketing,
+     speed:draft.speed,
+     excursionSelection:draft.excursionSelection||old.excursionSelection||{},
+     excursionPricing:draft.excursionPricing||old.excursionPricing||{},
+     planned:true,
+     committed:false,
+     routeApplied:true,
+     appliedDraft:{...draft,route:[...draft.route],cabinPrices:{...draft.cabinPrices}}
+   });
+   enforceProgrammeContinuity();
+   queueAutoSave();
+   renderSchedule();
+   setSaveStatus("Schedule saved");
  }catch(e){ alert(e.message||String(e)); }
 };
 
@@ -3355,6 +3451,7 @@ document.getElementById("saveCommitWeek").onclick=()=>{
      old.excursionPricing[p]=old.excursionPricing[p]||{};
      old.excursionPricing[p][idx]={sellPrice:+inp.value||0};
    });
+   queueAutoSave();
    renderAll();
    alert("Excursion prices saved.");
    return;
@@ -3381,6 +3478,7 @@ document.getElementById("saveCommitWeek").onclick=()=>{
 
  state.programme[i]={...old,route,fare,cabinPrices,excursionPricing:applied.excursionPricing||{},excursionSelection:applied.excursionSelection||{},service,foodSpendPpd,hotelConsumablesPpd,marketing,speed,planned:true,committed:true,routeApplied:false,appliedDraft:null};
  enforceProgrammeContinuity();
+ queueAutoSave();
  if(i===0){
    state.route=[...state.programme[0].route];
    state.fare=fare;state.service=service;state.foodSpendPpd=foodSpendPpd;state.hotelConsumablesPpd=hotelConsumablesPpd;state.marketing=marketing;state.speed=speed;
