@@ -195,6 +195,18 @@ nav button{white-space:nowrap}
 .saveBtn:active{transform:translateY(1px)}
 .saveActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .saveMeta{padding:10px 12px;border-radius:12px;background:#f2f6f9;margin-top:10px;color:var(--muted)}
+
+/* v0.10.0k scheduler/readability and finance UI */
+.weekBtn.active.committed{background:#dfe3e6!important;color:#26343d!important;border:2px solid #53636e!important;box-shadow:0 0 0 3px rgba(83,99,110,.14)!important}
+.weekBtn.active.urgent{background:#f8caca!important;color:#651717!important;border:2px solid #b63636!important;box-shadow:0 0 0 3px rgba(182,54,54,.14)!important}
+.weekBtn.active.future{background:#ffe99a!important;color:#4e3d00!important;border:2px solid #a88300!important;box-shadow:0 0 0 3px rgba(168,131,0,.14)!important}
+.schedulerCostStrip{margin:8px 0 12px;padding:10px 12px;border-radius:10px;background:#e9f2f7;border:1px solid #bdd0df;font-weight:800;color:#173e61}
+.schedulerCostStrip.pending{background:#f4f6f8;color:#5a6872;font-weight:600}
+.headerSailBtn{background:#fff;color:#0b5d87;border:0;border-radius:9px;padding:8px 13px;font-weight:900;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.headerSailBtn:hover{filter:brightness(.97)}
+.loanActionGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.loanAction{border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff}@media(max-width:700px){.loanActionGrid{grid-template-columns:1fr}}
+.reviewScoreCell{white-space:nowrap}.nextSailingTable td{vertical-align:top}
+
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -202,7 +214,7 @@ nav button{white-space:nowrap}
 <body>
 <header>
  <div class="toprow">
-  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.10.0j</span></div><div class="sub">One brand. One ship. Build from there.</div></div>
+  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.10.0k</span></div><div class="sub">One brand. One ship. Build from there.</div></div>
   <div class="pills">
    <div class="pill">Week <b id="weekPill">1</b></div>
    <div class="pill">Group cash <b id="cashPill">£45.0m</b></div>
@@ -214,18 +226,20 @@ nav button{white-space:nowrap}
    <div class="pill"><span id="saveStatus" class="saveStatus">Not saved yet</span></div>
    <button class="saveBtn" id="manualSaveBtn" type="button">Save</button>
    <button class="saveBtn" id="saveToolsBtn" type="button">Save / Load</button>
+   <button class="headerSailBtn" id="sailBtn" type="button">SAIL THIS WEEK →</button>
   </div>
  </div>
 </header>
 <nav>
  <button data-tab="dashboard" class="active">Dashboard</button><button data-tab="ships">My Ships</button>
- <button data-tab="schedule">6-Week Schedule</button>
+ <button data-tab="schedule">Scheduler</button>
  <button data-tab="calendar">24-Week Calendar</button>
  <button data-tab="bookings">Bookings</button><button data-tab="ports">Ports</button><button data-tab="market">Market</button>
  <button data-tab="pnl">Weekly P&amp;L</button>
  <button data-tab="pnlHistory">P&amp;L History</button>
  <button data-tab="cashflow">Weekly Cash</button>
  <button data-tab="balance">Balance Sheet</button>
+ <button data-tab="financing">Financing</button>
  <button data-tab="reviewHistory">Review History</button>
 </nav>
 <main>
@@ -235,15 +249,13 @@ nav button{white-space:nowrap}
   <div class="card c3"><div class="label">Fleet occupancy</div><div class="kpi" id="fleetOccKpi">—</div><div class="label">Latest completed week</div></div>
   <div class="card c3"><div class="label">Fleet EBITDA</div><div class="kpi" id="fleetEbitdaKpi">—</div><div class="label">Latest completed week</div></div>
   <div class="card c3"><div class="label">Group cash</div><div class="kpi" id="groupCashKpi">£45.0m</div><div class="label">Company level</div></div>
+
   <div class="card c6">
-   <div class="row" style="justify-content:space-between">
-    <div><h3 style="margin:0">Selected ship summary</h3><div class="label">Current operating picture for one ship.</div></div>
-    <select id="dashboardShipSelect" style="min-width:220px"></select>
-   </div>
+   <div class="row" style="justify-content:space-between"><div><h3 style="margin:0">Selected ship summary</h3><div class="label">Current operating picture.</div></div><select id="dashboardShipSelect" style="min-width:220px"></select></div>
    <div class="shipSummaryGrid">
-    <div><div class="label">Ship</div><div class="kpi" id="shipName">MV Meridian</div><div class="label" id="shipSummaryMeta"></div></div>
-    <div><div class="label">Forward bookings</div><div class="kpi" id="forwardBookings">—</div><div class="label">Next sailing</div></div>
-    <div><div class="label">Last occupancy</div><div class="kpi" id="lastOccKpi">—</div><div class="label">Completed sailing</div></div>
+    <div><div class="label">Ship</div><div class="kpi" id="shipName">—</div><div class="label" id="shipSummaryMeta"></div></div>
+    <div><div class="label">Forward bookings</div><div class="kpi" id="forwardBookings">—</div></div>
+    <div><div class="label">Last occupancy</div><div class="kpi" id="lastOccKpi">—</div></div>
     <div><div class="label">Avg fare / guest</div><div class="kpi" id="avgFareKpi">—</div></div>
     <div><div class="label">Onboard spend / guest</div><div class="kpi" id="onboardSpendKpi">—</div></div>
     <div><div class="label">EBITDA margin</div><div class="kpi" id="ebitdaMarginKpi">—</div></div>
@@ -251,40 +263,14 @@ nav button{white-space:nowrap}
     <div><div class="label">Current location</div><div class="kpi" id="shipLocationKpi" style="font-size:17px">—</div></div>
     <div><div class="label">Condition</div><div class="kpi" id="shipConditionKpi">—</div></div>
    </div>
-   <div class="label" style="margin-top:12px">Condition detail: Machinery <b id="condMachinery">82%</b> · Hull <b id="condHull">88%</b> · Hotel <b id="condHotel">80%</b> · Interiors <b id="condInteriors">76%</b></div>
-  </div>
-  <div class="card c6">
-   <h3>Group — last 6 completed weeks</h3>
-   <div class="label">Weekly profit, closing cash and average guest review across the fleet.</div>
-   <div id="groupTrendChart" class="trendChart"></div>
+   <div class="label" style="margin-top:12px">Condition detail: Machinery <b id="condMachinery">—</b> · Hull <b id="condHull">—</b> · Hotel <b id="condHotel">—</b> · Interiors <b id="condInteriors">—</b></div>
   </div>
 
-  <div class="card c12">
-   <h3>Next sailing</h3>
-   <div id="routeSummary" class="notice"></div>
-   <div class="timeline" id="dashTimeline" style="margin-top:10px"></div>
-   <div class="bigaction"><button class="btn good" id="sailBtn">SAIL THIS WEEK →</button></div>
-  </div>
-  </div>
-<div><b id="serviceLabel">3 / 5</b></div></div>
-   <div><b id="marketingLabel">£90k</b></div></div>
-   <div><b id="speedLabel">17.5 kn</b></div></div>
-   
+  <div class="card c6"><h3>Group — last 6 completed weeks</h3><div class="label">Profit, cash, occupancy, profit margin and average review across the fleet.</div><div id="groupTrendChart" class="trendChart"></div></div>
 
-  <div class="card c6">
-   <h3>Last week — passenger occupancy by segment</h3>
-   <div class="segbar" id="lastSegBar"></div>
-   <table id="lastSegmentTable"></table>
-  </div>
-  <div class="card c6">
-   <h3>This week's market</h3>
-   <div id="eventBox" class="notice"></div>
-   <table id="marketMini"></table>
-  </div>
+  <div class="card c12"><h3>Next sailings — fleet</h3><div class="label">The next departure for each ship. Use the ship selector above to choose which ship the blue-bar Sail button operates.</div><div id="fleetNextSailings"></div></div>
  </div>
 </section>
-
-
 
 <section id="ships" class="tab">
  <div class="grid">
@@ -355,8 +341,10 @@ nav button{white-space:nowrap}
       <button type="button" data-schedule-page="itinerary" class="active">Itinerary</button>
       <button type="button" data-schedule-page="pricing">Pricing &amp; demand</button>
       <button type="button" data-schedule-page="options">Onboard options</button>
+      <button type="button" data-schedule-page="excursions">Excursions</button>
       <button type="button" data-schedule-page="costs">Operating costs</button>
     </div>
+    <div id="schedulerCostStrip" class="schedulerCostStrip pending">Apply the route to calculate the estimated total voyage cost.</div>
 
     <div id="schedulePageItinerary" class="scheduleSubPage active">
       <div class="planGrid">
@@ -391,8 +379,11 @@ nav button{white-space:nowrap}
         <div class="span4"><label class="label">Service level</label><select id="selService" style="width:100%"></select></div>
         <div class="span4"><label class="label">Food spend (£ / guest / day)</label><input id="selFoodSpend" type="number" min="8" max="45" step="1" style="width:100%"><div class="label">Provisioning cost. Higher spend improves food reviews with diminishing returns.</div></div>
         <div class="span4"><label class="label">Hotel &amp; housekeeping consumables (£ / guest / day)</label><input id="selHotelSpend" type="number" min="3" max="25" step="1" style="width:100%"><div class="label">Linen, toiletries, cleaning and guest-room supplies. Affects hotel-service reviews.</div></div>
-        <div class="span12"><h3 style="margin-top:8px">Excursions offered this week</h3><div class="label">Tick the excursions you want to sell on this sailing. Selection and guest price are specific to this week.</div><div id="weekExcursions"></div></div>
       </div>
+    </div>
+
+    <div id="schedulePageExcursions" class="scheduleSubPage">
+      <div class="planGrid"><div class="span12"><h3 style="margin-top:8px">Excursions offered this week</h3><div class="label">Tick the excursions you want to sell on this sailing. Selection and guest price are specific to this week.</div><div id="weekExcursions"></div></div></div>
     </div>
 
     <div id="schedulePageCosts" class="scheduleSubPage">
@@ -415,8 +406,8 @@ nav button{white-space:nowrap}
 <section id="calendar" class="tab">
  <div class="grid">
   <div class="card c12">
-   <h3>24-Week demand calendar</h3>
-   <div class="label">Seasons, school-holiday periods and special weeks affect total demand and passenger mix. School holidays particularly increase family demand. Holiday timing follows a typical UK-style game calendar rather than real-world dated school terms.</div>
+   <h3>24-Week annual demand calendar</h3>
+   <div class="label">Each game year has 24 weeks. Each season contains exactly 6 weeks; winter is split across the start and end of the year to follow a normal annual cycle. School holidays and special weeks affect demand and passenger mix.</div>
    <div id="calendarGrid" class="calendarGrid" style="margin-top:12px"></div>
   </div>
  </div>
@@ -528,6 +519,20 @@ nav button{white-space:nowrap}
     <tr><td>Opening cash</td><td>£45m</td></tr>
    </table>
   </div>
+ </div>
+</section>
+
+<section id="financing" class="tab">
+ <div class="grid">
+  <div class="card c12"><h2 style="margin:0">Financing</h2><div class="label">Manage bank borrowing separately from the normal scheduled weekly repayment.</div></div>
+  <div class="card c4"><div class="label">Bank debt</div><div class="kpi" id="financeDebtKpi">—</div><div class="label">Current outstanding principal</div></div>
+  <div class="card c4"><div class="label">Current interest rate</div><div class="kpi" id="financeRateKpi">—</div><div class="label">Blended annual rate</div></div>
+  <div class="card c4"><div class="label">Normal weekly repayment</div><div class="kpi" id="financeScheduledKpi">—</div><div class="label">Automatically paid after each sailing</div></div>
+  <div class="card c12"><div class="loanActionGrid">
+    <div class="loanAction"><h3>Take additional borrowing</h3><div class="label">New borrowing immediately increases both cash and bank debt. The offered rate rises if leverage is already high.</div><label class="label">Amount (£m)</label><input id="newLoanAmount" type="number" min="0.5" max="100" step="0.5" value="5" style="width:100%"><div class="label" id="loanOfferText" style="margin:8px 0"></div><button class="btn good" id="takeLoanBtn">Draw loan</button></div>
+    <div class="loanAction"><h3>Make an extra repayment</h3><div class="label">This is on top of the normal agreed weekly repayment and reduces cash immediately.</div><label class="label">Amount (£m)</label><input id="extraRepayAmount" type="number" min="0.1" max="100" step="0.1" value="1" style="width:100%"><div class="label" style="margin:8px 0">You cannot repay more than available cash or outstanding debt.</div><button class="btn" id="extraRepayBtn">Repay early</button></div>
+  </div></div>
+  <div class="card c12"><h3>Debt history</h3><table id="debtHistoryTable"></table></div>
  </div>
 </section>
 
@@ -815,7 +820,7 @@ const state = {
    decks:12
   }
  },
- week:1,cash:45000000,debt:80000000,shipBook:115000000,otherAssets:5000000,
+ week:1,cash:45000000,debt:80000000,loanRate:.062,scheduledLoanRepayment:350000,debtHistory:[],shipBook:115000000,otherAssets:5000000,
  customerDeposits:7000000,payables:3500000,equity:74500000,rep:55,
  fuelUSD:690,fare:899,service:3,marketing:90000,speed:17.5,foodSpendPpd:18,hotelConsumablesPpd:7,
  weather:{temp:27,kind:"Sunny",icon:"☀️",rain:false,snow:false},
@@ -843,7 +848,7 @@ Object.keys(state.contracts).forEach(n=>{state.contracts[n].excursions=defaultEx
 
 const SAVE_STORAGE_KEY="cruiseTycoon.save.v1";
 const SAVE_SCHEMA_VERSION=1;
-const GAME_VERSION="0.10.0h";
+const GAME_VERSION="0.10.0k";
 const INITIAL_GAME_STATE=JSON.parse(JSON.stringify(state));
 let saveSystemReady=false;
 let saveTimer=null;
@@ -885,6 +890,8 @@ function hydrateFromPayload(payload){
  Object.assign(state,merged);
  // Defensive normalization for older saves.
  state.performanceHistory=Array.isArray(state.performanceHistory)?state.performanceHistory:[];
+ state.debtHistory=Array.isArray(state.debtHistory)?state.debtHistory:[];
+ state.loanRate=state.loanRate??.062;state.scheduledLoanRepayment=state.scheduledLoanRepayment??350000;
  state.fleet=state.fleet||cloneJson(INITIAL_GAME_STATE.fleet);
  if(!state.fleet[state.activeShipId])state.activeShipId=Object.keys(state.fleet)[0];
  if(!state.programme || !state.programme.length)state.programme=cloneJson(INITIAL_GAME_STATE.programme);
@@ -1299,28 +1306,36 @@ function expectedFareRevenue(item, occ){
 function sameRoute(a,b){return JSON.stringify(a)===JSON.stringify(b)}
 
 
+function gameYearInfo(weekNo){
+ const gameWeek=Math.max(1,weekNo|0);
+ const year=Math.floor((gameWeek-1)/24)+1;
+ const weekOfYear=((gameWeek-1)%24)+1;
+ return {gameWeek,year,weekOfYear};
+}
 function seasonForGameWeek(weekNo){
- const n=((weekNo-1)%52)+1;
- if(n<=8 || n>=49) return "Winter";
- if(n<=21) return "Spring";
- if(n<=35) return "Summer";
+ const n=gameYearInfo(weekNo).weekOfYear;
+ // Exactly six weeks per season. Winter spans year-end: W1-3 and W22-24.
+ if(n<=3 || n>=22) return "Winter";
+ if(n<=9) return "Spring";
+ if(n<=15) return "Summer";
  return "Autumn";
 }
 function gameWeekProfile(weekNo){
- const n=((weekNo-1)%52)+1;
+ const yi=gameYearInfo(weekNo),n=yi.weekOfYear;
  const season=seasonForGameWeek(weekNo);
  let event="Standard week", demand=1, family=1, couples=1, seniors=1, young=1, luxury=1;
- if(n===1){event="New Year holiday";demand=1.18;family=1.08;couples=1.08;luxury=1.08;}
- else if(n===7||n===8){event="February school half-term";demand=1.12;family=1.25;young=1.04;}
- else if(n===13||n===14){event="Easter school holidays";demand=1.18;family=1.32;couples=1.04;}
- else if(n===21||n===22){event="Late-spring school half-term";demand=1.13;family=1.26;}
- else if(n>=27&&n<=34){event="Summer school holidays";demand=1.24;family=1.42;young=1.08;couples=.98;seniors=.94;}
- else if(n===43){event="Autumn school half-term";demand=1.13;family=1.27;}
- else if(n===51){event="Christmas week";demand=1.28;family=1.30;couples=1.08;luxury=1.10;seniors=.95;}
- else if(n===52){event="New Year cruise week";demand=1.26;family=1.12;couples=1.14;luxury=1.12;}
- else if(n===18||n===35){event="Bank-holiday demand";demand=1.08;family=1.10;couples=1.05;}
- return {week:weekNo,weekOfYear:n,season,event,demand,segment:{Families:family,Couples:couples,Seniors:seniors,Young:young,Luxury:luxury}};
+ if(n===1){event="New Year holiday";demand=1.18;family=1.10;couples=1.08;luxury=1.08;}
+ else if(n===3){event="Winter school half-term";demand=1.12;family=1.27;young=1.04;}
+ else if(n===6||n===7){event="Easter school holidays";demand=1.18;family=1.32;couples=1.04;}
+ else if(n===9){event="Late-spring school half-term";demand=1.13;family=1.26;}
+ else if(n>=12&&n<=15){event="Summer school holidays";demand=1.24;family=1.42;young=1.08;couples=.98;seniors=.94;}
+ else if(n===18){event="Autumn school half-term";demand=1.13;family=1.27;}
+ else if(n===23){event="Christmas holiday build-up";demand=1.18;family=1.18;couples=1.07;luxury=1.08;}
+ else if(n===24){event="Christmas & New Year cruise";demand=1.30;family=1.28;couples=1.12;luxury=1.12;seniors=.96;}
+ else if(n===5||n===10||n===17){event="Bank-holiday demand";demand=1.08;family=1.10;couples=1.05;}
+ return {week:weekNo,year:yi.year,weekOfYear:n,season,event,demand,segment:{Families:family,Couples:couples,Seniors:seniors,Young:young,Luxury:luxury}};
 }
+function calendarWeekLabel(weekNo){const x=gameYearInfo(weekNo);return `Year ${x.year} · Week ${x.weekOfYear}`;}
 function seasonForWeek(weeksAhead){
  return seasonForGameWeek(state.week + weeksAhead - 1);
 }
@@ -1607,7 +1622,7 @@ function simpleTrendSvg(rows){
  <polyline points="${revPts}" fill="none" stroke="#8b5e34" stroke-width="3"/>
  ${labels}</svg>
  <div class="trendLegend"><span style="color:#173e61"><span class="legendMark"></span>Profit</span><span style="color:#637b8d"><span class="legendMark"></span>Closing cash</span><span style="color:#8b5e34"><span class="legendMark"></span>Average review</span></div>
- <div style="overflow-x:auto;margin-top:8px"><table><tr><th>Week</th>${rows.map(r=>`<th>W${r.week}</th>`).join("")}</tr><tr><td>Profit</td>${rows.map(r=>`<td>${statementMoney(r.profit)}</td>`).join("")}</tr><tr><td>Cash</td>${rows.map(r=>`<td>${statementMoney(r.cash)}</td>`).join("")}</tr><tr><td>Avg review</td>${rows.map(r=>`<td>${r.review.toFixed(1)} ★</td>`).join("")}</tr></table></div>`;
+ <div style="overflow-x:auto;margin-top:8px"><table><tr><th>Week</th>${rows.map(r=>`<th>W${r.week}</th>`).join("")}</tr><tr><td>Profit</td>${rows.map(r=>`<td>${statementMoney(r.profit)}</td>`).join("")}</tr><tr><td>Profit % revenue</td>${rows.map(r=>`<td>${pct(r.margin||0)}</td>`).join("")}</tr><tr><td>Occupancy</td>${rows.map(r=>`<td>${pct(r.occupancy||0)}</td>`).join("")}</tr><tr><td>Cash</td>${rows.map(r=>`<td>${statementMoney(r.cash)}</td>`).join("")}</tr><tr><td>Avg review</td>${rows.map(r=>`<td>${r.review.toFixed(1)} ★</td>`).join("")}</tr></table></div>`;
 }
 function groupHistoryRows(){
  const hist=state.performanceHistory||[];
@@ -1615,7 +1630,10 @@ function groupHistoryRows(){
  return weeks.map(w=>{
   const rr=hist.filter(x=>x.week===w);
   const pax=rr.reduce((a,x)=>a+(x.pax||0),0);
-  return {week:w,profit:rr.reduce((a,x)=>a+(x.net||0),0),cash:rr.length?rr[rr.length-1].cashClosing:state.cash,review:pax?rr.reduce((a,x)=>a+(x.reviewScore||0)*(x.pax||0),0)/pax:(rr.reduce((a,x)=>a+(x.reviewScore||0),0)/Math.max(1,rr.length))};
+  const capacity=rr.reduce((a,x)=>a+((state.fleet?.[x.shipId]?.capacity)||0),0);
+  const revenue=rr.reduce((a,x)=>a+(x.pnl?.totalRev||0),0);
+  const profit=rr.reduce((a,x)=>a+(x.net||0),0);
+  return {week:w,profit,revenue,margin:revenue?profit/revenue:0,occupancy:capacity?pax/capacity:0,cash:rr.length?rr[rr.length-1].cashClosing:state.cash,review:pax?rr.reduce((a,x)=>a+(x.reviewScore||0)*(x.pax||0),0)/pax:(rr.reduce((a,x)=>a+(x.reviewScore||0),0)/Math.max(1,rr.length))};
  });
 }
 function renderGroupTrend(){
@@ -1623,20 +1641,14 @@ function renderGroupTrend(){
 }
 function renderReviewHistory(){
  const sel=document.getElementById("reviewHistoryShip");
- if(sel){
-  const current=sel.value||"all";
-  sel.innerHTML='<option value="all">All ships</option>'+fleetShips().map(x=>`<option value="${x.id}">${x.name}</option>`).join('');
-  sel.value=[...sel.options].some(o=>o.value===current)?current:"all";
- }
+ if(sel){const current=sel.value||"all";sel.innerHTML='<option value="all">All ships</option>'+fleetShips().map(x=>`<option value="${x.id}">${x.name}</option>`).join('');sel.value=[...sel.options].some(o=>o.value===current)?current:"all";}
  const shipId=sel?.value||"all";
  const rows=(state.performanceHistory||[]).filter(x=>shipId==="all"||x.shipId===shipId).slice().reverse();
  const chartRows=[...rows].reverse().slice(-12).map(x=>({week:x.week,profit:x.net,cash:x.cashClosing,review:x.reviewScore}));
  const chart=document.getElementById("reviewHistoryTrend");if(chart)chart.innerHTML=simpleTrendSvg(chartRows);
  const tbl=document.getElementById("reviewHistoryTable");if(!tbl)return;
- tbl.innerHTML=rows.length?`<tr><th>Week</th><th>Ship</th><th>Route</th><th>Review</th><th>Best / weakest</th><th>Passenger comments</th></tr>`+rows.map(x=>{
-  const ent=Object.entries(x.reviewDetail||{}).sort((a,b)=>b[1]-a[1]);
-  return `<tr><td>W${x.week}<br><span class="label">${x.season} · ${x.weather}</span></td><td>${x.shipName}</td><td>${(x.route||[]).join(" → ")}</td><td><b>${x.reviewScore.toFixed(1)} ★</b></td><td>${ent[0]?.[0]||"—"}<br><span class="label">Weakest: ${ent[ent.length-1]?.[0]||"—"}</span></td><td>“${x.comments?.good||""}”<div class="reviewComment">“${x.comments?.bad||""}”</div></td></tr>`;
- }).join(''):'<tr><td>No completed sailings yet.</td></tr>';
+ const metrics=[...new Set(rows.flatMap(x=>Object.keys(x.reviewDetail||{})))];
+ tbl.innerHTML=rows.length?`<tr><th>Week</th><th>Ship</th><th>Overall</th>${metrics.map(m=>`<th>${m}</th>`).join("")}<th>Route</th><th>Passenger comments</th></tr>`+rows.map(x=>`<tr><td>${calendarWeekLabel(x.week)}<br><span class="label">Game W${x.week} · ${x.season} · ${x.weather}</span></td><td>${x.shipName}</td><td class="reviewScoreCell"><b>${x.reviewScore.toFixed(1)} ★</b></td>${metrics.map(m=>`<td class="reviewScoreCell">${x.reviewDetail?.[m]!==undefined?x.reviewDetail[m].toFixed(1)+" ★":"—"}</td>`).join("")}<td>${(x.route||[]).join(" → ")}</td><td>“${x.comments?.good||""}”<div class="reviewComment">“${x.comments?.bad||""}”</div></td></tr>`).join(''):'<tr><td>No completed sailings yet.</td></tr>';
 }
 function showVoyageAnimation(done){
  const overlay=document.getElementById("voyageOverlay");
@@ -1951,7 +1963,7 @@ function sail(){
  let ebitda=totalRev-opex;
  let depreciation=115000000/(20*52);
  let operating=ebitda-depreciation;
- let interest=state.debt*.062/52;
+ let interest=state.debt*(state.loanRate??.062)/52;
  let pbt=operating-interest;
  let tax=Math.max(0,pbt*.25);
  let net=pbt-tax;
@@ -1990,10 +2002,11 @@ function sail(){
  let taxCash=state.week%13===0?-Math.max(0,tax*10):0;
  let operatingCF=newDeposits+finalBalances+onboardCash+supplierCash+payroll+fuelCash+commissionsCash+marketingCash+hoCash+taxCash;
 
- let principal=-Math.min(state.debt,350000);
+ let principal=-Math.min(state.debt,state.scheduledLoanRepayment??350000);
  let interestCash=-interest;
  let financing=principal+interestCash;
  state.debt+=principal;
+ state.debtHistory=state.debtHistory||[];state.debtHistory.push({week:state.week,type:"Scheduled repayment",amount:principal,debt:state.debt,rate:state.loanRate??.062});if(state.debtHistory.length>120)state.debtHistory=state.debtHistory.slice(-120);
  let investing=0;
  let opening=state.cash;
  state.cash+=operatingCF+investing+financing;
@@ -2020,7 +2033,7 @@ function tab(name){
  document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x.id===name));
  document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("active",x.dataset.tab===name));
 }
-document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{tab(b.dataset.tab); if(b.dataset.tab==="ports")renderPorts(); if(b.dataset.tab==="ships")renderMyShips(); if(b.dataset.tab==="reviewHistory")renderReviewHistory(); if(b.dataset.tab==="pnlHistory")renderPnlHistory();});
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{tab(b.dataset.tab); if(b.dataset.tab==="ports")renderPorts(); if(b.dataset.tab==="ships")renderMyShips(); if(b.dataset.tab==="reviewHistory")renderReviewHistory(); if(b.dataset.tab==="pnlHistory")renderPnlHistory(); if(b.dataset.tab==="financing")renderFinancing();});
 setTimeout(()=>{
  const topShip=document.getElementById("activeShipSelect");
  const schedShip=document.getElementById("scheduleShipSelect");
@@ -2148,7 +2161,7 @@ function renderMarket(){
  document.getElementById("wealthTable").innerHTML=wr;
  document.getElementById("repBig").textContent=Math.round(state.rep)+" / 100";
  document.getElementById("repText").textContent=state.rep<45?"Weak reputation is making customers more price-sensitive.":state.rep<70?"A credible mainstream brand, but not yet strong enough to command a material premium.":"Strong brand equity supports pricing and affluent demand.";
- document.getElementById("marketMini").innerHTML=`<tr><th>Indicator</th><th>Value</th></tr><tr><td>Forecast occupancy</td><td>${pct(bookingForecast().lo)}–${pct(bookingForecast().hi)}</td></tr><tr><td>Brand reputation</td><td>${Math.round(state.rep)}/100</td></tr><tr><td>Fuel price</td><td>$${state.fuelUSD}/t</td></tr>`;
+ const mm=document.getElementById("marketMini");if(mm)mm.innerHTML=`<tr><th>Indicator</th><th>Value</th></tr><tr><td>Forecast occupancy</td><td>${pct(bookingForecast().lo)}–${pct(bookingForecast().hi)}</td></tr><tr><td>Brand reputation</td><td>${Math.round(state.rep)}/100</td></tr><tr><td>Fuel price</td><td>$${state.fuelUSD}/t</td></tr>`;
 }
 function pnlHistoryRows(p){
  if(!p)return [];
@@ -2381,7 +2394,7 @@ function renderSelectedPlan(){
  bindScheduleSubTabs();
  const season=seasonForWeek(selectedPlanWeek+1);
  const gameWeek=state.week+selectedPlanWeek;
- document.getElementById("planTitle").textContent=`Week ${gameWeek} · ${season}`;
+ document.getElementById("planTitle").textContent=`${calendarWeekLabel(gameWeek)} · Game week ${gameWeek} · ${season}`;
  document.getElementById("planStatus").textContent=item.committed?"COMMITTED — route and operating settings are locked":"Flexible — itinerary and commercial settings can still be changed";
  const actionBtn=document.getElementById("saveCommitWeek");
  const applyBtn=document.getElementById("applyWeekRoute");
@@ -2465,6 +2478,12 @@ function renderSelectedPlan(){
 
  document.getElementById("selCrewCost").textContent=`Estimated weekly crew wages ${statementMoney(weeklyCrewWages(activeShip(),previewItem.service??3))}`;
  const econ=estimateVoyageEconomics(previewItem);
+ const totalCostStrip=document.getElementById("schedulerCostStrip");
+ if(totalCostStrip){
+   const ready=item.committed||item.routeApplied;
+   totalCostStrip.classList.toggle("pending",!ready);
+   totalCostStrip.innerHTML=ready?`Estimated total voyage cost: <b>${statementMoney(econ.opex)}</b> · Fuel + ports ${statementMoney(econ.routeCost)} · ${priceMoney(econ.opex/Math.max(1,econ.pax))} per expected guest`:`Apply the route to calculate the estimated total voyage cost.`;
+ }
  const costPerGuest=econ.routeCost/Math.max(1,econ.pax);
  const intensity=costPerGuest<120?"Low":costPerGuest<180?"Moderate":costPerGuest<250?"High":"Very high";
  const meter=Math.min(100,Math.round(costPerGuest/3));
@@ -2519,7 +2538,7 @@ function renderCalendar(){
    const w=state.week+i,p=gameWeekProfile(w);
    const demandTxt=p.demand>1.2?"Very strong":p.demand>1.1?"Strong":p.demand>1.03?"Above normal":"Normal";
    const fam=(p.segment.Families||1)>1.2?" · Family demand ↑↑":(p.segment.Families||1)>1.05?" · Family demand ↑":"";
-   cards.push(`<div class="calendarWeek"><div class="cwNum">Week ${w}</div><div>${p.season}</div><div class="cwEvent"><b>${p.event}</b></div><div class="cwDemand">Demand: ${demandTxt} (${p.demand.toFixed(2)}×)${fam}</div></div>`);
+   cards.push(`<div class="calendarWeek"><div class="cwNum">${calendarWeekLabel(w)}</div><div class="label">Game week ${w} · ${p.season}</div><div class="cwEvent"><b>${p.event}</b></div><div class="cwDemand">Demand: ${demandTxt} (${p.demand.toFixed(2)}×)${fam}</div></div>`);
  }
  host.innerHTML=cards.join("");
 }
@@ -2617,7 +2636,7 @@ function renderSchedule(){
    const status=item.committed?"Committed":(urgent?"SET NOW — locks next week":(item.planned?"Future plan":"Future week"));
    const detail=item.planned?`${pct(item.booked||0)} booked ${growth>0?`· +${pct(growth)}`:""}`:"Not planned";
    const gameWeek=state.week+idx, prof=gameWeekProfile(gameWeek);
-   b.innerHTML=`<div class="wk">Week ${gameWeek}</div><div class="season">${prof.season} · ${status}</div><div class="book">${prof.event} · ${detail}</div>`;
+   b.innerHTML=`<div class="wk">${calendarWeekLabel(gameWeek)}</div><div class="season">Game week ${gameWeek} · ${prof.season} · ${status}</div><div class="book">${prof.event} · ${detail}</div>`;
    b.addEventListener("click",()=>{
      selectedPlanWeek=idx;
      renderSchedule();
@@ -2725,25 +2744,42 @@ function renderLastWeekDashboard(){
  const p=state.lastPnl, bar=document.getElementById("lastSegBar"), tbl=document.getElementById("lastSegmentTable");
  const cls={Families:"fam",Couples:"couple",Seniors:"senior",Young:"young",Luxury:"lux"};
  if(!p){
-   bar.innerHTML="";
-   tbl.innerHTML="<tr><td>No completed sailing yet.</td></tr>";
+   if(bar)bar.innerHTML="";
+   if(tbl)tbl.innerHTML="<tr><td>No completed sailing yet.</td></tr>";
    document.getElementById("lastOccKpi").textContent="—";
    document.getElementById("avgFareKpi").textContent="—";
    document.getElementById("onboardSpendKpi").textContent="—";
    document.getElementById("ebitdaMarginKpi").textContent="—";
    return;
  }
- bar.innerHTML="";
- Object.entries(p.mix||{}).forEach(([k,v])=>{let s=document.createElement("span");s.className=cls[k];s.style.width=(v*100)+"%";bar.appendChild(s)});
- let r="<tr><th>Segment</th><th>Guests</th><th>Share of guests</th><th>Share of ship capacity</th></tr>";
- Object.entries(p.segmentPax||{}).forEach(([k,n])=>r+=`<tr><td>${k}</td><td>${n.toLocaleString()}</td><td>${pct(n/p.pax)}</td><td>${pct(n/activeShip().capacity)}</td></tr>`);
- tbl.innerHTML=r;
+ if(bar){bar.innerHTML="";Object.entries(p.mix||{}).forEach(([k,v])=>{let sp=document.createElement("span");sp.className=cls[k];sp.style.width=(v*100)+"%";bar.appendChild(sp)});}
+ if(tbl){let r="<tr><th>Segment</th><th>Guests</th><th>Share of guests</th><th>Share of ship capacity</th></tr>";Object.entries(p.segmentPax||{}).forEach(([k,n])=>r+=`<tr><td>${k}</td><td>${n.toLocaleString()}</td><td>${pct(n/p.pax)}</td><td>${pct(n/activeShip().capacity)}</td></tr>`);tbl.innerHTML=r;}
  document.getElementById("lastOccKpi").textContent=pct(p.actualOcc);
  document.getElementById("avgFareKpi").textContent=money(p.fareRevenue/p.pax).replace("k","");
  document.getElementById("onboardSpendKpi").textContent=money((p.totalRev-p.fareRevenue)/p.pax).replace("k","");
  document.getElementById("ebitdaMarginKpi").textContent=pct(p.ebitda/p.totalRev);
 }
 
+function offeredLoanRate(){
+ const assets=Math.max(1,state.cash+state.shipBook+state.otherAssets);
+ const leverage=state.debt/assets;
+ return clamp(.058+Math.max(0,leverage-.35)*.055,.058,.105);
+}
+function renderFinancing(){
+ const d=document.getElementById("financeDebtKpi");if(!d)return;
+ d.textContent=statementMoney(state.debt);document.getElementById("financeRateKpi").textContent=((state.loanRate??.062)*100).toFixed(2)+"%";document.getElementById("financeScheduledKpi").textContent=statementMoney(state.scheduledLoanRepayment??350000);
+ const offer=offeredLoanRate();const ot=document.getElementById("loanOfferText");if(ot)ot.textContent=`Current new-money offer: ${(offer*100).toFixed(2)}% p.a.`;
+ const t=document.getElementById("debtHistoryTable");if(t){const rows=(state.debtHistory||[]).slice().reverse().slice(0,24);t.innerHTML=rows.length?`<tr><th>Week</th><th>Action</th><th>Cash / debt movement</th><th>Debt after</th><th>Rate</th></tr>`+rows.map(x=>`<tr><td>W${x.week}</td><td>${x.type}</td><td>${statementMoney(x.amount)}</td><td>${statementMoney(x.debt)}</td><td>${((x.rate||0)*100).toFixed(2)}%</td></tr>`).join(""):`<tr><td>No financing transactions yet.</td></tr>`;}
+}
+function nextProgrammeForShip(ship){
+ if(ship.id===state.activeShipId)return state.programme?.[0]||null;
+ return ship.programme?.[0]||null;
+}
+function renderFleetNextSailings(){
+ const host=document.getElementById("fleetNextSailings");if(!host)return;
+ const rows=fleetShips().map(ship=>{const item=nextProgrammeForShip(ship);if(!item)return `<tr><td>${ship.name}</td><td colspan="5">No sailing scheduled</td></tr>`;const r=item.route||[];const gw=ship.id===state.activeShipId?state.week:(ship.week||state.week);return `<tr><td><b>${ship.name}</b>${ship.id===state.activeShipId?'<br><span class="label">Selected ship</span>':''}</td><td>${calendarWeekLabel(gw)}<br><span class="label">Game W${gw}</span></td><td>${r.length?r.join(" → "):"Not set"}</td><td>${item.committed?"Committed":"Planning"}</td><td>${pct(item.booked||0)}</td><td>${seasonForGameWeek(gw)}</td></tr>`;});
+ host.innerHTML=`<div style="overflow-x:auto"><table class="nextSailingTable"><tr><th>Ship</th><th>Departure</th><th>Route</th><th>Status</th><th>Booked</th><th>Season</th></tr>${rows.join("")}</table></div>`;
+}
 function renderAll(){
  document.getElementById("weekPill").textContent=state.week;
  document.getElementById("cashPill").textContent=money(state.cash);
@@ -2780,10 +2816,8 @@ function renderAll(){
  const revk=document.getElementById("reviewKpi");if(revk)revk.textContent=state.lastPnl?.reviewScore?state.lastPnl.reviewScore.toFixed(1)+" ★":"—";
  let f=bookingForecast();
  document.getElementById("forwardBookings").textContent=pct(state.programme[0].booked||0);
- document.getElementById("eventBox").textContent=state.lastEvent;
- const sch=buildSchedule();
- document.getElementById("routeSummary").textContent=`${state.route.join(" → ")} · ${Math.round(sch.totalNm)} nm · ${sch.seaDays} sea day${sch.seaDays===1?"":"s"} inserted`;
- renderTimeline("dashTimeline"); renderMyShips(); renderSchedule(); renderCalendar(); renderMarket(); renderPnl(); renderPnlHistory(); renderCf(); renderBs(); renderLastWeekDashboard(); renderPorts(); renderGroupTrend(); renderReviewHistory();
+ const eb=document.getElementById("eventBox");if(eb)eb.textContent=state.lastEvent;
+ renderMyShips(); renderSchedule(); renderCalendar(); renderMarket(); renderPnl(); renderPnlHistory(); renderCf(); renderBs(); renderLastWeekDashboard(); renderPorts(); renderGroupTrend(); renderReviewHistory(); renderFleetNextSailings(); renderFinancing();
  queueAutoSave();
 }
 document.getElementById("pnlHistoryShip")?.addEventListener("change",renderPnlHistory);
@@ -2823,6 +2857,13 @@ document.getElementById("confirmWeekBtn").onclick=()=>{
  renderAll();
 };
 
+document.getElementById("takeLoanBtn")?.addEventListener("click",()=>{
+ const amount=(+document.getElementById("newLoanAmount").value||0)*1000000;if(amount<=0)return;
+ const offer=offeredLoanRate();const oldDebt=state.debt;const oldRate=state.loanRate??.062;state.debt+=amount;state.cash+=amount;state.loanRate=state.debt?((oldDebt*oldRate+amount*offer)/state.debt):offer;state.debtHistory=state.debtHistory||[];state.debtHistory.push({week:state.week,type:"New borrowing",amount,debt:state.debt,rate:state.loanRate});renderAll();saveProgress(false);
+});
+document.getElementById("extraRepayBtn")?.addEventListener("click",()=>{
+ const requested=(+document.getElementById("extraRepayAmount").value||0)*1000000;const amount=Math.min(requested,state.debt,Math.max(0,state.cash));if(amount<=0)return;state.debt-=amount;state.cash-=amount;state.debtHistory=state.debtHistory||[];state.debtHistory.push({week:state.week,type:"Extra repayment",amount:-amount,debt:state.debt,rate:state.loanRate??.062});renderAll();saveProgress(false);
+});
 document.getElementById("manualSaveBtn")?.addEventListener("click",()=>{saveProgress(true);renderAll();});
 document.getElementById("saveToolsBtn")?.addEventListener("click",openSaveTools);
 document.getElementById("closeSaveModal")?.addEventListener("click",()=>document.getElementById("saveModal")?.classList.remove("show"));
