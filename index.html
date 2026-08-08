@@ -81,6 +81,8 @@ th{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.03
 .weekBtn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
 .weekBtn .wk{font-weight:800}.weekBtn .season{font-size:11px;opacity:.75;margin-top:2px}
 .weekBtn .book{font-size:12px;margin-top:5px}
+.weekBtn.committed{background:#e6e9ec;border-color:#c7cdd2;color:#38434b}.weekBtn.urgent{background:#fde2e2;border-color:#d96b6b;color:#7b2020}.weekBtn.future{background:#fff4c9;border-color:#d9bd57;color:#66520b}.weekBtn.active{box-shadow:0 0 0 3px rgba(11,93,135,.22);outline:none}.weekBtn.active.committed,.weekBtn.active.urgent,.weekBtn.active.future{color:inherit}
+.calendarGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.calendarWeek{border:1px solid var(--line);border-radius:12px;padding:10px;background:#fff}.calendarWeek .cwNum{font-weight:800}.calendarWeek .cwEvent{font-size:12px;margin-top:5px}.calendarWeek .cwDemand{font-size:11px;opacity:.75;margin-top:4px}@media(max-width:900px){.calendarGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.calendarGrid{grid-template-columns:1fr}}
 .planGrid{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}
 .planGrid .span4{grid-column:span 4}.planGrid .span6{grid-column:span 6}.planGrid .span12{grid-column:span 12}
 .financeDetail td:first-child{padding-left:14px}.financeDetail .subline td:first-child{padding-left:28px;color:var(--muted)}
@@ -200,7 +202,7 @@ nav button{white-space:nowrap}
 <body>
 <header>
  <div class="toprow">
-  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.10.0i</span></div><div class="sub">One brand. One ship. Build from there.</div></div>
+  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.10.0j</span></div><div class="sub">One brand. One ship. Build from there.</div></div>
   <div class="pills">
    <div class="pill">Week <b id="weekPill">1</b></div>
    <div class="pill">Group cash <b id="cashPill">£45.0m</b></div>
@@ -218,6 +220,7 @@ nav button{white-space:nowrap}
 <nav>
  <button data-tab="dashboard" class="active">Dashboard</button><button data-tab="ships">My Ships</button>
  <button data-tab="schedule">6-Week Schedule</button>
+ <button data-tab="calendar">24-Week Calendar</button>
  <button data-tab="bookings">Bookings</button><button data-tab="ports">Ports</button><button data-tab="market">Market</button>
  <button data-tab="pnl">Weekly P&amp;L</button>
  <button data-tab="pnlHistory">P&amp;L History</button>
@@ -332,7 +335,7 @@ nav button{white-space:nowrap}
      <option value="meridian">MV Meridian</option>
    </select>
    <h3>Next 6 weeks</h3>
-   <div class="label" style="margin-bottom:8px">Select a ship, then select a week to view or plan that sailing.</div>
+   <div class="label" style="margin-bottom:8px">Select a ship, then select a week to view or plan that sailing.</div><div class="label" style="margin-bottom:10px"><span style="background:#e6e9ec;padding:2px 6px;border-radius:6px">Grey = committed</span> · <span style="background:#fde2e2;padding:2px 6px;border-radius:6px">Red = set now or it locks next week</span> · <span style="background:#fff4c9;padding:2px 6px;border-radius:6px">Yellow = future</span></div>
    <div id="weekList" class="weekList"></div>
   </div>
   <div>
@@ -360,6 +363,7 @@ nav button{white-space:nowrap}
         <div class="span12"><div id="routeApplyStatus" class="notice">Choose the route, then press Apply route & preview to calculate costs and forecast demand before committing.</div></div>
         <div class="span12"><h3 style="margin-top:8px">Itinerary</h3><div class="label">Start port is fixed by where the previous sailing ends.</div></div>
         <div class="span4"><div class="label">Start port</div><div class="kpi" id="selStartPort" style="font-size:20px"></div></div>
+        <div class="span4"><label class="label">Planned speed</label><select id="selSpeed" style="width:100%"></select><div class="label">Higher speed can make longer routes possible, but increases fuel use and machinery wear.</div></div>
         <div id="selectedPortSelectors" class="span12 planGrid"></div>
         <div class="span12"><div id="selectedRouteMap" class="realMap" aria-label="Selected cruise route map"></div></div>
         <div class="span12"><div class="timeline" id="selectedTimeline"></div></div>
@@ -393,14 +397,27 @@ nav button{white-space:nowrap}
 
     <div id="schedulePageCosts" class="scheduleSubPage">
       <div class="planGrid">
-        <div class="span4"><label class="label">Planned speed</label><select id="selSpeed" style="width:100%"></select></div>
         <div class="span4"><div class="label">Estimated fuel</div><div class="kpi" id="selFuel" style="font-size:20px"></div></div>
         <div class="span4"><div class="label">Port cost</div><div class="kpi" id="selPortCost" style="font-size:20px"></div></div>
         <div class="span4"><div class="label">Crew cost</div><div class="kpi" id="selCrewCost" style="font-size:20px"></div></div>
         <div class="span12"><div id="routeEconomicsBox" class="notice"></div></div>
+        <div class="span12"><h3 style="margin-top:10px">Estimated full itinerary cost</h3><div class="label">Planning estimate using the same core cost drivers as the sailing P&amp;L.</div><div id="routeCostBreakdown"></div></div>
+        <div class="span12"><h3 style="margin-top:10px">Profit / loss sensitivity by occupancy</h3><div class="label">Uses your current cabin fares and operating settings. This is a scenario table, not a guaranteed result.</div><div id="occupancyProfitTable"></div></div>
       </div>
     </div>
    </div>
+  </div>
+ </div>
+</section>
+
+
+
+<section id="calendar" class="tab">
+ <div class="grid">
+  <div class="card c12">
+   <h3>24-Week demand calendar</h3>
+   <div class="label">Seasons, school-holiday periods and special weeks affect total demand and passenger mix. School holidays particularly increase family demand. Holiday timing follows a typical UK-style game calendar rather than real-world dated school terms.</div>
+   <div id="calendarGrid" class="calendarGrid" style="margin-top:12px"></div>
   </div>
  </div>
 </section>
@@ -1208,11 +1225,12 @@ function routeAppeal(seg){
  let seaFit=1-Math.abs(seaRatio-def.seaPref*.22)*1.7;
  return clamp((avg/8.2)*seaFit,.65,1.25);
 }
-function forecastMix(){
+function forecastMix(gameWeek=state.week){
  let raw={},sum=0;
+ const prof=gameWeekProfile(gameWeek);
  Object.keys(segmentDefs).forEach(k=>{
   let d=segmentDefs[k];
-  let score=d.base*routeAppeal(k)*(0.80+state.rep/250)*(1+Math.min(.10,state.marketing/2500000));
+  let score=d.base*routeAppeal(k)*(0.80+state.rep/250)*(1+Math.min(.10,state.marketing/2500000))*(prof.segment[k]||1);
   raw[k]=score;sum+=score;
  });
  Object.keys(raw).forEach(k=>raw[k]/=sum);
@@ -1255,21 +1273,22 @@ function weightedPriceSensitivity(){
 
 function programmeForecast(item, weeksAhead){
  if(!item?.planned) return 0;
- const old={route:state.route,fare:state.fare,service:state.service,marketing:state.marketing,speed:state.speed};
- state.route=item.route; state.fare=item.fare; state.service=item.service??3; state.marketing=item.marketing??90000; state.speed=item.speed??17.5;
- let f=bookingForecastCore();
+ const targetWeek=state.week+weeksAhead-1;
+ const old={route:state.route,fare:state.fare,service:state.service,marketing:state.marketing,speed:state.speed,week:state.week};
+ state.route=item.route; state.fare=item.fare; state.service=item.service??3; state.marketing=item.marketing??90000; state.speed=item.speed??17.5; state.week=targetWeek;
+ let f=bookingForecastCore(targetWeek);
  Object.assign(state,old);
  let build=clamp(.22 + (6-weeksAhead)*.085, .18, .88);
  return clamp(Math.max(item.booked||0, f.mid*build), .15, .99);
 }
-function bookingForecastCore(){
- const sch=buildSchedule(), mix=forecastMix();
+function bookingForecastCore(gameWeek=state.week){
+ const sch=buildSchedule(), mix=forecastMix(gameWeek);
  let appeal=0;Object.keys(mix).forEach(k=>appeal+=mix[k]*routeAppeal(k));
  let refFare=930*(1+(state.service-3)*.07)*(0.82+state.rep/180);
  let pSens=weightedPriceSensitivity();
  let priceEffect=Math.pow(refFare/state.fare,pSens);
- let season=1+0.07*Math.sin((state.week-6)/52*2*Math.PI);
- let base=.78*appeal*priceEffect*season*(1+Math.min(.09,state.marketing/1800000));
+ const prof=gameWeekProfile(gameWeek);
+ let base=.78*appeal*priceEffect*prof.demand*(1+Math.min(.09,state.marketing/1800000));
  let mid=clamp(base,.43,.99);
  return {mid,lo:clamp(mid-.07,.30,.98),hi:clamp(mid+.06,.36,1.00)};
 }
@@ -1287,31 +1306,23 @@ function seasonForGameWeek(weekNo){
  if(n<=35) return "Summer";
  return "Autumn";
 }
-function generateWeather(season){
- const r=Math.random();
- if(season==="Winter"){
-   if(r<.08)return {temp:4+Math.round(Math.random()*4),kind:"Snow showers",icon:"🌨️",rain:false,snow:true};
-   if(r<.48)return {temp:9+Math.round(Math.random()*5),kind:"Rain",icon:"🌧️",rain:true,snow:false};
-   return {temp:11+Math.round(Math.random()*6),kind:"Cloudy",icon:"☁️",rain:false,snow:false};
- }
- if(season==="Spring"){
-   if(r<.35)return {temp:14+Math.round(Math.random()*6),kind:"Showers",icon:"🌦️",rain:true,snow:false};
-   return {temp:17+Math.round(Math.random()*7),kind:"Bright",icon:"🌤️",rain:false,snow:false};
- }
- if(season==="Summer"){
-   if(r<.12)return {temp:24+Math.round(Math.random()*5),kind:"Thunderstorms",icon:"⛈️",rain:true,snow:false};
-   return {temp:25+Math.round(Math.random()*8),kind:"Dry",icon:"☀️",rain:false,snow:false};
- }
- if(r<.38)return {temp:15+Math.round(Math.random()*6),kind:"Rain",icon:"🌧️",rain:true,snow:false};
- return {temp:17+Math.round(Math.random()*7),kind:"Fair",icon:"🌤️",rain:false,snow:false};
+function gameWeekProfile(weekNo){
+ const n=((weekNo-1)%52)+1;
+ const season=seasonForGameWeek(weekNo);
+ let event="Standard week", demand=1, family=1, couples=1, seniors=1, young=1, luxury=1;
+ if(n===1){event="New Year holiday";demand=1.18;family=1.08;couples=1.08;luxury=1.08;}
+ else if(n===7||n===8){event="February school half-term";demand=1.12;family=1.25;young=1.04;}
+ else if(n===13||n===14){event="Easter school holidays";demand=1.18;family=1.32;couples=1.04;}
+ else if(n===21||n===22){event="Late-spring school half-term";demand=1.13;family=1.26;}
+ else if(n>=27&&n<=34){event="Summer school holidays";demand=1.24;family=1.42;young=1.08;couples=.98;seniors=.94;}
+ else if(n===43){event="Autumn school half-term";demand=1.13;family=1.27;}
+ else if(n===51){event="Christmas week";demand=1.28;family=1.30;couples=1.08;luxury=1.10;seniors=.95;}
+ else if(n===52){event="New Year cruise week";demand=1.26;family=1.12;couples=1.14;luxury=1.12;}
+ else if(n===18||n===35){event="Bank-holiday demand";demand=1.08;family=1.10;couples=1.05;}
+ return {week:weekNo,weekOfYear:n,season,event,demand,segment:{Families:family,Couples:couples,Seniors:seniors,Young:young,Luxury:luxury}};
 }
-
 function seasonForWeek(weeksAhead){
- const n=((state.week + weeksAhead - 2)%52)+1;
- if(n<=8 || n>=49) return "Winter";
- if(n<=21) return "Spring";
- if(n<=35) return "Summer";
- return "Autumn";
+ return seasonForGameWeek(state.week + weeksAhead - 1);
 }
 
 function programmeStartPort(idx){
@@ -2315,34 +2326,46 @@ function planScheduleForItem(item){
  Object.assign(state,old);
  return {sch,fuel,fc};
 }
-function estimateVoyageEconomics(item){
+function estimateVoyageEconomics(item, forcedOcc=null){
  const info=planScheduleForItem(item);
  const fc=programmeForecast(item,selectedPlanWeek+1);
- const pax=Math.max(1,Math.round(activeShip().capacity*fc));
+ const occ=forcedOcc==null?fc:clamp(forcedOcc,.2,1);
+ const pax=Math.max(1,Math.round(activeShip().capacity*occ));
  const days=Math.max(6,info.sch.days.length);
- const old={route:state.route,fare:state.fare,service:state.service,marketing:state.marketing,speed:state.speed};
- state.route=item.route;state.fare=item.fare;state.service=item.service??3;state.marketing=item.marketing??0;state.speed=item.speed??17.5;
- const mix=forecastMix(),ob=calcOnboard(pax,mix,info.sch);
+ const targetWeek=state.week+selectedPlanWeek;
+ const old={route:state.route,fare:state.fare,service:state.service,marketing:state.marketing,speed:state.speed,week:state.week};
+ state.route=item.route;state.fare=item.fare;state.service=item.service??3;state.marketing=item.marketing??0;state.speed=item.speed??17.5;state.week=targetWeek;
+ const mix=forecastMix(targetWeek),ob=calcOnboard(pax,mix,info.sch);
  Object.assign(state,old);
  const rc=routeCosts(item.route,item.speed??17.5);
  const foodPpd=item.foodSpendPpd??state.foodSpendPpd??18;
  const hotelPpd=item.hotelConsumablesPpd??state.hotelConsumablesPpd??7;
  const food=pax*foodPpd*days,hotel=pax*hotelPpd*days;
  const crew=weeklyCrewWages(activeShip(),item.service??3);
- const fareRev=pax*(item.fare||0);
+ const cp=item.cabinPrices||{};
+ const berthTotal=Object.values(activeShip().berths).reduce((a,b)=>a+b,0)||1;
+ const weightedFare=Object.entries(activeShip().berths).reduce((a,[k,b])=>a+b*(cp[k]||item.fare||0),0)/berthTotal;
+ const fareRev=pax*weightedFare;
  const commissions=fareRev*.095;
  const entertainment=70000+((item.service??3)-3)*18000;
  const qfx=crewQualityEffects(activeShip());
  const repairs=(72000+Math.max(0,(75-conditionAverage()))*8500)*(1.14-qfx.marine*.14);
- const direct=ob.drinks*.26+ob.casino*.18+ob.retail*.48+ob.spa*.32+ob.wifi*.17+ob.dining*.35;
- const onboardRev=Object.values(ob).reduce((a,b)=>a+b,0);
+ const beverage=ob.drinks*.26,casinoCost=ob.casino*.18,retailCost=ob.retail*.48,spaCost=ob.spa*.32,wifiCost=ob.wifi*.17,diningCost=ob.dining*.35;
+ let exRevenue=0,excursionCost=0;
+ try{
+   const xp=scheduledExcursionsForWeek(item,"prebook");
+   const scale=fc>0?occ/fc:1;
+   exRevenue=xp.reduce((a,x)=>a+x.revenue,0)*scale;
+   excursionCost=xp.reduce((a,x)=>a+x.supplierCost,0)*scale;
+ }catch(e){}
+ const onboardRev=Object.values(ob).reduce((a,b)=>a+b,0)+exRevenue;
  const insurance=34000,marketing=item.marketing??0;
- const ho=50000+(fareRev+onboardRev)*.050;
- const opex=crew+food+hotel+rc.fuel+rc.ports+commissions+entertainment+repairs+insurance+marketing+direct+ho;
- const onboardContribution=onboardRev-direct;
- const breakEvenFare=Math.max(0,(opex-onboardContribution)/pax);
- const expectedEbitda=fareRev+onboardRev-opex;
- return {pax,fc,food,hotel,routeCost:rc.fuel+rc.ports,fuel:rc.fuel,ports:rc.ports,opex,onboardContribution,breakEvenFare,expectedEbitda,avgFare:item.fare||0};
+ const totalRev=fareRev+onboardRev;
+ const ho=50000+totalRev*.050;
+ const costs={crew,food,beverage,fuel:rc.fuel,portFees:rc.ports,commissions,entertainment,hotel,repairs,insurance,marketing,casinoCost,excursionCost,retailCost,spaCost,wifiCost,diningCost,ho};
+ const opex=Object.values(costs).reduce((a,b)=>a+b,0);
+ const ebitda=totalRev-opex;
+ return {pax,occ,fc,weightedFare,fareRev,onboardRev,totalRev,costs,food,hotel,routeCost:rc.fuel+rc.ports,fuel:rc.fuel,ports:rc.ports,opex,ebitda};
 }
 
 let selectedScheduleSubPage="itinerary";
@@ -2357,7 +2380,8 @@ function renderSelectedPlan(){
  const item=state.programme[selectedPlanWeek]; if(!item)return;
  bindScheduleSubTabs();
  const season=seasonForWeek(selectedPlanWeek+1);
- document.getElementById("planTitle").textContent=`Week ${selectedPlanWeek+1} · ${season}`;
+ const gameWeek=state.week+selectedPlanWeek;
+ document.getElementById("planTitle").textContent=`Week ${gameWeek} · ${season}`;
  document.getElementById("planStatus").textContent=item.committed?"COMMITTED — route and operating settings are locked":"Flexible — itinerary and commercial settings can still be changed";
  const actionBtn=document.getElementById("saveCommitWeek");
  const applyBtn=document.getElementById("applyWeekRoute");
@@ -2445,7 +2469,16 @@ function renderSelectedPlan(){
  const intensity=costPerGuest<120?"Low":costPerGuest<180?"Moderate":costPerGuest<250?"High":"Very high";
  const meter=Math.min(100,Math.round(costPerGuest/3));
  document.getElementById("routeEconomicsBox").innerHTML=`<b>Route cost indicator</b><div class="costIndicator"><span class="costPill">${intensity}</span><div class="costMeter"><span style="width:${meter}%"></span></div></div>
- <div class="label" style="margin-top:7px">Fuel + port cost <b>${statementMoney(econ.routeCost)}</b> · about <b>${priceMoney(costPerGuest)}</b> per expected guest. This is a cost guide only; the game will not reveal expected profit or a recommended fare before sailing.</div>`;
+ <div class="label" style="margin-top:7px">Fuel + port cost <b>${statementMoney(econ.routeCost)}</b> · about <b>${priceMoney(costPerGuest)}</b> per expected guest.</div>`;
+ const cb=econ.costs;
+ document.getElementById("routeCostBreakdown").innerHTML=`<table><tr><th>Estimated cost</th><th>Amount</th></tr>
+  <tr><td>Crew wages</td><td>${statementMoney(cb.crew)}</td></tr><tr><td>Food</td><td>${statementMoney(cb.food)}</td></tr><tr><td>Beverage supplies</td><td>${statementMoney(cb.beverage)}</td></tr>
+  <tr><td>Fuel</td><td>${statementMoney(cb.fuel)}</td></tr><tr><td>Port &amp; pilotage</td><td>${statementMoney(cb.portFees)}</td></tr><tr><td>Travel-agent commissions</td><td>${statementMoney(cb.commissions)}</td></tr>
+  <tr><td>Entertainment</td><td>${statementMoney(cb.entertainment)}</td></tr><tr><td>Hotel &amp; housekeeping consumables</td><td>${statementMoney(cb.hotel)}</td></tr><tr><td>Repairs &amp; maintenance</td><td>${statementMoney(cb.repairs)}</td></tr>
+  <tr><td>Insurance</td><td>${statementMoney(cb.insurance)}</td></tr><tr><td>Marketing</td><td>${statementMoney(cb.marketing)}</td></tr><tr><td>Onboard &amp; excursion direct costs</td><td>${statementMoney(cb.casinoCost+cb.excursionCost+cb.retailCost+cb.spaCost+cb.wifiCost+cb.diningCost)}</td></tr>
+  <tr><td>Allocated head office</td><td>${statementMoney(cb.ho)}</td></tr><tr class="total"><td>Total estimated operating cost</td><td>${statementMoney(econ.opex)}</td></tr></table>`;
+ const occs=[.60,.70,.80,.90,1.00];
+ document.getElementById("occupancyProfitTable").innerHTML=`<table><tr><th>Occupancy</th><th>Guests</th><th>Fare revenue</th><th>Onboard revenue</th><th>Total revenue</th><th>Operating cost</th><th>Potential EBITDA</th><th>Margin</th></tr>`+occs.map(o=>{const x=estimateVoyageEconomics(previewItem,o);return `<tr><td>${pct(o)}</td><td>${x.pax.toLocaleString()}</td><td>${statementMoney(x.fareRev)}</td><td>${statementMoney(x.onboardRev)}</td><td>${statementMoney(x.totalRev)}</td><td>${statementMoney(x.opex)}</td><td class="${x.ebitda<0?"neg":""}">${statementMoney(x.ebitda)}</td><td>${x.totalRev?pct(x.ebitda/x.totalRev):"—"}</td></tr>`}).join("")+`</table>`;
 
  document.getElementById("selStartPort").textContent=programmeStartPort(selectedPlanWeek);
  const holder=document.getElementById("selectedPortSelectors");holder.innerHTML="";
@@ -2477,6 +2510,18 @@ function renderSelectedPlan(){
    tl.appendChild(x);
  });
  document.getElementById("selectedRouteWarning").textContent=!info.sch.valid?(info.sch.reason||"Voyage must be exactly 7 days."):`Valid 7-day voyage · ${info.sch.portDays} port days · ${info.sch.seaDays} sea days`;
+}
+
+function renderCalendar(){
+ const host=document.getElementById("calendarGrid"); if(!host)return;
+ const cards=[];
+ for(let i=0;i<24;i++){
+   const w=state.week+i,p=gameWeekProfile(w);
+   const demandTxt=p.demand>1.2?"Very strong":p.demand>1.1?"Strong":p.demand>1.03?"Above normal":"Normal";
+   const fam=(p.segment.Families||1)>1.2?" · Family demand ↑↑":(p.segment.Families||1)>1.05?" · Family demand ↑":"";
+   cards.push(`<div class="calendarWeek"><div class="cwNum">Week ${w}</div><div>${p.season}</div><div class="cwEvent"><b>${p.event}</b></div><div class="cwDemand">Demand: ${demandTxt} (${p.demand.toFixed(2)}×)${fam}</div></div>`);
+ }
+ host.innerHTML=cards.join("");
 }
 
 function renderMyShips(){
@@ -2566,10 +2611,13 @@ function renderSchedule(){
    const growth=(item.booked||0)-(item.lastBooked||0);
    const b=document.createElement("button");
    b.type="button";
-   b.className="weekBtn"+(idx===selectedPlanWeek?" active":"");
-   const status=item.committed?"Launch committed":(item.planned?"Planned":"Open");
+   const urgent=!item.committed && idx===3;
+   const colourClass=item.committed?" committed":(urgent?" urgent":" future");
+   b.className="weekBtn"+colourClass+(idx===selectedPlanWeek?" active":"");
+   const status=item.committed?"Committed":(urgent?"SET NOW — locks next week":(item.planned?"Future plan":"Future week"));
    const detail=item.planned?`${pct(item.booked||0)} booked ${growth>0?`· +${pct(growth)}`:""}`:"Not planned";
-   b.innerHTML=`<div class="wk">Week ${idx+1}</div><div class="season">${seasonForWeek(idx+1)} · ${status}</div><div class="book">${detail}</div>`;
+   const gameWeek=state.week+idx, prof=gameWeekProfile(gameWeek);
+   b.innerHTML=`<div class="wk">Week ${gameWeek}</div><div class="season">${prof.season} · ${status}</div><div class="book">${prof.event} · ${detail}</div>`;
    b.addEventListener("click",()=>{
      selectedPlanWeek=idx;
      renderSchedule();
@@ -2582,7 +2630,7 @@ function renderSchedule(){
  const t=document.getElementById("scheduleCashTable");
  if(t){
    t.innerHTML=`<tr><th>Departure</th><th>Season</th><th>Booked last week</th><th>Booked now</th><th>Growth</th><th>Deposits this week</th><th>Final balances</th></tr>`+
-   cash.rows.map(r=>`<tr><td>Week ${r.week}</td><td>${seasonForWeek(r.week)}</td><td>${pct(r.prior)}</td><td>${pct(r.forecast)}</td><td>${r.growth>=0?"+":""}${pct(r.growth)}</td><td>${money(r.depositCash)}</td><td>${money(r.finalCash)}</td></tr>`).join("")+
+   cash.rows.map(r=>`<tr><td>Week ${state.week+r.week-1}</td><td>${seasonForWeek(r.week)}</td><td>${pct(r.prior)}</td><td>${pct(r.forecast)}</td><td>${r.growth>=0?"+":""}${pct(r.growth)}</td><td>${money(r.depositCash)}</td><td>${money(r.finalCash)}</td></tr>`).join("")+
    `<tr class="total"><td>Total</td><td></td><td></td><td></td><td></td><td>${money(cash.dep)}</td><td>${money(cash.final)}</td></tr>`;
  }
 }
@@ -2663,7 +2711,7 @@ document.getElementById("saveCommitWeek").onclick=()=>{
  const os=state.speed;state.speed=speed;const sch=buildSchedule(route);state.speed=os;
  if(!sch.valid){alert(sch.reason||"Itinerary must fit exactly 7 days.");return;}
 
- if(!confirm(`Save and commit Week ${i+1}? Route, cabin prices and operating settings will lock. Excursion prices can still be changed afterwards.`))return;
+ if(!confirm(`Save and commit Week ${state.week+i}? Route, cabin prices and operating settings will lock. Excursion prices can still be changed afterwards.`))return;
 
  state.programme[i]={...old,route,fare,cabinPrices,excursionPricing:applied.excursionPricing||{},excursionSelection:applied.excursionSelection||{},service,foodSpendPpd,hotelConsumablesPpd,marketing,speed,planned:true,committed:true,routeApplied:false,appliedDraft:null};
  enforceProgrammeContinuity();
@@ -2735,7 +2783,7 @@ function renderAll(){
  document.getElementById("eventBox").textContent=state.lastEvent;
  const sch=buildSchedule();
  document.getElementById("routeSummary").textContent=`${state.route.join(" → ")} · ${Math.round(sch.totalNm)} nm · ${sch.seaDays} sea day${sch.seaDays===1?"":"s"} inserted`;
- renderTimeline("dashTimeline"); renderMyShips(); renderSchedule(); renderMarket(); renderPnl(); renderPnlHistory(); renderCf(); renderBs(); renderLastWeekDashboard(); renderPorts(); renderGroupTrend(); renderReviewHistory();
+ renderTimeline("dashTimeline"); renderMyShips(); renderSchedule(); renderCalendar(); renderMarket(); renderPnl(); renderPnlHistory(); renderCf(); renderBs(); renderLastWeekDashboard(); renderPorts(); renderGroupTrend(); renderReviewHistory();
  queueAutoSave();
 }
 document.getElementById("pnlHistoryShip")?.addEventListener("change",renderPnlHistory);
