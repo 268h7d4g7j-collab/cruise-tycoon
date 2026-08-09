@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Cruise Tycoon v0.22.1</title>
+<title>Cruise Tycoon v0.23.0</title>
 <style>
 :root{
   --navy:#102c46;--navy2:#173e61;--bg:#edf3f7;--card:#fff;--ink:#17324a;
@@ -196,7 +196,7 @@ nav button{white-space:nowrap}
 .saveActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .saveMeta{padding:10px 12px;border-radius:12px;background:#f2f6f9;margin-top:10px;color:var(--muted)}
 
-/* v0.22.1 scheduler/readability and finance UI */
+/* v0.23.0 scheduler/readability and finance UI */
 .weekBtn.active.committed{background:#dfe3e6!important;color:#26343d!important;border:2px solid #53636e!important;box-shadow:0 0 0 3px rgba(83,99,110,.14)!important}
 .weekBtn.active.urgent{background:#f8caca!important;color:#651717!important;border:2px solid #b63636!important;box-shadow:0 0 0 3px rgba(182,54,54,.14)!important}
 .weekBtn.active.future{background:#ffe99a!important;color:#4e3d00!important;border:2px solid #a88300!important;box-shadow:0 0 0 3px rgba(168,131,0,.14)!important}
@@ -208,7 +208,7 @@ nav button{white-space:nowrap}
 .reviewScoreCell{white-space:nowrap}.nextSailingTable td{vertical-align:top}
 
 
-/* v0.22.1 visual refresh */
+/* v0.23.0 visual refresh */
 :root{--navy:#092b46;--navy2:#0d4769;--ocean:#137ea5;--ocean2:#42a6bf;--teal:#16837d;--bg:#f2f6f8;--card:#fff;--ink:#163247;--muted:#6e8290;--line:#dce7ec;--lineStrong:#c8d8e0;--good:#18734c;--bad:#aa3b42;--gold:#b78524;--shadow:0 10px 30px rgba(17,53,75,.075);--shadowStrong:0 18px 46px rgba(13,55,79,.13)}
 html{background:#eaf1f5}
 body{background:radial-gradient(circle at 8% 0%,rgba(54,151,181,.08),transparent 30%),linear-gradient(180deg,#edf4f7 0,#f5f8fa 290px,#f2f6f8 100%);min-height:100vh}
@@ -254,7 +254,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:650px){.title{font-size:20px}.pill{padding:6px 9px}.heroKpi .kpi{font-size:27px}.card{padding:13px;border-radius:15px}}
 
 
-/* v0.22.1 graphics expansion */
+/* v0.23.0 graphics expansion */
 .cruiseHero{
  position:relative;
  overflow:hidden;
@@ -302,7 +302,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 }
 
 
-/* v0.22.1 ship/deck management */
+/* v0.23.0 ship/deck management */
 .shipMgmtHeader{background:linear-gradient(145deg,#fff,#f4fafc)}
 .shipMgmtKpis{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:14px}.shipMgmtKpis>div,.deckSpaceSummary>div,.facilityMetrics>div{border:1px solid #d9e6eb;border-radius:12px;padding:10px;background:#f8fbfc}.shipMgmtKpis span,.deckSpaceSummary span,.facilityMetrics span{display:block;color:#748995;font-size:10px;text-transform:uppercase;letter-spacing:.05em}.shipMgmtKpis b{display:block;margin-top:4px;font-size:17px;color:#12364e}
 .deckSidebar{max-height:760px;overflow:auto}.deckList{display:flex;flex-direction:column;gap:6px;margin-top:10px}.deckListBtn{text-align:left;border:1px solid #d7e3e8;background:#f8fbfc;border-radius:11px;padding:9px 10px;color:#17384f}.deckListBtn span,.deckListBtn small{display:block;color:#718691}.deckListBtn.active{background:#0e5579;color:#fff;border-color:#0e5579}.deckListBtn.active span,.deckListBtn.active small{color:#d5eaf2}
@@ -313,13 +313,13 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:1000px){.shipMgmtKpis{grid-template-columns:repeat(4,1fr)}}@media(max-width:700px){.shipMgmtKpis{grid-template-columns:repeat(2,1fr)}.deckSpaceSummary{grid-template-columns:1fr 1fr}}
 
 
-/* v0.22.1 editable ship planner */
+/* v0.23.0 editable ship planner */
 .deckPlanner{margin-top:14px;padding:13px;border:1px solid #cfe0e7;border-radius:14px;background:linear-gradient(145deg,#f5fafc,#fff)}
 .deckPlannerControls{display:grid;grid-template-columns:2fr 1fr 1.3fr auto;gap:9px;align-items:end;margin-top:10px}.deckPlannerControls label{font-size:11px;font-weight:750;color:#607887}.deckPlannerControls select,.deckPlannerControls input{display:block;width:100%;margin-top:4px}.plannerCost{font-weight:850;color:#0f668b;background:#e9f6fa;padding:7px 10px;border-radius:9px}.removeSpaceBtn{margin-top:14px;width:100%}
 .shipClassCards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.shipClassCard{border:1px solid #d4e2e8;border-radius:14px;padding:13px;background:linear-gradient(155deg,#f8fbfc,#fff)}.shipClassCard>b,.shipClassCard>span,.shipClassCard>small{display:block}.shipClassCard>span{color:#718692;margin:3px 0 10px}.shipClassCard>div{margin-top:5px}.shipClassCard>small{color:#718692;margin-top:7px}.shipClassSilhouette{font-size:15px;letter-spacing:-2px;color:#2a7c9d;opacity:.7;margin-bottom:7px!important}
 @media(max-width:850px){.deckPlannerControls{grid-template-columns:1fr 1fr}.shipClassCards{grid-template-columns:1fr}}
 
-/* v0.22.1 management-sim visual overhaul */
+/* v0.23.0 management-sim visual overhaul */
 @media(min-width:980px){
  body{padding-left:178px}
  header{left:0}
@@ -395,7 +395,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .deckQualityMini{grid-column:1/-1;display:flex;gap:5px;margin-top:4px;flex-wrap:wrap}.deckQualityMini em{font-style:normal;font-size:9px;padding:2px 5px;border-radius:5px;background:rgba(255,255,255,.11);color:#cce1ea}.deckConditionActions,.shipRefurbActions{display:flex;align-items:center;gap:10px;margin-top:11px;padding-top:10px;border-top:1px solid #dbe6eb}.facilityMetrics{grid-template-columns:repeat(auto-fit,minmax(82px,1fr))}
 
 
-/* v0.22.1 brand corner and capacity economics */
+/* v0.23.0 brand corner and capacity economics */
 .brandCorner{display:none}
 @media(min-width:980px){
  .brandCorner{
@@ -415,7 +415,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .capacityCallout b{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#176786}.capacityCallout span{font-size:12px}
 
 
-/* v0.22.1 ship summary, luxury catalogue, landmark ports */
+/* v0.23.0 ship summary, luxury catalogue, landmark ports */
 .shipSummaryHero{display:grid;grid-template-columns:minmax(330px,42%) 1fr;min-height:275px;border-radius:17px;overflow:hidden;background:#082b45}
 .shipSummaryPhoto{position:relative;background-image:var(--ship-photo);background-size:cover;background-position:center;min-height:275px}
 .shipSummaryPhotoShade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,30,47,.72),transparent 58%)}
@@ -426,7 +426,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .upgradeCatalogue button:hover{border-color:#5ca8c1;background:#f5fbfd}.upgradeCatalogue button b,.upgradeCatalogue button small{display:block}.upgradeCatalogue button small{color:#718691;margin-top:3px}.upgradeCatalogue button:after{content:"＋";position:absolute;right:9px;top:50%;transform:translateY(-50%);width:25px;height:25px;border-radius:8px;background:#e7f3f8;display:grid;place-items:center;color:#11658a;font-weight:900}
 @media(max-width:900px){.shipSummaryHero{grid-template-columns:1fr}.shipSummaryPhoto{min-height:220px}.shipSummaryIntro .shipMgmtKpis{grid-template-columns:repeat(2,1fr)}}
 
-/* v0.22.1 deck picker and technical condition */
+/* v0.23.0 deck picker and technical condition */
 .deckListBtn{display:block;width:100%;position:relative;z-index:1;pointer-events:auto;cursor:pointer}
 .deckListBtn>*{pointer-events:none}
 .deckSidebar{position:relative;z-index:3}
@@ -438,7 +438,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:720px){.technicalConditionActions{grid-template-columns:1fr}}
 
 
-/* v0.22.1 deck planner disabled-state clarity */
+/* v0.23.0 deck planner disabled-state clarity */
 #addSpaceBtn:disabled,#addSpaceBtn.disabledBuild{
  opacity:.48;
  cursor:not-allowed;
@@ -451,7 +451,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 #addSpaceBtn:disabled:hover{filter:grayscale(.35)}
 
 
-/* v0.22.1 facility capacity summary */
+/* v0.23.0 facility capacity summary */
 .facilityCapacitySummary{display:flex;flex-direction:column;gap:8px;margin-top:12px}
 .capacityRow{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 11px;border:1px solid #d7e4e9;border-radius:11px;background:linear-gradient(180deg,#fbfdfe,#f6fafb)}
 .capacityRow b,.capacityRow span,.capacityRow small{display:block}
@@ -460,12 +460,12 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .capacityRow strong{font-size:14px;color:#0d5e83;text-align:right}
 
 .fuelTitle{display:flex;justify-content:space-between;gap:10px;align-items:center}.fuelTitle span{display:block;font-size:10px;color:#718792}.fuelGauge{height:12px;background:#dce7eb;border-radius:99px;overflow:hidden;margin:10px 0}.fuelGauge div{height:100%;background:#167aa4}.fuelNumbers{font-size:11px;color:#536d79}.shipMarketGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}.marketShip{padding:13px;border:1px solid #d5e2e7;border-radius:13px;background:#fbfdfe}.marketShipHead{display:flex;justify-content:space-between;gap:10px}.marketShipHead span{display:block;font-size:10px;color:#718590}.marketShip p{font-size:11px;color:#607985}.marketSpecs{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}.marketSpecs span{font-size:9px;padding:4px 6px;border-radius:99px;background:#edf4f6}@media(max-width:760px){.shipMarketGrid{grid-template-columns:1fr}}
-/* v0.22.1 render isolation */
+/* v0.23.0 render isolation */
 .renderErrorNotice{margin:12px;padding:12px 14px;border:1px solid #e0b7b7;border-radius:12px;background:#fff1f1;color:#873b3f}
 .renderErrorNotice b,.renderErrorNotice span{display:block}.renderErrorNotice span{font-size:11px;margin-top:4px;color:#8d5b5e}
 
 .marketBuyActions{display:grid;grid-template-columns:1fr 1fr;gap:7px}.marketBuyActions button{width:100%}#selectedRouteWarning small{opacity:.78}
-/* v0.22.1 acquisition/finance/port economics */
+/* v0.23.0 acquisition/finance/port economics */
 .marketSectionTitle{grid-column:1/-1;margin:4px 0 0;padding:10px 12px;background:#eaf3f6;border-radius:12px}.marketSectionTitle h3{margin:0}.marketSectionTitle span{font-size:11px;color:#607784}.marketSectionTitle.newBuild{margin-top:18px;background:#eef6ef}.marketSubGrid{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.newShipName,.shipFinanceProfile{box-sizing:border-box}.headerSailBtn:disabled{opacity:.48;cursor:not-allowed}.marketShip input,.marketShip select{font-size:12px}
 @media(max-width:760px){.marketSubGrid{grid-template-columns:1fr}}
 
@@ -476,7 +476,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:760px){.starControl{grid-template-columns:1fr}.queueHeadline{display:block}}
 
 
-/* v0.22.1 port access usability */
+/* v0.23.0 port access usability */
 .schedulerPortAccess{display:flex;align-items:center;gap:10px;padding:9px 11px;background:#eef6f8;border:1px solid #d4e6eb;border-radius:10px;margin:4px 0 8px}
 .schedulerPortAccess label{white-space:nowrap}
 
@@ -514,7 +514,7 @@ body{background:linear-gradient(180deg,#eef7f8 0,#f7faf9 420px,#f4f6f5 100%)}.to
 @media(prefers-reduced-motion:reduce){.ctHeroShip,.ctWave{animation:none!important}}
 
 
-/* v0.22.1 iOS/mobile fixes */
+/* v0.23.0 iOS/mobile fixes */
 .mobileMenuBtn{display:none}
 @media(max-width:760px){
  .mobileMenuBtn{display:flex;align-items:center;justify-content:center;position:sticky;top:0;z-index:51;width:calc(100% - 20px);margin:8px 10px 0;padding:11px 14px;border:0;border-radius:13px;background:#083b50;color:#fff;font-weight:800;font-size:14px;box-shadow:0 8px 20px rgba(4,49,65,.18)}
@@ -557,7 +557,7 @@ input[type="range"]{width:100%}
 .scheduleSubTabs button.locked{opacity:.42;cursor:not-allowed;filter:grayscale(.5)}
 .scheduleSubTabs button.locked,.scheduleSubTabs button:disabled{opacity:.42;cursor:not-allowed;filter:grayscale(.5)}
 
-/* v0.22.1 Scheduler hotfix */
+/* v0.23.0 Scheduler hotfix */
 .visualBuilderWrap{display:block;width:100%;min-width:0;overflow:visible;grid-column:1/-1!important}
 .visualDayBuilder{
  display:grid!important;
@@ -592,6 +592,28 @@ input[type="range"]{width:100%}
  .visualDayBuilder{grid-template-columns:1fr!important}
 }
 
+
+/* v0.23 */
+.committedItinerarySummary{margin:12px 0;padding:13px;border:1px solid #d5e4e9;border-radius:15px;background:#f7fafb}
+.committedDayStrip{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-top:8px}
+.committedDay{padding:9px;border-radius:10px;background:white;border:1px solid #dce7eb;min-height:58px}.committedDay span{display:block;font-size:8px;opacity:.6;text-transform:uppercase}.committedDay b{font-size:10px}.committedDay.sea{background:#edf7fa}
+.portPickCard span{line-height:1.25}
+.fleetMap{height:430px!important;border-radius:18px;overflow:hidden}.fleetShipMarker{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#0d6284;color:white;border:3px solid white;box-shadow:0 4px 12px rgba(0,0,0,.25);font-size:17px}.fleetPopup{min-width:190px;line-height:1.4}.fleetMapEmpty{padding:30px;text-align:center;color:#6e858f}
+.deckVisualPlan{margin:12px 0}
+.visualDeckShell{position:relative;padding:18px 28px 18px 20px;border-radius:28px 8px 28px 8px;background:#edf4f5;border:2px solid #9fb9c1;overflow:hidden}
+.deckBow{position:absolute;right:-22px;top:0;bottom:0;width:54px;background:#edf4f5;border-right:2px solid #9fb9c1;transform:skewX(-12deg)}
+.deckCorridor{position:absolute;left:8%;right:8%;top:48%;height:8px;background:#cbdcdf;border-radius:5px}
+.visualDeckRooms{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;z-index:1}
+.visualSpace{min-height:92px;background:white;border:1px solid #d0dde1;border-radius:10px;padding:6px;display:flex;flex-direction:column;justify-content:space-between}.visualSpace span{font-size:9px;font-weight:700;color:#405c66}
+.miniRoom{position:relative;height:62px;border-radius:7px;background:#eef3f4;overflow:hidden}
+.miniRoom .bed{position:absolute;width:34%;height:22%;left:10%;top:18%;background:#d8c7ad;border-radius:3px}.miniRoom .bath{position:absolute;width:22%;height:28%;right:8%;top:8%;background:#cfe1e7;border-radius:3px}.miniRoom .sofa{position:absolute;width:35%;height:15%;left:12%;bottom:12%;background:#b5c4a8}.balconyRail{position:absolute;right:0;top:0;bottom:0;width:12%;background:repeating-linear-gradient(90deg,#6ea8b9 0 2px,transparent 2px 5px)}
+.restaurant i,.lounge i,.theatre i,.casino i{position:relative;display:inline-block;width:12px;height:12px;border-radius:50%;background:#b98961;margin:6px}.restaurant .kitchen{position:absolute;right:0;top:0;bottom:0;width:25%;background:#c9d2d4}.theatre .stage{height:16px;background:#8c5b5b;margin-bottom:4px}.casino .tableOval{position:absolute;left:35%;top:20%;width:28%;height:28%;border-radius:50%;background:#658e6d}.pool .water{position:absolute;left:18%;right:18%;top:14%;bottom:20%;background:#64b9cf;border-radius:10px}.lounge .bar{position:absolute;right:6%;top:10%;bottom:10%;width:18%;background:#8a6a55}.retail .shelf{height:10px;background:#b8a582;margin:8px}.machinery{display:grid;place-items:center;font-size:24px}
+@media(max-width:900px){.committedDayStrip{grid-template-columns:repeat(4,1fr)}.fleetMap{height:360px!important}.visualDeckRooms{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.committedDayStrip{grid-template-columns:repeat(2,1fr)}.fleetMap{height:300px!important}.visualDeckRooms{grid-template-columns:repeat(2,1fr)}}
+
+
+.marketDeckPreview{display:grid;gap:7px;margin:10px 0}.marketPreviewDeck{display:grid;grid-template-columns:48px 1fr;gap:6px;align-items:center}.marketPreviewDeck>span{font-size:9px;font-weight:800;color:#607984}.marketPreviewDeck>div{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:5px 12px 5px 5px;border:1px solid #c9dbe1;border-radius:12px 4px 12px 4px;background:#edf4f5}.marketPreviewSpace{min-width:0}.marketPreviewSpace .miniRoom{height:36px}.marketPreviewSpace small{display:block;font-size:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#526b74}.marketFacilityList{display:flex;gap:5px;flex-wrap:wrap}.marketFacilityList span{font-size:8px;padding:4px 6px;border-radius:8px;background:#edf4f5;color:#47616b}
+
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -605,7 +627,7 @@ input[type="range"]{width:100%}
   <div><b>CRUISE<br>TYCOON</b><span>BUILD YOUR FLEET</span></div>
  </div>
  <div class="toprow">
-  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.22.1</span></div><div class="sub">One brand. £5m. No ship. Build from there.</div></div>
+  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.23.0</span></div><div class="sub">One brand. £5m. No ship. Build from there.</div></div>
   <div class="pills">
    <div class="pill">Week <b id="weekPill">1</b></div>
    <div class="pill">Group cash <b id="cashPill">£5.0m</b></div>
@@ -710,7 +732,7 @@ input[type="range"]{width:100%}
    <div id="deckVisual" class="deckVisual"></div>
    <div id="deckSpaceSummary" class="deckSpaceSummary"></div>
    <div class="deckConditionActions"><button class="btn" id="refurbDeckBtn">Refurbish entire deck</button><span id="refurbDeckQuote" class="label"></span></div>
-   <div class="refitQueueBox"><h3>Dry-dock refit queue</h3><div class="label">New cabins and facilities are planned here but are not installed until you schedule enough dry-dock weeks. Cash is spent as the work is performed.</div><div id="refitQueueSummary"></div></div><div class="deckPlanner">
+   <div class="refitQueueBox"><h3>Dry-dock refit queue</h3><div class="label">New cabins and facilities are planned here but are not installed until you schedule enough dry-dock weeks. Cash is spent as the work is performed.</div><div id="refitQueueSummary"></div></div><div id="deckVisualPlan" class="deckVisualPlan"></div><div class="deckPlanner">
     <div class="row" style="justify-content:space-between;align-items:flex-end"><div><h3 style="margin:0">Deck space planner</h3><div class="label">Plan cabins, facilities or crew space. New spaces join the dry-dock queue and only become operational after the scheduled refit.</div></div><div id="deckPlannerCost" class="plannerCost">Select a space to add</div></div>
     <div class="deckPlannerControls">
      <label>Space type<select id="addSpaceType"></select></label>
@@ -799,7 +821,7 @@ input[type="range"]{width:100%}
         <div class="span12 schedulerPortAccess">
 <label><input type="checkbox" id="showOneOffPorts"> <b>Show one-off ports</b></label>
 <span class="label">Contracted ports are shown by default. Turn this on only when you want an uncontracted stop.</span>
-</div><div class="visualBuilderWrap"><div class="row" style="justify-content:space-between"><div><div class="eyebrow">7-DAY ITINERARY BUILDER</div><b>Tap a day to choose a port or sea day</b></div><div class="label">Committed weeks are read-only</div></div><div id="visualDayBuilder" class="visualDayBuilder"></div><div id="visualPortPicker" class="visualPortPicker" hidden></div></div>
+</div><div class="visualBuilderWrap"><div class="row" style="justify-content:space-between"><div><div class="eyebrow">7-DAY ITINERARY BUILDER</div><b>Tap a day to choose a port or sea day</b></div><div class="label">Committed weeks are read-only</div></div><div id="visualDayBuilder" class="visualDayBuilder"></div><div id="visualPortPicker" class="visualPortPicker" hidden></div></div><div id="committedItinerarySummary" class="committedItinerarySummary" hidden></div>
 <div id="selectedPortSelectors" class="legacyPortSelectors span12 planGrid"></div>
         <div class="span12"><div id="selectedRouteMap" class="realMap" aria-label="Selected cruise route map"></div></div>
         <div class="span12"><div class="timeline" id="selectedTimeline"></div></div>
@@ -1358,7 +1380,7 @@ Object.keys(state.contracts).forEach(n=>{state.contracts[n].excursions=defaultEx
 
 const SAVE_STORAGE_KEY="cruiseTycoon.save.v1";
 const SAVE_SCHEMA_VERSION=1;
-const GAME_VERSION="0.22.1";
+const GAME_VERSION="0.23.0";
 
 function makeStarterProgramme(){
  return Array.from({length:6},()=>({startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,speed:17.5,booked:0,lastBooked:0,committed:false,planned:false,routeApplied:false,appliedDraft:null,excursionSelection:{},excursionPricing:{}}));
@@ -1721,11 +1743,41 @@ function processDryDockWeek(){
 }
 function worldXY(lat,lon,w=900,h=390){return {x:(lon+180)/360*w,y:(90-lat)/180*h}}
 function renderDashboardFleetMap(){
- const host=document.getElementById("dashboardFleetMap");if(!host)return;
- const ships=fleetShips();if(!ships.length){host.innerHTML='<div class="emptyState"><b>No ships yet</b><span>Buy your first ship to see fleet locations and itineraries.</span></div>';return;}
- const W=900,H=390;
- let svg=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Fleet route map"><rect width="${W}" height="${H}" rx="16" fill="#dceff5"/><path d="M60 90 Q160 35 270 75 T470 80 T700 70 T850 95 L845 180 Q760 165 690 205 T520 190 T340 185 T170 205 T55 175Z" fill="#e7e5d5" opacity=".85"/><path d="M80 240 Q190 205 270 245 T440 250 T610 235 T820 255 L790 350 Q650 330 520 350 T250 335 T85 325Z" fill="#e7e5d5" opacity=".8"/>`;
- ships.forEach((s,idx)=>{const item=nextProgrammeForShip(s)||{},route=item.route||[],loc=s.currentPort||route[0]||"Southampton";if(route.length>1){const pts=route.filter(n=>ports[n]).map(n=>worldXY(ports[n].lat,ports[n].lon,W,H));svg+=`<polyline points="${pts.map(p=>`${p.x},${p.y}`).join(" ")}" fill="none" stroke="#167aa4" stroke-width="3" stroke-dasharray="${idx%2?"8 5":"0"}" opacity=".8"/>`;pts.forEach((p,i)=>svg+=`<circle cx="${p.x}" cy="${p.y}" r="5" fill="#fff" stroke="#167aa4" stroke-width="2"/>`)}if(ports[loc]){const p=worldXY(ports[loc].lat,ports[loc].lon,W,H);svg+=`<g class="fleetShipMarker" transform="translate(${p.x},${p.y})"><circle r="10" fill="#0d5f7b"/><text x="14" y="4" font-size="12" font-weight="700">${s.name}</text></g>`}});svg+="</svg>";host.innerHTML=svg;
+ const el=document.getElementById("dashboardFleetMap");if(!el)return;
+ const ships=fleetShips();if(!ships.length){el.innerHTML='<div class="fleetMapEmpty">No ships owned yet.</div>';return}
+ if(typeof L==="undefined"){el.innerHTML='<div class="fleetMapEmpty">Map unavailable. Fleet data is still valid.</div>';return}
+ if(mapInstances.dashboardFleetMap){mapInstances.dashboardFleetMap.remove();delete mapInstances.dashboardFleetMap}
+ const map=L.map("dashboardFleetMap",{zoomControl:true,attributionControl:true});
+ mapInstances.dashboardFleetMap=map;
+ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:8,attribution:"&copy; OpenStreetMap contributors"}).addTo(map);
+ const bounds=[];
+ ships.forEach((ship,si)=>{
+   const isActive=ship.id===state.activeShipId;
+   const lastHist=(state.performanceHistory||[]).filter(x=>x.shipId===ship.id&&!x.dryDock).slice(-1)[0];
+   const plan=isActive?((state.programme||[])[0]||{}):{};
+   const route=isActive?(plan.route||[]):((lastHist?.route)||[]);
+   const sea=fullSeaRoute(route);
+   if(sea.length>1){
+     L.polyline(sea,{color:si===0?"#0d6284":"#6f8791",weight:4,opacity:.82,dashArray:si===0?null:"8 6"}).addTo(map);
+     sea.forEach(x=>bounds.push(x))
+   }
+   route.forEach((name,idx)=>{const p=ports[name];if(!p)return;bounds.push([p.lat,p.lon]);const m=L.circleMarker([p.lat,p.lon],{radius:idx===0?6:5,weight:2,color:"#0d6284",fillColor:idx===0?"#e0ac45":"#fff",fillOpacity:1}).addTo(map);m.bindTooltip(name,{direction:"top"})});
+   let ll=null,status="In port";
+   if(isActive&&plan.dryDock){const p=ports[plan.startPort||ship.currentPort];if(p)ll=[p.lat,p.lon];status="Dry dock"}
+   else if(ship.currentPort&&ports[ship.currentPort])ll=[ports[ship.currentPort].lat,ports[ship.currentPort].lon];
+   else if(isActive&&sea.length){ll=sea[Math.floor(sea.length*.35)];status="At sea"}
+   else if(route.length&&ports[route[route.length-1]]){const p=ports[route[route.length-1]];ll=[p.lat,p.lon]}
+   if(ll){
+     bounds.push(ll);
+     const icon=L.divIcon({className:"fleetShipIcon",html:`<div class="fleetShipMarker">🚢</div>`,iconSize:[34,34],iconAnchor:[17,17]});
+     const m=L.marker(ll,{icon}).addTo(map);
+     const review=(state.performanceHistory||[]).filter(x=>x.shipId===ship.id&&!x.dryDock).slice(-1)[0]?.reviewScore;
+     m.bindPopup(`<div class="fleetPopup"><b>${ship.name}</b><br>${status}<br>Condition ${ship3DCondition(ship).toFixed(0)}%${review?` · Review ${review.toFixed(1)}★`:""}<br>${route.length?route.join(" → "):"No itinerary"}</div>`);
+     m.on("click",()=>{state.activeShipId=ship.id;document.querySelector('nav button[data-tab="ships"]')?.click()})
+   }
+ });
+ if(bounds.length)map.fitBounds(L.latLngBounds(bounds).pad(.18),{maxZoom:6});else map.setView([50,-5],4);
+ setTimeout(()=>map.invalidateSize(),80)
 }
 
 function fleetShips(){return Object.values(state.fleet||{});}
@@ -3504,6 +3556,22 @@ function refreshSchedulerEconomicsFromDom(){
  const occs=[];if(sens)sens.innerHTML=`<div class="notice">Future revenue, EBITDA, margin and break-even are deliberately hidden. Use the cost profile, current bookings and your judgement to set fares.</div>`;
 }
 
+
+function initialiseFutureWeekFromPrevious(i){
+ const item=state.programme?.[i];if(!item||i<=0||item._carryInitialised)return;
+ const prev=state.programme?.[i-1];if(!prev)return;
+ const isVirgin=!item.planned&&!item.committed&&(!item.cabinPrices||Object.values(item.cabinPrices).every(v=>!(+v)))&&!(item.fare||0);
+ if(!isVirgin){item._carryInitialised=true;return}
+ item.cabinPrices={...(prev.cabinPrices||{})};
+ item.fare=prev.fare||0;
+ item.service=prev.service??3;
+ item.foodSpendPpd=prev.foodSpendPpd??18;
+ item.hotelConsumablesPpd=prev.hotelConsumablesPpd??7;
+ item.entertainmentSpendPpd=prev.entertainmentSpendPpd??4;
+ item.speed=prev.speed??17.5;
+ item.marketing=0;
+ item._carryInitialised=true;
+}
 function renderSelectedPlanCore(){
  if(!hasOwnedShip()){
    const item=state.programme?.[selectedPlanWeek],gameWeek=state.week+selectedPlanWeek;
@@ -3518,6 +3586,7 @@ function renderSelectedPlanCore(){
    return;
  }
 
+ initialiseFutureWeekFromPrevious(selectedPlanWeek);
  const item=state.programme[selectedPlanWeek]; if(!item)return;
  const dd=document.getElementById("dryDockPlanSummary"),ddb=document.getElementById("scheduleDryDockBtn");
  if(dd){const q=refitQueue(activeShip()),w=refitWeeksRequired(activeShip()),c=refitTotalCost(activeShip());dd.innerHTML=item.dryDock?`<b>DRY DOCK COMMITTED</b> · week ${item.dryDockPart}/${item.dryDockWeeks} · ${statementMoney(item.dryDockTotalCost||0)} total refit`:(q.length?`${q.length} queued change(s) · <b>${w} dry-dock week(s)</b> required · ${statementMoney(c)} cash spend as work is performed`:"No queued refit work.");}
@@ -4110,11 +4179,28 @@ function repairTechnicalCondition(kind){
 }
 
 
+
+function marketFacilityTypes(x){
+ const base=["restaurant","lounge","theatre"];
+ const v=(x?.facilityVariant||"standard").toLowerCase();
+ if(/spa|premium|lux/.test(v))base.push("spa","speciality");
+ if(/casino|entertain/.test(v))base.push("casino");
+ if(/family/.test(v))base.push("kids","pool");
+ if(!base.includes("pool"))base.push("pool");
+ return base
+}
+function marketDeckPreviewHtml(x){
+ const facilities=marketFacilityTypes(x),decks=Math.max(2,x.decks||3);
+ return `<div class="marketDeckPreview">${Array.from({length:Math.min(4,decks)},(_,di)=>{
+   const rooms=di===0?["inside","inside","crew","technical"]:di===1?["oceanview","restaurant","lounge","balcony"]:di===2?["balcony","suite",...(facilities.slice(0,2))]:["suite",...(facilities.slice(2,5))];
+   return `<div class="marketPreviewDeck"><span>Deck ${di+1}</span><div>${rooms.map(t=>`<div class="marketPreviewSpace">${deckSpaceMiniature({type:t,label:SPACE_TYPES[t]?.name||t})}<small>${SPACE_TYPES[t]?.name||t}</small></div>`).join("")}</div></div>`
+ }).join("")}</div><div class="marketFacilityList">${facilities.map(t=>`<span>${deckSpaceIcon(t)} ${SPACE_TYPES[t]?.name||t}</span>`).join("")}</div>`
+}
 function renderShipMarket(){
  const mg=document.getElementById("shipMarketGrid");if(!mg)return;
  const card=x=>{
    const maxLtv=shipFinanceMaxLtv(x);const profOptions=FINANCE_PROFILES.map(p=>{const ltv=Math.min(p.ltv,maxLtv),rate=shipFinanceRate(x,ltv),dep=x.price*(1-ltv),rep=(x.price-dep)/(p.years*52);return `<option value="${p.id}" ${p.id==="7y"?"selected":""}>${p.label} · ${Math.round(ltv*100)}% LTV · ${(rate*100).toFixed(2)}% · ${statementMoney(dep)} deposit · ~${statementMoney(rep)}/wk</option>`}).join("");
-   return `<div class="marketShip" data-market-card="${x.id}"><div class="marketShipHead"><div><b>${x.marketType==="used"?x.name:x.className}</b><span>${x.marketType==="used"?"USED SHIP · NAME FIXED":"NEW SHIP · CHOOSE THE NAME"}</span></div><strong>${statementMoney(x.price)}</strong></div><p>${x.desc}</p><div class="marketSpecs"><span>${x.decks} decks</span><span>${x.capacity.toLocaleString()} guests</span><span>${x.gt.toLocaleString()} GT</span><span>${x.tankTonnes.toLocaleString()}t tank</span><span>${x.marketType==="used"?`${x.age} yrs · ${x.condition}% condition · ${(x.facilityVariant||"standard").replace("_"," ")}`:"New · 100% condition"}</span></div>${x.marketType==="used"?`<details class="shipInspection"><summary>Inspect facilities & deck plan</summary><div class="label">Condition ${x.condition}% · ${x.decks} decks · ${x.capacity.toLocaleString()} guests · ${x.tankTonnes.toLocaleString()}t fuel tank</div><div class="inspectionDecks">${Array.from({length:x.decks},(_,i)=>`<span>Deck ${i+1}</span>`).join("")}</div><div class="label">Facility fit: ${(x.facilityVariant||"standard").replace("_"," ")}. The actual generated deck plan and facilities transfer unchanged when purchased.</div></details>`:""}${x.renameAllowed?`<label class="label">Ship name</label><input class="newShipName" data-market-id="${x.id}" value="${x.defaultName}" maxlength="40" style="width:100%;margin-bottom:7px">`:""}<label class="label">Finance profile</label><select class="shipFinanceProfile" data-market-id="${x.id}" style="width:100%;margin-bottom:7px">${profOptions}</select><div class="marketBuyActions"><button class="btn buyMarketCashBtn" data-market-id="${x.id}" ${state.cash<x.price?"disabled":""}>Buy cash</button><button class="btn good buyMarketFinanceBtn" data-market-id="${x.id}">Finance ship</button></div></div>`;
+   return `<div class="marketShip" data-market-card="${x.id}"><div class="marketShipHead"><div><b>${x.marketType==="used"?x.name:x.className}</b><span>${x.marketType==="used"?"USED SHIP · NAME FIXED":"NEW SHIP · CHOOSE THE NAME"}</span></div><strong>${statementMoney(x.price)}</strong></div><p>${x.desc}</p><div class="marketSpecs"><span>${x.decks} decks</span><span>${x.capacity.toLocaleString()} guests</span><span>${x.gt.toLocaleString()} GT</span><span>${x.tankTonnes.toLocaleString()}t tank</span><span>${x.marketType==="used"?`${x.age} yrs · ${x.condition}% condition · ${(x.facilityVariant||"standard").replace("_"," ")}`:"New · 100% condition"}</span></div>${x.marketType==="used"?`<details class="shipInspection"><summary>Inspect facilities & deck plan</summary><div class="label">Condition ${x.condition}% · ${x.decks} decks · ${x.capacity.toLocaleString()} guests · ${x.tankTonnes.toLocaleString()}t fuel tank</div>${marketDeckPreviewHtml(x)}<div class="label">Facility fit: ${(x.facilityVariant||"standard").replace("_"," ")}. This preview represents the fitted spaces that transfer with the used ship.</div></details>`:""}${x.renameAllowed?`<label class="label">Ship name</label><input class="newShipName" data-market-id="${x.id}" value="${x.defaultName}" maxlength="40" style="width:100%;margin-bottom:7px">`:""}<label class="label">Finance profile</label><select class="shipFinanceProfile" data-market-id="${x.id}" style="width:100%;margin-bottom:7px">${profOptions}</select><div class="marketBuyActions"><button class="btn buyMarketCashBtn" data-market-id="${x.id}" ${state.cash<x.price?"disabled":""}>Buy cash</button><button class="btn good buyMarketFinanceBtn" data-market-id="${x.id}">Finance ship</button></div></div>`;
  };
  const market=currentShipMarket(),used=market.filter(x=>x.marketType==="used"),nw=market.filter(x=>x.marketType==="new");
  mg.innerHTML=`<div class="marketSectionTitle"><h3>Used ships</h3><span>Stock refreshes every 3–6 game weeks. Names are fixed; condition and facilities vary. Next refresh: week ${state.usedMarketRefreshWeek}.</span></div><div class="marketSubGrid">${used.map(card).join("")}</div><div class="marketSectionTitle newBuild"><h3>New ships</h3><span>More expensive, 100% condition, and you choose the vessel name.</span></div><div class="marketSubGrid">${nw.map(card).join("")}</div>`;
@@ -4244,6 +4330,31 @@ function renderShip3D(){
  const model=m4M(m4RY(ship3DState.rotY),m4RX(ship3DState.rotX)),view=m4T(0,-.12,-12*ship3DState.zoom),proj=m4P(.68,rw/rh,.1,100),mvp=m4M(proj,m4M(view,model));gl.uniformMatrix4fv(gl.getUniformLocation(prog,"uMVP"),false,new Float32Array(mvp));gl.uniformMatrix4fv(gl.getUniformLocation(prog,"uModel"),false,new Float32Array(model));const cond=ship3DCondition(ship),modern=(ship.yearBuilt||2000)>=2015;gl.uniform3fv(gl.getUniformLocation(prog,"uBase"),new Float32Array(modern?[.88,.92,.95]:[.80,.83,.84]));gl.uniform1f(gl.getUniformLocation(prog,"uWear"),clamp((100-cond)/55,0,1));gl.drawElements(gl.TRIANGLES,built.count,gl.UNSIGNED_SHORT,0);
  const hud=document.getElementById("ship3DHud");if(hud)hud.innerHTML=`<b>${ship.name}</b><span>${built.g.decks} decks · ${Math.round(built.g.gt/1000)}k GT · ${(ship.capacity||0).toLocaleString()} guests · condition ${cond.toFixed(0)}%</span>`;ship3DState.raf=requestAnimationFrame(renderShip3D);
 }
+
+function deckSpaceIcon(type){
+ const icons={inside:"🛏",oceanview:"🪟",balcony:"🌊",suite:"🛋",restaurant:"🍽",speciality:"🍷",lounge:"🍸",theatre:"🎭",casino:"🎰",spa:"🧖",retail:"🛍",pool:"🏊",kids:"🧸",communications:"📡",excursiondesk:"🧭",crew:"👥",machinery:"⚙️",technical:"🔧"};
+ return icons[type]||"▦"
+}
+function deckSpaceMiniature(sp){
+ const t=sp.type||"space",kind=SPACE_TYPES[t]?.kind||"facility";
+ if(["inside","oceanview","balcony","suite"].includes(t)){
+   return `<div class="miniRoom cabin ${t}"><div class="bed"></div><div class="bath"></div>${t==="balcony"?'<div class="balconyRail"></div>':""}${t==="suite"?'<div class="sofa"></div>':""}</div>`
+ }
+ if(t==="restaurant"||t==="speciality")return `<div class="miniRoom restaurant"><i></i><i></i><i></i><i></i><div class="kitchen"></div></div>`;
+ if(t==="theatre")return `<div class="miniRoom theatre"><div class="stage"></div>${"<i></i>".repeat(8)}</div>`;
+ if(t==="casino")return `<div class="miniRoom casino">${"<i></i>".repeat(5)}<div class="tableOval"></div></div>`;
+ if(t==="pool")return `<div class="miniRoom pool"><div class="water"></div><i></i><i></i></div>`;
+ if(t==="spa")return `<div class="miniRoom spa"><div class="bed"></div><div class="bed"></div></div>`;
+ if(t==="lounge")return `<div class="miniRoom lounge"><div class="bar"></div>${"<i></i>".repeat(4)}</div>`;
+ if(t==="retail")return `<div class="miniRoom retail"><div class="shelf"></div><div class="shelf"></div></div>`;
+ if(t==="crew")return `<div class="miniRoom crew"><div class="bed"></div><div class="bed"></div></div>`;
+ if(t==="machinery"||t==="technical")return `<div class="miniRoom machinery">⚙️ ⚙️</div>`;
+ return `<div class="miniRoom generic">${deckSpaceIcon(t)}</div>`
+}
+function visualDeckHtml(deck){
+ const spaces=deck?.spaces||[];
+ return `<div class="visualDeckShell"><div class="deckBow"></div><div class="deckCorridor"></div><div class="visualDeckRooms">${spaces.map(sp=>`<div class="visualSpace ${SPACE_TYPES[sp.type]?.kind||"facility"}" title="${sp.label||SPACE_TYPES[sp.type]?.name||sp.type}">${deckSpaceMiniature(sp)}<span>${sp.label||SPACE_TYPES[sp.type]?.name||sp.type}</span></div>`).join("")}</div></div>`
+}
 function renderMyShips(){
 
  const ships=fleetShips(),sel=document.getElementById("myShipsSelect");
@@ -4335,7 +4446,7 @@ function renderMyShips(){
  }
 
  const cc=document.getElementById("shipClassCards");if(cc)cc.innerHTML=Object.values(SHIP_CLASSES).map(c=>`<div class="shipClassCard"><div class="shipClassSilhouette">▰▰▰▰▰</div><b>${c.name}</b><span>${c.positioning}</span><div><strong>${c.decks}</strong> decks · <strong>${c.grossTonnage.toLocaleString()}</strong> GT · <strong>${c.lengthM}m</strong></div><small>Approx. physical deck area ${(c.grossTonnage*c.deckAreaFactor).toLocaleString(undefined,{maximumFractionDigits:0})} m²</small></div>`).join("");
- const deckSpaces=d.spaces||[],allSpaces=m.decks.flatMap(x=>x.spaces||[]);
+ const deckSpaces=d.spaces||[],allSpaces=m.decks.flatMap(x=>x.spaces||[]);const dv=document.getElementById("deckVisualPlan");if(dv)dv.innerHTML=visualDeckHtml(d);
  const rd=document.getElementById("refurbDeckBtn"),rq=document.getElementById("refurbDeckQuote");if(rd){const cost=refurbCostForSpaces(deckSpaces);rq.textContent=`Restore all spaces to 100% · ${statementMoney(cost)}`;rd.onclick=()=>refurbSpaces(deckSpaces,`Deck ${d.number} refurbishment`)}
  const rh=document.getElementById("repairHullBtn"),rhq=document.getElementById("repairHullQuote");if(rh){const cost=technicalRepairCost("hull");rhq.textContent=statementMoney(cost);rh.onclick=()=>repairTechnicalCondition("hull")}
  const rmach=document.getElementById("repairMachineryBtn"),rmq=document.getElementById("repairMachineryQuote");if(rmach){const cost=technicalRepairCost("machinery");rmq.textContent=statementMoney(cost);rmach.onclick=()=>repairTechnicalCondition("machinery")}
@@ -4452,6 +4563,19 @@ function normalizeSevenDayPlan(plan){
  while(days.length<7)days.push({type:"sea"});
  return days.slice(0,7)
 }
+
+function updateItineraryBuilderVisibility(){
+ const wrap=document.querySelector(".visualBuilderWrap"),summary=document.getElementById("committedItinerarySummary");
+ if(!wrap||!summary)return;
+ const plan=selectedPlanWeek>=0?state.programme?.[selectedPlanWeek]:null;
+ const showBuilder=!!(plan&&!plan.committed);
+ wrap.style.display=showBuilder?"block":"none";
+ summary.hidden=showBuilder;
+ if(!showBuilder&&plan){
+   const days=normalizeSevenDayPlan(plan);
+   summary.innerHTML=`<div class="eyebrow">COMMITTED ITINERARY</div><div class="committedDayStrip">${days.map((d,i)=>`<div class="committedDay ${d.type==="sea"||!d.port?"sea":""}"><span>Day ${i+1}</span><b>${d.type==="sea"||!d.port?"Sea Day":d.port}</b></div>`).join("")}</div>`;
+ }
+}
 function renderVisualDayBuilder(){
  const box=document.getElementById("visualDayBuilder");if(!box)return;
  const plan=state.programme?.[selectedPlanWeek]||{},days=normalizeSevenDayPlan(plan),locked=!!plan.committed;
@@ -4476,17 +4600,48 @@ function renderVisualDayBuilder(){
    box.dataset.bound="1";
  }
 }
+
+function coordDistanceNm(a,b){
+ const R=3440.065,toRad=Math.PI/180;
+ const dlat=(b[0]-a[0])*toRad,dlon=(b[1]-a[1])*toRad;
+ const q=Math.sin(dlat/2)**2+Math.cos(a[0]*toRad)*Math.cos(b[0]*toRad)*Math.sin(dlon/2)**2;
+ return 2*R*Math.asin(Math.sqrt(q))
+}
+function seaLegDistanceNm(a,b){
+ const pts=fullSeaRoute([a,b]);
+ if(!pts||pts.length<2)return nm(a,b);
+ let total=0;for(let i=1;i<pts.length;i++)total+=coordDistanceNm(pts[i-1],pts[i]);
+ return total
+}
 function openVisualPortPicker(dayIndex){
  const picker=document.getElementById("visualPortPicker"),plan=state.programme?.[selectedPlanWeek]||{};if(!picker||plan.committed)return;
  const names=availablePortNames().filter(p=>p!==programmeStartPort(selectedPlanWeek));
- picker.hidden=false;
- picker.style.display="block";
- picker.innerHTML=`<div class="pickerHead"><b>Choose Day ${dayIndex+1}</b><button type="button" id="closeVisualPicker">Close</button></div><div class="portPickerGrid"><button type="button" class="portPickCard seaPick" data-port="__SEA__" style="background-image:url('${seaDayDataUri()}')"><b>Sea Day</b><span>Open ocean</span></button>${names.map(p=>{let cost=0;try{cost=estimatePortCallCost?estimatePortCallCost(p,activeShip()):0}catch(e){}return `<button type="button" class="portPickCard" data-port="${p}" style="background-image:url('${portSceneDataUri(p)}')"><b>${p}</b><span>${cost?statementMoney(cost):"Port call"}</span></button>`}).join("")}</div>`;
+ const days=normalizeSevenDayPlan(plan);
+ const prevPort=(()=>{
+   for(let i=dayIndex-1;i>=0;i--){if(days[i]?.type==="port"&&days[i]?.port)return days[i].port}
+   return programmeStartPort(selectedPlanWeek)
+ })();
+ const ship=activeShip(),speed=+document.getElementById("selSpeed")?.value||plan.speed||17.5;
+ picker.hidden=false;picker.style.display="block";
+ picker.innerHTML=`<div class="pickerHead"><div><b>Choose Day ${dayIndex+1}</b><div class="label">Costs shown from ${prevPort}</div></div><button type="button" id="closeVisualPicker">Close</button></div>
+ <div class="portPickerGrid">
+  <button type="button" class="portPickCard seaPick" data-port="__SEA__" style="background-image:url('${seaDayDataUri()}')"><b>Sea Day</b><span>Open ocean · fuel only</span></button>
+  ${names.map(p=>{
+    let portCost=0,fuel=0,nm=0,hours=0;
+    try{
+      portCost=portCallCost(p,ship);
+      nm=seaLegDistanceNm(prevPort,p);
+      fuel=nm*fuelCostPerNm(ship,speed);
+      hours=nm/Math.max(1,speed)
+    }catch(e){}
+    return `<button type="button" class="portPickCard" data-port="${p}" style="background-image:url('${portSceneDataUri(p)}')"><b>${p}</b><span>Port ${statementMoney(portCost)} · Fuel ${statementMoney(fuel)}<br>${Math.round(nm)} nm · ${hours.toFixed(1)} hrs</span></button>`
+  }).join("")}
+ </div>`;
  const close=picker.querySelector("#closeVisualPicker");if(close)close.onclick=()=>{picker.hidden=true;picker.style.display="none"};
  picker.querySelectorAll(".portPickCard").forEach(btn=>{
    const choose=ev=>{
      ev.preventDefault();
-     const days=normalizeSevenDayPlan(plan),p=btn.dataset.port;
+     const p=btn.dataset.port;
      days[dayIndex]=p==="__SEA__"?{type:"sea"}:{type:"port",port:p};
      plan.days=days;
      plan.route=days.filter(x=>x.type==="port"&&x.port).map(x=>x.port);
@@ -4577,8 +4732,13 @@ function renderHistoricalSchedule(x){
  document.getElementById("selStartPort").textContent=x.route?.[0]||"—";
  document.getElementById("selectedPortSelectors").innerHTML=(x.route||[]).slice(1).map((p,i)=>`<div class="span4"><div class="label">Port ${i+1}</div><div class="kpi" style="font-size:17px">${p}</div></div>`).join("");
  drawRouteMap("selectedRouteMap",x.route||[]);const hb=document.getElementById("visualDayBuilder");if(hb){const d=normalizeSevenDayPlan(x.sailingPlan||{route:x.route||[]});hb.innerHTML=d.map((q,i)=>`<div class="visualDayCard ${q.type==="sea"||!q.port?"sea":""}" style="background-image:url('${q.type==="sea"||!q.port?seaDayDataUri():portSceneDataUri(q.port)}')"><span>DAY ${i+1}</span><b>${q.type==="sea"||!q.port?"Sea Day":q.port}</b><small>${q.type==="sea"||!q.port?"At sea":"Port call"}</small></div>`).join("")}
- const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v};
+ 
+ const vw=document.querySelector(".visualBuilderWrap"),vs=document.getElementById("committedItinerarySummary");
+ if(vw)vw.style.display="none";
+ if(vs){const hd=normalizeSevenDayPlan(x.sailingPlan||{route:x.route||[]});vs.hidden=false;vs.innerHTML=`<div class="eyebrow">SAILED ITINERARY · READ ONLY</div><div class="committedDayStrip">${hd.map((d,i)=>`<div class="committedDay ${d.type==="sea"||!d.port?"sea":""}"><span>Day ${i+1}</span><b>${d.type==="sea"||!d.port?"Sea Day":d.port}</b></div>`).join("")}</div>`}
+const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v};
  set("selBookings",pct(x.actualOcc||0));set("selGrowth","Final sailed occupancy");set("selForecast","Sailed");
+ updateItineraryBuilderVisibility();
  set("selFuel",statementMoney(x.pnl?.fuel||0));set("selPortCost",statementMoney(x.pnl?.portFees||0));set("selCrewCost",statementMoney(x.pnl?.crew||0));
  const re=document.getElementById("routeEconomicsBox");if(re)re.innerHTML=`Actual operating cost ${statementMoney(x.pnl?.opex||0)} · Review ${reviewStars(x.reviewScore)} · ${x.pax||0} guests`;
  const rc=document.getElementById("routeCostBreakdown");if(rc)rc.innerHTML=`<table><tr><th>Actual sailing information</th><th>Amount</th></tr><tr><td>Operating costs</td><td>${statementMoney(x.pnl?.opex||0)}</td></tr><tr><td>Fuel</td><td>${statementMoney(x.pnl?.fuel||0)}</td></tr><tr><td>Ports</td><td>${statementMoney(x.pnl?.portFees||0)}</td></tr><tr><td>Crew</td><td>${statementMoney(x.pnl?.crew||0)}</td></tr><tr><td>Marketing</td><td>${statementMoney(x.pnl?.marketing||0)}</td></tr></table>`;
@@ -4627,7 +4787,7 @@ function renderSchedule(){
    });
    list.appendChild(b);
  });
- try{if(selectedPlanWeek<0&&selectedHistoryRecord)renderHistoricalSchedule(selectedHistoryRecord);else{selectedHistoryRecord=null;renderSelectedPlan();}renderVisualRouteTimeline();renderSchedulerPortScenes();renderVisualDayBuilder();enforceSchedulerExcursionGate();}catch(e){console.error("Scheduler detail error",e)}
+ try{if(selectedPlanWeek<0&&selectedHistoryRecord)renderHistoricalSchedule(selectedHistoryRecord);else{selectedHistoryRecord=null;renderSelectedPlan();}renderVisualRouteTimeline();renderSchedulerPortScenes();renderVisualDayBuilder();updateItineraryBuilderVisibility();enforceSchedulerExcursionGate();}catch(e){console.error("Scheduler detail error",e)}
 
  const cash=forwardCashReceipts();
  const t=document.getElementById("scheduleCashTable");
