@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Cruise Tycoon v0.23.1</title>
+<title>Cruise Tycoon v0.24.2</title>
 <style>
 :root{
   --navy:#102c46;--navy2:#173e61;--bg:#edf3f7;--card:#fff;--ink:#17324a;
@@ -196,7 +196,7 @@ nav button{white-space:nowrap}
 .saveActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .saveMeta{padding:10px 12px;border-radius:12px;background:#f2f6f9;margin-top:10px;color:var(--muted)}
 
-/* v0.23.1 scheduler/readability and finance UI */
+/* v0.24.2 scheduler/readability and finance UI */
 .weekBtn.active.committed{background:#dfe3e6!important;color:#26343d!important;border:2px solid #53636e!important;box-shadow:0 0 0 3px rgba(83,99,110,.14)!important}
 .weekBtn.active.urgent{background:#f8caca!important;color:#651717!important;border:2px solid #b63636!important;box-shadow:0 0 0 3px rgba(182,54,54,.14)!important}
 .weekBtn.active.future{background:#ffe99a!important;color:#4e3d00!important;border:2px solid #a88300!important;box-shadow:0 0 0 3px rgba(168,131,0,.14)!important}
@@ -208,7 +208,7 @@ nav button{white-space:nowrap}
 .reviewScoreCell{white-space:nowrap}.nextSailingTable td{vertical-align:top}
 
 
-/* v0.23.1 visual refresh */
+/* v0.24.2 visual refresh */
 :root{--navy:#092b46;--navy2:#0d4769;--ocean:#137ea5;--ocean2:#42a6bf;--teal:#16837d;--bg:#f2f6f8;--card:#fff;--ink:#163247;--muted:#6e8290;--line:#dce7ec;--lineStrong:#c8d8e0;--good:#18734c;--bad:#aa3b42;--gold:#b78524;--shadow:0 10px 30px rgba(17,53,75,.075);--shadowStrong:0 18px 46px rgba(13,55,79,.13)}
 html{background:#eaf1f5}
 body{background:radial-gradient(circle at 8% 0%,rgba(54,151,181,.08),transparent 30%),linear-gradient(180deg,#edf4f7 0,#f5f8fa 290px,#f2f6f8 100%);min-height:100vh}
@@ -254,7 +254,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:650px){.title{font-size:20px}.pill{padding:6px 9px}.heroKpi .kpi{font-size:27px}.card{padding:13px;border-radius:15px}}
 
 
-/* v0.23.1 graphics expansion */
+/* v0.24.2 graphics expansion */
 .cruiseHero{
  position:relative;
  overflow:hidden;
@@ -302,7 +302,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 }
 
 
-/* v0.23.1 ship/deck management */
+/* v0.24.2 ship/deck management */
 .shipMgmtHeader{background:linear-gradient(145deg,#fff,#f4fafc)}
 .shipMgmtKpis{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:14px}.shipMgmtKpis>div,.deckSpaceSummary>div,.facilityMetrics>div{border:1px solid #d9e6eb;border-radius:12px;padding:10px;background:#f8fbfc}.shipMgmtKpis span,.deckSpaceSummary span,.facilityMetrics span{display:block;color:#748995;font-size:10px;text-transform:uppercase;letter-spacing:.05em}.shipMgmtKpis b{display:block;margin-top:4px;font-size:17px;color:#12364e}
 .deckSidebar{max-height:760px;overflow:auto}.deckList{display:flex;flex-direction:column;gap:6px;margin-top:10px}.deckListBtn{text-align:left;border:1px solid #d7e3e8;background:#f8fbfc;border-radius:11px;padding:9px 10px;color:#17384f}.deckListBtn span,.deckListBtn small{display:block;color:#718691}.deckListBtn.active{background:#0e5579;color:#fff;border-color:#0e5579}.deckListBtn.active span,.deckListBtn.active small{color:#d5eaf2}
@@ -313,13 +313,13 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:1000px){.shipMgmtKpis{grid-template-columns:repeat(4,1fr)}}@media(max-width:700px){.shipMgmtKpis{grid-template-columns:repeat(2,1fr)}.deckSpaceSummary{grid-template-columns:1fr 1fr}}
 
 
-/* v0.23.1 editable ship planner */
+/* v0.24.2 editable ship planner */
 .deckPlanner{margin-top:14px;padding:13px;border:1px solid #cfe0e7;border-radius:14px;background:linear-gradient(145deg,#f5fafc,#fff)}
 .deckPlannerControls{display:grid;grid-template-columns:2fr 1fr 1.3fr auto;gap:9px;align-items:end;margin-top:10px}.deckPlannerControls label{font-size:11px;font-weight:750;color:#607887}.deckPlannerControls select,.deckPlannerControls input{display:block;width:100%;margin-top:4px}.plannerCost{font-weight:850;color:#0f668b;background:#e9f6fa;padding:7px 10px;border-radius:9px}.removeSpaceBtn{margin-top:14px;width:100%}
 .shipClassCards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.shipClassCard{border:1px solid #d4e2e8;border-radius:14px;padding:13px;background:linear-gradient(155deg,#f8fbfc,#fff)}.shipClassCard>b,.shipClassCard>span,.shipClassCard>small{display:block}.shipClassCard>span{color:#718692;margin:3px 0 10px}.shipClassCard>div{margin-top:5px}.shipClassCard>small{color:#718692;margin-top:7px}.shipClassSilhouette{font-size:15px;letter-spacing:-2px;color:#2a7c9d;opacity:.7;margin-bottom:7px!important}
 @media(max-width:850px){.deckPlannerControls{grid-template-columns:1fr 1fr}.shipClassCards{grid-template-columns:1fr}}
 
-/* v0.23.1 management-sim visual overhaul */
+/* v0.24.2 management-sim visual overhaul */
 @media(min-width:980px){
  body{padding-left:178px}
  header{left:0}
@@ -395,7 +395,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .deckQualityMini{grid-column:1/-1;display:flex;gap:5px;margin-top:4px;flex-wrap:wrap}.deckQualityMini em{font-style:normal;font-size:9px;padding:2px 5px;border-radius:5px;background:rgba(255,255,255,.11);color:#cce1ea}.deckConditionActions,.shipRefurbActions{display:flex;align-items:center;gap:10px;margin-top:11px;padding-top:10px;border-top:1px solid #dbe6eb}.facilityMetrics{grid-template-columns:repeat(auto-fit,minmax(82px,1fr))}
 
 
-/* v0.23.1 brand corner and capacity economics */
+/* v0.24.2 brand corner and capacity economics */
 .brandCorner{display:none}
 @media(min-width:980px){
  .brandCorner{
@@ -415,7 +415,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .capacityCallout b{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#176786}.capacityCallout span{font-size:12px}
 
 
-/* v0.23.1 ship summary, luxury catalogue, landmark ports */
+/* v0.24.2 ship summary, luxury catalogue, landmark ports */
 .shipSummaryHero{display:grid;grid-template-columns:minmax(330px,42%) 1fr;min-height:275px;border-radius:17px;overflow:hidden;background:#082b45}
 .shipSummaryPhoto{position:relative;background-image:var(--ship-photo);background-size:cover;background-position:center;min-height:275px}
 .shipSummaryPhotoShade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,30,47,.72),transparent 58%)}
@@ -426,7 +426,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .upgradeCatalogue button:hover{border-color:#5ca8c1;background:#f5fbfd}.upgradeCatalogue button b,.upgradeCatalogue button small{display:block}.upgradeCatalogue button small{color:#718691;margin-top:3px}.upgradeCatalogue button:after{content:"＋";position:absolute;right:9px;top:50%;transform:translateY(-50%);width:25px;height:25px;border-radius:8px;background:#e7f3f8;display:grid;place-items:center;color:#11658a;font-weight:900}
 @media(max-width:900px){.shipSummaryHero{grid-template-columns:1fr}.shipSummaryPhoto{min-height:220px}.shipSummaryIntro .shipMgmtKpis{grid-template-columns:repeat(2,1fr)}}
 
-/* v0.23.1 deck picker and technical condition */
+/* v0.24.2 deck picker and technical condition */
 .deckListBtn{display:block;width:100%;position:relative;z-index:1;pointer-events:auto;cursor:pointer}
 .deckListBtn>*{pointer-events:none}
 .deckSidebar{position:relative;z-index:3}
@@ -438,7 +438,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:720px){.technicalConditionActions{grid-template-columns:1fr}}
 
 
-/* v0.23.1 deck planner disabled-state clarity */
+/* v0.24.2 deck planner disabled-state clarity */
 #addSpaceBtn:disabled,#addSpaceBtn.disabledBuild{
  opacity:.48;
  cursor:not-allowed;
@@ -451,7 +451,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 #addSpaceBtn:disabled:hover{filter:grayscale(.35)}
 
 
-/* v0.23.1 facility capacity summary */
+/* v0.24.2 facility capacity summary */
 .facilityCapacitySummary{display:flex;flex-direction:column;gap:8px;margin-top:12px}
 .capacityRow{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 11px;border:1px solid #d7e4e9;border-radius:11px;background:linear-gradient(180deg,#fbfdfe,#f6fafb)}
 .capacityRow b,.capacityRow span,.capacityRow small{display:block}
@@ -460,12 +460,12 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .capacityRow strong{font-size:14px;color:#0d5e83;text-align:right}
 
 .fuelTitle{display:flex;justify-content:space-between;gap:10px;align-items:center}.fuelTitle span{display:block;font-size:10px;color:#718792}.fuelGauge{height:12px;background:#dce7eb;border-radius:99px;overflow:hidden;margin:10px 0}.fuelGauge div{height:100%;background:#167aa4}.fuelNumbers{font-size:11px;color:#536d79}.shipMarketGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}.marketShip{padding:13px;border:1px solid #d5e2e7;border-radius:13px;background:#fbfdfe}.marketShipHead{display:flex;justify-content:space-between;gap:10px}.marketShipHead span{display:block;font-size:10px;color:#718590}.marketShip p{font-size:11px;color:#607985}.marketSpecs{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}.marketSpecs span{font-size:9px;padding:4px 6px;border-radius:99px;background:#edf4f6}@media(max-width:760px){.shipMarketGrid{grid-template-columns:1fr}}
-/* v0.23.1 render isolation */
+/* v0.24.2 render isolation */
 .renderErrorNotice{margin:12px;padding:12px 14px;border:1px solid #e0b7b7;border-radius:12px;background:#fff1f1;color:#873b3f}
 .renderErrorNotice b,.renderErrorNotice span{display:block}.renderErrorNotice span{font-size:11px;margin-top:4px;color:#8d5b5e}
 
 .marketBuyActions{display:grid;grid-template-columns:1fr 1fr;gap:7px}.marketBuyActions button{width:100%}#selectedRouteWarning small{opacity:.78}
-/* v0.23.1 acquisition/finance/port economics */
+/* v0.24.2 acquisition/finance/port economics */
 .marketSectionTitle{grid-column:1/-1;margin:4px 0 0;padding:10px 12px;background:#eaf3f6;border-radius:12px}.marketSectionTitle h3{margin:0}.marketSectionTitle span{font-size:11px;color:#607784}.marketSectionTitle.newBuild{margin-top:18px;background:#eef6ef}.marketSubGrid{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.newShipName,.shipFinanceProfile{box-sizing:border-box}.headerSailBtn:disabled{opacity:.48;cursor:not-allowed}.marketShip input,.marketShip select{font-size:12px}
 @media(max-width:760px){.marketSubGrid{grid-template-columns:1fr}}
 
@@ -476,7 +476,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:760px){.starControl{grid-template-columns:1fr}.queueHeadline{display:block}}
 
 
-/* v0.23.1 port access usability */
+/* v0.24.2 port access usability */
 .schedulerPortAccess{display:flex;align-items:center;gap:10px;padding:9px 11px;background:#eef6f8;border:1px solid #d4e6eb;border-radius:10px;margin:4px 0 8px}
 .schedulerPortAccess label{white-space:nowrap}
 
@@ -514,7 +514,7 @@ body{background:linear-gradient(180deg,#eef7f8 0,#f7faf9 420px,#f4f6f5 100%)}.to
 @media(prefers-reduced-motion:reduce){.ctHeroShip,.ctWave{animation:none!important}}
 
 
-/* v0.23.1 iOS/mobile fixes */
+/* v0.24.2 iOS/mobile fixes */
 .mobileMenuBtn{display:none}
 @media(max-width:760px){
  .mobileMenuBtn{display:flex;align-items:center;justify-content:center;position:sticky;top:0;z-index:51;width:calc(100% - 20px);margin:8px 10px 0;padding:11px 14px;border:0;border-radius:13px;background:#083b50;color:#fff;font-weight:800;font-size:14px;box-shadow:0 8px 20px rgba(4,49,65,.18)}
@@ -557,7 +557,7 @@ input[type="range"]{width:100%}
 .scheduleSubTabs button.locked{opacity:.42;cursor:not-allowed;filter:grayscale(.5)}
 .scheduleSubTabs button.locked,.scheduleSubTabs button:disabled{opacity:.42;cursor:not-allowed;filter:grayscale(.5)}
 
-/* v0.23.1 Scheduler hotfix */
+/* v0.24.2 Scheduler hotfix */
 .visualBuilderWrap{display:block;width:100%;min-width:0;overflow:visible;grid-column:1/-1!important}
 .visualDayBuilder{
  display:grid!important;
@@ -615,7 +615,7 @@ input[type="range"]{width:100%}
 .marketDeckPreview{display:grid;gap:7px;margin:10px 0}.marketPreviewDeck{display:grid;grid-template-columns:48px 1fr;gap:6px;align-items:center}.marketPreviewDeck>span{font-size:9px;font-weight:800;color:#607984}.marketPreviewDeck>div{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:5px 12px 5px 5px;border:1px solid #c9dbe1;border-radius:12px 4px 12px 4px;background:#edf4f5}.marketPreviewSpace{min-width:0}.marketPreviewSpace .miniRoom{height:36px}.marketPreviewSpace small{display:block;font-size:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#526b74}.marketFacilityList{display:flex;gap:5px;flex-wrap:wrap}.marketFacilityList span{font-size:8px;padding:4px 6px;border-radius:8px;background:#edf4f5;color:#47616b}
 
 
-/* v0.23.1 dashboard + committed scheduler hotfix */
+/* v0.24.2 dashboard + committed scheduler hotfix */
 .worldActions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
 .worldActions button{white-space:nowrap}
 #dashboard .ctHero{margin-bottom:14px}
@@ -628,6 +628,21 @@ input[type="range"]{width:100%}
  .routeNode{min-width:72px}
  .routeLeg{min-width:28px}
 }
+
+
+/* v0.24 marketing funnel */
+.funnelKpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}.funnelKpis>div{padding:10px;border:1px solid #d6e3e8;border-radius:12px;background:#f8fbfc}.funnelKpis span{display:block;font-size:9px;color:#6a808a;text-transform:uppercase}.funnelKpis b{font-size:18px}.funnelTables{display:grid;grid-template-columns:1fr 1fr;gap:10px}.funnelTables table{width:100%;font-size:10px}
+@media(max-width:750px){.funnelKpis{grid-template-columns:repeat(2,1fr)}.funnelTables{grid-template-columns:1fr}}
+
+
+/* v0.24.2 audience reviews */
+.audReviewHead{margin:14px 0 7px;color:#35576b}.audReviewGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}.audReview{border:1px solid #dce7ec;border-radius:11px;padding:10px;background:#f8fbfc}.audReview span{display:block;font-size:10px;color:#6e8290}.audReview b{font-size:12px;color:#b17d2b}.audMatrixWrap{overflow-x:auto;margin-top:14px}.audMatrixWrap table{width:100%;font-size:10px}.audMatrixWrap td{text-align:center}.audMatrixWrap td:first-child{text-align:left}
+@media(max-width:750px){.audReviewGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+
+/* v0.24.2 weekly forward bookings */
+#resultForwardBookings th,#resultForwardBookings td{white-space:nowrap;vertical-align:top}
+#resultForwardBookings td:nth-child(2){white-space:normal;min-width:220px}
 
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
@@ -642,7 +657,7 @@ input[type="range"]{width:100%}
   <div><b>CRUISE<br>TYCOON</b><span>BUILD YOUR FLEET</span></div>
  </div>
  <div class="toprow">
-  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.23.1</span></div><div class="sub">One brand. £5m. No ship. Build from there.</div></div>
+  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.24.2</span></div><div class="sub">One brand. £5m. No ship. Build from there.</div></div>
   <div class="pills">
    <div class="pill">Week <b id="weekPill">1</b></div>
    <div class="pill">Group cash <b id="cashPill">£5.0m</b></div>
@@ -851,9 +866,12 @@ input[type="range"]{width:100%}
         <div class="span4"><label class="label">Balcony fare (£ per guest)</label><input id="selBalconyFare" type="number" min="499" max="3499" step="25" style="width:100%"></div>
         <div class="span4"><label class="label">Suite fare (£ per guest)</label><input id="selSuiteFare" type="number" min="899" max="5999" step="50" style="width:100%"></div>
         <div class="span4"><label class="label">Marketing / week</label><input id="selMarketing" type="number" min="0" max="500000" step="10000" style="width:100%"></div>
+<div class="span4"><label class="label">Target passenger group</label><select id="selMarketingSegment" style="width:100%"></select></div>
+<div class="span4"><label class="label">Target wealth tier</label><select id="selMarketingWealth" style="width:100%"></select></div>
         <div class="span4"><div class="label">Bookings so far</div><div class="kpi" id="selBookings" style="font-size:22px"></div><div class="label" id="selGrowth"></div></div>
         <div class="span4"><div class="label">Bookings so far</div><div class="kpi" id="selForecast" style="font-size:22px"></div></div>
         <div class="span12"><h3 style="margin-top:8px">Bookings so far by passenger segment</h3><div id="weekSegmentPie"></div></div>
+<div class="span12"><h3 style="margin-top:8px">Marketing funnel</h3><div class="label">Marketing creates enquiries by passenger group and wealth tier; conversion depends on price, itinerary, facilities, brand and service.</div><div id="marketingFunnelSummary"></div></div>
         <div class="span12"><h3 style="margin-top:8px">Cabin bookings so far</h3><div id="weekCabinOccupancy"></div></div>
       </div>
     </div>
@@ -1029,7 +1047,7 @@ input[type="range"]{width:100%}
 <div class="card c12"><div class="row" style="justify-content:space-between"><div><h2 style="margin:0">Guest reviews</h2><div class="label">What guests thought, why scores moved and which operating choices drove the result.</div></div><select id="reviewHistoryShip" style="min-width:220px"><option value="all">All ships</option></select></div></div>
 <div class="card c3"><div class="label">Latest review</div><div class="kpi" id="reviewLatestKpi">—</div></div><div class="card c3"><div class="label">6-week average</div><div class="kpi" id="reviewAvgKpi">—</div></div><div class="card c3"><div class="label">Best category</div><div class="kpi smallKpi" id="reviewBestKpi">—</div></div><div class="card c3"><div class="label">Needs attention</div><div class="kpi smallKpi" id="reviewWorstKpi">—</div></div>
 <div class="card c7"><h3>Review trend</h3><div id="reviewHistoryTrend" class="trendChart"></div></div><div class="card c5"><h3>Latest category scores</h3><div id="reviewCategoryCards" class="reviewCategoryGrid"></div></div>
-<div class="card c12"><h3>Sailing reviews & guest comments</h3><div style="overflow-x:auto"><table id="reviewHistoryTable"></table></div></div></div></section>
+<div class="card c12"><h3>Latest reviews by passenger group & wealth</h3><div class="label">Different audiences judge the same cruise differently. These scores feed directly into future conversion for that audience.</div><div id="reviewAudienceGrid"></div></div><div class="card c12"><h3>Sailing reviews & guest comments</h3><div style="overflow-x:auto"><table id="reviewHistoryTable"></table></div></div></div></section>
 </main>
 
 
@@ -1096,7 +1114,10 @@ input[type="range"]{width:100%}
    <div class="notice" id="resultEvent" style="margin-top:12px"></div>
   </div>
 
-  <div id="resultPagePnl" class="resultPage">
+  <div class="card" style="margin-top:12px"><h3>Forward bookings — committed sailings</h3>
+<div class="label">Bookings to date for future committed itineraries. These are actual bookings so far, not final occupancy forecasts.</div>
+<div style="overflow-x:auto"><table id="resultForwardBookings"></table></div></div>
+<div id="resultPagePnl" class="resultPage">
    <div class="card"><h3>Ship P&amp;L</h3><div class="label">Selected ship only.</div><table id="resultPnl"></table>
    <h3 style="margin-top:16px">Finance KPIs</h3><table id="resultFinanceKpis"></table></div>
   </div>
@@ -1125,7 +1146,8 @@ input[type="range"]{width:100%}
   <h2 id="voyageAnimTitle" style="margin:0">Sailing week</h2>
   <div class="voyageMeta"><span id="voyageAnimWeek"></span><span id="voyageAnimSeason"></span><span id="voyageAnimWeather"></span><span id="voyageAnimLocation"></span></div>
   <div class="voyageTrack"><div class="voyageShip">🚢</div></div>
-  <div id="voyageAnimRoute" class="label" style="color:#d7e6f1;margin-bottom:12px"></div>
+  <div id="voyageAnimRoute" class="label" style="color:#d7e6f1;
+ renderWeeklyForwardBookings();margin-bottom:12px"></div>
   <div id="voyageAnimPhotos" class="voyagePhotos"></div>
  </div>
 </div>
@@ -1380,12 +1402,12 @@ const state = {
  },
  route:[],
  programme:[
-  {startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,speed:17.5,booked:0,lastBooked:0,committed:false,planned:false},
-  {startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,speed:17.5,booked:0,lastBooked:0,committed:false,planned:false},
-  {startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,speed:17.5,booked:0,lastBooked:0,committed:false,planned:false},
-  {startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,speed:17.5,booked:0,lastBooked:0,committed:false,planned:false},
-  {startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,speed:17.5,booked:0,lastBooked:0,committed:false,planned:false},
-  {startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,speed:17.5,booked:0,lastBooked:0,committed:false,planned:false}
+  {startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,marketingTargetSegment:"Broad",marketingTargetWealth:"Broad",speed:17.5,booked:0,lastBooked:0,committed:false,planned:false},
+  {startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,marketingTargetSegment:"Broad",marketingTargetWealth:"Broad",speed:17.5,booked:0,lastBooked:0,committed:false,planned:false},
+  {startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,marketingTargetSegment:"Broad",marketingTargetWealth:"Broad",speed:17.5,booked:0,lastBooked:0,committed:false,planned:false},
+  {startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,marketingTargetSegment:"Broad",marketingTargetWealth:"Broad",speed:17.5,booked:0,lastBooked:0,committed:false,planned:false},
+  {startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,marketingTargetSegment:"Broad",marketingTargetWealth:"Broad",speed:17.5,booked:0,lastBooked:0,committed:false,planned:false},
+  {startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,marketingTargetSegment:"Broad",marketingTargetWealth:"Broad",speed:17.5,booked:0,lastBooked:0,committed:false,planned:false}
  ],
  lastPnl:null,lastCf:null,performanceHistory:[],lastEvent:"You have £5m of launch capital and no ship. Buy your first vessel before scheduling sailings."
 }
@@ -1394,16 +1416,16 @@ Object.keys(state.contracts).forEach(n=>{state.contracts[n].excursions=defaultEx
 
 const SAVE_STORAGE_KEY="cruiseTycoon.save.v1";
 const SAVE_SCHEMA_VERSION=1;
-const GAME_VERSION="0.23.1";
+const GAME_VERSION="0.24.2";
 
 function makeStarterProgramme(){
- return Array.from({length:6},()=>({startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,speed:17.5,booked:0,lastBooked:0,committed:false,planned:false,routeApplied:false,appliedDraft:null,excursionSelection:{},excursionPricing:{}}));
+ return Array.from({length:6},()=>({startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,marketingTargetSegment:"Broad",marketingTargetWealth:"Broad",speed:17.5,booked:0,lastBooked:0,committed:false,planned:false,routeApplied:false,appliedDraft:null,excursionSelection:{},excursionPricing:{}}));
 }
 function makeFirstShipProgramme(){
  return [
-  {startPort:"Southampton",route:["Southampton","Le Havre","Bruges (Zeebrugge)","Rotterdam"],fare:899,cabinPrices:{inside:809,oceanview:1019,balcony:1319,suite:1949},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,speed:17.5,booked:.62,lastBooked:.56,committed:true,planned:true,routeApplied:false,appliedDraft:null,excursionSelection:{},excursionPricing:{}},
-  {startPort:"Rotterdam",route:["Rotterdam","Hamburg","Southampton","Le Havre"],fare:925,cabinPrices:{inside:835,oceanview:1045,balcony:1345,suite:1975},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,speed:17.5,booked:.54,lastBooked:.49,committed:true,planned:true,routeApplied:false,appliedDraft:null,excursionSelection:{},excursionPricing:{}},
-  {startPort:"Le Havre",route:["Le Havre","Bruges (Zeebrugge)","Rotterdam","Southampton"],fare:915,cabinPrices:{inside:825,oceanview:1035,balcony:1335,suite:1965},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,speed:17.5,booked:.46,lastBooked:.40,committed:true,planned:true,routeApplied:false,appliedDraft:null,excursionSelection:{},excursionPricing:{}},
+  {startPort:"Southampton",route:["Southampton","Le Havre","Bruges (Zeebrugge)","Rotterdam"],fare:899,cabinPrices:{inside:809,oceanview:1019,balcony:1319,suite:1949},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,marketingTargetSegment:"Broad",marketingTargetWealth:"Broad",speed:17.5,booked:.72,lastBooked:.66,committed:true,planned:true,routeApplied:false,appliedDraft:null,excursionSelection:{},excursionPricing:{}},
+  {startPort:"Rotterdam",route:["Rotterdam","Hamburg","Southampton","Le Havre"],fare:925,cabinPrices:{inside:835,oceanview:1045,balcony:1345,suite:1975},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,marketingTargetSegment:"Broad",marketingTargetWealth:"Broad",speed:17.5,booked:.69,lastBooked:.62,committed:true,planned:true,routeApplied:false,appliedDraft:null,excursionSelection:{},excursionPricing:{}},
+  {startPort:"Le Havre",route:["Le Havre","Bruges (Zeebrugge)","Rotterdam","Southampton"],fare:915,cabinPrices:{inside:825,oceanview:1035,balcony:1335,suite:1965},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,marketingTargetSegment:"Broad",marketingTargetWealth:"Broad",speed:17.5,booked:.66,lastBooked:.59,committed:true,planned:true,routeApplied:false,appliedDraft:null,excursionSelection:{},excursionPricing:{}},
   ...makeStarterProgramme().slice(0,3)
  ];
 }
@@ -1459,7 +1481,7 @@ function hydrateFromPayload(payload){
  if(!state.fleet[state.activeShipId])state.activeShipId=Object.keys(state.fleet)[0];
  if(!state.programme || !state.programme.length)state.programme=cloneJson(INITIAL_GAME_STATE.programme);
  // Recover valid routes from old saves before scheduler normalisation runs.
- state.programme.forEach(item=>{
+ state.programme.forEach(item=>{item.marketingTargetSegment=item.marketingTargetSegment||"Broad";item.marketingTargetWealth=item.marketingTargetWealth||"Broad";
    const savedRoute=Array.isArray(item.route)&&item.route.length>1;
    const draftRoute=Array.isArray(item.appliedDraft?.route)&&item.appliedDraft.route.length>1;
    if(savedRoute)item.planned=true;
@@ -1472,7 +1494,7 @@ function hydrateFromPayload(payload){
      item.foodSpendPpd=d.foodSpendPpd??item.foodSpendPpd??18;
      item.hotelConsumablesPpd=d.hotelConsumablesPpd??item.hotelConsumablesPpd??7;
      item.entertainmentSpendPpd=d.entertainmentSpendPpd??item.entertainmentSpendPpd??4;
-     item.marketing=d.marketing??item.marketing??0;
+     item.marketing=d.marketing??item.marketing??0;item.marketingTargetSegment=d.marketingTargetSegment??item.marketingTargetSegment??"Broad";item.marketingTargetWealth=d.marketingTargetWealth??item.marketingTargetWealth??"Broad";
      item.speed=d.speed??item.speed??17.5;
      item.planned=true;item.routeApplied=true;
    }
@@ -2056,16 +2078,18 @@ function buildSchedule(route=state.route, speedOverride=null){
  };
 }
 function routeAppeal(seg){
- const sch=buildSchedule(), def=segmentDefs[seg]; let score=0,n=0;
+ const sch=buildSchedule(),def=segmentDefs[seg];let score=0,n=0;
  sch.days.filter(d=>d.type==="port").forEach(d=>{
-   let p=ports[d.name]; if(!p)return;
-   let s=currentPortAppeal(d.name,seg);
-   score+=s;n++;
+   const p=ports[d.name];if(!p)return;
+   score+=currentPortAppeal(d.name,seg);n++
  });
- let avg=n?score/n:5;
- let seaRatio=sch.seaDays/Math.max(1,sch.days.length);
- let seaFit=1-Math.abs(seaRatio-def.seaPref*.22)*1.7;
- return clamp((avg/8.2)*seaFit,.65,1.25);
+ const avg=n?score/n:5;
+ const seaRatio=sch.seaDays/Math.max(1,sch.days.length);
+ // seaPref is already a 0–1 preferred share of sea days. The old model
+ // multiplied it by .22, pushing almost every normal 7-day cruise into
+ // the same minimum appeal clamp and making route choice irrelevant.
+ const seaFit=1-Math.abs(seaRatio-def.seaPref)*.65;
+ return clamp((avg/8.2)*seaFit,.70,1.25)
 }
 function forecastMix(gameWeek=state.week){
  let raw={},sum=0;
@@ -2079,40 +2103,64 @@ function forecastMix(gameWeek=state.week){
  return raw;
 }
 
-function cabinDemand(item){
- const ship=activeShip();
- if(!item?.planned || !item.route || item.route.length<2){
-   return Object.fromEntries(Object.keys(ship.berths||{}).map(k=>[k,{occ:0,booked:0,share:0}]));
+function cabinDemand(item,occupancyOverride=null){
+ const ship=activeShip(),berths=ship.berths||{};
+ if(!item?.planned||!item.route||item.route.length<2){
+   return Object.fromEntries(Object.keys(berths).map(k=>[k,{occ:0,booked:0,share:0}]))
  }
  const cp=item.cabinPrices||{inside:699,oceanview:899,balcony:1159,suite:1749};
  const refs={inside:699,oceanview:899,balcony:1149,suite:1899};
  const elasticity={inside:1.18,oceanview:1.02,balcony:.86,suite:.58};
- const base=programmeForecast(item,selectedPlanWeek+1)||bookingForecastCore().mid;
- const out={};
- Object.keys(ship.berths).forEach(k=>{
-   const priceEffect=Math.pow(refs[k]/Math.max(1,cp[k]),elasticity[k]);
-   const occ=clamp(base*priceEffect*(k==="suite"?(0.92+state.rep/400):1),.18,1);
-   out[k]={occ,booked:Math.round(ship.berths[k]*occ),share:0};
+ const base=occupancyOverride==null?programmeForecast(item,itemWeeksAhead(item)):clamp(occupancyOverride,0,1);
+ const targetPax=Math.round((ship.capacity||Object.values(berths).reduce((a,v)=>a+(+v||0),0))*base);
+ const keys=Object.keys(berths);
+ const weight={};
+ keys.forEach(k=>{
+   const priceEffect=Math.pow(refs[k]/Math.max(1,cp[k]||refs[k]),elasticity[k]||1);
+   const pref=k==="suite"?(0.90+state.rep/400):k==="balcony"?1.04:k==="inside"?.98:1;
+   weight[k]=Math.max(.01,(+berths[k]||0)*priceEffect*pref)
  });
- const totalBooked=Object.values(out).reduce((a,x)=>a+x.booked,0);
- Object.values(out).forEach(x=>x.share=totalBooked?x.booked/totalBooked:0);
- return out;
+ const alloc=Object.fromEntries(keys.map(k=>[k,0]));
+ let remaining=targetPax,open=new Set(keys),guard=0;
+ while(remaining>0&&open.size&&guard++<10){
+   const totalW=[...open].reduce((a,k)=>a+weight[k],0)||1;
+   let used=0;
+   [...open].forEach((k,ix,arr)=>{
+     const cap=Math.max(0,(+berths[k]||0)-alloc[k]);
+     const want=ix===arr.length-1?remaining-used:Math.round(remaining*weight[k]/totalW);
+     const add=Math.min(cap,Math.max(0,want));
+     alloc[k]+=add;used+=add;
+     if(alloc[k]>=+berths[k])open.delete(k)
+   });
+   if(used<=0)break;
+   remaining-=used
+ }
+ // Rounding residue: place one passenger at a time into cabins with free capacity.
+ if(remaining>0){
+   const ranked=[...keys].sort((a,b)=>weight[b]-weight[a]);
+   for(const k of ranked){
+     const free=Math.max(0,(+berths[k]||0)-alloc[k]),add=Math.min(free,remaining);
+     alloc[k]+=add;remaining-=add;if(!remaining)break
+   }
+ }
+ const totalBooked=Object.values(alloc).reduce((a,v)=>a+v,0);
+ const out={};
+ keys.forEach(k=>out[k]={occ:(+berths[k]||0)?alloc[k]/berths[k]:0,booked:alloc[k],share:totalBooked?alloc[k]/totalBooked:0});
+ return out
 }
 function passengerMarketShare(item){
  const mix=forecastMix();
- if(!item?.planned || !item.route || item.route.length<2){
-   return Object.fromEntries(Object.keys(mix).map(k=>[k,{booked:0,market:0,share:0}]));
+ if(!item?.planned||!item.route||item.route.length<2){
+   return Object.fromEntries(Object.keys(mix).map(k=>[k,{booked:0,market:0,share:0}]))
  }
- const fc=programmeForecast(item,selectedPlanWeek+1);
- const totalMarket=5200*(.85+selectedPlanWeek*.03);
- const booked=Math.round(activeShip().capacity*fc);
- const out={};
+ const weeksAhead=itemWeeksAhead(item),fc=programmeForecast(item,weeksAhead);
+ const totalMarket=5200*(.85+(weeksAhead-1)*.03);
+ const booked=Math.round(activeShip().capacity*fc),out={};
  Object.entries(mix).forEach(([k,v])=>{
-   const our=Math.round(booked*v);
-   const market=Math.max(our,Math.round(totalMarket*(segmentDefs[k].base||.1)));
-   out[k]={booked:our,market,share:market?our/market:0};
+   const our=Math.round(booked*v),market=Math.max(our,Math.round(totalMarket*(segmentDefs[k].base||.1)));
+   out[k]={booked:our,market,share:market?our/market:0}
  });
- return out;
+ return out
 }
 
 function weightedPriceSensitivity(){
@@ -2120,17 +2168,79 @@ function weightedPriceSensitivity(){
  Object.keys(mix).forEach(k=>x+=mix[k]*segmentDefs[k].priceSens); return x;
 }
 
-function programmeForecast(item, weeksAhead){
- if(!item?.planned) return 0;
- const targetWeek=state.week+weeksAhead-1;
+
+const MARKETING_SEGMENT_RESPONSE={Families:1.12,Couples:.96,Seniors:.72,Young:1.30,Luxury:.58};
+const MARKETING_BASE_CONVERSION={Families:.16,Couples:.19,Seniors:.23,Young:.11,Luxury:.17};
+const MARKETING_WEALTH_RESPONSE={Budget:1.15,Mainstream:1.00,Affluent:.82,Luxury:.58};
+const MARKETING_WEALTH_CONVERSION={Budget:.78,Mainstream:1.00,Affluent:1.13,Luxury:1.24};
+
+function facilityConversionFit(seg,ship=activeShip()){
+ let f=1;
+ if(seg==="Families"){if(hasFacility(ship,"kids"))f+=.08;if(hasFacility(ship,"pool"))f+=.06}
+ if(seg==="Young"){if(hasFacility(ship,"pool"))f+=.05;if(hasFacility(ship,"casino"))f+=.04;if(hasFacility(ship,"lounge"))f+=.04}
+ if(seg==="Couples"){if(hasFacility(ship,"spa"))f+=.04;if(hasFacility(ship,"speciality"))f+=.05}
+ if(seg==="Luxury"){if(hasFacility(ship,"spa"))f+=.07;if(hasFacility(ship,"speciality"))f+=.08;if((ship.berths?.suite||0)>0)f+=.06}
+ return f
+}
+function programmeDemandTargetBase(item,gameWeek=null){
+ if(!item?.planned||!item.route||item.route.length<2)return 0;
+ let idx=state.programme?.indexOf(item)??-1;if(gameWeek==null)gameWeek=state.week+Math.max(0,idx);
  const old={route:state.route,fare:state.fare,service:state.service,marketing:state.marketing,speed:state.speed,week:state.week};
- state.route=item.route; state.fare=item.fare; state.service=item.service??3; state.marketing=item.marketing??0; state.speed=item.speed??17.5; state.week=targetWeek;
- let f=bookingForecastCore(targetWeek);
- Object.assign(state,old);
- let build=clamp(.22 + (6-weeksAhead)*.085, .18, .88);
- const booked=item.booked||0,baseForecast=Math.max(booked,f.mid*build);
- const incrementalMarketing=marketingDemandLift(item.marketing??0)*.32*(1-baseForecast);
- return clamp(baseForecast+incrementalMarketing,.15,.99);
+ state.route=[...item.route];state.fare=Math.max(1,item.fare||0);state.service=item.service??3;state.marketing=0;state.speed=item.speed??17.5;state.week=gameWeek;
+ const f=bookingForecastCore(gameWeek);Object.assign(state,old);return clamp(f.mid,.30,.995)
+}
+function marketingCellConversion(item,seg,wealthKey,gameWeek){
+ const w=wealth[wealthKey],prof=gameWeekProfile(gameWeek),service=item.service??3;
+ const fare=Math.max(1,item.fare||900),reference=930*w.fareFactor*(1+(service-3)*.05);
+ const priceFit=clamp(Math.pow(reference/fare,w.priceSens),.55,1.45);
+ const routeFit=clamp(routeAppeal(seg),.70,1.25),serviceFit=.88+service*.04,brandFit=.82+state.rep/280,seasonFit=clamp(prof.segment[seg]||1,.88,1.18);
+ return clamp((MARKETING_BASE_CONVERSION[seg]||.15)*(MARKETING_WEALTH_CONVERSION[wealthKey]||1)*priceFit*routeFit*serviceFit*brandFit*seasonFit*facilityConversionFit(seg)*audienceReviewConversionFactor(seg,wealthKey),.035,.42)
+}
+function marketingFunnel(item,weeksAhead=1){
+ if(!item?.planned||!item.route||item.route.length<2)return {enquiries:0,bookings:0,conversion:0,rows:[],bySegment:{},byWealth:{},paidBookings:0,organicBookings:0};
+ const gameWeek=state.week+Math.max(0,(weeksAhead||1)-1),mix=forecastMix(gameWeek),cap=activeShip().capacity||600;
+ const spend=Math.max(0,+item.marketing||0),segTarget=item.marketingTargetSegment||"Broad",wealthTarget=item.marketingTargetWealth||"Broad";
+ const organicTarget=programmeDemandTargetBase(item,gameWeek),organicPax=organicTarget*cap,rows=[];
+ let enquiries=0,bookings=0,paidBookings=0,organicBookings=0;
+ Object.entries(mix).forEach(([seg,segShare])=>Object.entries(wealth).forEach(([wk,w])=>{
+   const cellShare=segShare*w.share,conv=marketingCellConversion(item,seg,wk,gameWeek);
+   const organicCellBookings=organicPax*cellShare,organicEnquiries=organicCellBookings/Math.max(.035,conv);
+   const segFocus=segTarget==="Broad"?1:(seg===segTarget?1.85:.62),wealthFocus=wealthTarget==="Broad"?1:(wk===wealthTarget?1.75:.68);
+   const response=(MARKETING_SEGMENT_RESPONSE[seg]||1)*(MARKETING_WEALTH_RESPONSE[wk]||1)*segFocus*wealthFocus;
+   const saturation=spend?((1-Math.exp(-spend/180000))/(spend/180000)):1;
+   const paidEnquiries=(spend/230)*saturation*cellShare*response,paidCellBookings=paidEnquiries*conv;
+   const cellEnq=organicEnquiries+paidEnquiries,cellBookings=organicCellBookings+paidCellBookings;
+   rows.push({segment:seg,wealth:wk,enquiries:cellEnq,conversion:cellEnq?cellBookings/cellEnq:0,bookings:cellBookings,paidEnquiries,paidBookings:paidCellBookings});
+   enquiries+=cellEnq;bookings+=cellBookings;paidBookings+=paidCellBookings;organicBookings+=organicCellBookings
+ }));
+ const bySegment={},byWealth={};
+ rows.forEach(r=>{[[bySegment,r.segment],[byWealth,r.wealth]].forEach(([obj,k])=>{obj[k]=obj[k]||{enquiries:0,bookings:0};obj[k].enquiries+=r.enquiries;obj[k].bookings+=r.bookings})});
+ Object.values(bySegment).forEach(x=>x.conversion=x.enquiries?x.bookings/x.enquiries:0);Object.values(byWealth).forEach(x=>x.conversion=x.enquiries?x.bookings/x.enquiries:0);
+ return {enquiries,bookings,conversion:enquiries?bookings/enquiries:0,rows,bySegment,byWealth,paidBookings,organicBookings}
+}
+function programmeDemandTarget(item,gameWeek=null){
+ if(!item?.planned||!item.route||item.route.length<2)return 0;
+ let idx=state.programme?.indexOf(item)??-1;if(gameWeek==null)gameWeek=state.week+Math.max(0,idx);
+ const base=programmeDemandTargetBase(item,gameWeek);
+ if(!(item.marketing>0))return base;
+ const weeksAhead=Math.max(1,gameWeek-state.week+1),f=marketingFunnel(item,weeksAhead),paidLift=f.paidBookings/Math.max(1,activeShip().capacity||600);
+ return clamp(base+paidLift,.30,.995)
+}
+function bookingCurveForWeeksAhead(weeksAhead){
+ const curve={1:.94,2:.84,3:.70,4:.55,5:.42,6:.30};
+ return curve[clamp(Math.round(weeksAhead||1),1,6)]||.30
+}
+function itemWeeksAhead(item){
+ const idx=state.programme?.indexOf(item);
+ return idx>=0?idx+1:1
+}
+function programmeForecast(item,weeksAhead){
+ if(!item?.planned)return 0;
+ weeksAhead=clamp(Math.round(weeksAhead||itemWeeksAhead(item)),1,6);
+ const target=programmeDemandTarget(item,state.week+weeksAhead-1);
+ const curve=bookingCurveForWeeksAhead(weeksAhead);
+ const current=item.booked||0;
+ return clamp(Math.max(current,target*curve),0,.995)
 }
 
 function bookingsSoFarForPlan(plan){
@@ -2267,28 +2377,35 @@ function changePenalty(oldItem,newRoute,newFare,newService,newMarketing,newSpeed
  return passengerValue*(0.36 + booked*.22);
 }
 function bookingGrowthForItem(item,weeksAhead){
- if(!item?.planned) return 0;
- let fc=programmeForecast(item,weeksAhead);
- let current=item.booked||0;
- // Growth slows as sailing fills and accelerates as departure approaches.
- let urgency=0.055 + (7-weeksAhead)*0.018;
- let headroom=Math.max(0,1-current);
- let increment=Math.min(headroom, Math.max(0,(fc-current)*0.48 + urgency*headroom*0.22));
- return clamp(current+increment,current,0.995);
+ if(!item?.planned||!item.committed)return item?.booked||0;
+ weeksAhead=clamp(Math.round(weeksAhead||itemWeeksAhead(item)),1,6);
+ const desired=programmeForecast(item,weeksAhead);
+ const current=clamp(item.booked||0,0,.995);
+ // Bookings move towards the appropriate point on the booking curve.
+ // Catch-up becomes stronger close to departure so a newly-created sailing
+ // does not permanently inherit a low starting booking percentage.
+ const catchup={1:.94,2:.88,3:.82,4:.76,5:.70,6:.64}[weeksAhead]||.70;
+ const next=current+Math.max(0,desired-current)*catchup;
+ return clamp(next,current,.995)
 }
 function forwardCashReceipts(){
  // Deposits arise only from new bookings this week. Final balances are collected 2 weeks before departure.
  let dep=0,final=0,rows=[];
  state.programme.forEach((item,idx)=>{
-   let weeksAhead=idx+1;
-   let prev=item.booked||0;
-   let next=item.planned?bookingGrowthForItem(item,weeksAhead):0;
-   let newlyBooked=Math.max(0,next-prev);
-   let grossAtFull=expectedFareRevenue(item,1);
-   let depositCash=grossAtFull*newlyBooked*.20;
-   let finalCash=(weeksAhead===2)?grossAtFull*next*.70:0;
-   dep+=depositCash; final+=finalCash;
-   rows.push({week:weeksAhead,item,forecast:next,prior:prev,newlyBooked,depositCash,finalCash,growth:next-prev});
+   const weeksAhead=idx+1,prev=item.booked||0;
+   // Index 0 is sailing now. New-booking cash must not be created after the
+   // sailing result has already been calculated; its late bookings are part
+   // of current fare revenue, not future customer deposits.
+   if(idx===0){
+     rows.push({week:weeksAhead,item,forecast:prev,prior:prev,newlyBooked:0,depositCash:0,finalCash:0,growth:0});
+     return
+   }
+   const next=item.planned?bookingGrowthForItem(item,weeksAhead):0;
+   const newlyBooked=Math.max(0,next-prev),grossAtFull=expectedFareRevenue(item,1);
+   const depositCash=grossAtFull*newlyBooked*.20;
+   const finalCash=(weeksAhead===2)?grossAtFull*next*.70:0;
+   dep+=depositCash;final+=finalCash;
+   rows.push({week:weeksAhead,item,forecast:next,prior:prev,newlyBooked,depositCash,finalCash,growth:next-prev})
  });
  return {dep,final,rows};
 }
@@ -2586,6 +2703,17 @@ function renderReviewHistory(){
  set("reviewLatestKpi",latest?`${latest.reviewScore.toFixed(1)} ★`:"—");set("reviewAvgKpi",recent.length?`${avg.toFixed(1)} ★`:"—");set("reviewBestKpi",sorted[0]?`${sorted[0][0]} ${sorted[0][1].toFixed(1)}★`:"—");set("reviewWorstKpi",sorted.length?`${sorted.at(-1)[0]} ${sorted.at(-1)[1].toFixed(1)}★`:"—");
  const chart=document.getElementById("reviewHistoryTrend");if(chart)chart.innerHTML=simpleTrendSvg([...rows].reverse().slice(-12).map(x=>({week:x.week,profit:x.net,cash:x.cashClosing,review:x.reviewScore})));
  const cards=document.getElementById("reviewCategoryCards");if(cards)cards.innerHTML=sorted.map(([k,v])=>`<div class="reviewCat"><span>${k}</span><b>${v.toFixed(1)} ★</b><span class="reviewMiniTrack"><span style="width:${v/5*100}%"></span></span></div>`).join("")||'<div class="label">No completed sailing yet.</div>';
+ const ag=document.getElementById("reviewAudienceGrid");
+ if(ag){
+   const a=latest?.audienceReviews;
+   if(!a)ag.innerHTML='<div class="emptyState"><div class="emptyStateIcon">★</div><b>No audience reviews yet</b><span>Complete a sailing to see reviews by passenger group and wealth.</span></div>';
+   else{
+    const segCards=Object.entries(a.bySegment||{}).map(([k,v])=>`<div class="audReview"><span>${k}</span><b>${reviewStars(v)}</b></div>`).join("");
+    const wealthCards=Object.entries(a.byWealth||{}).map(([k,v])=>`<div class="audReview"><span>${k}</span><b>${reviewStars(v)}</b></div>`).join("");
+    const matrix=`<div class="audMatrixWrap"><table><tr><th>Passenger group</th>${Object.keys(wealth).map(w=>`<th>${w}</th>`).join("")}</tr>${Object.keys(segmentDefs).map(s=>`<tr><td><b>${s}</b></td>${Object.keys(wealth).map(w=>{const v=a.matrix?.[s]?.[w]||0;return `<td>${v.toFixed(1)}★<div class="label">Conv. ${audienceReviewConversionFactor(s,w).toFixed(2)}x</div></td>`}).join("")}</tr>`).join("")}</table></div>`;
+    ag.innerHTML=`<div class="audReviewHead"><b>Passenger groups</b></div><div class="audReviewGrid">${segCards}</div><div class="audReviewHead"><b>Wealth tiers</b></div><div class="audReviewGrid">${wealthCards}</div>${matrix}`
+   }
+ }
  const tbl=document.getElementById("reviewHistoryTable");if(!tbl)return;tbl.innerHTML=rows.length?`<tr><th>Sailing</th><th>Overall</th><th>Occupancy</th><th>Route</th><th>Strongest</th><th>Needs attention</th><th>Guest comments</th></tr>`+rows.map(x=>{const a=Object.entries(x.reviewDetail||{}).sort((a,b)=>b[1]-a[1]),best=a[0],worst=a.at(-1);return `<tr><td><b>${calendarWeekLabel(x.week)}</b><br><span class="label">${x.shipName} · ${x.season} · ${x.weather}</span></td><td>${reviewScoreBar(x.reviewScore)}</td><td>${pct(x.actualOcc||0)}</td><td>${(x.route||[]).join(" → ")}</td><td class="goodtxt">${best?best[0]+" "+best[1].toFixed(1)+"★":"—"}</td><td class="badtxt">${worst?worst[0]+" "+worst[1].toFixed(1)+"★":"—"}</td><td><b>“${x.comments?.good||""}”</b><div class="reviewComment">“${x.comments?.bad||""}”</div></td></tr>`}).join(''):'<tr><td>No completed sailings yet.</td></tr>';
  if(sel)sel.onchange=renderReviewHistory;
 }
@@ -2606,6 +2734,39 @@ function showVoyageAnimation(done){
  setTimeout(()=>{overlay.classList.remove("show");done();},2100);
 }
 
+
+function weeklyForwardCommittedBookings(){
+ const ship=activeShip(),cap=Math.max(1,ship.capacity||Object.values(ship.berths||{}).reduce((a,v)=>a+(+v||0),0));
+ return (state.programme||[]).map((item,idx)=>({item,idx})).filter(x=>x.idx>0&&x.item?.committed&&x.item?.planned&&Array.isArray(x.item.route)&&x.item.route.length>1).map(({item,idx})=>{
+   const booked=clamp(item.booked||0,0,1),pax=Math.round(cap*booked);
+   const cd=cabinDemand(item);
+   return {
+     weekAhead:idx+1,
+     gameWeek:state.week+idx,
+     route:[...(item.route||[])],
+     booked,pax,
+     cabin:Object.fromEntries(Object.entries(cd||{}).map(([k,v])=>[k,{occ:v.occ||0,booked:v.booked||0}])),
+     marketing:item.marketing||0,
+     targetSegment:item.marketingTargetSegment||"Broad",
+     targetWealth:item.marketingTargetWealth||"Broad"
+   }
+ })
+}
+function renderWeeklyForwardBookings(){
+ const tbl=document.getElementById("resultForwardBookings");if(!tbl)return;
+ const rows=weeklyForwardCommittedBookings();
+ if(!rows.length){tbl.innerHTML='<tr><td>No future committed sailings yet.</td></tr>';return}
+ const cabinKeys=Object.keys(activeShip().berths||{});
+ tbl.innerHTML=`<tr><th>Sailing</th><th>Route</th><th>Bookings so far</th><th>Guests booked</th>${cabinKeys.map(k=>`<th>${k[0].toUpperCase()+k.slice(1)}</th>`).join("")}<th>Marketing</th></tr>`+
+ rows.map(r=>`<tr>
+   <td><b>${calendarWeekLabel(r.gameWeek)}</b><br><span class="label">${r.weekAhead-1} week${r.weekAhead-1===1?"":"s"} ahead</span></td>
+   <td>${r.route.join(" → ")}</td>
+   <td><b>${pct(r.booked)}</b></td>
+   <td>${r.pax.toLocaleString()}</td>
+   ${cabinKeys.map(k=>`<td>${pct(r.cabin[k]?.occ||0)}<div class="label">${(r.cabin[k]?.booked||0).toLocaleString()}</div></td>`).join("")}
+   <td>${r.marketing?`${statementMoney(r.marketing)}<div class="label">${r.targetSegment} · ${r.targetWealth}</div>`:"£0"}</td>
+ </tr>`).join("")
+}
 function showVoyageResult(ev){
  const p=state.lastPnl,c=state.lastCf;
  document.getElementById("resultSubtitle").textContent=`${activeShip().name} · Week ${state.week} · ${seasonForGameWeek(state.week)} · ${state.weather.temp}°C ${state.weather.icon} ${state.weather.kind} · ${state.route.join(" → ")}`;
@@ -2879,6 +3040,51 @@ function routeReviewMetrics(p){
  const fitScore=clamp(3.9+(fit-1)*3.0,2.4,5.0);
  return {fit,repeatHits,exactRepeats,repeatPenalty,routeScore:clamp(fitScore-repeatPenalty,2.3,5.0)};
 }
+
+const SEGMENT_REVIEW_BIAS={
+ Families:{"Entertainment":.16,"Facilities & public spaces":.14,"Dining capacity":.08,"Value for money":.12},
+ Couples:{"Food quality":.10,"Route / itinerary":.10,"Cabin & hotel service":.07},
+ Seniors:{"Cabin & hotel service":.14,"Food quality":.08,"Route / itinerary":.13,"Entertainment":-.05},
+ Young:{"Entertainment":.20,"Facilities & public spaces":.13,"Value for money":.10,"Food quality":-.03},
+ Luxury:{"Cabin & hotel service":.18,"Food quality":.16,"Facilities & public spaces":.15,"Ship condition":.12,"Value for money":-.08}
+};
+const WEALTH_REVIEW_EXPECTATION={Budget:.16,Mainstream:0,Affluent:-.12,Luxury:-.28};
+function audienceReviewScoreFromDetail(detail,seg,wk,p){
+ const weights={"Cabin & hotel service":.18,"Food quality":.12,"Dining capacity":.10,"Entertainment":.11,"Facilities & public spaces":.11,"Ship condition":.12,"Route / itinerary":.14,"Value for money":.12};
+ const bias=SEGMENT_REVIEW_BIAS[seg]||{},w=wealth[wk]||wealth.Mainstream;
+ let num=0,den=0;
+ Object.entries(detail).forEach(([k,v])=>{const wt=Math.max(.03,(weights[k]||.1)+(bias[k]||0));num+=v*wt;den+=wt});
+ let score=num/Math.max(.01,den)+(WEALTH_REVIEW_EXPECTATION[wk]||0);
+ // Wealth changes what "value" means: budget guests punish expensive fares harder,
+ // luxury guests tolerate price but expect the premium product to justify it.
+ const fare=Math.max(1,(p?.fareRevenue||0)/Math.max(1,p?.pax||1)),ref=930*w.fareFactor;
+ if(wk==="Budget")score-=Math.max(0,(fare-ref)/700)*.22;
+ if(wk==="Luxury" && (detail["Cabin & hotel service"]||4)<4.2)score-=.12;
+ return clamp(score,2.2,5)
+}
+function buildAudienceReviews(p,detail=reviewBreakdown(p)){
+ const bySegment={},byWealth={},matrix={};
+ Object.keys(segmentDefs).forEach(seg=>{
+   matrix[seg]={};let sum=0;
+   Object.entries(wealth).forEach(([wk,w])=>{const s=audienceReviewScoreFromDetail(detail,seg,wk,p);matrix[seg][wk]=s;sum+=s*w.share});
+   bySegment[seg]=sum
+ });
+ Object.keys(wealth).forEach(wk=>{
+   let sum=0,den=0;Object.entries(p?.mix||forecastMix()).forEach(([seg,sh])=>{sum+=(matrix[seg]?.[wk]||0)*sh;den+=sh});byWealth[wk]=den?sum/den:0
+ });
+ return {bySegment,byWealth,matrix}
+}
+function latestAudienceReview(seg,wk){
+ const hist=(state.performanceHistory||[]).filter(x=>!x.dryDock&&x.audienceReviews);
+ for(let i=hist.length-1;i>=0;i--){const a=hist[i].audienceReviews;if(a?.matrix?.[seg]?.[wk])return a.matrix[seg][wk]}
+ return null
+}
+function audienceReviewConversionFactor(seg,wk){
+ const score=latestAudienceReview(seg,wk);if(score==null)return 1;
+ // 4.0 is broadly neutral. Poor reviews materially depress conversion while
+ // excellent reviews create repeat/referral confidence, capped to avoid runaway demand.
+ return clamp(1+(score-4)*.18,.72,1.18)
+}
 function guestReviewScore(p,ev){
  const detail=reviewBreakdown(p);
  const weights={"Cabin & hotel service":.18,"Food quality":.12,"Dining capacity":.10,"Entertainment":.11,"Facilities & public spaces":.11,"Ship condition":.12,"Route / itinerary":.14,"Value for money":.12};
@@ -2948,18 +3154,24 @@ function sail(){ if(hasOwnedShip()&&state.programme?.[0]?.dryDock){processDryDoc
    document.getElementById("selectedRouteWarning").textContent=`ITINERARY TOO LONG: this schedule needs ${sch.voyageDays} days. A weekly sailing may use a maximum of 8 schedule days. Shorten the route or increase speed.`;
    return;
  }
- const fc=bookingForecast(), ev=randomEvent();
+ const ev=randomEvent();
  const currentItem=state.programme[0];
- const hasCommittedItinerary=!!(currentItem?.committed && currentItem?.planned && currentItem?.route && currentItem.route.length>1);
- let actualOcc=hasCommittedItinerary?clamp(fc.mid+(Math.random()-.5)*.11+ev.demand,.30,1):0;
- let pax=hasCommittedItinerary?expectedPassengerCount(actualOcc):0, mix=forecastMix();
+ const hasCommittedItinerary=!!(currentItem?.committed&&currentItem?.planned&&currentItem?.route&&currentItem.route.length>1);
+ // Final occupancy is based on this sailing's independent demand potential.
+ // Bookings-to-date provide a floor; late bookings then close most of the remaining
+ // gap to underlying demand. Scheduler UI selection has no role in this calculation.
+ const demandTarget=hasCommittedItinerary?programmeDemandTarget(currentItem,state.week):0;
+ const bookedToDate=hasCommittedItinerary?clamp(currentItem.booked||0,0,1):0;
+ let actualOcc=hasCommittedItinerary?clamp(Math.max(bookedToDate,demandTarget*.94)+(Math.random()-.5)*.06+ev.demand,.25,1):0;
+ let pax=hasCommittedItinerary?expectedPassengerCount(actualOcc):0,mix=forecastMix();
 
- // fares split by wealth mix while keeping user's average as headline average
- const cdSail=hasCommittedItinerary?cabinDemand(currentItem):Object.fromEntries(Object.keys(activeShip().cabins||{}).map(k=>[k,{booked:0}]));
+ // Allocate the final passenger total across cabin types according to relative
+ // cabin pricing/preferences. Cabin allocation no longer determines total demand.
+ const cdSail=hasCommittedItinerary?cabinDemand(currentItem,actualOcc):Object.fromEntries(Object.keys(activeShip().berths||{}).map(k=>[k,{booked:0,occ:0,share:0}]));
  const cpSail=currentItem.cabinPrices||{inside:699,oceanview:899,balcony:1159,suite:1749};
- let fareRevenue=Object.entries(cdSail).reduce((a,[k,v])=>a+v.booked*cpSail[k],0);
+ let fareRevenue=Object.entries(cdSail).reduce((a,[k,v])=>a+v.booked*(cpSail[k]||0),0);
  pax=Object.values(cdSail).reduce((a,v)=>a+v.booked,0);
- actualOcc=pax/activeShip().capacity;
+ actualOcc=pax/Math.max(1,activeShip().capacity);
  const cabinActual={};Object.entries(cdSail).forEach(([k,v])=>cabinActual[k]=v.booked);
  let ob=calcOnboard(pax,mix,sch);
  let excursionPlan=scheduledExcursionsForWeek(state.programme[0],"final");
@@ -3018,7 +3230,8 @@ function sail(){ if(hasOwnedShip()&&state.programme?.[0]?.dryDock){processDryDoc
  let segmentPax={}; Object.entries(mix).forEach(([k,v])=>segmentPax[k]=Math.round(pax*v));
  const reviewScore=guestReviewScore({fareRevenue,totalRev,actualOcc,pax,mix},ev);
  const reviewDetail=reviewBreakdown({fareRevenue,totalRev,actualOcc,pax,mix});
- state.lastPnl={fareRevenue,...ob,totalRev,...costs,opex,ebitda,depreciation,operating,interest,pbt,tax,net,actualOcc,pax,mix,segmentPax,units,cabinActual,excursionPlan,reviewScore,reviewDetail};
+ const audienceReviews=buildAudienceReviews({fareRevenue,totalRev,actualOcc,pax,mix},reviewDetail);
+ state.lastPnl={fareRevenue,...ob,totalRev,...costs,opex,ebitda,depreciation,operating,interest,pbt,tax,net,actualOcc,pax,mix,segmentPax,units,cabinActual,excursionPlan,reviewScore,reviewDetail,audienceReviews,demandTarget,bookedAtDeparture:bookedToDate};
  state.routeHistory=state.routeHistory||[];
  state.routeHistory.push({week:state.week,shipId:state.activeShipId,routeArray:[...(state.route||[])]});activeShip().currentPort=(state.route||[]).slice(-1)[0]||activeShip().currentPort||"Southampton";
  if(state.routeHistory.length>24)state.routeHistory=state.routeHistory.slice(-24);
@@ -3068,7 +3281,7 @@ function sail(){ if(hasOwnedShip()&&state.programme?.[0]?.dryDock){processDryDoc
  const routeMetrics=routeReviewMetrics(state.lastPnl);
  const comments=passengerComments(reviewDetail,routeMetrics);
  state.performanceHistory=state.performanceHistory||[];
- state.performanceHistory.push({week:state.week,shipId:state.activeShipId,shipName:activeShip().name,season:seasonForGameWeek(state.week),weather:`${state.weather.icon} ${state.weather.kind}`,route:[...(state.route||[])],reviewScore,reviewDetail:{...reviewDetail},comments,pax,actualOcc,ebitda,net,cashClosing:state.cash,pnl:JSON.parse(JSON.stringify(state.lastPnl)),sailingPlan:JSON.parse(JSON.stringify(currentItem||state.programme?.[0]||{})),settings:{service:state.service,staffing:ensureShipStandards(activeShip()).staffing,maintenance:ensureShipStandards(activeShip()).maintenance,foodSpendPpd:state.foodSpendPpd,hotelConsumablesPpd:state.hotelConsumablesPpd,entertainmentSpendPpd:currentItem?.entertainmentSpendPpd||4,marketing:state.marketing,speed:state.speed}});
+ state.performanceHistory.push({week:state.week,shipId:state.activeShipId,shipName:activeShip().name,season:seasonForGameWeek(state.week),weather:`${state.weather.icon} ${state.weather.kind}`,route:[...(state.route||[])],reviewScore,reviewDetail:{...reviewDetail},audienceReviews:JSON.parse(JSON.stringify(audienceReviews)),comments,pax,actualOcc,ebitda,net,cashClosing:state.cash,pnl:JSON.parse(JSON.stringify(state.lastPnl)),sailingPlan:JSON.parse(JSON.stringify(currentItem||state.programme?.[0]||{})),settings:{service:state.service,staffing:ensureShipStandards(activeShip()).staffing,maintenance:ensureShipStandards(activeShip()).maintenance,foodSpendPpd:state.foodSpendPpd,hotelConsumablesPpd:state.hotelConsumablesPpd,entertainmentSpendPpd:currentItem?.entertainmentSpendPpd||4,marketing:state.marketing,speed:state.speed}});
  if(state.performanceHistory.length>156)state.performanceHistory=state.performanceHistory.slice(-156);
 
  state.rep=clamp(state.rep+ev.rep+(state.service-3)*.7+(actualOcc>.96?-1.2:0),20,95);
@@ -3194,11 +3407,11 @@ function renderPorts(){
 function renderMarket(){
  let mix=forecastMix();
  const cls={Families:"fam",Couples:"couple",Seniors:"senior",Young:"young",Luxury:"lux"};
- let rows="<tr><th>Segment</th><th>Forecast mix</th><th>Route fit</th><th>Sea-day preference</th></tr>";
- Object.entries(mix).forEach(([k,v])=>rows+=`<tr><td>${k}</td><td>${pct(v)}</td><td>${routeAppeal(k).toFixed(2)}x</td><td>${Math.round(segmentDefs[k].seaPref*100)} / 100</td></tr>`);
+ let rows="<tr><th>Segment</th><th>Forecast mix</th><th>Route fit</th><th>Marketing response</th><th>Base conversion</th></tr>";
+ Object.entries(mix).forEach(([k,v])=>rows+=`<tr><td>${k}</td><td>${pct(v)}</td><td>${routeAppeal(k).toFixed(2)}x</td><td>${(MARKETING_SEGMENT_RESPONSE[k]||1).toFixed(2)}x</td><td>${pct(MARKETING_BASE_CONVERSION[k]||0)}</td></tr>`);
  document.getElementById("demandTable").innerHTML=rows;
- let wr="<tr><th>Wealth tier</th><th>Market share</th><th>Fare tolerance</th><th>Onboard spend</th></tr>";
- Object.entries(wealth).forEach(([k,w])=>wr+=`<tr><td>${k}</td><td>${pct(w.share)}</td><td>${w.fareFactor.toFixed(2)}x</td><td>${w.spendFactor.toFixed(2)}x</td></tr>`);
+ let wr="<tr><th>Wealth tier</th><th>Market share</th><th>Fare tolerance</th><th>Marketing response</th><th>Conversion factor</th><th>Onboard spend</th></tr>";
+ Object.entries(wealth).forEach(([k,w])=>wr+=`<tr><td>${k}</td><td>${pct(w.share)}</td><td>${w.fareFactor.toFixed(2)}x</td><td>${(MARKETING_WEALTH_RESPONSE[k]||1).toFixed(2)}x</td><td>${(MARKETING_WEALTH_CONVERSION[k]||1).toFixed(2)}x</td><td>${w.spendFactor.toFixed(2)}x</td></tr>`);
  document.getElementById("wealthTable").innerHTML=wr;
  document.getElementById("repBig").textContent=Math.round(state.rep)+" / 100";
  document.getElementById("repText").textContent=state.rep<45?"Weak reputation is making customers more price-sensitive.":state.rep<70?"A credible mainstream brand, but not yet strong enough to command a material premium.":"Strong brand equity supports pricing and affluent demand.";
@@ -3583,7 +3796,7 @@ function initialiseFutureWeekFromPrevious(i){
  item.hotelConsumablesPpd=prev.hotelConsumablesPpd??7;
  item.entertainmentSpendPpd=prev.entertainmentSpendPpd??4;
  item.speed=prev.speed??17.5;
- item.marketing=0;
+ item.marketing=0;item.marketingTargetSegment="Broad";item.marketingTargetWealth="Broad";
  item._carryInitialised=true;
 }
 
@@ -3670,13 +3883,16 @@ function renderSelectedPlanCore(){
  document.getElementById("selBalconyFare").value=cp.balcony;
  document.getElementById("selSuiteFare").value=cp.suite;
  document.getElementById("selMarketing").value=previewItem.marketing??0;
+ const mts=document.getElementById("selMarketingSegment"),mtw=document.getElementById("selMarketingWealth");
+ if(mts)mts.innerHTML=["Broad",...Object.keys(segmentDefs)].map(x=>`<option value="${x}" ${(previewItem.marketingTargetSegment||"Broad")===x?"selected":""}>${x==="Broad"?"Broad campaign":x}</option>`).join("");
+ if(mtw)mtw.innerHTML=["Broad",...Object.keys(wealth)].map(x=>`<option value="${x}" ${(previewItem.marketingTargetWealth||"Broad")===x?"selected":""}>${x==="Broad"?"All wealth tiers":x}</option>`).join("");
  document.getElementById("selFoodSpend").value=previewItem.foodSpendPpd??state.foodSpendPpd??18;
  document.getElementById("selHotelSpend").value=previewItem.hotelConsumablesPpd??state.hotelConsumablesPpd??7;
  document.getElementById("selEntertainmentSpend").value=previewItem.entertainmentSpendPpd??4;
  document.getElementById("selService").innerHTML=[1,2,3,4,5].map(v=>`<option value="${v}" ${(previewItem.service??3)===v?"selected":""}>${v} / 5</option>`).join("");
  document.getElementById("selSpeed").innerHTML=[15,15.5,16,16.5,17,17.5,18,18.5,19,19.5,20,20.5,21].map(v=>`<option value="${v}" ${(previewItem.speed??17.5)===v?"selected":""}>${v} kn</option>`).join("");
  const locked=!!item.committed;
- ["selInsideFare","selOceanFare","selBalconyFare","selSuiteFare","selService","selFoodSpend","selHotelSpend","selEntertainmentSpend","selMarketing","selSpeed"].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=locked;});
+ ["selInsideFare","selOceanFare","selBalconyFare","selSuiteFare","selService","selFoodSpend","selHotelSpend","selEntertainmentSpend","selMarketing","selMarketingSegment","selMarketingWealth","selSpeed"].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=locked;});
 
  const displayedBooked=item.committed?(item.booked||0):0,growth=item.committed?displayedBooked-(item.lastBooked||0):0, info=planScheduleForItem(previewItem);
  document.getElementById("selBookings").textContent=pct(displayedBooked);
@@ -3688,6 +3904,12 @@ function renderSelectedPlanCore(){
  const ms=passengerMarketShare(previewItem);
  const segmentBooked={};Object.entries(ms).forEach(([k,v])=>segmentBooked[k]=v.booked);
  document.getElementById("weekSegmentPie").innerHTML=pieSvg(segmentBooked,"Bookings so far by passenger segment");
+ const mf=marketingFunnel(previewItem,Math.max(1,selectedPlanWeek+1)),mfh=document.getElementById("marketingFunnelSummary");
+ if(mfh){
+  const sr=Object.entries(mf.bySegment).map(([k,v])=>`<tr><td>${k}</td><td>${Math.round(v.enquiries).toLocaleString()}</td><td>${pct(v.conversion)}</td><td>${Math.round(v.bookings).toLocaleString()}</td></tr>`).join("");
+  const wr=Object.entries(mf.byWealth).map(([k,v])=>`<tr><td>${k}</td><td>${Math.round(v.enquiries).toLocaleString()}</td><td>${pct(v.conversion)}</td><td>${Math.round(v.bookings).toLocaleString()}</td></tr>`).join("");
+  mfh.innerHTML=`<div class="funnelKpis"><div><span>Enquiries</span><b>${Math.round(mf.enquiries).toLocaleString()}</b></div><div><span>Conversion</span><b>${pct(mf.conversion)}</b></div><div><span>Potential bookings</span><b>${Math.round(mf.bookings).toLocaleString()}</b></div><div><span>Marketing-generated</span><b>${Math.round(mf.paidBookings).toLocaleString()}</b></div></div><div class="funnelTables"><table><tr><th>Passenger group</th><th>Enquiries</th><th>Conversion</th><th>Bookings</th></tr>${sr}</table><table><tr><th>Wealth tier</th><th>Enquiries</th><th>Conversion</th><th>Bookings</th></tr>${wr}</table></div>`
+ }
  const cd=cabinDemand(previewItem),prices=previewItem.cabinPrices||{};
  document.getElementById("weekCabinOccupancy").innerHTML=Object.keys(activeShip().berths).map(k=>{
    const occ=cd[k]?.occ||0;
@@ -4881,7 +5103,7 @@ function collectSelectedWeekDraft(){
    foodSpendPpd:+document.getElementById("selFoodSpend").value||18,
    hotelConsumablesPpd:+document.getElementById("selHotelSpend").value||7,
    entertainmentSpendPpd:+document.getElementById("selEntertainmentSpend").value||0,
-   marketing:+document.getElementById("selMarketing").value||0,
+   marketing:+document.getElementById("selMarketing").value||0,marketingTargetSegment:document.getElementById("selMarketingSegment")?.value||"Broad",marketingTargetWealth:document.getElementById("selMarketingWealth")?.value||"Broad",
    speed:+document.getElementById("selSpeed").value||17.5,
    planned:true,committed:false};
 }
@@ -4959,7 +5181,7 @@ document.getElementById("saveCommitWeek").onclick=()=>{
 
  if(!confirm(`Save and commit Week ${state.week+i}? Route, cabin prices and operating settings will lock. Excursion prices can still be changed afterwards.`))return;
 
- state.programme[i]={...old,route,days:normalizeSevenDayPlan(applied),fare,cabinPrices,excursionPricing:{},excursionSelection:{},service,foodSpendPpd,hotelConsumablesPpd,marketing,speed,planned:true,committed:true,routeApplied:false,appliedDraft:null};
+ state.programme[i]={...old,route,days:normalizeSevenDayPlan(applied),fare,cabinPrices,excursionPricing:{},excursionSelection:{},service,foodSpendPpd,hotelConsumablesPpd,marketing,marketingTargetSegment:marketingTargetSegment||"Broad",marketingTargetWealth:marketingTargetWealth||"Broad",speed,planned:true,committed:true,routeApplied:false,appliedDraft:null};
  state.programme[i].excursionsInitialised=true;
  enforceProgrammeContinuity();
  queueAutoSave();
@@ -5173,7 +5395,7 @@ document.getElementById("confirmWeekBtn").onclick=()=>{
  state.programme.forEach((x,idx)=>{ if(idx<=2) x.committed=true; });
  const newStart=last.route[last.route.length-1];
  const templateRest=last.route.slice(1);
- state.programme.push({startPort:newStart,route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,speed:17.5,booked:0,lastBooked:0,committed:false,planned:false});
+ state.programme.push({startPort:newStart,route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,marketingTargetSegment:"Broad",marketingTargetWealth:"Broad",speed:17.5,booked:0,lastBooked:0,committed:false,planned:false});
  enforceProgrammeContinuity();
  state.route=[...state.programme[0].route];
  state.fare=state.programme[0].fare;
