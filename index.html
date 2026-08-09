@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Cruise Tycoon v0.20.0</title>
+<title>Cruise Tycoon v0.21.0</title>
 <style>
 :root{
   --navy:#102c46;--navy2:#173e61;--bg:#edf3f7;--card:#fff;--ink:#17324a;
@@ -196,7 +196,7 @@ nav button{white-space:nowrap}
 .saveActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .saveMeta{padding:10px 12px;border-radius:12px;background:#f2f6f9;margin-top:10px;color:var(--muted)}
 
-/* v0.20.0 scheduler/readability and finance UI */
+/* v0.21.0 scheduler/readability and finance UI */
 .weekBtn.active.committed{background:#dfe3e6!important;color:#26343d!important;border:2px solid #53636e!important;box-shadow:0 0 0 3px rgba(83,99,110,.14)!important}
 .weekBtn.active.urgent{background:#f8caca!important;color:#651717!important;border:2px solid #b63636!important;box-shadow:0 0 0 3px rgba(182,54,54,.14)!important}
 .weekBtn.active.future{background:#ffe99a!important;color:#4e3d00!important;border:2px solid #a88300!important;box-shadow:0 0 0 3px rgba(168,131,0,.14)!important}
@@ -208,7 +208,7 @@ nav button{white-space:nowrap}
 .reviewScoreCell{white-space:nowrap}.nextSailingTable td{vertical-align:top}
 
 
-/* v0.20.0 visual refresh */
+/* v0.21.0 visual refresh */
 :root{--navy:#092b46;--navy2:#0d4769;--ocean:#137ea5;--ocean2:#42a6bf;--teal:#16837d;--bg:#f2f6f8;--card:#fff;--ink:#163247;--muted:#6e8290;--line:#dce7ec;--lineStrong:#c8d8e0;--good:#18734c;--bad:#aa3b42;--gold:#b78524;--shadow:0 10px 30px rgba(17,53,75,.075);--shadowStrong:0 18px 46px rgba(13,55,79,.13)}
 html{background:#eaf1f5}
 body{background:radial-gradient(circle at 8% 0%,rgba(54,151,181,.08),transparent 30%),linear-gradient(180deg,#edf4f7 0,#f5f8fa 290px,#f2f6f8 100%);min-height:100vh}
@@ -254,7 +254,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:650px){.title{font-size:20px}.pill{padding:6px 9px}.heroKpi .kpi{font-size:27px}.card{padding:13px;border-radius:15px}}
 
 
-/* v0.20.0 graphics expansion */
+/* v0.21.0 graphics expansion */
 .cruiseHero{
  position:relative;
  overflow:hidden;
@@ -302,7 +302,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 }
 
 
-/* v0.20.0 ship/deck management */
+/* v0.21.0 ship/deck management */
 .shipMgmtHeader{background:linear-gradient(145deg,#fff,#f4fafc)}
 .shipMgmtKpis{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:14px}.shipMgmtKpis>div,.deckSpaceSummary>div,.facilityMetrics>div{border:1px solid #d9e6eb;border-radius:12px;padding:10px;background:#f8fbfc}.shipMgmtKpis span,.deckSpaceSummary span,.facilityMetrics span{display:block;color:#748995;font-size:10px;text-transform:uppercase;letter-spacing:.05em}.shipMgmtKpis b{display:block;margin-top:4px;font-size:17px;color:#12364e}
 .deckSidebar{max-height:760px;overflow:auto}.deckList{display:flex;flex-direction:column;gap:6px;margin-top:10px}.deckListBtn{text-align:left;border:1px solid #d7e3e8;background:#f8fbfc;border-radius:11px;padding:9px 10px;color:#17384f}.deckListBtn span,.deckListBtn small{display:block;color:#718691}.deckListBtn.active{background:#0e5579;color:#fff;border-color:#0e5579}.deckListBtn.active span,.deckListBtn.active small{color:#d5eaf2}
@@ -313,13 +313,13 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:1000px){.shipMgmtKpis{grid-template-columns:repeat(4,1fr)}}@media(max-width:700px){.shipMgmtKpis{grid-template-columns:repeat(2,1fr)}.deckSpaceSummary{grid-template-columns:1fr 1fr}}
 
 
-/* v0.20.0 editable ship planner */
+/* v0.21.0 editable ship planner */
 .deckPlanner{margin-top:14px;padding:13px;border:1px solid #cfe0e7;border-radius:14px;background:linear-gradient(145deg,#f5fafc,#fff)}
 .deckPlannerControls{display:grid;grid-template-columns:2fr 1fr 1.3fr auto;gap:9px;align-items:end;margin-top:10px}.deckPlannerControls label{font-size:11px;font-weight:750;color:#607887}.deckPlannerControls select,.deckPlannerControls input{display:block;width:100%;margin-top:4px}.plannerCost{font-weight:850;color:#0f668b;background:#e9f6fa;padding:7px 10px;border-radius:9px}.removeSpaceBtn{margin-top:14px;width:100%}
 .shipClassCards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.shipClassCard{border:1px solid #d4e2e8;border-radius:14px;padding:13px;background:linear-gradient(155deg,#f8fbfc,#fff)}.shipClassCard>b,.shipClassCard>span,.shipClassCard>small{display:block}.shipClassCard>span{color:#718692;margin:3px 0 10px}.shipClassCard>div{margin-top:5px}.shipClassCard>small{color:#718692;margin-top:7px}.shipClassSilhouette{font-size:15px;letter-spacing:-2px;color:#2a7c9d;opacity:.7;margin-bottom:7px!important}
 @media(max-width:850px){.deckPlannerControls{grid-template-columns:1fr 1fr}.shipClassCards{grid-template-columns:1fr}}
 
-/* v0.20.0 management-sim visual overhaul */
+/* v0.21.0 management-sim visual overhaul */
 @media(min-width:980px){
  body{padding-left:178px}
  header{left:0}
@@ -395,7 +395,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .deckQualityMini{grid-column:1/-1;display:flex;gap:5px;margin-top:4px;flex-wrap:wrap}.deckQualityMini em{font-style:normal;font-size:9px;padding:2px 5px;border-radius:5px;background:rgba(255,255,255,.11);color:#cce1ea}.deckConditionActions,.shipRefurbActions{display:flex;align-items:center;gap:10px;margin-top:11px;padding-top:10px;border-top:1px solid #dbe6eb}.facilityMetrics{grid-template-columns:repeat(auto-fit,minmax(82px,1fr))}
 
 
-/* v0.20.0 brand corner and capacity economics */
+/* v0.21.0 brand corner and capacity economics */
 .brandCorner{display:none}
 @media(min-width:980px){
  .brandCorner{
@@ -415,7 +415,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .capacityCallout b{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#176786}.capacityCallout span{font-size:12px}
 
 
-/* v0.20.0 ship summary, luxury catalogue, landmark ports */
+/* v0.21.0 ship summary, luxury catalogue, landmark ports */
 .shipSummaryHero{display:grid;grid-template-columns:minmax(330px,42%) 1fr;min-height:275px;border-radius:17px;overflow:hidden;background:#082b45}
 .shipSummaryPhoto{position:relative;background-image:var(--ship-photo);background-size:cover;background-position:center;min-height:275px}
 .shipSummaryPhotoShade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,30,47,.72),transparent 58%)}
@@ -426,7 +426,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .upgradeCatalogue button:hover{border-color:#5ca8c1;background:#f5fbfd}.upgradeCatalogue button b,.upgradeCatalogue button small{display:block}.upgradeCatalogue button small{color:#718691;margin-top:3px}.upgradeCatalogue button:after{content:"＋";position:absolute;right:9px;top:50%;transform:translateY(-50%);width:25px;height:25px;border-radius:8px;background:#e7f3f8;display:grid;place-items:center;color:#11658a;font-weight:900}
 @media(max-width:900px){.shipSummaryHero{grid-template-columns:1fr}.shipSummaryPhoto{min-height:220px}.shipSummaryIntro .shipMgmtKpis{grid-template-columns:repeat(2,1fr)}}
 
-/* v0.20.0 deck picker and technical condition */
+/* v0.21.0 deck picker and technical condition */
 .deckListBtn{display:block;width:100%;position:relative;z-index:1;pointer-events:auto;cursor:pointer}
 .deckListBtn>*{pointer-events:none}
 .deckSidebar{position:relative;z-index:3}
@@ -438,7 +438,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:720px){.technicalConditionActions{grid-template-columns:1fr}}
 
 
-/* v0.20.0 deck planner disabled-state clarity */
+/* v0.21.0 deck planner disabled-state clarity */
 #addSpaceBtn:disabled,#addSpaceBtn.disabledBuild{
  opacity:.48;
  cursor:not-allowed;
@@ -451,7 +451,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 #addSpaceBtn:disabled:hover{filter:grayscale(.35)}
 
 
-/* v0.20.0 facility capacity summary */
+/* v0.21.0 facility capacity summary */
 .facilityCapacitySummary{display:flex;flex-direction:column;gap:8px;margin-top:12px}
 .capacityRow{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 11px;border:1px solid #d7e4e9;border-radius:11px;background:linear-gradient(180deg,#fbfdfe,#f6fafb)}
 .capacityRow b,.capacityRow span,.capacityRow small{display:block}
@@ -460,12 +460,12 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .capacityRow strong{font-size:14px;color:#0d5e83;text-align:right}
 
 .fuelTitle{display:flex;justify-content:space-between;gap:10px;align-items:center}.fuelTitle span{display:block;font-size:10px;color:#718792}.fuelGauge{height:12px;background:#dce7eb;border-radius:99px;overflow:hidden;margin:10px 0}.fuelGauge div{height:100%;background:#167aa4}.fuelNumbers{font-size:11px;color:#536d79}.shipMarketGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}.marketShip{padding:13px;border:1px solid #d5e2e7;border-radius:13px;background:#fbfdfe}.marketShipHead{display:flex;justify-content:space-between;gap:10px}.marketShipHead span{display:block;font-size:10px;color:#718590}.marketShip p{font-size:11px;color:#607985}.marketSpecs{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}.marketSpecs span{font-size:9px;padding:4px 6px;border-radius:99px;background:#edf4f6}@media(max-width:760px){.shipMarketGrid{grid-template-columns:1fr}}
-/* v0.20.0 render isolation */
+/* v0.21.0 render isolation */
 .renderErrorNotice{margin:12px;padding:12px 14px;border:1px solid #e0b7b7;border-radius:12px;background:#fff1f1;color:#873b3f}
 .renderErrorNotice b,.renderErrorNotice span{display:block}.renderErrorNotice span{font-size:11px;margin-top:4px;color:#8d5b5e}
 
 .marketBuyActions{display:grid;grid-template-columns:1fr 1fr;gap:7px}.marketBuyActions button{width:100%}#selectedRouteWarning small{opacity:.78}
-/* v0.20.0 acquisition/finance/port economics */
+/* v0.21.0 acquisition/finance/port economics */
 .marketSectionTitle{grid-column:1/-1;margin:4px 0 0;padding:10px 12px;background:#eaf3f6;border-radius:12px}.marketSectionTitle h3{margin:0}.marketSectionTitle span{font-size:11px;color:#607784}.marketSectionTitle.newBuild{margin-top:18px;background:#eef6ef}.marketSubGrid{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.newShipName,.shipFinanceProfile{box-sizing:border-box}.headerSailBtn:disabled{opacity:.48;cursor:not-allowed}.marketShip input,.marketShip select{font-size:12px}
 @media(max-width:760px){.marketSubGrid{grid-template-columns:1fr}}
 
@@ -476,7 +476,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:760px){.starControl{grid-template-columns:1fr}.queueHeadline{display:block}}
 
 
-/* v0.20.0 port access usability */
+/* v0.21.0 port access usability */
 .schedulerPortAccess{display:flex;align-items:center;gap:10px;padding:9px 11px;background:#eef6f8;border:1px solid #d4e6eb;border-radius:10px;margin:4px 0 8px}
 .schedulerPortAccess label{white-space:nowrap}
 
@@ -514,7 +514,7 @@ body{background:linear-gradient(180deg,#eef7f8 0,#f7faf9 420px,#f4f6f5 100%)}.to
 @media(prefers-reduced-motion:reduce){.ctHeroShip,.ctWave{animation:none!important}}
 
 
-/* v0.20.0 iOS/mobile fixes */
+/* v0.21.0 iOS/mobile fixes */
 .mobileMenuBtn{display:none}
 @media(max-width:760px){
  .mobileMenuBtn{display:flex;align-items:center;justify-content:center;position:sticky;top:0;z-index:51;width:calc(100% - 20px);margin:8px 10px 0;padding:11px 14px;border:0;border-radius:13px;background:#083b50;color:#fff;font-weight:800;font-size:14px;box-shadow:0 8px 20px rgba(4,49,65,.18)}
@@ -533,6 +533,14 @@ section.tab.active>.grid{animation:screenIn .25s ease-out}@keyframes screenIn{fr
 @media(max-width:760px){.ctHero{min-height:470px!important}.ctHeroContent{padding-top:26px!important}.ctHero h1{font-size:31px!important}.worldActions{display:grid;grid-template-columns:1fr 1fr 1fr}.worldActions button{padding:8px 5px;font-size:9px}.worldBadge{top:10px;right:10px}.schedulerPortScenes{grid-template-columns:1fr 1fr}.portSceneTile{height:80px}.ship3DWrap{min-height:310px!important}#ship3DCanvas{height:330px!important}}
 @media(prefers-reduced-motion:reduce){section.tab.active>.grid{animation:none}}
 
+
+/* v0.21 authored ship asset */
+.ship3DWrap{position:relative;overflow:hidden;border-radius:18px!important;background:#8fc7d8!important}
+.ship3DHud{background:linear-gradient(90deg,rgba(7,47,60,.90),rgba(7,47,60,.68))!important;border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px)}
+#ship3DCanvas{touch-action:none}
+@media(max-width:760px){.ship3DWrap{min-height:245px!important}#ship3DCanvas{height:265px!important}.ship3DHud{left:10px!important;right:10px!important;bottom:10px!important;padding:9px 11px!important}.ship3DHud b{font-size:12px!important}.ship3DHud span{font-size:9px!important}}
+@media(min-width:761px){.ship3DWrap{min-height:390px!important}#ship3DCanvas{height:410px!important}}
+
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -546,7 +554,7 @@ section.tab.active>.grid{animation:screenIn .25s ease-out}@keyframes screenIn{fr
   <div><b>CRUISE<br>TYCOON</b><span>BUILD YOUR FLEET</span></div>
  </div>
  <div class="toprow">
-  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.20.0</span></div><div class="sub">One brand. £5m. No ship. Build from there.</div></div>
+  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.21.0</span></div><div class="sub">One brand. £5m. No ship. Build from there.</div></div>
   <div class="pills">
    <div class="pill">Week <b id="weekPill">1</b></div>
    <div class="pill">Group cash <b id="cashPill">£5.0m</b></div>
@@ -626,7 +634,7 @@ section.tab.active>.grid{animation:screenIn .25s ease-out}@keyframes screenIn{fr
   <div class="shipHeroRail shipViewCard shipView-summary"><div><span>SHIP PROFILE</span><b id="shipHeroClass">—</b></div><div><span>CONDITION</span><b id="shipHeroCondition">—</b></div><div><span>CAPACITY</span><b id="shipHeroCapacity">—</b></div><div><span>DECKS</span><b id="shipHeroDecks">—</b></div></div>
   <div class="card c12 shipViewCard shipView-summary ship3DCard">
    <div class="row" style="justify-content:space-between;align-items:flex-start;gap:12px">
-    <div><div class="eyebrow">SHIPYARD VIEW</div><h3 style="margin:2px 0 0">Interactive ship model</h3><div class="label">Generated from the actual ship size, deck count and condition. Drag to rotate · pinch/wheel to zoom.</div></div>
+    <div><div class="eyebrow">SHIPYARD VIEW</div><h3 style="margin:2px 0 0">Ship model</h3><div class="label">A detailed model of your ship, reflecting its size, facilities and condition.</div></div>
     <div class="row" style="gap:6px"><button class="btn secondary" id="ship3DReset">Reset view</button><select id="ship3DQuality"><option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option></select></div>
    </div>
    <div id="ship3DWrap" class="ship3DWrap"><canvas id="ship3DCanvas" width="960" height="480" aria-label="Interactive 3D ship model"></canvas><div id="ship3DHud" class="ship3DHud"></div><div id="ship3DFallback" class="ship3DFallback" hidden>3D graphics are unavailable on this device. The rest of the game remains fully usable.</div></div>
@@ -1297,7 +1305,7 @@ Object.keys(state.contracts).forEach(n=>{state.contracts[n].excursions=defaultEx
 
 const SAVE_STORAGE_KEY="cruiseTycoon.save.v1";
 const SAVE_SCHEMA_VERSION=1;
-const GAME_VERSION="0.20.0";
+const GAME_VERSION="0.21.0";
 
 function makeStarterProgramme(){
  return Array.from({length:6},()=>({startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,speed:17.5,booked:0,lastBooked:0,committed:false,planned:false,routeApplied:false,appliedDraft:null,excursionSelection:{},excursionPricing:{}}));
@@ -4032,25 +4040,71 @@ function bindShip3DControls(canvas){
 function initShip3D(){
  cancelAnimationFrame(ship3DState.raf||0);const canvas=document.getElementById("ship3DCanvas"),fb=document.getElementById("ship3DFallback");if(!canvas||!hasOwnedShip())return;ship3DState.canvas=canvas;bindShip3DControls(canvas);
  const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
- if(isiOS){ship3DState.gl=null;canvas.style.display="block";if(fb){fb.hidden=false;fb.textContent="iOS interactive ship view"};renderShip3DCompatibility();return}
+ if(isiOS){ship3DState.gl=null;canvas.style.display="block";if(fb){fb.hidden=true;fb.textContent=""};renderShip3DCompatibility();return}
  let gl;try{gl=canvas.getContext("webgl",{antialias:true,alpha:false})||canvas.getContext("experimental-webgl")}catch(e){}
  if(!gl){ship3DState.gl=null;canvas.style.display="block";if(fb){fb.hidden=false;fb.textContent="Interactive compatibility ship view"};renderShip3DCompatibility();return}
  ship3DState.gl=gl;if(fb)fb.hidden=true;canvas.style.display="block";renderShip3D();
 }
 function renderShip3DCompatibility(){
  const canvas=ship3DState.canvas;if(!canvas||ship3DState.gl||!hasOwnedShip()||!document.body.contains(canvas))return;
- const ctx=canvas.getContext("2d");if(!ctx)return;const ship=activeShip(),g=ship3DGeometry(ship),cond=ship3DCondition(ship),dpr=Math.min(window.devicePixelRatio||1,1.5),w=Math.max(320,canvas.clientWidth||960),hh=Math.max(220,canvas.clientHeight||420),rw=Math.round(w*dpr),rh=Math.round(hh*dpr);if(canvas.width!==rw||canvas.height!==rh){canvas.width=rw;canvas.height=rh}ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,hh);
- // shipyard background
- const sky=ctx.createLinearGradient(0,0,0,hh*.62);sky.addColorStop(0,"#b8d7e2");sky.addColorStop(1,"#edf5f6");ctx.fillStyle=sky;ctx.fillRect(0,0,w,hh);ctx.fillStyle="#6ba3b4";ctx.fillRect(0,hh*.62,w,hh*.38);
- ctx.globalAlpha=.18;ctx.fillStyle="#49636c";for(let i=0;i<5;i++){const x=w*(.06+i*.22);ctx.fillRect(x,hh*.35,5,hh*.25);ctx.fillRect(x,hh*.35,60,5)}ctx.globalAlpha=1;
- // water
- ctx.strokeStyle="rgba(255,255,255,.28)";for(let r=0;r<7;r++){ctx.beginPath();const y=hh*.69+r*hh*.035;for(let x=0;x<=w;x+=16)ctx.lineTo(x,y+Math.sin(x*.03+Date.now()*.0015+r)*2);ctx.stroke()}
- const scale=Math.min(w/7.6,hh/3.25)/ship3DState.zoom,cx=w/2,cy=hh*.67,ang=ship3DState.rotY,heading=Math.cos(ang)>=0?1:-1;drawWorldShip(ctx,ship,cx,cy,scale*.72,heading);
- // dock shadow + info markers
- ctx.fillStyle="rgba(6,49,63,.62)";roundRect2(ctx,16,16,150,56,12);ctx.fill();ctx.fillStyle="#fff";ctx.font="700 13px Arial";ctx.fillText(ship.name,28,39);ctx.font="11px Arial";ctx.globalAlpha=.78;ctx.fillText(`${g.decks} decks · ${Math.round(g.gt/1000)}k GT`,28,57);ctx.globalAlpha=1;
- const facilities=[["pool","Pool"],["lounge","Bars"],["speciality","Speciality"],["casino","Casino"],["spa","Spa"]].filter(([k])=>facilityCount(ship,k)>0);let fx=18;ctx.font="10px Arial";facilities.forEach(([k,n])=>{const tw=ctx.measureText(n).width+16;ctx.fillStyle="rgba(255,255,255,.82)";roundRect2(ctx,fx,hh-32,tw,20,9);ctx.fill();ctx.fillStyle="#17485a";ctx.fillText(n,fx+8,hh-18);fx+=tw+5});
- const hud=document.getElementById("ship3DHud");if(hud)hud.innerHTML=`<b>${ship.name}</b><span>${g.decks} decks · ${Math.round(g.gt/1000)}k GT · ${(ship.capacity||0).toLocaleString()} guests · condition ${cond.toFixed(0)}% · interactive shipyard view</span>`;
+ const ctx=canvas.getContext("2d");if(!ctx)return;const ship=activeShip(),g=ship3DGeometry(ship),cond=ship3DCondition(ship),dpr=Math.min(window.devicePixelRatio||1,1.5),w=Math.max(320,canvas.clientWidth||960),hh=Math.max(250,canvas.clientHeight||420),rw=Math.round(w*dpr),rh=Math.round(hh*dpr);if(canvas.width!==rw||canvas.height!==rh){canvas.width=rw;canvas.height=rh}ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,hh);
+ drawShipyardEnvironment(ctx,w,hh,cond);
+ const profile=shipArtProfile(ship),scale=Math.min(w/760,hh/390),cx=w*.50,cy=hh*.68;
+ drawAuthoredShip(ctx,ship,cx,cy,scale,cond,profile);
+ drawShipyardLabels(ctx,ship,g,cond,w,hh);
+ const hud=document.getElementById("ship3DHud");if(hud)hud.innerHTML=`<b>${ship.name}</b><span>${profile.label} · ${g.decks} decks · ${Math.round(g.gt/1000)}k GT · ${(ship.capacity||0).toLocaleString()} guests · condition ${cond.toFixed(0)}%</span>`;
  ship3DState.raf=requestAnimationFrame(renderShip3DCompatibility)
+}
+function shipArtProfile(ship){
+ const gt=ship?.grossTonnage||26000,cap=ship?.capacity||600,name=(ship?.name||"").toLowerCase();
+ if(gt<35000||cap<900)return {label:"Classic small cruise ship",length:620,height:190,bow:82,stern:48,deckStep:12,superX:-235,superW:440,funnelX:-55,funnelCount:1};
+ if(gt<85000||cap<2200)return {label:"Mid-size cruise ship",length:680,height:215,bow:88,stern:52,deckStep:11,superX:-255,superW:485,funnelX:-42,funnelCount:1};
+ return {label:"Large resort ship",length:720,height:245,bow:96,stern:55,deckStep:10,superX:-270,superW:520,funnelX:-30,funnelCount:2}
+}
+function drawShipyardEnvironment(ctx,w,h,condition){
+ const sky=ctx.createLinearGradient(0,0,0,h*.64);sky.addColorStop(0,"#8fc7dd");sky.addColorStop(.55,"#d7edf3");sky.addColorStop(1,"#eef5f6");ctx.fillStyle=sky;ctx.fillRect(0,0,w,h);
+ ctx.fillStyle="rgba(255,238,190,.75)";ctx.beginPath();ctx.arc(w*.82,h*.16,28,0,Math.PI*2);ctx.fill();
+ // distant dry-dock / terminal silhouettes
+ ctx.fillStyle="rgba(42,75,82,.20)";for(let i=0;i<4;i++){let x=w*(.06+i*.27);ctx.fillRect(x,h*.34,5,h*.25);ctx.fillRect(x,h*.34,72,5);ctx.beginPath();ctx.moveTo(x+70,h*.34);ctx.lineTo(x+45,h*.52);ctx.lineTo(x+49,h*.52);ctx.lineTo(x+74,h*.34);ctx.fill()}
+ ctx.fillStyle="#5e9eb2";ctx.fillRect(0,h*.62,w,h*.38);
+ const t=Date.now()*.0013;ctx.strokeStyle="rgba(255,255,255,.30)";ctx.lineWidth=1;for(let r=0;r<8;r++){ctx.beginPath();for(let x=-10;x<w+20;x+=14)ctx.lineTo(x,h*.66+r*h*.038+Math.sin(x*.032+t+r*.8)*2);ctx.stroke()}
+ ctx.fillStyle="rgba(16,55,66,.18)";ctx.fillRect(0,h*.89,w,h*.11)
+}
+function drawAuthoredShip(ctx,ship,cx,cy,s,condition,p){
+ ctx.save();ctx.translate(cx,cy);const L=p.length*s,H=p.height*s,decks=Math.max(3,ship?.decks||ship?.spaceModel?.decks?.length||3),wear=(100-condition)/100;
+ // water shadow and wake
+ ctx.fillStyle="rgba(5,38,50,.22)";ctx.beginPath();ctx.ellipse(-L*.02,H*.19,L*.49,H*.075,0,0,Math.PI*2);ctx.fill();
+ ctx.strokeStyle="rgba(255,255,255,.72)";ctx.lineWidth=2.2*s;for(let q=0;q<3;q++){ctx.beginPath();ctx.moveTo(-L*.43,H*.13+q*5*s);ctx.bezierCurveTo(-L*.58,H*.18,-L*.72,H*.22,-L*(.88+q*.025),H*.26+q*5*s);ctx.stroke()}
+ // dark lower hull with curved keel
+ ctx.fillStyle="#153e4c";ctx.beginPath();ctx.moveTo(-L*.48,-H*.01);ctx.lineTo(L*.43,-H*.01);ctx.quadraticCurveTo(L*.52,H*.015,L*.49,H*.09);ctx.quadraticCurveTo(L*.45,H*.19,L*.30,H*.23);ctx.lineTo(-L*.35,H*.23);ctx.quadraticCurveTo(-L*.47,H*.17,-L*.50,H*.08);ctx.closePath();ctx.fill();
+ // white upper hull, true pointed bow
+ const hullR=Math.round(238-wear*28),hullG=Math.round(243-wear*32),hullB=Math.round(244-wear*34);ctx.fillStyle=`rgb(${hullR},${hullG},${hullB})`;ctx.beginPath();ctx.moveTo(-L*.47,-H*.06);ctx.lineTo(L*.31,-H*.06);ctx.quadraticCurveTo(L*.43,-H*.05,L*.50,H*.02);ctx.quadraticCurveTo(L*.43,H*.08,L*.30,H*.10);ctx.lineTo(-L*.40,H*.10);ctx.quadraticCurveTo(-L*.49,H*.06,-L*.47,-H*.06);ctx.fill();
+ // boot stripe
+ ctx.fillStyle="#c8443b";ctx.fillRect(-L*.43,H*.075,L*.78,3.2*s);
+ // superstructure stepped silhouette
+ const deckY=-H*.08, step=10.5*s;for(let d=0;d<decks+2;d++){let x=-L*.34+d*2.2*s,wid=L*(.64-d*.018);if(d>decks-1){x=-L*.18+d*2*s;wid=L*.42}ctx.fillStyle=d%2?"#f8fbfb":"#e9f0f1";roundRect2(ctx,x,deckY-d*step,wid,step+1,2.5*s);ctx.fill();ctx.strokeStyle="rgba(36,76,88,.14)";ctx.lineWidth=.7*s;ctx.stroke()}
+ // long dark window bands + individual windows
+ for(let d=1;d<decks+1;d++){const yy=deckY-d*step+3*s,xx=-L*.29+d*1.8*s,ww=L*(.52-d*.012);ctx.fillStyle="#285968";roundRect2(ctx,xx,yy,ww,3.7*s,1.7*s);ctx.fill();ctx.fillStyle="#a9d5df";for(let j=0;j<Math.floor(ww/(14*s));j++)ctx.fillRect(xx+5*s+j*14*s,yy+.8*s,7*s,1.8*s)}
+ // forward bridge with raked front
+ ctx.fillStyle="#e9f1f2";ctx.beginPath();ctx.moveTo(L*.18,deckY-(decks+1)*step);ctx.lineTo(L*.37,deckY-(decks+1)*step);ctx.lineTo(L*.31,deckY-(decks+3.1)*step);ctx.lineTo(L*.12,deckY-(decks+3.1)*step);ctx.closePath();ctx.fill();ctx.fillStyle="#163f4f";ctx.beginPath();ctx.moveTo(L*.145,deckY-(decks+2.45)*step);ctx.lineTo(L*.315,deckY-(decks+2.45)*step);ctx.lineTo(L*.292,deckY-(decks+2.85)*step);ctx.lineTo(L*.13,deckY-(decks+2.85)*step);ctx.fill();
+ // funnel with cap and logo stripe
+ const fx=p.funnelX*s,fy=deckY-(decks+3.6)*step;ctx.fillStyle="#d9e3e5";ctx.beginPath();ctx.moveTo(fx-18*s,fy+30*s);ctx.lineTo(fx+22*s,fy+30*s);ctx.lineTo(fx+16*s,fy);ctx.lineTo(fx-12*s,fy);ctx.closePath();ctx.fill();ctx.fillStyle="#123b49";ctx.fillRect(fx-13*s,fy,30*s,8*s);ctx.fillStyle="#d8a33d";ctx.fillRect(fx-11*s,fy+9*s,27*s,5*s);
+ // mast/radar
+ ctx.strokeStyle="#244d58";ctx.lineWidth=2*s;ctx.beginPath();ctx.moveTo(L*.16,deckY-(decks+3.2)*step);ctx.lineTo(L*.16,deckY-(decks+5.0)*step);ctx.stroke();ctx.fillStyle="#f2f5f5";ctx.beginPath();ctx.ellipse(L*.16,deckY-(decks+4.65)*step,13*s,3.5*s,0,0,Math.PI*2);ctx.fill();
+ // orange lifeboats with white davits
+ const boats=Math.max(5,Math.min(10,Math.round((ship?.capacity||600)/130)));for(let i=0;i<boats;i++){const bx=-L*.26+i*(L*.48/(boats-1)),by=deckY-1.3*step;ctx.strokeStyle="#cad7d9";ctx.lineWidth=1.2*s;ctx.beginPath();ctx.moveTo(bx,by-7*s);ctx.lineTo(bx+3*s,by);ctx.stroke();ctx.fillStyle="#ef842e";roundRect2(ctx,bx-8*s,by,17*s,6.5*s,3*s);ctx.fill();ctx.fillStyle="#b55b20";ctx.fillRect(bx-3*s,by+1.5*s,6*s,1.5*s)}
+ // pool / top deck furniture driven by facilities
+ if(facilityCount(ship,"pool")){ctx.fillStyle="#42b9d0";roundRect2(ctx,-L*.05,deckY-(decks+2.0)*step,70*s,9*s,4*s);ctx.fill();ctx.fillStyle="#fff";for(let i=0;i<4;i++)ctx.fillRect(-L*.04+i*17*s,deckY-(decks+2.0)*step-5*s,9*s,2*s)}
+ if(facilityCount(ship,"lounge")){ctx.fillStyle="rgba(61,112,128,.75)";roundRect2(ctx,-L*.20,deckY-(decks+2.8)*step,72*s,10*s,3*s);ctx.fill()}
+ // rust/wear concentrated around waterline and stern
+ if(wear>.12){ctx.globalAlpha=Math.min(.34,wear*.42);ctx.fillStyle="#9a5a3d";for(let i=0;i<10;i++){const rx=-L*.39+(i%5)*L*.15,ry=H*.055+(i%3)*3*s;ctx.fillRect(rx,ry,(5+(i%4)*3)*s,(1.2+(i%2))*s)}ctx.globalAlpha=1}
+ // bow name
+ ctx.save();ctx.fillStyle="#284e5a";ctx.font=`700 ${Math.max(8,10*s)}px Arial`;ctx.textAlign="right";ctx.fillText((ship?.name||"SHIP").toUpperCase(),L*.34,H*.015);ctx.restore();
+ ctx.restore()
+}
+function drawShipyardLabels(ctx,ship,g,condition,w,h){
+ ctx.fillStyle="rgba(7,48,62,.82)";roundRect2(ctx,16,16,176,58,12);ctx.fill();ctx.fillStyle="#fff";ctx.font="700 14px Arial";ctx.fillText(ship.name,29,40);ctx.font="10px Arial";ctx.globalAlpha=.78;ctx.fillText(`${Math.round(g.gt/1000)}k GT  •  ${(ship.capacity||0).toLocaleString()} guests  •  ${condition.toFixed(0)}% condition`,29,59);ctx.globalAlpha=1;
+ const tags=[];if(facilityCount(ship,"pool"))tags.push("POOL");if(facilityCount(ship,"lounge"))tags.push("LOUNGES");if(facilityCount(ship,"speciality"))tags.push("DINING");if(facilityCount(ship,"casino"))tags.push("CASINO");if(facilityCount(ship,"spa"))tags.push("SPA");let x=18;ctx.font="700 9px Arial";for(const tag of tags){const tw=ctx.measureText(tag).width+17;ctx.fillStyle="rgba(255,255,255,.88)";roundRect2(ctx,x,h-31,tw,19,9);ctx.fill();ctx.fillStyle="#17485a";ctx.fillText(tag,x+8,h-18);x+=tw+5}
 }
 function renderShip3D(){
  const gl=ship3DState.gl,canvas=ship3DState.canvas;if(!gl||!canvas||!document.body.contains(canvas)||!hasOwnedShip())return;const ship=activeShip(),dpr=Math.min(window.devicePixelRatio||1,ship3DState.quality==="high"?2:ship3DState.quality==="low"?1:1.5),w=Math.max(320,canvas.clientWidth||960),hh=Math.max(220,canvas.clientHeight||420),rw=Math.round(w*dpr),rh=Math.round(hh*dpr);if(canvas.width!==rw||canvas.height!==rh){canvas.width=rw;canvas.height=rh}gl.viewport(0,0,rw,rh);gl.enable(gl.DEPTH_TEST);gl.clearColor(.72,.86,.92,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
