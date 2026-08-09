@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Cruise Tycoon v0.24.2</title>
+<title>Cruise Tycoon v0.24.3</title>
 <style>
 :root{
   --navy:#102c46;--navy2:#173e61;--bg:#edf3f7;--card:#fff;--ink:#17324a;
@@ -196,7 +196,7 @@ nav button{white-space:nowrap}
 .saveActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .saveMeta{padding:10px 12px;border-radius:12px;background:#f2f6f9;margin-top:10px;color:var(--muted)}
 
-/* v0.24.2 scheduler/readability and finance UI */
+/* v0.24.3 scheduler/readability and finance UI */
 .weekBtn.active.committed{background:#dfe3e6!important;color:#26343d!important;border:2px solid #53636e!important;box-shadow:0 0 0 3px rgba(83,99,110,.14)!important}
 .weekBtn.active.urgent{background:#f8caca!important;color:#651717!important;border:2px solid #b63636!important;box-shadow:0 0 0 3px rgba(182,54,54,.14)!important}
 .weekBtn.active.future{background:#ffe99a!important;color:#4e3d00!important;border:2px solid #a88300!important;box-shadow:0 0 0 3px rgba(168,131,0,.14)!important}
@@ -208,7 +208,7 @@ nav button{white-space:nowrap}
 .reviewScoreCell{white-space:nowrap}.nextSailingTable td{vertical-align:top}
 
 
-/* v0.24.2 visual refresh */
+/* v0.24.3 visual refresh */
 :root{--navy:#092b46;--navy2:#0d4769;--ocean:#137ea5;--ocean2:#42a6bf;--teal:#16837d;--bg:#f2f6f8;--card:#fff;--ink:#163247;--muted:#6e8290;--line:#dce7ec;--lineStrong:#c8d8e0;--good:#18734c;--bad:#aa3b42;--gold:#b78524;--shadow:0 10px 30px rgba(17,53,75,.075);--shadowStrong:0 18px 46px rgba(13,55,79,.13)}
 html{background:#eaf1f5}
 body{background:radial-gradient(circle at 8% 0%,rgba(54,151,181,.08),transparent 30%),linear-gradient(180deg,#edf4f7 0,#f5f8fa 290px,#f2f6f8 100%);min-height:100vh}
@@ -254,7 +254,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:650px){.title{font-size:20px}.pill{padding:6px 9px}.heroKpi .kpi{font-size:27px}.card{padding:13px;border-radius:15px}}
 
 
-/* v0.24.2 graphics expansion */
+/* v0.24.3 graphics expansion */
 .cruiseHero{
  position:relative;
  overflow:hidden;
@@ -302,7 +302,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 }
 
 
-/* v0.24.2 ship/deck management */
+/* v0.24.3 ship/deck management */
 .shipMgmtHeader{background:linear-gradient(145deg,#fff,#f4fafc)}
 .shipMgmtKpis{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:14px}.shipMgmtKpis>div,.deckSpaceSummary>div,.facilityMetrics>div{border:1px solid #d9e6eb;border-radius:12px;padding:10px;background:#f8fbfc}.shipMgmtKpis span,.deckSpaceSummary span,.facilityMetrics span{display:block;color:#748995;font-size:10px;text-transform:uppercase;letter-spacing:.05em}.shipMgmtKpis b{display:block;margin-top:4px;font-size:17px;color:#12364e}
 .deckSidebar{max-height:760px;overflow:auto}.deckList{display:flex;flex-direction:column;gap:6px;margin-top:10px}.deckListBtn{text-align:left;border:1px solid #d7e3e8;background:#f8fbfc;border-radius:11px;padding:9px 10px;color:#17384f}.deckListBtn span,.deckListBtn small{display:block;color:#718691}.deckListBtn.active{background:#0e5579;color:#fff;border-color:#0e5579}.deckListBtn.active span,.deckListBtn.active small{color:#d5eaf2}
@@ -313,13 +313,13 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:1000px){.shipMgmtKpis{grid-template-columns:repeat(4,1fr)}}@media(max-width:700px){.shipMgmtKpis{grid-template-columns:repeat(2,1fr)}.deckSpaceSummary{grid-template-columns:1fr 1fr}}
 
 
-/* v0.24.2 editable ship planner */
+/* v0.24.3 editable ship planner */
 .deckPlanner{margin-top:14px;padding:13px;border:1px solid #cfe0e7;border-radius:14px;background:linear-gradient(145deg,#f5fafc,#fff)}
 .deckPlannerControls{display:grid;grid-template-columns:2fr 1fr 1.3fr auto;gap:9px;align-items:end;margin-top:10px}.deckPlannerControls label{font-size:11px;font-weight:750;color:#607887}.deckPlannerControls select,.deckPlannerControls input{display:block;width:100%;margin-top:4px}.plannerCost{font-weight:850;color:#0f668b;background:#e9f6fa;padding:7px 10px;border-radius:9px}.removeSpaceBtn{margin-top:14px;width:100%}
 .shipClassCards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.shipClassCard{border:1px solid #d4e2e8;border-radius:14px;padding:13px;background:linear-gradient(155deg,#f8fbfc,#fff)}.shipClassCard>b,.shipClassCard>span,.shipClassCard>small{display:block}.shipClassCard>span{color:#718692;margin:3px 0 10px}.shipClassCard>div{margin-top:5px}.shipClassCard>small{color:#718692;margin-top:7px}.shipClassSilhouette{font-size:15px;letter-spacing:-2px;color:#2a7c9d;opacity:.7;margin-bottom:7px!important}
 @media(max-width:850px){.deckPlannerControls{grid-template-columns:1fr 1fr}.shipClassCards{grid-template-columns:1fr}}
 
-/* v0.24.2 management-sim visual overhaul */
+/* v0.24.3 management-sim visual overhaul */
 @media(min-width:980px){
  body{padding-left:178px}
  header{left:0}
@@ -395,7 +395,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .deckQualityMini{grid-column:1/-1;display:flex;gap:5px;margin-top:4px;flex-wrap:wrap}.deckQualityMini em{font-style:normal;font-size:9px;padding:2px 5px;border-radius:5px;background:rgba(255,255,255,.11);color:#cce1ea}.deckConditionActions,.shipRefurbActions{display:flex;align-items:center;gap:10px;margin-top:11px;padding-top:10px;border-top:1px solid #dbe6eb}.facilityMetrics{grid-template-columns:repeat(auto-fit,minmax(82px,1fr))}
 
 
-/* v0.24.2 brand corner and capacity economics */
+/* v0.24.3 brand corner and capacity economics */
 .brandCorner{display:none}
 @media(min-width:980px){
  .brandCorner{
@@ -415,7 +415,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .capacityCallout b{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#176786}.capacityCallout span{font-size:12px}
 
 
-/* v0.24.2 ship summary, luxury catalogue, landmark ports */
+/* v0.24.3 ship summary, luxury catalogue, landmark ports */
 .shipSummaryHero{display:grid;grid-template-columns:minmax(330px,42%) 1fr;min-height:275px;border-radius:17px;overflow:hidden;background:#082b45}
 .shipSummaryPhoto{position:relative;background-image:var(--ship-photo);background-size:cover;background-position:center;min-height:275px}
 .shipSummaryPhotoShade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,30,47,.72),transparent 58%)}
@@ -426,7 +426,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .upgradeCatalogue button:hover{border-color:#5ca8c1;background:#f5fbfd}.upgradeCatalogue button b,.upgradeCatalogue button small{display:block}.upgradeCatalogue button small{color:#718691;margin-top:3px}.upgradeCatalogue button:after{content:"＋";position:absolute;right:9px;top:50%;transform:translateY(-50%);width:25px;height:25px;border-radius:8px;background:#e7f3f8;display:grid;place-items:center;color:#11658a;font-weight:900}
 @media(max-width:900px){.shipSummaryHero{grid-template-columns:1fr}.shipSummaryPhoto{min-height:220px}.shipSummaryIntro .shipMgmtKpis{grid-template-columns:repeat(2,1fr)}}
 
-/* v0.24.2 deck picker and technical condition */
+/* v0.24.3 deck picker and technical condition */
 .deckListBtn{display:block;width:100%;position:relative;z-index:1;pointer-events:auto;cursor:pointer}
 .deckListBtn>*{pointer-events:none}
 .deckSidebar{position:relative;z-index:3}
@@ -438,7 +438,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:720px){.technicalConditionActions{grid-template-columns:1fr}}
 
 
-/* v0.24.2 deck planner disabled-state clarity */
+/* v0.24.3 deck planner disabled-state clarity */
 #addSpaceBtn:disabled,#addSpaceBtn.disabledBuild{
  opacity:.48;
  cursor:not-allowed;
@@ -451,7 +451,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 #addSpaceBtn:disabled:hover{filter:grayscale(.35)}
 
 
-/* v0.24.2 facility capacity summary */
+/* v0.24.3 facility capacity summary */
 .facilityCapacitySummary{display:flex;flex-direction:column;gap:8px;margin-top:12px}
 .capacityRow{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 11px;border:1px solid #d7e4e9;border-radius:11px;background:linear-gradient(180deg,#fbfdfe,#f6fafb)}
 .capacityRow b,.capacityRow span,.capacityRow small{display:block}
@@ -460,12 +460,12 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .capacityRow strong{font-size:14px;color:#0d5e83;text-align:right}
 
 .fuelTitle{display:flex;justify-content:space-between;gap:10px;align-items:center}.fuelTitle span{display:block;font-size:10px;color:#718792}.fuelGauge{height:12px;background:#dce7eb;border-radius:99px;overflow:hidden;margin:10px 0}.fuelGauge div{height:100%;background:#167aa4}.fuelNumbers{font-size:11px;color:#536d79}.shipMarketGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}.marketShip{padding:13px;border:1px solid #d5e2e7;border-radius:13px;background:#fbfdfe}.marketShipHead{display:flex;justify-content:space-between;gap:10px}.marketShipHead span{display:block;font-size:10px;color:#718590}.marketShip p{font-size:11px;color:#607985}.marketSpecs{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}.marketSpecs span{font-size:9px;padding:4px 6px;border-radius:99px;background:#edf4f6}@media(max-width:760px){.shipMarketGrid{grid-template-columns:1fr}}
-/* v0.24.2 render isolation */
+/* v0.24.3 render isolation */
 .renderErrorNotice{margin:12px;padding:12px 14px;border:1px solid #e0b7b7;border-radius:12px;background:#fff1f1;color:#873b3f}
 .renderErrorNotice b,.renderErrorNotice span{display:block}.renderErrorNotice span{font-size:11px;margin-top:4px;color:#8d5b5e}
 
 .marketBuyActions{display:grid;grid-template-columns:1fr 1fr;gap:7px}.marketBuyActions button{width:100%}#selectedRouteWarning small{opacity:.78}
-/* v0.24.2 acquisition/finance/port economics */
+/* v0.24.3 acquisition/finance/port economics */
 .marketSectionTitle{grid-column:1/-1;margin:4px 0 0;padding:10px 12px;background:#eaf3f6;border-radius:12px}.marketSectionTitle h3{margin:0}.marketSectionTitle span{font-size:11px;color:#607784}.marketSectionTitle.newBuild{margin-top:18px;background:#eef6ef}.marketSubGrid{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.newShipName,.shipFinanceProfile{box-sizing:border-box}.headerSailBtn:disabled{opacity:.48;cursor:not-allowed}.marketShip input,.marketShip select{font-size:12px}
 @media(max-width:760px){.marketSubGrid{grid-template-columns:1fr}}
 
@@ -476,7 +476,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:760px){.starControl{grid-template-columns:1fr}.queueHeadline{display:block}}
 
 
-/* v0.24.2 port access usability */
+/* v0.24.3 port access usability */
 .schedulerPortAccess{display:flex;align-items:center;gap:10px;padding:9px 11px;background:#eef6f8;border:1px solid #d4e6eb;border-radius:10px;margin:4px 0 8px}
 .schedulerPortAccess label{white-space:nowrap}
 
@@ -514,7 +514,7 @@ body{background:linear-gradient(180deg,#eef7f8 0,#f7faf9 420px,#f4f6f5 100%)}.to
 @media(prefers-reduced-motion:reduce){.ctHeroShip,.ctWave{animation:none!important}}
 
 
-/* v0.24.2 iOS/mobile fixes */
+/* v0.24.3 iOS/mobile fixes */
 .mobileMenuBtn{display:none}
 @media(max-width:760px){
  .mobileMenuBtn{display:flex;align-items:center;justify-content:center;position:sticky;top:0;z-index:51;width:calc(100% - 20px);margin:8px 10px 0;padding:11px 14px;border:0;border-radius:13px;background:#083b50;color:#fff;font-weight:800;font-size:14px;box-shadow:0 8px 20px rgba(4,49,65,.18)}
@@ -557,7 +557,7 @@ input[type="range"]{width:100%}
 .scheduleSubTabs button.locked{opacity:.42;cursor:not-allowed;filter:grayscale(.5)}
 .scheduleSubTabs button.locked,.scheduleSubTabs button:disabled{opacity:.42;cursor:not-allowed;filter:grayscale(.5)}
 
-/* v0.24.2 Scheduler hotfix */
+/* v0.24.3 Scheduler hotfix */
 .visualBuilderWrap{display:block;width:100%;min-width:0;overflow:visible;grid-column:1/-1!important}
 .visualDayBuilder{
  display:grid!important;
@@ -615,7 +615,7 @@ input[type="range"]{width:100%}
 .marketDeckPreview{display:grid;gap:7px;margin:10px 0}.marketPreviewDeck{display:grid;grid-template-columns:48px 1fr;gap:6px;align-items:center}.marketPreviewDeck>span{font-size:9px;font-weight:800;color:#607984}.marketPreviewDeck>div{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:5px 12px 5px 5px;border:1px solid #c9dbe1;border-radius:12px 4px 12px 4px;background:#edf4f5}.marketPreviewSpace{min-width:0}.marketPreviewSpace .miniRoom{height:36px}.marketPreviewSpace small{display:block;font-size:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#526b74}.marketFacilityList{display:flex;gap:5px;flex-wrap:wrap}.marketFacilityList span{font-size:8px;padding:4px 6px;border-radius:8px;background:#edf4f5;color:#47616b}
 
 
-/* v0.24.2 dashboard + committed scheduler hotfix */
+/* v0.24.3 dashboard + committed scheduler hotfix */
 .worldActions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
 .worldActions button{white-space:nowrap}
 #dashboard .ctHero{margin-bottom:14px}
@@ -635,12 +635,12 @@ input[type="range"]{width:100%}
 @media(max-width:750px){.funnelKpis{grid-template-columns:repeat(2,1fr)}.funnelTables{grid-template-columns:1fr}}
 
 
-/* v0.24.2 audience reviews */
+/* v0.24.3 audience reviews */
 .audReviewHead{margin:14px 0 7px;color:#35576b}.audReviewGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}.audReview{border:1px solid #dce7ec;border-radius:11px;padding:10px;background:#f8fbfc}.audReview span{display:block;font-size:10px;color:#6e8290}.audReview b{font-size:12px;color:#b17d2b}.audMatrixWrap{overflow-x:auto;margin-top:14px}.audMatrixWrap table{width:100%;font-size:10px}.audMatrixWrap td{text-align:center}.audMatrixWrap td:first-child{text-align:left}
 @media(max-width:750px){.audReviewGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 
-/* v0.24.2 weekly forward bookings */
+/* v0.24.3 weekly forward bookings */
 #resultForwardBookings th,#resultForwardBookings td{white-space:nowrap;vertical-align:top}
 #resultForwardBookings td:nth-child(2){white-space:normal;min-width:220px}
 
@@ -657,7 +657,7 @@ input[type="range"]{width:100%}
   <div><b>CRUISE<br>TYCOON</b><span>BUILD YOUR FLEET</span></div>
  </div>
  <div class="toprow">
-  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.24.2</span></div><div class="sub">One brand. £5m. No ship. Build from there.</div></div>
+  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.24.3</span></div><div class="sub">One brand. £5m. No ship. Build from there.</div></div>
   <div class="pills">
    <div class="pill">Week <b id="weekPill">1</b></div>
    <div class="pill">Group cash <b id="cashPill">£5.0m</b></div>
@@ -1416,7 +1416,7 @@ Object.keys(state.contracts).forEach(n=>{state.contracts[n].excursions=defaultEx
 
 const SAVE_STORAGE_KEY="cruiseTycoon.save.v1";
 const SAVE_SCHEMA_VERSION=1;
-const GAME_VERSION="0.24.2";
+const GAME_VERSION="0.24.3";
 
 function makeStarterProgramme(){
  return Array.from({length:6},()=>({startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,marketingTargetSegment:"Broad",marketingTargetWealth:"Broad",speed:17.5,booked:0,lastBooked:0,committed:false,planned:false,routeApplied:false,appliedDraft:null,excursionSelection:{},excursionPricing:{}}));
@@ -5174,6 +5174,9 @@ document.getElementById("saveCommitWeek").onclick=()=>{
  const foodSpendPpd=applied.foodSpendPpd??18;
  const hotelConsumablesPpd=applied.hotelConsumablesPpd??7;
  const marketing=applied.marketing;
+ const marketingTargetSegment=applied.marketingTargetSegment||"Broad";
+ const marketingTargetWealth=applied.marketingTargetWealth||"Broad";
+ const entertainmentSpendPpd=applied.entertainmentSpendPpd??4;
  const speed=applied.speed;
 
  const os=state.speed;state.speed=speed;const sch=buildSchedule(route);state.speed=os;
@@ -5181,7 +5184,7 @@ document.getElementById("saveCommitWeek").onclick=()=>{
 
  if(!confirm(`Save and commit Week ${state.week+i}? Route, cabin prices and operating settings will lock. Excursion prices can still be changed afterwards.`))return;
 
- state.programme[i]={...old,route,days:normalizeSevenDayPlan(applied),fare,cabinPrices,excursionPricing:{},excursionSelection:{},service,foodSpendPpd,hotelConsumablesPpd,marketing,marketingTargetSegment:marketingTargetSegment||"Broad",marketingTargetWealth:marketingTargetWealth||"Broad",speed,planned:true,committed:true,routeApplied:false,appliedDraft:null};
+ state.programme[i]={...old,route,days:normalizeSevenDayPlan(applied),fare,cabinPrices,excursionPricing:{},excursionSelection:{},service,foodSpendPpd,hotelConsumablesPpd,entertainmentSpendPpd,marketing,marketingTargetSegment,marketingTargetWealth,speed,planned:true,committed:true,routeApplied:false,appliedDraft:null};
  state.programme[i].excursionsInitialised=true;
  enforceProgrammeContinuity();
  queueAutoSave();
@@ -5190,6 +5193,8 @@ document.getElementById("saveCommitWeek").onclick=()=>{
    state.fare=fare;state.service=service;state.foodSpendPpd=foodSpendPpd;state.hotelConsumablesPpd=hotelConsumablesPpd;state.marketing=marketing;state.speed=speed;
  }
  renderAll();
+  setSaveStatus("Itinerary committed");
+  showScheduleSubPage("itinerary");
 };
 function renderLastWeekDashboard(){
  const p=state.lastPnl, bar=document.getElementById("lastSegBar"), tbl=document.getElementById("lastSegmentTable");
