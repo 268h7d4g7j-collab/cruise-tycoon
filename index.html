@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Cruise Tycoon v0.22.0</title>
+<title>Cruise Tycoon v0.22.1</title>
 <style>
 :root{
   --navy:#102c46;--navy2:#173e61;--bg:#edf3f7;--card:#fff;--ink:#17324a;
@@ -196,7 +196,7 @@ nav button{white-space:nowrap}
 .saveActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .saveMeta{padding:10px 12px;border-radius:12px;background:#f2f6f9;margin-top:10px;color:var(--muted)}
 
-/* v0.22.0 scheduler/readability and finance UI */
+/* v0.22.1 scheduler/readability and finance UI */
 .weekBtn.active.committed{background:#dfe3e6!important;color:#26343d!important;border:2px solid #53636e!important;box-shadow:0 0 0 3px rgba(83,99,110,.14)!important}
 .weekBtn.active.urgent{background:#f8caca!important;color:#651717!important;border:2px solid #b63636!important;box-shadow:0 0 0 3px rgba(182,54,54,.14)!important}
 .weekBtn.active.future{background:#ffe99a!important;color:#4e3d00!important;border:2px solid #a88300!important;box-shadow:0 0 0 3px rgba(168,131,0,.14)!important}
@@ -208,7 +208,7 @@ nav button{white-space:nowrap}
 .reviewScoreCell{white-space:nowrap}.nextSailingTable td{vertical-align:top}
 
 
-/* v0.22.0 visual refresh */
+/* v0.22.1 visual refresh */
 :root{--navy:#092b46;--navy2:#0d4769;--ocean:#137ea5;--ocean2:#42a6bf;--teal:#16837d;--bg:#f2f6f8;--card:#fff;--ink:#163247;--muted:#6e8290;--line:#dce7ec;--lineStrong:#c8d8e0;--good:#18734c;--bad:#aa3b42;--gold:#b78524;--shadow:0 10px 30px rgba(17,53,75,.075);--shadowStrong:0 18px 46px rgba(13,55,79,.13)}
 html{background:#eaf1f5}
 body{background:radial-gradient(circle at 8% 0%,rgba(54,151,181,.08),transparent 30%),linear-gradient(180deg,#edf4f7 0,#f5f8fa 290px,#f2f6f8 100%);min-height:100vh}
@@ -254,7 +254,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:650px){.title{font-size:20px}.pill{padding:6px 9px}.heroKpi .kpi{font-size:27px}.card{padding:13px;border-radius:15px}}
 
 
-/* v0.22.0 graphics expansion */
+/* v0.22.1 graphics expansion */
 .cruiseHero{
  position:relative;
  overflow:hidden;
@@ -302,7 +302,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 }
 
 
-/* v0.22.0 ship/deck management */
+/* v0.22.1 ship/deck management */
 .shipMgmtHeader{background:linear-gradient(145deg,#fff,#f4fafc)}
 .shipMgmtKpis{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:14px}.shipMgmtKpis>div,.deckSpaceSummary>div,.facilityMetrics>div{border:1px solid #d9e6eb;border-radius:12px;padding:10px;background:#f8fbfc}.shipMgmtKpis span,.deckSpaceSummary span,.facilityMetrics span{display:block;color:#748995;font-size:10px;text-transform:uppercase;letter-spacing:.05em}.shipMgmtKpis b{display:block;margin-top:4px;font-size:17px;color:#12364e}
 .deckSidebar{max-height:760px;overflow:auto}.deckList{display:flex;flex-direction:column;gap:6px;margin-top:10px}.deckListBtn{text-align:left;border:1px solid #d7e3e8;background:#f8fbfc;border-radius:11px;padding:9px 10px;color:#17384f}.deckListBtn span,.deckListBtn small{display:block;color:#718691}.deckListBtn.active{background:#0e5579;color:#fff;border-color:#0e5579}.deckListBtn.active span,.deckListBtn.active small{color:#d5eaf2}
@@ -313,13 +313,13 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:1000px){.shipMgmtKpis{grid-template-columns:repeat(4,1fr)}}@media(max-width:700px){.shipMgmtKpis{grid-template-columns:repeat(2,1fr)}.deckSpaceSummary{grid-template-columns:1fr 1fr}}
 
 
-/* v0.22.0 editable ship planner */
+/* v0.22.1 editable ship planner */
 .deckPlanner{margin-top:14px;padding:13px;border:1px solid #cfe0e7;border-radius:14px;background:linear-gradient(145deg,#f5fafc,#fff)}
 .deckPlannerControls{display:grid;grid-template-columns:2fr 1fr 1.3fr auto;gap:9px;align-items:end;margin-top:10px}.deckPlannerControls label{font-size:11px;font-weight:750;color:#607887}.deckPlannerControls select,.deckPlannerControls input{display:block;width:100%;margin-top:4px}.plannerCost{font-weight:850;color:#0f668b;background:#e9f6fa;padding:7px 10px;border-radius:9px}.removeSpaceBtn{margin-top:14px;width:100%}
 .shipClassCards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.shipClassCard{border:1px solid #d4e2e8;border-radius:14px;padding:13px;background:linear-gradient(155deg,#f8fbfc,#fff)}.shipClassCard>b,.shipClassCard>span,.shipClassCard>small{display:block}.shipClassCard>span{color:#718692;margin:3px 0 10px}.shipClassCard>div{margin-top:5px}.shipClassCard>small{color:#718692;margin-top:7px}.shipClassSilhouette{font-size:15px;letter-spacing:-2px;color:#2a7c9d;opacity:.7;margin-bottom:7px!important}
 @media(max-width:850px){.deckPlannerControls{grid-template-columns:1fr 1fr}.shipClassCards{grid-template-columns:1fr}}
 
-/* v0.22.0 management-sim visual overhaul */
+/* v0.22.1 management-sim visual overhaul */
 @media(min-width:980px){
  body{padding-left:178px}
  header{left:0}
@@ -395,7 +395,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .deckQualityMini{grid-column:1/-1;display:flex;gap:5px;margin-top:4px;flex-wrap:wrap}.deckQualityMini em{font-style:normal;font-size:9px;padding:2px 5px;border-radius:5px;background:rgba(255,255,255,.11);color:#cce1ea}.deckConditionActions,.shipRefurbActions{display:flex;align-items:center;gap:10px;margin-top:11px;padding-top:10px;border-top:1px solid #dbe6eb}.facilityMetrics{grid-template-columns:repeat(auto-fit,minmax(82px,1fr))}
 
 
-/* v0.22.0 brand corner and capacity economics */
+/* v0.22.1 brand corner and capacity economics */
 .brandCorner{display:none}
 @media(min-width:980px){
  .brandCorner{
@@ -415,7 +415,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .capacityCallout b{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#176786}.capacityCallout span{font-size:12px}
 
 
-/* v0.22.0 ship summary, luxury catalogue, landmark ports */
+/* v0.22.1 ship summary, luxury catalogue, landmark ports */
 .shipSummaryHero{display:grid;grid-template-columns:minmax(330px,42%) 1fr;min-height:275px;border-radius:17px;overflow:hidden;background:#082b45}
 .shipSummaryPhoto{position:relative;background-image:var(--ship-photo);background-size:cover;background-position:center;min-height:275px}
 .shipSummaryPhotoShade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,30,47,.72),transparent 58%)}
@@ -426,7 +426,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .upgradeCatalogue button:hover{border-color:#5ca8c1;background:#f5fbfd}.upgradeCatalogue button b,.upgradeCatalogue button small{display:block}.upgradeCatalogue button small{color:#718691;margin-top:3px}.upgradeCatalogue button:after{content:"＋";position:absolute;right:9px;top:50%;transform:translateY(-50%);width:25px;height:25px;border-radius:8px;background:#e7f3f8;display:grid;place-items:center;color:#11658a;font-weight:900}
 @media(max-width:900px){.shipSummaryHero{grid-template-columns:1fr}.shipSummaryPhoto{min-height:220px}.shipSummaryIntro .shipMgmtKpis{grid-template-columns:repeat(2,1fr)}}
 
-/* v0.22.0 deck picker and technical condition */
+/* v0.22.1 deck picker and technical condition */
 .deckListBtn{display:block;width:100%;position:relative;z-index:1;pointer-events:auto;cursor:pointer}
 .deckListBtn>*{pointer-events:none}
 .deckSidebar{position:relative;z-index:3}
@@ -438,7 +438,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:720px){.technicalConditionActions{grid-template-columns:1fr}}
 
 
-/* v0.22.0 deck planner disabled-state clarity */
+/* v0.22.1 deck planner disabled-state clarity */
 #addSpaceBtn:disabled,#addSpaceBtn.disabledBuild{
  opacity:.48;
  cursor:not-allowed;
@@ -451,7 +451,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 #addSpaceBtn:disabled:hover{filter:grayscale(.35)}
 
 
-/* v0.22.0 facility capacity summary */
+/* v0.22.1 facility capacity summary */
 .facilityCapacitySummary{display:flex;flex-direction:column;gap:8px;margin-top:12px}
 .capacityRow{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 11px;border:1px solid #d7e4e9;border-radius:11px;background:linear-gradient(180deg,#fbfdfe,#f6fafb)}
 .capacityRow b,.capacityRow span,.capacityRow small{display:block}
@@ -460,12 +460,12 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .capacityRow strong{font-size:14px;color:#0d5e83;text-align:right}
 
 .fuelTitle{display:flex;justify-content:space-between;gap:10px;align-items:center}.fuelTitle span{display:block;font-size:10px;color:#718792}.fuelGauge{height:12px;background:#dce7eb;border-radius:99px;overflow:hidden;margin:10px 0}.fuelGauge div{height:100%;background:#167aa4}.fuelNumbers{font-size:11px;color:#536d79}.shipMarketGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}.marketShip{padding:13px;border:1px solid #d5e2e7;border-radius:13px;background:#fbfdfe}.marketShipHead{display:flex;justify-content:space-between;gap:10px}.marketShipHead span{display:block;font-size:10px;color:#718590}.marketShip p{font-size:11px;color:#607985}.marketSpecs{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}.marketSpecs span{font-size:9px;padding:4px 6px;border-radius:99px;background:#edf4f6}@media(max-width:760px){.shipMarketGrid{grid-template-columns:1fr}}
-/* v0.22.0 render isolation */
+/* v0.22.1 render isolation */
 .renderErrorNotice{margin:12px;padding:12px 14px;border:1px solid #e0b7b7;border-radius:12px;background:#fff1f1;color:#873b3f}
 .renderErrorNotice b,.renderErrorNotice span{display:block}.renderErrorNotice span{font-size:11px;margin-top:4px;color:#8d5b5e}
 
 .marketBuyActions{display:grid;grid-template-columns:1fr 1fr;gap:7px}.marketBuyActions button{width:100%}#selectedRouteWarning small{opacity:.78}
-/* v0.22.0 acquisition/finance/port economics */
+/* v0.22.1 acquisition/finance/port economics */
 .marketSectionTitle{grid-column:1/-1;margin:4px 0 0;padding:10px 12px;background:#eaf3f6;border-radius:12px}.marketSectionTitle h3{margin:0}.marketSectionTitle span{font-size:11px;color:#607784}.marketSectionTitle.newBuild{margin-top:18px;background:#eef6ef}.marketSubGrid{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.newShipName,.shipFinanceProfile{box-sizing:border-box}.headerSailBtn:disabled{opacity:.48;cursor:not-allowed}.marketShip input,.marketShip select{font-size:12px}
 @media(max-width:760px){.marketSubGrid{grid-template-columns:1fr}}
 
@@ -476,7 +476,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:760px){.starControl{grid-template-columns:1fr}.queueHeadline{display:block}}
 
 
-/* v0.22.0 port access usability */
+/* v0.22.1 port access usability */
 .schedulerPortAccess{display:flex;align-items:center;gap:10px;padding:9px 11px;background:#eef6f8;border:1px solid #d4e6eb;border-radius:10px;margin:4px 0 8px}
 .schedulerPortAccess label{white-space:nowrap}
 
@@ -514,7 +514,7 @@ body{background:linear-gradient(180deg,#eef7f8 0,#f7faf9 420px,#f4f6f5 100%)}.to
 @media(prefers-reduced-motion:reduce){.ctHeroShip,.ctWave{animation:none!important}}
 
 
-/* v0.22.0 iOS/mobile fixes */
+/* v0.22.1 iOS/mobile fixes */
 .mobileMenuBtn{display:none}
 @media(max-width:760px){
  .mobileMenuBtn{display:flex;align-items:center;justify-content:center;position:sticky;top:0;z-index:51;width:calc(100% - 20px);margin:8px 10px 0;padding:11px 14px;border:0;border-radius:13px;background:#083b50;color:#fff;font-weight:800;font-size:14px;box-shadow:0 8px 20px rgba(4,49,65,.18)}
@@ -547,7 +547,7 @@ section.tab.active>.grid{animation:screenIn .25s ease-out}@keyframes screenIn{fr
 .visualBuilderWrap{margin:12px 0;padding:13px;border:1px solid rgba(8,72,91,.12);border-radius:16px;background:#f8fbfc}
 .visualDayBuilder{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin-top:10px}
 .visualDayCard{position:relative;min-height:118px;border:0;border-radius:13px;background-size:cover;background-position:center;overflow:hidden;text-align:left;padding:9px;color:white;box-shadow:0 7px 16px rgba(5,49,63,.14)}
-.visualDayCard:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,35,46,.82),rgba(4,35,46,.06) 66%);z-index:0}
+.visualDayCard:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(4,35,46,.82),rgba(4,35,46,.06) 66%);z-index:0}
 .visualDayCard>*{position:relative;z-index:1;display:block}.visualDayCard span{font-size:8px;font-weight:800;letter-spacing:.12em}.visualDayCard b{position:absolute;left:9px;right:9px;bottom:25px;font-size:11px}.visualDayCard small{position:absolute;left:9px;bottom:9px;font-size:8px;opacity:.75}.visualDayCard:disabled{filter:saturate(.75);cursor:default}.visualDayCard:not(:disabled):active{transform:scale(.98)}
 .visualPortPicker{margin-top:10px;padding:11px;border-radius:14px;background:white;border:1px solid var(--line)}.pickerHead{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px}.portPickerGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:8px}.portPickCard{height:94px;border:0;border-radius:12px;background-size:cover;background-position:center;color:white;position:relative;overflow:hidden;text-align:left;padding:9px}.portPickCard:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,34,45,.80),transparent 70%)}.portPickCard b,.portPickCard span{position:absolute;z-index:1;left:9px}.portPickCard b{bottom:25px}.portPickCard span{bottom:9px;font-size:9px;opacity:.78}
 .qualityReadout{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:11px;margin-top:4px}.qualityStars{letter-spacing:.04em;color:#b4841f;white-space:nowrap}
@@ -556,6 +556,42 @@ input[type="range"]{width:100%}
 
 .scheduleSubTabs button.locked{opacity:.42;cursor:not-allowed;filter:grayscale(.5)}
 .scheduleSubTabs button.locked,.scheduleSubTabs button:disabled{opacity:.42;cursor:not-allowed;filter:grayscale(.5)}
+
+/* v0.22.1 Scheduler hotfix */
+.visualBuilderWrap{display:block;width:100%;min-width:0;overflow:visible;grid-column:1/-1!important}
+.visualDayBuilder{
+ display:grid!important;
+ grid-template-columns:repeat(7,minmax(0,1fr))!important;
+ gap:8px!important;
+ width:100%!important;
+ min-width:0!important;
+ margin-top:12px!important;
+}
+.visualDayCard{
+ display:block!important;
+ width:100%!important;
+ min-width:0!important;
+ min-height:118px!important;
+ cursor:pointer!important;
+ pointer-events:auto!important;
+ touch-action:manipulation!important;
+ position:relative!important;
+ z-index:1!important;
+}
+.visualDayCard:disabled{cursor:default!important;pointer-events:none!important}
+.visualDayCard:after{pointer-events:none!important}
+.visualDayCard>*{pointer-events:none!important}
+.visualPortPicker{position:relative;z-index:6}
+@media(max-width:1100px){
+ .visualDayBuilder{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+}
+@media(max-width:720px){
+ .visualDayBuilder{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:430px){
+ .visualDayBuilder{grid-template-columns:1fr!important}
+}
+
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -569,7 +605,7 @@ input[type="range"]{width:100%}
   <div><b>CRUISE<br>TYCOON</b><span>BUILD YOUR FLEET</span></div>
  </div>
  <div class="toprow">
-  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.22.0</span></div><div class="sub">One brand. £5m. No ship. Build from there.</div></div>
+  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.22.1</span></div><div class="sub">One brand. £5m. No ship. Build from there.</div></div>
   <div class="pills">
    <div class="pill">Week <b id="weekPill">1</b></div>
    <div class="pill">Group cash <b id="cashPill">£5.0m</b></div>
@@ -1322,7 +1358,7 @@ Object.keys(state.contracts).forEach(n=>{state.contracts[n].excursions=defaultEx
 
 const SAVE_STORAGE_KEY="cruiseTycoon.save.v1";
 const SAVE_SCHEMA_VERSION=1;
-const GAME_VERSION="0.22.0";
+const GAME_VERSION="0.22.1";
 
 function makeStarterProgramme(){
  return Array.from({length:6},()=>({startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,speed:17.5,booked:0,lastBooked:0,committed:false,planned:false,routeApplied:false,appliedDraft:null,excursionSelection:{},excursionPricing:{}}));
@@ -4417,16 +4453,51 @@ function normalizeSevenDayPlan(plan){
  return days.slice(0,7)
 }
 function renderVisualDayBuilder(){
- const box=document.getElementById("visualDayBuilder");if(!box)return;const plan=state.programme?.[selectedPlanWeek]||{},days=normalizeSevenDayPlan(plan),locked=!!plan.committed;
- box.innerHTML=days.map((d,i)=>{const sea=d.type==="sea"||!d.port,img=sea?seaDayDataUri():portSceneDataUri(d.port),title=sea?"Sea Day":d.port;return `<button type="button" class="visualDayCard ${sea?"sea":""}" data-day="${i}" ${locked?"disabled":""} style="background-image:url('${img}')"><span>DAY ${i+1}</span><b>${title}</b><small>${sea?"At sea":"Port call"}</small></button>`}).join("");
- box.querySelectorAll(".visualDayCard:not([disabled])").forEach(b=>b.onclick=()=>openVisualPortPicker(+b.dataset.day));
+ const box=document.getElementById("visualDayBuilder");if(!box)return;
+ const plan=state.programme?.[selectedPlanWeek]||{},days=normalizeSevenDayPlan(plan),locked=!!plan.committed;
+ box.innerHTML=days.map((d,i)=>{
+   const sea=d.type==="sea"||!d.port,img=sea?seaDayDataUri():portSceneDataUri(d.port),title=sea?"Sea Day":d.port;
+   return `<button type="button" class="visualDayCard ${sea?"sea":""}" data-day="${i}" ${locked?"disabled":""} style="background-image:url('${img}')"><span>DAY ${i+1}</span><b>${title}</b><small>${sea?"At sea":"Port call"}</small></button>`
+ }).join("");
+ if(!box.dataset.bound){
+   const activate=(ev)=>{
+     const btn=ev.target.closest?.(".visualDayCard");if(!btn||btn.disabled)return;
+     ev.preventDefault();
+     const day=Number(btn.dataset.day);
+     if(Number.isFinite(day))openVisualPortPicker(day);
+   };
+   box.addEventListener("click",activate);
+   box.addEventListener("touchend",ev=>{
+     const btn=ev.target.closest?.(".visualDayCard");if(!btn||btn.disabled)return;
+     ev.preventDefault();
+     const day=Number(btn.dataset.day);
+     if(Number.isFinite(day))openVisualPortPicker(day);
+   },{passive:false});
+   box.dataset.bound="1";
+ }
 }
 function openVisualPortPicker(dayIndex){
- const picker=document.getElementById("visualPortPicker"),plan=state.programme?.[selectedPlanWeek]||{};if(!picker)return;
+ const picker=document.getElementById("visualPortPicker"),plan=state.programme?.[selectedPlanWeek]||{};if(!picker||plan.committed)return;
  const names=availablePortNames().filter(p=>p!==programmeStartPort(selectedPlanWeek));
- picker.hidden=false;picker.innerHTML=`<div class="pickerHead"><b>Choose Day ${dayIndex+1}</b><button type="button" id="closeVisualPicker">Close</button></div><div class="portPickerGrid"><button class="portPickCard seaPick" data-port="__SEA__" style="background-image:url('${seaDayDataUri()}')"><b>Sea Day</b><span>Open ocean</span></button>${names.map(p=>{const cost=estimatePortCallCost?estimatePortCallCost(p,activeShip()):0;return `<button class="portPickCard" data-port="${p}" style="background-image:url('${portSceneDataUri(p)}')"><b>${p}</b><span>${cost?statementMoney(cost):"Port call"}</span></button>`}).join("")}</div>`;
- picker.querySelector("#closeVisualPicker").onclick=()=>picker.hidden=true;
- picker.querySelectorAll(".portPickCard").forEach(b=>b.onclick=()=>{const days=normalizeSevenDayPlan(plan),p=b.dataset.port;days[dayIndex]=p==="__SEA__"?{type:"sea"}:{type:"port",port:p};plan.days=days;plan.route=days.filter(x=>x.type==="port"&&x.port).map(x=>x.port);picker.hidden=true;renderSchedule()})
+ picker.hidden=false;
+ picker.style.display="block";
+ picker.innerHTML=`<div class="pickerHead"><b>Choose Day ${dayIndex+1}</b><button type="button" id="closeVisualPicker">Close</button></div><div class="portPickerGrid"><button type="button" class="portPickCard seaPick" data-port="__SEA__" style="background-image:url('${seaDayDataUri()}')"><b>Sea Day</b><span>Open ocean</span></button>${names.map(p=>{let cost=0;try{cost=estimatePortCallCost?estimatePortCallCost(p,activeShip()):0}catch(e){}return `<button type="button" class="portPickCard" data-port="${p}" style="background-image:url('${portSceneDataUri(p)}')"><b>${p}</b><span>${cost?statementMoney(cost):"Port call"}</span></button>`}).join("")}</div>`;
+ const close=picker.querySelector("#closeVisualPicker");if(close)close.onclick=()=>{picker.hidden=true;picker.style.display="none"};
+ picker.querySelectorAll(".portPickCard").forEach(btn=>{
+   const choose=ev=>{
+     ev.preventDefault();
+     const days=normalizeSevenDayPlan(plan),p=btn.dataset.port;
+     days[dayIndex]=p==="__SEA__"?{type:"sea"}:{type:"port",port:p};
+     plan.days=days;
+     plan.route=days.filter(x=>x.type==="port"&&x.port).map(x=>x.port);
+     plan.routeApplied=false;plan.appliedDraft=null;
+     picker.hidden=true;picker.style.display="none";
+     renderSchedule();
+   };
+   btn.addEventListener("click",choose);
+   btn.addEventListener("touchend",choose,{passive:false});
+ });
+ picker.scrollIntoView?.({behavior:"smooth",block:"nearest"});
 }
 function renderVisualRouteTimeline(){
  const box=document.getElementById("visualRouteTimeline");if(!box)return;const plan=selectedPlanWeek>=0?state.programme?.[selectedPlanWeek]:null,route=plan?.route||[];
@@ -4556,7 +4627,7 @@ function renderSchedule(){
    });
    list.appendChild(b);
  });
- try{if(selectedPlanWeek<0&&selectedHistoryRecord)renderHistoricalSchedule(selectedHistoryRecord);else{selectedHistoryRecord=null;renderSelectedPlan();}renderVisualRouteTimeline();renderSchedulerPortScenes();}catch(e){console.error("Scheduler detail error",e)}
+ try{if(selectedPlanWeek<0&&selectedHistoryRecord)renderHistoricalSchedule(selectedHistoryRecord);else{selectedHistoryRecord=null;renderSelectedPlan();}renderVisualRouteTimeline();renderSchedulerPortScenes();renderVisualDayBuilder();enforceSchedulerExcursionGate();}catch(e){console.error("Scheduler detail error",e)}
 
  const cash=forwardCashReceipts();
  const t=document.getElementById("scheduleCashTable");
@@ -4569,11 +4640,11 @@ function renderSchedule(){
 
 function collectSelectedWeekDraft(){
  const i=selectedPlanWeek,old=state.programme[i];
- let route=[programmeStartPort(i)];
- for(let j=0;j<5;j++){
-   const v=document.getElementById(`selPort${j}`)?.value||"";
-   if(v)route.push(v);
- }
+ const days=normalizeSevenDayPlan(old);
+ let route=days.filter(x=>x.type==="port"&&x.port).map(x=>x.port);
+ const start=programmeStartPort(i);
+ if(!route.length||route[0]!==start)route=[start,...route.filter(p=>p!==start)];
+ old.days=days;
  if(route.length<2) throw new Error("Add at least one destination port.");
  if(route.some(p=>portAccessMode(p,activeShip())==="unavailable")) throw new Error("One or more ports cannot physically accept this ship.");
  const cabinPrices={
@@ -4623,7 +4694,7 @@ document.getElementById("applyWeekRoute").onclick=()=>{
      planned:true,
      committed:false,
      routeApplied:true,
-     appliedDraft:{...draft,route:[...draft.route],cabinPrices:{...draft.cabinPrices}}
+     appliedDraft:{...draft,route:[...draft.route],days:normalizeSevenDayPlan(draft),cabinPrices:{...draft.cabinPrices}}
    });
    enforceProgrammeContinuity();
    queueAutoSave();
@@ -4668,7 +4739,7 @@ document.getElementById("saveCommitWeek").onclick=()=>{
 
  if(!confirm(`Save and commit Week ${state.week+i}? Route, cabin prices and operating settings will lock. Excursion prices can still be changed afterwards.`))return;
 
- state.programme[i]={...old,route,fare,cabinPrices,excursionPricing:{},excursionSelection:{},service,foodSpendPpd,hotelConsumablesPpd,marketing,speed,planned:true,committed:true,routeApplied:false,appliedDraft:null};
+ state.programme[i]={...old,route,days:normalizeSevenDayPlan(applied),fare,cabinPrices,excursionPricing:{},excursionSelection:{},service,foodSpendPpd,hotelConsumablesPpd,marketing,speed,planned:true,committed:true,routeApplied:false,appliedDraft:null};
  state.programme[i].excursionsInitialised=true;
  enforceProgrammeContinuity();
  queueAutoSave();
