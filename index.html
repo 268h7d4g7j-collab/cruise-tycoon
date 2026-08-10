@@ -1824,7 +1824,7 @@ function processDryDockWeek(){
  postJournal(`Dry-dock refit — ${s.name} (${part}/${weeks})`,[{account:"refitAssets",debit:spend,credit:0},{account:"cash",debit:0,credit:spend}]);
  if(part===weeks)applyRefitQueue(s,batch);
  state.lastPnl={fareRevenue:0,totalRev:0,opex:0,ebitda:0,depreciation:0,operating:0,interest:0,pbt:0,tax:0,net:0,actualOcc:0,pax:0,reviewScore:0,dryDock:true,refitSpend:spend};
- state.lastCf={opening,currentFareCash:0,newDeposits:0,finalBalances:0,onboardCash:0,supplierCash:0,supplierDetail:{},payroll:0,fuelCash:0,commissionsCash:0,marketingCash:0,hoCash:0,taxCash:0,operatingCF:0,investing:-spend,principal:0,interestCash:0,financing:0,closing:state.cash};
+ state.lastCf={opening,newDeposits:0,finalBalances:0,onboardCash:0,supplierCash:0,supplierDetail:{},payroll:0,fuelCash:0,commissionsCash:0,marketingCash:0,hoCash:0,taxCash:0,operatingCF:0,investing:-spend,principal:0,interestCash:0,financing:0,closing:state.cash};
  state.performanceHistory=state.performanceHistory||[];state.performanceHistory.push({week:state.week,shipId:s.id,shipName:s.name,season:seasonForGameWeek(state.week),weather:`${state.weather.icon} ${state.weather.kind}`,route:[],reviewScore:0,pax:0,actualOcc:0,ebitda:0,net:0,cashClosing:state.cash,pnl:JSON.parse(JSON.stringify(state.lastPnl)),dryDock:true});
  state.lastEvent=`${s.name} spent week ${state.week} in dry dock. Refit spend ${statementMoney(spend)}${part===weeks?". Queued work is now complete.":` — ${weeks-part} week(s) remain.`}`;
  renderAll();showVoyageResult({txt:state.lastEvent,rep:0,demand:0,fuel:1,cost:0});
@@ -2912,39 +2912,7 @@ function showVoyageResult(ev){
  const pnlRows=document.querySelectorAll("#resultPnl tr");
  pnlRows.forEach((tr,idx)=>{if(idx===0)return;const td=tr.querySelectorAll("td");if(td[2]&&td[2].textContent.trim())td[2].classList.add("goodtxt");if(td[3]&&td[3].textContent.trim())td[3].classList.add("badtxt");if(td[4]&&td[4].textContent.trim()){td[4].classList.add(td[4].textContent.includes("(")?"badtxt":"goodtxt")}});
 
- const modalIn=[
- ["Customer deposits received",c.newDeposits],
- ["Final balances received",c.finalBalances],
- ["Onboard cash receipts",c.onboardCash]
-];
-const msd=c.supplierDetail||{};
-const modalOut=[
- ["Food",-msd.food],
- ["Beverage supplies",-msd.beverage],
- ["Port & pilotage fees",-msd.portFees],
- ["Entertainment suppliers",-msd.entertainment],
- ["Hotel & housekeeping suppliers",-msd.hotel],
- ["Facility maintenance",-msd.facilityMaintenance],
- ["Utilities & technical systems",-msd.utilities],
- ["Routine technical maintenance",-msd.repairs],
- ["Insurance",-msd.insurance],
- ["Casino direct costs",-msd.casinoCost],
- ["Excursion operators",-msd.excursionCost],
- ["Retail cost of sales",-msd.retailCost],
- ["Spa direct costs",-msd.spaCost],
- ["Wi‑Fi direct costs",-msd.wifiCost],
- ["Speciality dining direct costs",-msd.diningCost],
- ["Payroll",-c.payroll],
- ["Fuel paid",-c.fuelCash],
- ["Commissions paid",-c.commissionsCash],
- ["Marketing paid",-c.marketingCash],
- ["Head-office cash costs",-c.hoCash],
- ["Tax paid",-c.taxCash],
- ["Debt principal repayment",-c.principal],
- ["Interest paid",-c.interestCash]
-];
-const modalTotalIn=modalIn.reduce((a,x)=>a+x[1],0);
-const modalTotalOut=modalOut.reduce((a,x)=>a+x[1],0);
+ const {moneyIn:modalIn,moneyOut:modalOut,totalIn:modalTotalIn,totalOut:modalTotalOut}=cashFlowReportRows(c);
 document.getElementById("resultCash").innerHTML=`
  <tr class="total"><td>Opening cash</td><td>${statementMoney(c.opening)}</td></tr>
  <tr class="total"><td>MONEY IN</td><td>${statementMoney(modalTotalIn)}</td></tr>
@@ -3705,85 +3673,63 @@ function renderPnl(){
  if(bmt)bmt.innerHTML="<tr><th>Cost category</th><th>Game</th><th>Listed-company range</th></tr>"+
    bm.map(([n,a,b])=>`<tr><td>${n}</td><td>${pct(a)}</td><td>${pct(b.low)}–${pct(b.high)}</td></tr>`).join("");
 }
+
+function cashFlowReportRows(c){
+ const sd=c?.supplierDetail||{};
+ const moneyIn=[
+   ["Passenger fares collected at departure",c?.currentFareCash||0],
+   ["Customer deposits received",c?.newDeposits||0],
+   ["Final balances received",c?.finalBalances||0],
+   ["Onboard cash receipts",c?.onboardCash||0]
+ ];
+ const moneyOut=[
+   ["Food",-((sd.food)||0)],
+   ["Beverage supplies",-((sd.beverage)||0)],
+   ["Port & pilotage fees",-((sd.portFees)||0)],
+   ["Entertainment suppliers",-((sd.entertainment)||0)],
+   ["Hotel & housekeeping suppliers",-((sd.hotel)||0)],
+   ["Facility maintenance",-((sd.facilityMaintenance)||0)],
+   ["Utilities & technical systems",-((sd.utilities)||0)],
+   ["Routine technical maintenance",-((sd.repairs)||0)],
+   ["Insurance",-((sd.insurance)||0)],
+   ["Casino direct costs",-((sd.casinoCost)||0)],
+   ["Excursion operators",-((sd.excursionCost)||0)],
+   ["Retail cost of sales",-((sd.retailCost)||0)],
+   ["Spa direct costs",-((sd.spaCost)||0)],
+   ["Wi‑Fi direct costs",-((sd.wifiCost)||0)],
+   ["Speciality dining direct costs",-((sd.diningCost)||0)],
+   ["Payroll",-((c?.payroll)||0)],
+   ["Fuel paid",-((c?.fuelCash)||0)],
+   ["Commissions paid",-((c?.commissionsCash)||0)],
+   ["Marketing paid",-((c?.marketingCash)||0)],
+   ["Head-office cash costs",-((c?.hoCash)||0)],
+   ["Tax paid",-((c?.taxCash)||0)],
+   ["Debt principal repayment",-((c?.principal)||0)],
+   ["Interest paid",-((c?.interestCash)||0)]
+ ];
+ return {
+   moneyIn,moneyOut,
+   totalIn:moneyIn.reduce((a,x)=>a+(+x[1]||0),0),
+   totalOut:moneyOut.reduce((a,x)=>a+(+x[1]||0),0)
+ }
+}
+
 function renderCf(){
  let c=state.lastCf;
  if(!c){document.getElementById("cfTable").innerHTML="<tr><td>No completed sailing yet. Sail Week 1 to produce the first cash flow.</td></tr>";return}
- const sd=c.supplierDetail||{};
-
- const operatingIn=[
-   ["Current sailing fares collected",c.currentFareCash||0],
-   ["Customer deposits received",c.newDeposits||0],
-   ["Final balances received",c.finalBalances||0],
-   ["Onboard cash receipts",c.onboardCash||0]
- ];
- const operatingOut=[
-   ["Food",-Number(sd.food||0)],
-   ["Beverage supplies",-Number(sd.beverage||0)],
-   ["Port & pilotage fees",-Number(sd.portFees||0)],
-   ["Entertainment suppliers",-Number(sd.entertainment||0)],
-   ["Hotel & housekeeping suppliers",-Number(sd.hotel||0)],
-   ["Facility maintenance",-Number(sd.facilityMaintenance||0)],
-   ["Utilities & technical systems",-Number(sd.utilities||0)],
-   ["Routine technical maintenance",-Number(sd.repairs||0)],
-   ["Insurance",-Number(sd.insurance||0)],
-   ["Casino direct costs",-Number(sd.casinoCost||0)],
-   ["Excursion operators",-Number(sd.excursionCost||0)],
-   ["Retail cost of sales",-Number(sd.retailCost||0)],
-   ["Spa direct costs",-Number(sd.spaCost||0)],
-   ["Wi‑Fi direct costs",-Number(sd.wifiCost||0)],
-   ["Speciality dining direct costs",-Number(sd.diningCost||0)],
-   ["Payroll",-Number(c.payroll||0)],
-   ["Fuel paid",-Number(c.fuelCash||0)],
-   ["Commissions paid",-Number(c.commissionsCash||0)],
-   ["Marketing paid",-Number(c.marketingCash||0)],
-   ["Head-office cash costs",-Number(c.hoCash||0)],
-   ["Tax paid",-Number(c.taxCash||0)]
- ].filter(x=>Math.abs(x[1])>.005);
-
- const opIn=operatingIn.reduce((a,x)=>a+(+x[1]||0),0);
- const opOut=operatingOut.reduce((a,x)=>a+(+x[1]||0),0);
- const calculatedOperating=opIn-opOut;
-
- const investingLines=[];
- if((c.investing||0)<-.005)investingLines.push(["Dry-dock / capital investment",-c.investing]);
- else if((c.investing||0)>.005)investingLines.push(["Investing cash received",-(c.investing||0)]);
-
- const financingIn=[];
- const financingOut=[];
- if((c.principal||0)<-.005)financingOut.push(["Debt principal repayment",-c.principal]);
- else if((c.principal||0)>.005)financingIn.push(["New borrowing",c.principal]);
- if((c.interestCash||0)<-.005)financingOut.push(["Interest paid",-c.interestCash]);
- else if((c.interestCash||0)>.005)financingIn.push(["Interest / financing receipt",c.interestCash]);
-
- const calculatedFinancing=financingIn.reduce((a,x)=>a+x[1],0)-financingOut.reduce((a,x)=>a+x[1],0);
- const reportedMove=(c.closing||0)-(c.opening||0);
- const calculatedClose=(c.opening||0)+calculatedOperating+(c.investing||0)+calculatedFinancing;
- const ledgerCash=accountingSnapshot().b.cash||0;
- const cashDiff=(c.closing||0)-ledgerCash;
- const arithmeticDiff=(c.closing||0)-calculatedClose;
- const ok=Math.abs(cashDiff)<1&&Math.abs(arithmeticDiff)<1&&Math.abs(calculatedOperating-(c.operatingCF||0))<1&&Math.abs(calculatedFinancing-(c.financing||0))<1;
-
- const row=(x,cls="subline")=>`<tr class="${cls}"><td>${x[0]}</td><td>${statementMoney(x[1])}</td></tr>`;
- const outRow=x=>`<tr class="subline"><td>${x[0]}</td><td class="badtxt">${statementMoney(-x[1])}</td></tr>`;
-
+ const {moneyIn,moneyOut,totalIn,totalOut}=cashFlowReportRows(c);
  document.getElementById("cfTable").innerHTML=
  `<tr><th>Weekly cash flow</th><th>£</th></tr>
-  <tr class="total"><td>Opening cash</td><td>${statementMoney(c.opening||0)}</td></tr>
-  <tr class="total"><td>OPERATING CASH IN</td><td>${statementMoney(opIn)}</td></tr>`+
-  operatingIn.filter(x=>Math.abs(x[1])>.005).map(x=>row(x)).join("")+
-  `<tr class="total"><td>OPERATING CASH OUT</td><td>${statementMoney(-opOut)}</td></tr>`+
-  operatingOut.map(x=>outRow(x)).join("")+
-  `<tr class="total"><td>Net operating cash flow</td><td>${statementMoney(calculatedOperating)}</td></tr>
-   <tr class="total"><td>INVESTING CASH FLOW</td><td>${statementMoney(c.investing||0)}</td></tr>`+
-  investingLines.map(x=>outRow(x)).join("")+
-  `<tr class="total"><td>FINANCING CASH IN</td><td>${statementMoney(financingIn.reduce((a,x)=>a+x[1],0))}</td></tr>`+
-  financingIn.map(x=>row(x)).join("")+
-  `<tr class="total"><td>FINANCING CASH OUT</td><td>${statementMoney(-financingOut.reduce((a,x)=>a+x[1],0))}</td></tr>`+
-  financingOut.map(x=>outRow(x)).join("")+
-  `<tr class="total"><td>Net financing cash flow</td><td>${statementMoney(calculatedFinancing)}</td></tr>
-   <tr class="total"><td>Net cash movement</td><td>${statementMoney(reportedMove)}</td></tr>
-   <tr class="total"><td>Closing cash</td><td>${statementMoney(c.closing||0)}</td></tr>
-   <tr><td colspan="2" class="${ok?"goodtxt":"badtxt"}"><b>${ok?"✓ Cash reconciles":"⚠ Cash does not reconcile"}</b> · Opening + operating + investing + financing = ${statementMoney(calculatedClose)} · Balance sheet cash ${statementMoney(ledgerCash)}${ok?"":` · difference ${statementMoney(cashDiff)}`}</td></tr>`;
+  <tr class="total"><td>Opening cash</td><td>${statementMoney(c.opening)}</td></tr>
+  <tr class="total"><td>MONEY IN</td><td>${statementMoney(totalIn)}</td></tr>`+
+  moneyIn.map(x=>`<tr class="subline"><td>${x[0]}</td><td>${statementMoney(x[1])}</td></tr>`).join("")+
+  `<tr class="total"><td>MONEY OUT</td><td>${statementMoney(-totalOut)}</td></tr>`+
+  moneyOut.map(x=>`<tr class="subline"><td>${x[0]}</td><td class="badtxt">${statementMoney(-x[1])}</td></tr>`).join("")+
+  `<tr class="total"><td>Net operating cash flow</td><td>${statementMoney(c.operatingCF)}</td></tr>
+   <tr class="total"><td>Investing cash flow</td><td>${statementMoney(c.investing)}</td></tr>
+   <tr class="total"><td>Financing cash flow</td><td>${statementMoney(c.financing)}</td></tr>
+   <tr class="total"><td>Net cash movement</td><td>${statementMoney(c.closing-c.opening)}</td></tr>
+   <tr class="total"><td>Closing cash</td><td>${statementMoney(c.closing)}</td></tr>`;
 }
 function renderBs(){
  ensureLedger();const s=accountingSnapshot(),b=s.b;
