@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Cruise Tycoon v5.0 — 10 Aug 2026 17:49</title>
+<title>Cruise Tycoon v5.0 — 10 Aug 2026 17:58</title>
 <style>
 :root{
   --navy:#102c46;--navy2:#173e61;--bg:#edf3f7;--card:#fff;--ink:#17324a;
@@ -729,6 +729,46 @@ input[type="range"]{width:100%}
 }
 @media(max-width:430px){.schedulerPortChoiceGrid{grid-template-columns:1fr!important}.schedulerPortChoice{height:150px!important}}
 
+
+/* v5.0 17:58 scheduler flow fix — picker must own the full call width */
+.timedPortSlot{
+ display:block!important;
+ width:100%!important;
+ min-width:0!important;
+ box-sizing:border-box!important;
+}
+.timedPortHead{
+ width:100%!important;
+ min-width:0!important;
+}
+.portChoicePanel{
+ position:static!important;
+ width:100%!important;
+ max-width:none!important;
+ min-width:0!important;
+ box-sizing:border-box!important;
+ clear:both!important;
+}
+.schedulerPortChoiceGrid{
+ width:100%!important;
+ min-width:0!important;
+}
+.schedulerPortChoice{
+ width:100%!important;
+ aspect-ratio:2.15/1!important;
+ height:auto!important;
+ min-height:138px!important;
+}
+@media(max-width:900px) and (min-width:681px){
+ .schedulerPortChoiceGrid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
+@media(max-width:680px){
+ .schedulerPortChoiceGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .schedulerPortChoice{aspect-ratio:1.7/1!important;min-height:132px!important}
+}
+@media(max-width:430px){
+ .schedulerPortChoiceGrid{grid-template-columns:1fr!important}
+}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -742,7 +782,7 @@ input[type="range"]{width:100%}
   <div><b>CRUISE<br>TYCOON</b><span>BUILD YOUR FLEET</span></div>
  </div>
  <div class="toprow">
-  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v5.0 — 10 Aug 2026 17:49</span></div><div class="sub">One brand. £5m. No ship. Build from there. · Global ports expansion</div></div>
+  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v5.0 — 10 Aug 2026 17:58</span></div><div class="sub">One brand. £5m. No ship. Build from there. · Global ports expansion</div></div>
   <div class="pills">
    <div class="pill">Week <b id="weekPill">1</b></div>
    <div class="pill">Group cash <b id="cashPill">£5.0m</b></div>
