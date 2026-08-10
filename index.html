@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Cruise Tycoon v5.0 — 10 Aug 2026 18:36</title>
+<title>Cruise Tycoon v5.0 — 10 Aug 2026 19:52</title>
 <style>
 :root{
   --navy:#102c46;--navy2:#173e61;--bg:#edf3f7;--card:#fff;--ink:#17324a;
@@ -780,6 +780,12 @@ input[type="range"]{width:100%}
 .reviewCommercialSummary span{display:block;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
 .reviewCommercialSummary b{display:block;margin-top:4px;font-size:15px}
 @media(max-width:800px){.reviewCommercialSummary{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* v5.0 19:46 CEO dashboard / company weekly report */
+.dashboardLegacyHidden{display:none!important}.dashboardControlCentre{align-items:start}.dashboardHeading{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(120deg,#082b45,#0c5273);color:#fff}.dashboardHeading h2,.dashboardHeading .label{color:#fff}.dashboardHeading .label{opacity:.78}.dashKpi{min-height:105px;position:relative;overflow:hidden}.dashKpi .kpi{font-size:24px;margin:7px 0}.c2{grid-column:span 2}.attentionItem{display:grid;grid-template-columns:1fr auto;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.attentionItem:last-child{border-bottom:0}.attentionItem b,.attentionItem span{display:block}.attentionItem span{font-size:11px;color:var(--muted);margin-top:2px}.attentionItem button{align-self:center}.attentionClear{padding:12px;border-radius:11px;background:#eef7f3;color:#35634c;margin-top:8px}.mapHorizonControls{display:flex;gap:6px}.mapHorizonControls .active{background:#0d5e89;color:#fff}.dashboardFleetCards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.dashboardShipCard{border:1px solid var(--line);border-radius:13px;padding:12px;background:#f9fbfc;cursor:pointer}.dashboardShipCard:hover{border-color:#7eb4c8}.dashboardShipTop{display:flex;justify-content:space-between;gap:10px}.dashboardShipMetrics{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:10px}.dashboardShipMetrics div{padding:7px;background:#fff;border:1px solid #e1eaee;border-radius:9px}.dashboardShipMetrics span{display:block;font-size:9px;color:var(--muted);text-transform:uppercase}.dashboardShipMetrics b{display:block;margin-top:2px}.bookingHeat{display:grid;grid-template-columns:150px repeat(6,1fr);gap:5px;align-items:stretch;margin-top:9px}.bookingHeat>div{padding:8px;border-radius:8px;background:#f5f8fa;text-align:center}.bookingHeat .shipLabel{text-align:left;font-weight:800}.bookingCell.low{background:#fde4e4}.bookingCell.mid{background:#fff0c7}.bookingCell.good{background:#e6f4ec}.dashboardPnlTrend{overflow-x:auto}.dashboardPnlTrend table td,.dashboardPnlTrend table th{white-space:nowrap}.cashMiniBars{display:grid;gap:7px;margin-top:12px}.cashMiniRow{display:grid;grid-template-columns:45px 1fr 100px;gap:9px;align-items:center}.cashMiniTrack{height:10px;background:#e5edf1;border-radius:99px;overflow:hidden}.cashMiniFill{height:100%;background:#1684aa}.guestDriver{display:grid;grid-template-columns:120px 1fr 42px;gap:8px;align-items:center;margin:8px 0}.guestDriverTrack{height:9px;background:#e5edf1;border-radius:99px;overflow:hidden}.guestDriverTrack span{display:block;height:100%;background:#b17d2b}.routeDayLine{font-size:12px;color:#466474;margin:8px 2px 0;font-weight:750}.weeklyCompanyReport{width:min(1120px,98vw)}.weeklyOpsKpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}.weeklyOpsKpis>div{padding:11px;border:1px solid var(--line);border-radius:12px;background:#f7fafb}.weeklyOpsKpis span{display:block;font-size:9px;color:var(--muted);text-transform:uppercase}.weeklyOpsKpis b{display:block;font-size:20px;margin-top:3px}.weeklyFleetRows{display:grid;gap:8px}.weeklyFleetRow{display:grid;grid-template-columns:1.3fr 2fr repeat(4,.8fr);gap:8px;padding:10px;border:1px solid var(--line);border-radius:11px;align-items:center}.driverBox{padding:11px;border-radius:12px;background:#eef6f8;margin:10px 0}.destinationCards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.destinationCard{padding:10px;border:1px solid var(--line);border-radius:11px;background:#fbfdfe}.destinationCard span{display:block;color:var(--muted);font-size:10px}.weeklyCompare{font-size:10px;color:var(--muted)}
+@media(max-width:1050px){.c2{grid-column:span 4}.dashboardFleetCards{grid-template-columns:1fr}.weeklyFleetRow{grid-template-columns:1fr 1fr 1fr}.bookingHeat{grid-template-columns:120px repeat(6,minmax(65px,1fr));overflow-x:auto}}
+@media(max-width:650px){.c2{grid-column:span 6}.weeklyOpsKpis{grid-template-columns:repeat(2,1fr)}.destinationCards{grid-template-columns:1fr}.mapHorizonControls{width:100%;margin-top:8px}.fleetMapCard>.row{display:block}.bookingHeat{grid-template-columns:100px repeat(6,75px)}}
+
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -793,7 +799,7 @@ input[type="range"]{width:100%}
   <div><b>CRUISE<br>TYCOON</b><span>BUILD YOUR FLEET</span></div>
  </div>
  <div class="toprow">
-  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v5.0 — 10 Aug 2026 18:36</span></div><div class="sub">One brand. £5m. No ship. Build from there. · Global ports expansion</div></div>
+  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v5.0 — 10 Aug 2026 19:52</span></div><div class="sub">One brand. £5m. No ship. Build from there. · Global ports expansion</div></div>
   <div class="pills">
    <div class="pill">Week <b id="weekPill">1</b></div>
    <div class="pill">Group cash <b id="cashPill">£5.0m</b></div>
@@ -823,47 +829,29 @@ input[type="range"]{width:100%}
 </nav>
 <main>
 <section id="dashboard" class="tab active">
-<div class="card c12"><h3>Fleet map — this week</h3><div class="label">Current ship locations and this week's planned itineraries. Dry-docked ships remain at their dock.</div><div id="dashboardFleetMap" class="fleetMap"></div></div>
- <div class="ctHero">
-  <div class="ctHeroSea worldStage"><canvas id="worldCanvas" width="1280" height="520" aria-label="Live animated cruise world"></canvas><div class="worldVignette"></div><div class="worldBadge"><span id="worldScenePort">Southampton</span><b id="worldSceneWeather">Clear</b></div></div>
-  <div class="ctHeroContent"><div class="eyebrow">CRUISE TYCOON · LIVE OPERATIONS</div><h1 id="ctHeroTitle">Build your cruise empire</h1><div id="ctHeroRoute" class="ctHeroRoute">Acquire a ship to begin</div>
-   <div class="ctHeroStats"><div><span>Cash</span><b id="ctHeroCash">—</b></div><div><span>Fleet</span><b id="ctHeroFleet">—</b></div><div><span>Review</span><b id="ctHeroReview">—</b></div><div><span>Credit Rating</span><b id="ctHeroCredit">—</b></div></div><div class="worldActions">
-<button data-jump="schedule">Plan sailing</button>
-<button data-jump="ships">Manage ship</button>
-<button data-jump="facilities">Facilities</button>
-<button data-jump="calendar">24-week seasons</button>
-<button data-jump="reviewHistory">Guest reviews</button>
-<button data-jump="pnlHistory">Route economics</button>
-</div>
-  </div>
+ <div class="grid dashboardControlCentre">
+  <div class="card c12 dashboardHeading"><div><div class="eyebrow">CEO CONTROL CENTRE</div><h2 style="margin:4px 0">Fleet overview</h2><div class="label">What happened, what needs attention and what is coming next.</div></div></div>
+  <div class="card c2 dashKpi"><div class="label">Group cash</div><div class="kpi" id="dashCashKpi">—</div><div class="label" id="dashCashSub">Closing balance</div></div>
+  <div class="card c2 dashKpi"><div class="label">Weekly cash flow</div><div class="kpi" id="dashCashFlowKpi">—</div><div class="label" id="dashCashFlowSub">vs previous week</div></div>
+  <div class="card c2 dashKpi"><div class="label">Weekly net profit</div><div class="kpi" id="dashProfitKpi">—</div><div class="label" id="dashProfitSub">vs previous week</div></div>
+  <div class="card c2 dashKpi"><div class="label">Fleet occupancy</div><div class="kpi" id="dashOccKpi">—</div><div class="label" id="dashOccSub">vs previous week</div></div>
+  <div class="card c2 dashKpi"><div class="label">Average review</div><div class="kpi" id="dashReviewKpi">—</div><div class="label" id="dashReviewSub">vs previous week</div></div>
+  <div class="card c2 dashKpi"><div class="label">Debt</div><div class="kpi" id="dashDebtKpi">—</div><div class="label" id="dashDebtSub">Credit position</div></div>
+
+  <div class="card c12 attentionCard"><div class="row" style="justify-content:space-between"><div><h3>Attention required</h3><div class="label">Only operational items that need a decision or action.</div></div><span id="attentionCount" class="shipBadge">0 items</span></div><div id="dashboardAttention"></div></div>
+
+  <div class="card c12 fleetMapCard"><div class="row" style="justify-content:space-between;align-items:flex-start"><div><h3>Fleet map &amp; upcoming routes</h3><div class="label">Automatically zooms to the fleet. Solid = imminent route; dashed = later committed/applied routes.</div></div><div class="mapHorizonControls"><button type="button" class="btn secondary active" data-map-horizon="1">This week</button><button type="button" class="btn secondary" data-map-horizon="3">Next 3 weeks</button></div></div><div id="dashboardFleetMap" class="fleetMap"></div></div>
+
+  <div class="card c12"><h3>Your fleet</h3><div class="label">One operating view per ship. Select a ship to manage it.</div><div id="dashboardFleetCards" class="dashboardFleetCards"></div></div>
+  <div class="card c12"><h3>Six-week bookings outlook</h3><div class="label">Committed/applied sailings. Low forward bookings are highlighted for attention.</div><div id="dashboardBookingsOutlook" class="dashboardBookingsOutlook"></div></div>
+  <div class="card c12"><h3>Summary P&amp;L — last 6 weeks</h3><div class="label">Company result in £000s. Detailed accounts remain in Finance.</div><div id="dashboardPnlTrend" class="dashboardPnlTrend"></div></div>
+  <div class="card c7"><h3>Cash — last 6 completed weeks</h3><div class="label">Closing cash and weekly movement.</div><div id="dashboardCashTrend"></div></div>
+  <div class="card c5"><h3>Guest experience</h3><div id="dashboardGuestExperience"></div></div>
  </div>
-
- <div class="grid">
-  
-  <div class="card c3 heroKpi fleetHero"><div class="label">Fleet size</div><div class="kpi" id="fleetSizeKpi">1</div><div class="label">Ships in service</div></div>
-  <div class="card c3 heroKpi occupancyHero"><div class="label">Fleet occupancy</div><div class="kpi" id="fleetOccKpi">—</div><div class="label">Latest completed week</div></div>
-  <div class="card c3 heroKpi profitHero"><div class="label">Fleet EBITDA</div><div class="kpi" id="fleetEbitdaKpi">—</div><div class="label">Latest completed week</div></div>
-  <div class="card c3 heroKpi cashHero"><div class="label">Group cash</div><div class="kpi" id="groupCashKpi">£45.0m</div><div class="label">Company level</div></div>
-
-  <div class="card c6 shipSummaryCard">
-   <div class="row" style="justify-content:space-between"><div><h3 style="margin:0">Selected ship summary</h3><div class="label">Current operating picture.</div></div><select id="dashboardShipSelect" style="min-width:220px"></select></div>
-   <div class="shipSummaryGrid">
-    <div><div class="label">Ship</div><div class="kpi" id="shipName">—</div><div class="label" id="shipSummaryMeta"></div></div>
-    <div><div class="label">Forward bookings</div><div class="kpi" id="forwardBookings">—</div></div>
-    <div><div class="label">Last occupancy</div><div class="kpi" id="lastOccKpi">—</div></div>
-    <div><div class="label">Avg fare / guest</div><div class="kpi" id="avgFareKpi">—</div></div>
-    <div><div class="label">Onboard spend / guest</div><div class="kpi" id="onboardSpendKpi">—</div></div>
-    <div><div class="label">EBITDA margin</div><div class="kpi" id="ebitdaMarginKpi">—</div></div>
-    <div><div class="label">Guest review</div><div class="kpi" id="reviewKpi">—</div></div>
-    <div><div class="label">Current location</div><div class="kpi" id="shipLocationKpi" style="font-size:17px">—</div></div>
-    <div><div class="label">Condition</div><div class="kpi" id="shipConditionKpi">—</div></div>
-   </div>
-   <div class="label" style="margin-top:12px">Condition detail: Machinery <b id="condMachinery">—</b> · Hull <b id="condHull">—</b> · Hotel <b id="condHotel">—</b> · Interiors <b id="condInteriors">—</b></div>
-  </div>
-
-  <div class="card c6 performanceCard"><h3>Group — last 6 completed weeks</h3><div class="label">Profit, cash, occupancy, profit margin and average review across the fleet.</div><div id="groupTrendChart" class="trendChart"></div></div>
-
-  <div class="card c12 visualStatusCard"><div class="visualStatusTrack"><span id="visualWeekProgress"></span></div><div class="row" style="justify-content:space-between;gap:12px"><div><b id="visualFleetStatus">Fleet preparing for departure</b><div class="label" id="visualFleetSub">Bookings, weather and ships update as the week progresses.</div></div><div class="visualPulse" aria-hidden="true"></div></div></div><div class="card c12 nextSailingsCard"><h3>Next sailings — fleet</h3><div class="label">The next departure for each ship. Use the ship selector above to choose which ship the blue-bar Sail button operates.</div><div id="fleetNextSailings"></div></div>
+ <!-- Legacy dashboard bindings retained hidden so older game systems remain compatible. -->
+ <div class="dashboardLegacyHidden" aria-hidden="true">
+  <span id="fleetSizeKpi"></span><span id="fleetOccKpi"></span><span id="fleetEbitdaKpi"></span><span id="groupCashKpi"></span><select id="dashboardShipSelect"></select>
+  <span id="shipName"></span><span id="shipSummaryMeta"></span><span id="forwardBookings"></span><span id="lastOccKpi"></span><span id="avgFareKpi"></span><span id="onboardSpendKpi"></span><span id="ebitdaMarginKpi"></span><span id="reviewKpi"></span><span id="shipLocationKpi"></span><span id="shipConditionKpi"></span><span id="condMachinery"></span><span id="condHull"></span><span id="condHotel"></span><span id="condInteriors"></span><div id="groupTrendChart"></div><span id="visualWeekProgress"></span><span id="visualFleetStatus"></span><span id="visualFleetSub"></span><div id="fleetNextSailings"></div><span id="ctHeroCash"></span><span id="ctHeroFleet"></span><span id="ctHeroReview"></span><span id="ctHeroCredit"></span><span id="ctHeroTitle"></span><span id="ctHeroRoute"></span><span id="worldScenePort"></span><span id="worldSceneWeather"></span><canvas id="worldCanvas"></canvas>
  </div>
 </section>
 
@@ -966,9 +954,9 @@ input[type="range"]{width:100%}
     </div>
     <div class="scheduleSubTabs" id="scheduleSubTabs">
       <button type="button" data-schedule-page="itinerary" class="active">Itinerary</button>
+      <button type="button" data-schedule-page="excursions">Excursions</button>
       <button type="button" data-schedule-page="pricing">Pricing &amp; demand</button>
       <button type="button" data-schedule-page="options">Onboard options</button>
-      <button type="button" data-schedule-page="excursions">Excursions</button>
       <button type="button" data-schedule-page="costs">Operating costs</button>
       <button type="button" data-schedule-page="review">Review &amp; commit</button>
     </div>
@@ -999,7 +987,7 @@ input[type="range"]{width:100%}
           <select id="selSpeed" style="display:none" aria-hidden="true"><option value="17.5">17.5 kn</option></select>
           <div class="span12 schedulerPortAccess"><label><input type="checkbox" id="showOneOffPorts"> <b>Include all one-off ports</b></label><span class="label">Reachable contracted ports are prioritised. Use one-off access when you want to explore beyond your contracted network.</span></div>
           <div id="visualDayBuilder" class="visualDayBuilder schedulerLegacyHidden"></div><div id="visualPortPicker" class="visualPortPicker schedulerLegacyHidden" hidden></div><div id="selectedPortSelectors" class="legacyPortSelectors span12 planGrid"></div>
-          <div class="span12"><button class="btn secondary" id="applyWeekRoute">Apply &amp; save route</button></div>
+          <div class="span12"><h3 style="margin:12px 0 5px">Live route check</h3><div class="label">Updates as you build the itinerary so you can check the geography before applying it.</div><div id="draftRouteMap" class="realMap" aria-label="Live draft cruise route map"></div><div id="draftRouteLine" class="routeDayLine"></div></div><div class="span12"><button class="btn secondary" id="applyWeekRoute">Apply &amp; save route</button></div>
 
         </div>
       </div>
@@ -1032,7 +1020,7 @@ input[type="range"]{width:100%}
     </div>
 
     <div id="schedulePageExcursions" class="scheduleSubPage">
-      <div class="planGrid"><div class="span12"><h3 style="margin-top:8px">Excursions offered this week</h3><div class="label">Tick the excursions you want to sell on this sailing. Selection and guest price are specific to this week.</div><div id="weekExcursions"></div></div></div>
+      <div class="planGrid"><div class="span12"><h3 style="margin-top:8px">Excursions offered this week</h3><div class="label">Available after the route is applied. Choose which excursions to offer and set the guest price before committing the week.</div><div id="weekExcursions"></div></div></div>
     </div>
 
     <div id="schedulePageCosts" class="scheduleSubPage">
@@ -1050,7 +1038,7 @@ input[type="range"]{width:100%}
         <div class="span12 routeReviewCard">
           <div class="routeReviewHead"><div><h3>Review &amp; commit</h3><div class="label">Apply the route first, then use the other tabs to refine pricing, service, marketing and onboard settings. Return here when you are ready to lock the week.</div></div><div id="selAutoSpeed" class="kpi" style="font-size:20px">—</div></div>
           <div id="reviewRouteStatus" class="notice" style="margin-bottom:10px">Route not yet applied.</div>
-          <div id="selectedRouteMap" class="realMap" aria-label="Selected cruise route map"></div>
+          <div id="reviewRouteMap" class="realMap" aria-label="Applied cruise route map"></div>
           <div id="selectedTimeline" class="timeline schedulerLegacyHidden"></div>
           <div id="selectedRouteWarning" class="notice" style="margin-top:10px"></div>
           <div id="schedulerCostStrip" class="schedulerCostStrip pending">Apply the route to calculate the estimated total voyage cost.</div>
@@ -1276,70 +1264,18 @@ input[type="range"]{width:100%}
 </div>
 
 <div id="resultModal" class="modal" aria-live="polite">
- <div class="modalCard">
-  <div class="modalHead">
-   <div><h2 style="margin:0">Weekly ship results</h2><div class="label" id="resultSubtitle"></div></div>
-  </div>
+ <div class="modalCard weeklyCompanyReport">
+  <div class="modalHead"><div><div class="eyebrow">WEEKLY COMPANY REPORT</div><h2 style="margin:2px 0">Week <span id="weeklyReportWeek">—</span></h2><div class="label" id="resultSubtitle"></div></div></div>
   <div class="resultPages">
-   <button id="resultTabReviews" class="active">1 · Guest reviews</button>
-   <button id="resultTabSummary">2 · Operating summary</button>
-   <button id="resultTabPnl">3 · P&amp;L</button>
-   <button id="resultTabCash">4 · Cash</button>
-   <button id="resultTabBalance">5 · Balance sheet</button>
+   <button id="resultTabOps" class="active">1 · Operations</button><button id="resultTabCommercial">2 · Commercial</button><button id="resultTabDestinations">3 · Destinations</button><button id="resultTabReviews">4 · Guest experience</button><button id="resultTabPnl">5 · P&amp;L</button><button id="resultTabCash">6 · Cash</button>
   </div>
-
-  <div id="resultPageSummary" class="resultPage">
-   <div class="card" style="margin-bottom:12px">
-    <div class="row" style="justify-content:space-between">
-     <div><div class="label">Ship</div><div class="kpi" id="resultShipName" style="font-size:22px">MV Meridian</div></div>
-     <div><div class="label">Brand</div><div id="resultBrandName"><b>Harbour Line</b></div></div>
-     <div><div class="label">Voyage</div><div id="resultVoyageRoute"></div></div>
-    </div>
-   </div>
-   <div class="resultKpis">
-    <div><div class="label">Occupancy</div><div class="kpi" id="resOcc"></div></div>
-    <div><div class="label">Revenue</div><div class="kpi" id="resRevenue"></div></div>
-    <div><div class="label">EBITDA</div><div class="kpi" id="resEbitda"></div></div>
-    <div><div class="label">Net profit</div><div class="kpi" id="resNet"></div></div>
-   </div>
-   <div class="pieGrid">
-    <div class="card"><h3>Occupancy by passenger segment</h3><div id="resultSegmentPie"></div></div>
-    <div class="card"><h3>Occupancy by cabin type</h3><div id="resultCabinOccupancy"></div></div>
-   </div>
-   <div class="card" style="margin-top:12px"><h3>Shore excursion uptake</h3><table id="resultExcursions"></table></div>
-   <div class="notice" id="resultEvent" style="margin-top:12px"></div>
-  
-   <div class="card" style="margin-top:12px">
-    <h3>Maintenance policy</h3>
-    <div class="label">Routine technical maintenance is driven by the selected maintenance policy and ship condition. Random one-off event costs are excluded from routine maintenance and reserved for the future news/event system.</div>
-    <div class="kpi" id="resultMaintenancePolicy" style="font-size:20px"></div>
-   </div>
-
-   <div class="card" style="margin-top:12px">
-    <h3>Forward bookings — committed sailings</h3>
-    <div class="label">Actual bookings to date for future committed itineraries — not forecast or final occupancy.</div>
-    <div style="overflow-x:auto"><table id="resultForwardBookings"></table></div>
-   </div>
-</div>
-<div id="resultPagePnl" class="resultPage">
-   <div class="card"><h3>Ship P&amp;L</h3><div class="label">Selected ship only.</div><table id="resultPnl"></table>
-   <h3 style="margin-top:16px">Finance KPIs</h3><table id="resultFinanceKpis"></table></div>
-  </div>
-  <div id="resultPageCash" class="resultPage">
-   <div class="card"><h3>Company cash flow — Money In / Money Out</h3><table id="resultCash"></table></div>
-  </div>
-  <div id="resultPageBalance" class="resultPage">
-   <div class="card"><h3>Company balance sheet snapshot</h3><table id="resultBalance"></table></div>
-  </div>
-
-  <div id="resultPageReviews" class="resultPage active">
-   <div class="grid">
-    <div class="card c4"><div class="label">Overall guest review</div><div class="kpi" id="resultReviewScore">—</div><div class="label">out of 5.0</div></div>
-    <div class="card c8"><h3>Review drivers</h3><table id="resultReviewDrivers"></table></div>
-    <div class="card c12"><h3>What affected the score</h3><div id="resultReviewCommentary" class="notice"></div></div>
-   </div>
-  </div>
-
+  <div id="resultPageOps" class="resultPage active"><div id="weeklyOpsDashboard"></div></div>
+  <div id="resultPageCommercial" class="resultPage"><div id="weeklyCommercial"></div></div>
+  <div id="resultPageDestinations" class="resultPage"><div id="weeklyDestinations"></div></div>
+  <div id="resultPageReviews" class="resultPage"><div id="weeklyGuestExperience"></div><div class="grid" style="margin-top:12px"><div class="card c4"><div class="label">Selected ship review</div><div class="kpi" id="resultReviewScore">—</div></div><div class="card c8"><h3>Selected ship review drivers</h3><table id="resultReviewDrivers"></table></div><div class="card c12"><h3>What affected the selected ship</h3><div id="resultReviewCommentary" class="notice"></div></div></div></div>
+  <div id="resultPagePnl" class="resultPage"><div class="card"><h3>Company P&amp;L</h3><div class="label">All ships for the completed week. Previous-week variance shown on key lines.</div><table id="resultPnl"></table><h3 style="margin-top:16px">Finance KPIs</h3><table id="resultFinanceKpis"></table></div></div>
+  <div id="resultPageCash" class="resultPage"><div class="card"><h3>Company cash flow</h3><table id="resultCash"></table></div></div>
+  <div style="display:none"><span id="resultShipName"></span><span id="resultBrandName"></span><span id="resultVoyageRoute"></span><span id="resOcc"></span><span id="resRevenue"></span><span id="resEbitda"></span><span id="resNet"></span><div id="resultSegmentPie"></div><div id="resultCabinOccupancy"></div><table id="resultExcursions"></table><div id="resultEvent"></div><span id="resultMaintenancePolicy"></span><table id="resultForwardBookings"></table><table id="resultBalance"></table></div>
   <div class="bigaction"><button class="btn good" id="confirmWeekBtn">OK — CONTINUE TO NEXT WEEK →</button></div>
  </div>
 </div>
@@ -2099,42 +2035,29 @@ function processDryDockWeek(){
  renderAll();showVoyageResult({txt:state.lastEvent,rep:0,demand:0,fuel:1,cost:0});
 }
 function worldXY(lat,lon,w=900,h=390){return {x:(lon+180)/360*w,y:(90-lat)/180*h}}
+let dashboardMapHorizon=1;
 function renderDashboardFleetMap(){
  const el=document.getElementById("dashboardFleetMap");if(!el)return;
  const ships=fleetShips();if(!ships.length){el.innerHTML='<div class="fleetMapEmpty">No ships owned yet.</div>';return}
  if(typeof L==="undefined"){el.innerHTML='<div class="fleetMapEmpty">Map unavailable. Fleet data is still valid.</div>';return}
  if(mapInstances.dashboardFleetMap){mapInstances.dashboardFleetMap.remove();delete mapInstances.dashboardFleetMap}
- const map=L.map("dashboardFleetMap",{zoomControl:true,attributionControl:true});
- mapInstances.dashboardFleetMap=map;
- L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:8,attribution:"&copy; OpenStreetMap contributors"}).addTo(map);
+ const map=L.map("dashboardFleetMap",{zoomControl:true,attributionControl:true});mapInstances.dashboardFleetMap=map;
+ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:9,attribution:"&copy; OpenStreetMap contributors"}).addTo(map);
  const bounds=[];
  ships.forEach((ship,si)=>{
-   const isActive=ship.id===state.activeShipId;
-   const lastHist=(state.performanceHistory||[]).filter(x=>x.shipId===ship.id&&!x.dryDock).slice(-1)[0];
-   const plan=isActive?((state.programme||[])[0]||{}):{};
-   const route=isActive?(plan.route||[]):((lastHist?.route)||[]);
-   const sea=fullSeaRoute(route);
-   if(sea.length>1){
-     L.polyline(sea,{color:si===0?"#0d6284":"#6f8791",weight:4,opacity:.82,dashArray:si===0?null:"8 6"}).addTo(map);
-     sea.forEach(x=>bounds.push(x))
+   const prog=ship.id===state.activeShipId?(state.programme||[]):ensureShipProgramme(ship);
+   const currentPort=ship.currentPort||prog?.[0]?.startPort||"Southampton";
+   const cp=ports[currentPort];if(cp)bounds.push([cp.lat,cp.lon]);
+   for(let wi=0;wi<Math.min(dashboardMapHorizon,prog.length);wi++){
+     const item=prog[wi]||{};if(item.dryDock||!Array.isArray(item.route)||item.route.length<2)continue;
+     const route=item.route,sea=fullSeaRoute(route);if(sea.length<2)continue;
+     const col=si%3===0?"#0d6284":si%3===1?"#628897":"#9d7930";
+     L.polyline(sea,{color:col,weight:wi===0?4:2.5,opacity:wi===0?.88:.55,dashArray:wi===0?null:"8 7"}).addTo(map);sea.forEach(x=>bounds.push(x));
+     route.forEach((name,idx)=>{const p=ports[name];if(!p)return;bounds.push([p.lat,p.lon]);if(wi===0){const m=L.circleMarker([p.lat,p.lon],{radius:idx===0?5.5:4.5,weight:2,color:col,fillColor:idx===0?"#e0ac45":"#fff",fillOpacity:1}).addTo(map);m.bindTooltip(`${name} · ${idx===0?"Start":"Call"}`,{direction:"top"})}})
    }
-   route.forEach((name,idx)=>{const p=ports[name];if(!p)return;bounds.push([p.lat,p.lon]);const m=L.circleMarker([p.lat,p.lon],{radius:idx===0?6:5,weight:2,color:"#0d6284",fillColor:idx===0?"#e0ac45":"#fff",fillOpacity:1}).addTo(map);m.bindTooltip(name,{direction:"top"})});
-   let ll=null,status="In port";
-   if(isActive&&plan.dryDock){const p=ports[plan.startPort||ship.currentPort];if(p)ll=[p.lat,p.lon];status="Dry dock"}
-   else if(ship.currentPort&&ports[ship.currentPort])ll=[ports[ship.currentPort].lat,ports[ship.currentPort].lon];
-   else if(isActive&&sea.length){ll=sea[Math.floor(sea.length*.35)];status="At sea"}
-   else if(route.length&&ports[route[route.length-1]]){const p=ports[route[route.length-1]];ll=[p.lat,p.lon]}
-   if(ll){
-     bounds.push(ll);
-     const icon=L.divIcon({className:"fleetShipIcon",html:`<div class="fleetShipMarker">🚢</div>`,iconSize:[34,34],iconAnchor:[17,17]});
-     const m=L.marker(ll,{icon}).addTo(map);
-     const review=(state.performanceHistory||[]).filter(x=>x.shipId===ship.id&&!x.dryDock).slice(-1)[0]?.reviewScore;
-     m.bindPopup(`<div class="fleetPopup"><b>${ship.name}</b><br>${status}<br>Condition ${ship3DCondition(ship).toFixed(0)}%${review?` · Review ${review.toFixed(1)}★`:""}<br>${route.length?route.join(" → "):"No itinerary"}</div>`);
-     m.on("click",()=>{state.activeShipId=ship.id;document.querySelector('nav button[data-tab="ships"]')?.click()})
-   }
+   let ll=cp?[cp.lat,cp.lon]:null;if(ll){const icon=L.divIcon({className:"fleetShipIcon",html:`<div class="fleetShipMarker">🚢</div>`,iconSize:[34,34],iconAnchor:[17,17]});const m=L.marker(ll,{icon}).addTo(map);const item=prog[0]||{},hist=(state.performanceHistory||[]).filter(x=>x.shipId===ship.id&&!x.dryDock).slice(-1)[0];m.bindPopup(`<div class="fleetPopup"><b>${ship.name}</b><br>${currentPort}<br>Next: ${item.dryDock?"Dry dock":((item.route||[]).join(" → ")||"Not planned")}<br>Booked ${pct(item.booked||0)} · Fuel ${Math.round((ensureFuelModel(ship).currentTonnes||0)/Math.max(1,ensureFuelModel(ship).capacityTonnes||1)*100)}% · Condition ${ship3DCondition(ship).toFixed(0)}%${hist?.reviewScore?` · ${hist.reviewScore.toFixed(1)}★`:""}</div>`);m.on("click",()=>{bindShipContext(ship.id);document.querySelector('nav button[data-tab="ships"]')?.click()})}
  });
- if(bounds.length)map.fitBounds(L.latLngBounds(bounds).pad(.18),{maxZoom:6});else map.setView([50,-5],4);
- setTimeout(()=>map.invalidateSize(),80)
+ if(bounds.length){const b=L.latLngBounds(bounds);map.fitBounds(b.pad(.08),{maxZoom:dashboardMapHorizon===1?6:5});}else map.setView([50,-5],5);setTimeout(()=>map.invalidateSize(),80);
 }
 
 function fleetShips(){return Object.values(state.fleet||{});}
@@ -3287,6 +3210,8 @@ function showVoyageResult(ev){
 
  const p=state.lastPnl,c=state.lastCf;
  renderWeeklyForwardBookings();
+ setTimeout(renderCompanyWeeklyReport,0);
+ showResultPage("Ops");
  document.getElementById("resultSubtitle").textContent=`${activeShip().name} · Week ${state.week} · ${seasonForGameWeek(state.week)} · ${state.weather.temp}°C ${state.weather.icon} ${state.weather.kind} · ${state.route.join(" → ")}`;
  const rsn=document.getElementById("resultShipName");if(rsn)rsn.textContent=activeShip().name;
  const rbn=document.getElementById("resultBrandName");if(rbn)rbn.innerHTML="<b>Harbour Line</b>";
@@ -3395,7 +3320,7 @@ document.getElementById("resultCash").innerHTML=`
    ex.map(x=>`<tr><td>${x.port}<br><span class="label">${x.name}</span></td><td>${x.attendance}</td><td>${x.maxPax}</td><td>${pct(x.attendancePct)}</td><td>${money(x.revenue)}</td><td>${money(x.supplierCost)}</td><td>${money(x.contribution)}</td></tr>`).join("")
    :'<tr><td>No excursions sold.</td></tr>';
  showResultPage("Reviews");
- const sm=document.getElementById("selectedRouteMap"); if(sm)sm.style.display="none";
+ for(const id of ["draftRouteMap","reviewRouteMap"]){const sm=document.getElementById(id);if(sm)sm.style.display="none";}
  document.getElementById("resultModal").classList.add("show");
 }
 
@@ -4249,12 +4174,12 @@ function estimateVoyageEconomics(item, forcedOcc=null){ if(!hasOwnedShip())retur
 
 function schedulerExcursionsUnlocked(){
  const item=selectedPlanWeek>=0?state.programme?.[selectedPlanWeek]:null;
- return !!(item&&item.committed&&Array.isArray(item.route)&&item.route.length>1)
+ return !!(item&&(item.routeApplied||item.committed)&&Array.isArray(item.route)&&item.route.length>1)
 }
 function enforceSchedulerExcursionGate(){
  const b=document.querySelector('#scheduleSubTabs button[data-schedule-page="excursions"]');
  const locked=!schedulerExcursionsUnlocked();
- if(b){b.disabled=locked;b.classList.toggle("locked",locked);b.title=locked?"Commit the itinerary before selecting excursions.":""}
+ if(b){b.disabled=locked;b.classList.toggle("locked",locked);b.title=locked?"Apply the route before selecting excursions.":""}
  if(locked&&selectedScheduleSubPage==="excursions")selectedScheduleSubPage="itinerary";
 }
 let selectedScheduleSubPage="itinerary";
@@ -4267,7 +4192,7 @@ function showScheduleSubPage(page){
  if(selectedScheduleSubPage==="review") {
    refreshSchedulerEconomicsFromDom();
    updateReviewCommitSummary();
-   setTimeout(()=>{const m=mapInstances?.selectedRouteMap;if(m)m.invalidateSize();},60);
+   setTimeout(()=>{const m=mapInstances?.reviewRouteMap;if(m)m.invalidateSize();},60);
  }
 }
 function bindScheduleSubTabs(){
@@ -4327,7 +4252,7 @@ function renderTimedPortSlots(item){
  const refresh=(invalidateApplied=false)=>{
    const r=[start];host.querySelectorAll(".timedPortSlot .selectedPortCard[data-port]").forEach(x=>{if(x.dataset.port)r.push(x.dataset.port)});item.route=r;item.portTimes=item.portTimes||{};const sd=host.querySelector(".startDeparture");item.portTimes[0]={...(item.portTimes[0]||{}),departure:sd?.value||defDep};host.querySelectorAll(".slotDay").forEach(x=>{item.portTimes[+x.dataset.slot]={...(item.portTimes[+x.dataset.slot]||{}),day:+x.value}});host.querySelectorAll(".slotArrival").forEach(x=>{item.portTimes[+x.dataset.slot]={...(item.portTimes[+x.dataset.slot]||{}),arrival:x.value}});host.querySelectorAll(".slotDeparture").forEach(x=>{item.portTimes[+x.dataset.slot]={...(item.portTimes[+x.dataset.slot]||{}),departure:x.value}});
    const tp=timedPortPlan(item,activeShip());item.speed=Math.max(12,tp.requiredSpeed||12);item.days=tp.days;const speedEl=document.getElementById("selSpeed");if(speedEl){speedEl.innerHTML=`<option value="${item.speed}">${item.speed.toFixed(1)}</option>`;speedEl.value=item.speed}if(auto)auto.textContent=tp.requiredSpeed?`${tp.requiredSpeed.toFixed(1)} kn`:`—`;host.querySelectorAll(".slotSpeed b").forEach((b,j)=>b.textContent=tp.legs[j]?`${tp.legs[j].requiredSpeed.toFixed(1)} kn`:"—");
-   if(invalidateApplied){item.routeApplied=false;item.appliedDraft=null;item.routeAppliedAt=null;}drawRouteMap("selectedRouteMap",item.route);const warn=document.getElementById("selectedRouteWarning");if(warn)warn.textContent=tp.valid?`Reachable at ${tp.requiredSpeed.toFixed(1)} kn · ship maximum ${tp.maxSpeed.toFixed(1)} kn · ${tp.seaDays} sea day${tp.seaDays===1?"":"s"}`:tp.reason;
+   if(invalidateApplied){item.routeApplied=false;item.appliedDraft=null;item.routeAppliedAt=null;}drawRouteMap("draftRouteMap",item.route);drawRouteMap("reviewRouteMap",item.route);const warn=document.getElementById("selectedRouteWarning");if(warn)warn.textContent=tp.valid?`Reachable at ${tp.requiredSpeed.toFixed(1)} kn · ship maximum ${tp.maxSpeed.toFixed(1)} kn · ${tp.seaDays} sea day${tp.seaDays===1?"":"s"}`:tp.reason;
  };
  const openPicker=(slot,row)=>{
    if(locked)return;host.querySelectorAll(".portChoicePanel").forEach(x=>{if(x!==row.querySelector(".portChoicePanel"))x.hidden=true});const panel=row.querySelector(".portChoicePanel");panel.hidden=!panel.hidden;if(panel.hidden)return;
@@ -4455,8 +4380,7 @@ function updateCommittedSchedulerLayout(item){
  if(itineraryHeading)itineraryHeading.parentElement.style.display=committed?"none":"";
  const routeStatus=document.getElementById("routeApplyStatus")?.closest(".span12");
  if(routeStatus)routeStatus.style.display=committed?"none":"";
- const map=document.getElementById("selectedRouteMap");
- if(map)map.classList.toggle("committedMap",committed);
+ for(const id of ["draftRouteMap","reviewRouteMap"]){const map=document.getElementById(id);if(map)map.classList.toggle("committedMap",committed);}
 }
 function renderSelectedPlanCore(){
  if(!hasOwnedShip()){
@@ -4500,8 +4424,8 @@ function renderSelectedPlanCore(){
  const actionBtn=document.getElementById("saveCommitWeek");
  const applyBtn=document.getElementById("applyWeekRoute");
  if(actionBtn){
-   actionBtn.disabled=!item.committed && !item.routeApplied;
-   actionBtn.textContent=item.committed?"Save excursion prices":"Commit itinerary";
+   actionBtn.disabled=item.committed || !item.routeApplied;
+   actionBtn.textContent=item.committed?"Committed":"Commit itinerary";
  }
  if(applyBtn){
    applyBtn.style.display=item.committed?"none":"inline-block";
@@ -4511,7 +4435,7 @@ function renderSelectedPlanCore(){
  const applyStatus=document.getElementById("routeApplyStatus");
  if(applyStatus){
    applyStatus.textContent=item.committed
-     ?"Itinerary committed. Excursion pricing remains editable."
+     ?"Itinerary committed. Route, excursions, pricing and operating settings are locked."
      :(item.routeApplied
        ?"Route saved as a flexible plan. Review the map, schedule and costs before committing."
        :"Draft only — press Apply & save route to keep this flexible schedule before committing.");
@@ -4558,6 +4482,8 @@ function renderSelectedPlanCore(){
    return `<div class="occRow"><div>${label}</div><div class="occTrack"><div class="occFill" style="width:${Math.min(100,occ*100)}%"></div></div><div><b>${pct(occ)}</b></div></div>
    <div class="label" style="margin:-6px 0 8px 108px">${(cd[k]?.booked||0).toLocaleString()} of ${activeShip().berths[k].toLocaleString()} berths · ${priceMoney(prices[k]||0)}</div>`;
  }).join("");
+ const routeLine=document.getElementById("draftRouteLine");if(routeLine){const pt=timedPortPlan(previewItem);routeLine.textContent=pt.calls?.length?[previewItem.startPort||previewItem.route?.[0]||"Start",...pt.calls.map(c=>`D${c.day} ${c.name}`)].join(" → "):"Choose ports to build the live route.";}
+ drawRouteMap("draftRouteMap",previewItem.route||[]);drawRouteMap("reviewRouteMap",previewItem.route||[]);
  const exHost=document.getElementById("weekExcursions");
  const exItem=item.committed?item:previewItem;
  if(!item.routeApplied && !item.committed){
@@ -4578,7 +4504,7 @@ function renderSelectedPlanCore(){
        rows.push({port,idx,exc,offered,price,calc});
      });
    });
-   exHost.innerHTML=rows.length?`<table><tr><th>Offer</th><th>Port / excursion</th><th>Guest price</th><th>Supplier cost</th><th>Max</th><th>Expected pre-book</th><th>Contribution</th></tr>`+rows.map(r=>`<tr><td><input type="checkbox" class="weekExcOffer" data-port="${r.port}" data-index="${r.idx}" ${r.offered?"checked":""}></td><td>${r.port}<br><span class="label">${r.exc.name}</span></td><td><input type="number" class="excPriceInput" data-port="${r.port}" data-index="${r.idx}" value="${r.price}" min="10" max="500" step="5" style="width:90px"></td><td>${money(r.exc.flatCost||0)} + ${money(r.exc.perPaxCost||0)}/guest</td><td>${r.exc.maxPax}</td><td>${r.offered?(r.calc?.attendance||0):"—"}</td><td>${r.offered?money(r.calc?.contribution||0):"—"}</td></tr>`).join("")+`</table>`:'<div class="notice">No excursions configured for the ports on this route.</div>';
+   exHost.innerHTML=rows.length?`<table><tr><th>Offer</th><th>Port / excursion</th><th>Guest price</th><th>Supplier cost</th><th>Max</th><th>Expected pre-book</th><th>Contribution</th></tr>`+rows.map(r=>`<tr><td><input type="checkbox" class="weekExcOffer" data-port="${r.port}" data-index="${r.idx}" ${r.offered?"checked":""} ${item.committed?"disabled":""}></td><td>${r.port}<br><span class="label">${r.exc.name}</span></td><td><input type="number" class="excPriceInput" data-port="${r.port}" data-index="${r.idx}" value="${r.price}" min="10" max="500" step="5" ${item.committed?"disabled":""} style="width:90px"></td><td>${money(r.exc.flatCost||0)} + ${money(r.exc.perPaxCost||0)}/guest</td><td>${r.exc.maxPax}</td><td>${r.offered?(r.calc?.attendance||0):"—"}</td><td>${r.offered?money(r.calc?.contribution||0):"—"}</td></tr>`).join("")+`</table>`:'<div class="notice">No excursions configured for the ports on this route.</div>';
    exHost.querySelectorAll(".weekExcOffer").forEach(cb=>cb.addEventListener("change",()=>{
      const target=item.committed?item:(item.appliedDraft||item);
      target.excursionSelection=target.excursionSelection||{};target.excursionSelection[cb.dataset.port]=target.excursionSelection[cb.dataset.port]||{};target.excursionSelection[cb.dataset.port][+cb.dataset.index]=cb.checked;renderSelectedPlan();
@@ -4659,7 +4585,7 @@ function renderSelectedPlanCore(){
    // Pricing, service, marketing and onboard options remain editable after Apply and before Commit.
  }
 
- drawRouteMap("selectedRouteMap",previewItem.route);
+ drawRouteMap("draftRouteMap",previewItem.route);drawRouteMap("reviewRouteMap",previewItem.route);
  const tl=document.getElementById("selectedTimeline");tl.innerHTML="";
  const dayCosts=routeCosts(previewItem.route,previewItem.speed??17.5).days;
  dayCosts.forEach((d,i)=>{
@@ -5690,7 +5616,7 @@ function renderHistoricalSchedule(x){
  document.getElementById("routeApplyStatus").innerHTML=`<b>Historical sailing — read only.</b> ${x.comments?.good?`Guests: “${x.comments.good}”`:""} ${x.comments?.bad?`<br><span class="badtxt">“${x.comments.bad}”</span>`:""}`;
  document.getElementById("selStartPort").textContent=x.route?.[0]||"—";
  document.getElementById("selectedPortSelectors").innerHTML=(x.route||[]).slice(1).map((p,i)=>`<div class="span4"><div class="label">Port ${i+1}</div><div class="kpi" style="font-size:17px">${p}</div></div>`).join("");
- drawRouteMap("selectedRouteMap",x.route||[]);const hb=document.getElementById("visualDayBuilder");if(hb){const d=normalizeSevenDayPlan(x.sailingPlan||{route:x.route||[]});hb.innerHTML=d.map((q,i)=>`<div class="visualDayCard ${q.type==="sea"||!q.port?"sea":""}" style="background-image:url('${q.type==="sea"||!q.port?seaDayDataUri():portSceneDataUri(q.port)}')"><span>DAY ${i+1}</span><b>${q.type==="sea"||!q.port?"Sea Day":q.port}</b><small>${q.type==="sea"||!q.port?"At sea":"Port call"}</small></div>`).join("")}
+ drawRouteMap("draftRouteMap",x.route||[]);drawRouteMap("reviewRouteMap",x.route||[]);const hb=document.getElementById("visualDayBuilder");if(hb){const d=normalizeSevenDayPlan(x.sailingPlan||{route:x.route||[]});hb.innerHTML=d.map((q,i)=>`<div class="visualDayCard ${q.type==="sea"||!q.port?"sea":""}" style="background-image:url('${q.type==="sea"||!q.port?seaDayDataUri():portSceneDataUri(q.port)}')"><span>DAY ${i+1}</span><b>${q.type==="sea"||!q.port?"Sea Day":q.port}</b><small>${q.type==="sea"||!q.port?"At sea":"Port call"}</small></div>`).join("")}
  const vw=document.querySelector(".visualBuilderWrap");if(vw)vw.style.display="none";
  if(vw)vw.style.display="none";
  if(vs){const hd=normalizeSevenDayPlan(x.sailingPlan||{route:x.route||[]});vs.hidden=false;vs.innerHTML=`<div class="eyebrow">SAILED ITINERARY · READ ONLY</div><div class="committedDayStrip">${hd.map((d,i)=>`<div class="committedDay ${d.type==="sea"||!d.port?"sea":""}"><span>Day ${i+1}</span><b>${d.type==="sea"||!d.port?"Sea Day":d.port}</b></div>`).join("")}</div>`}
@@ -5976,6 +5902,41 @@ function renderFleetNextSailings(){
  host.innerHTML=`<div style="overflow-x:auto"><table class="nextSailingTable"><tr><th>Ship</th><th>Departure</th><th>Route</th><th>Status</th><th>Booked</th><th>Season</th></tr>${rows.join("")}</table></div>`;
 }
 
+
+function companyWeekAggregate(week){
+ const rows=(state.performanceHistory||[]).filter(x=>x.week===week);if(!rows.length)return null;
+ const sail=rows.filter(x=>!x.dryDock),pax=sail.reduce((a,x)=>a+(x.pax||0),0),capacity=sail.reduce((a,x)=>a+(state.fleet?.[x.shipId]?.capacity||0),0);
+ const sum=k=>sail.reduce((a,x)=>a+(x.pnl?.[k]||0),0),rev=sum("totalRev"),fare=sum("fareRevenue"),ebitda=sail.reduce((a,x)=>a+(x.ebitda||x.pnl?.ebitda||0),0),net=sail.reduce((a,x)=>a+(x.net||x.pnl?.net||0),0);
+ const review=pax?sail.reduce((a,x)=>a+(x.reviewScore||0)*(x.pax||0),0)/pax:0;
+ const finalCash=rows.at(-1)?.cashClosing??state.cash;
+ return {week,rows,sail,pax,capacity,occ:capacity?pax/capacity:0,rev,fare,onboard:rev-fare,ebitda,net,review,finalCash,fuel:sum("fuel"),ports:sum("portFees"),crew:sum("crew"),food:sum("food"),ho:sum("ho"),marketing:sum("marketing"),opex:sum("opex"),interest:sum("interest")};
+}
+function completedCompanyWeeks(){return [...new Set((state.performanceHistory||[]).map(x=>x.week))].sort((a,b)=>a-b).map(companyWeekAggregate).filter(Boolean)}
+function varianceText(cur,prev,kind="money") {if(prev==null)return "First result";const d=cur-prev;if(kind==="pct")return `${d>=0?"↑":"↓"} ${Math.abs(d*100).toFixed(1)} pts vs previous week`;if(kind==="score")return `${d>=0?"↑":"↓"} ${Math.abs(d).toFixed(1)} vs previous week`;return `${d>=0?"↑":"↓"} ${statementMoney(Math.abs(d))} vs previous week`;}
+function renderDashboardControlCentre(){
+ const weeks=completedCompanyWeeks(),cur=weeks.at(-1),prev=weeks.at(-2);const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v};
+ set("dashCashKpi",statementMoney(state.cash));set("dashDebtKpi",statementMoney(state.debt||0));set("dashDebtSub",`${creditMetrics().label||creditMetrics().grade||"Credit"}`);
+ if(cur){const prevPrev=weeks.at(-3),curMove=prev?cur.finalCash-prev.finalCash:0,prevMove=prevPrev?prev.finalCash-prevPrev.finalCash:0;set("dashCashFlowKpi",statementMoney(curMove));set("dashCashFlowSub",varianceText(curMove,prevMove));set("dashProfitKpi",statementMoney(cur.net));set("dashProfitSub",varianceText(cur.net,prev?.net));set("dashOccKpi",pct(cur.occ));set("dashOccSub",varianceText(cur.occ,prev?.occ,"pct"));set("dashReviewKpi",cur.review?`${cur.review.toFixed(1)} ★`:"—");set("dashReviewSub",cur.review?varianceText(cur.review,prev?.review,"score"):"No reviews");}else{["dashCashFlowKpi","dashProfitKpi","dashOccKpi","dashReviewKpi"].forEach(id=>set(id,"—"));}
+ const att=[];fleetShips().forEach(ship=>{const prog=ship.id===state.activeShipId?state.programme:ensureShipProgramme(ship),n=prog?.[0]||{};if(n.dryDock)return;if(!n.committed)att.push({title:`${ship.name} — next week not committed`,sub:n.routeApplied?"Route applied; commercial plan still needs committing.":"Itinerary still needs planning and applying.",tab:"schedule",ship:ship.id});const fm=ensureFuelModel(ship),need=routeFuelEstimate(n,ship).tonnes,fuel=fm.currentTonnes||0;if(n.committed&&need>fuel+1)att.push({title:`${ship.name} — fuel shortfall`,sub:`Needs approximately ${Math.ceil(need-fuel)}t before departure.`,tab:"ships",ship:ship.id});if(ship3DCondition(ship)<65)att.push({title:`${ship.name} — condition ${ship3DCondition(ship).toFixed(0)}%`,sub:"Condition is beginning to affect operating performance. Consider maintenance or dry dock.",tab:"ships",ship:ship.id});});
+ const host=document.getElementById("dashboardAttention");if(host)host.innerHTML=att.length?att.map((a,i)=>`<div class="attentionItem"><div><b>${a.title}</b><span>${a.sub}</span></div><button class="btn secondary attentionGo" data-tab="${a.tab}" data-ship="${a.ship}">Open</button></div>`).join(""):'<div class="attentionClear">✓ No immediate fleet actions required.</div>';set("attentionCount",`${att.length} item${att.length===1?"":"s"}`);host?.querySelectorAll(".attentionGo").forEach(b=>b.onclick=()=>{if(b.dataset.ship)bindShipContext(b.dataset.ship);document.querySelector(`nav button[data-tab="${b.dataset.tab}"]`)?.click()});
+ const fc=document.getElementById("dashboardFleetCards");if(fc)fc.innerHTML=fleetShips().map(ship=>{const prog=ship.id===state.activeShipId?state.programme:ensureShipProgramme(ship),n=prog?.[0]||{},h=(state.performanceHistory||[]).filter(x=>x.shipId===ship.id&&!x.dryDock).slice(-1)[0];return `<div class="dashboardShipCard" data-ship="${ship.id}"><div class="dashboardShipTop"><div><b>${ship.name}</b><div class="label">${ship.currentPort||n.startPort||"—"} · ${n.dryDock?"Dry dock":((n.route||[]).join(" → ")||"Route not set")}</div></div><span class="shipBadge">${n.committed?"Committed":n.routeApplied?"Applied":"Planning"}</span></div><div class="dashboardShipMetrics"><div><span>Booked</span><b>${pct(n.booked||0)}</b></div><div><span>Last occ.</span><b>${h?pct(h.actualOcc||0):"—"}</b></div><div><span>Profit</span><b>${h?statementMoney(h.net||0):"—"}</b></div><div><span>Review</span><b>${h?.reviewScore?`${h.reviewScore.toFixed(1)}★`:"—"}</b></div></div><div class="label" style="margin-top:8px">Fuel ${Math.round((ensureFuelModel(ship).currentTonnes||0)/Math.max(1,ensureFuelModel(ship).capacityTonnes||1)*100)}% · Condition ${ship3DCondition(ship).toFixed(0)}%</div></div>`}).join("");fc?.querySelectorAll(".dashboardShipCard").forEach(c=>c.onclick=()=>{bindShipContext(c.dataset.ship);document.querySelector('nav button[data-tab="ships"]')?.click()});
+ const bo=document.getElementById("dashboardBookingsOutlook");if(bo){const hdr=`<div class="shipLabel">Ship</div>${[1,2,3,4,5,6].map(x=>`<div><b>W+${x-1}</b></div>`).join("")}`;bo.innerHTML=`<div class="bookingHeat">${hdr}${fleetShips().map(ship=>{const prog=ship.id===state.activeShipId?state.programme:ensureShipProgramme(ship);return `<div class="shipLabel">${ship.name}</div>`+[0,1,2,3,4,5].map(i=>{const it=prog[i],b=it?.booked||0,cl=!it?.committed&&!it?.routeApplied?"":b<.45?"low":b<.7?"mid":"good";return `<div class="bookingCell ${cl}">${it?.dryDock?"Dock":(it?.committed||it?.routeApplied?pct(b):"—")}</div>`}).join("")}).join("")}</div>`}
+ const last6=weeks.slice(-6),pl=document.getElementById("dashboardPnlTrend");if(pl)pl.innerHTML=last6.length?`<table><tr><th>£000</th>${last6.map(w=>`<th>W${w.week}</th>`).join("")}</tr>${[["Cruise fares","fare"],["Onboard revenue","onboard"],["Total revenue","rev"],["Ship operating costs",w=>Math.max(0,w.opex-w.fuel-w.ports-w.ho-w.marketing)],["Port & fuel",w=>w.fuel+w.ports],["Head office / marketing",w=>w.ho+w.marketing],["EBITDA","ebitda"],["Interest","interest"],["Net profit","net"]].map(([lab,key])=>`<tr${["Total revenue","EBITDA","Net profit"].includes(lab)?' class="total"':''}><td>${lab}</td>${last6.map(w=>{const v=typeof key==='function'?key(w):w[key];return `<td>${(v/1000).toFixed(0)}</td>`}).join("")}</tr>`).join("")}</table>`:'<div class="emptyState"><b>No completed weeks yet</b></div>';
+ const cash=document.getElementById("dashboardCashTrend");if(cash){const mx=Math.max(1,...last6.map(w=>w.finalCash));cash.innerHTML=last6.length?`<div class="cashMiniBars">${last6.map((w,i)=>{const prior=last6[i-1],mv=prior?w.finalCash-prior.finalCash:0;return `<div class="cashMiniRow"><b>W${w.week}</b><div class="cashMiniTrack"><div class="cashMiniFill" style="width:${Math.max(3,w.finalCash/mx*100)}%"></div></div><div>${statementMoney(w.finalCash)}<div class="label">${i?statementMoney(mv):""}</div></div></div>`}).join("")}</div>`:'<div class="emptyState"><b>No cash history yet</b></div>'}
+ const ge=document.getElementById("dashboardGuestExperience");if(ge){const latestRows=cur?.sail||[],weighted={};let wt=0;latestRows.forEach(x=>{const n=x.pax||1;wt+=n;Object.entries(x.reviewDetail||{}).forEach(([k,v])=>weighted[k]=(weighted[k]||0)+v*n)});Object.keys(weighted).forEach(k=>weighted[k]/=Math.max(1,wt));const drivers=Object.entries(weighted).sort((a,b)=>b[1]-a[1]);ge.innerHTML=cur?`<div class="kpi">${cur.review?cur.review.toFixed(1)+" ★":"—"}</div><div class="label">Fleet average · ${prev&&cur.review?varianceText(cur.review,prev.review,"score"):"latest week"}</div>${drivers.slice(0,4).map(([k,v])=>`<div class="guestDriver"><span>${k}</span><div class="guestDriverTrack"><span style="width:${v/5*100}%"></span></div><b>${v.toFixed(1)}</b></div>`).join("")}`:'<div class="emptyState"><b>No guest reviews yet</b></div>'}
+ document.querySelectorAll(".mapHorizonControls [data-map-horizon]").forEach(b=>{b.classList.toggle("active",+b.dataset.mapHorizon===dashboardMapHorizon);b.onclick=()=>{dashboardMapHorizon=+b.dataset.mapHorizon;document.querySelectorAll(".mapHorizonControls [data-map-horizon]").forEach(x=>x.classList.toggle("active",x===b));renderDashboardFleetMap()}});
+}
+function weeklyReportAggregate(){const weeks=completedCompanyWeeks();return weeks.find(x=>x.week===state.week)||weeks.at(-1)||null}
+function renderCompanyWeeklyReport(){
+ const cur=weeklyReportAggregate();if(!cur)return;const weeks=completedCompanyWeeks(),idx=weeks.findIndex(x=>x.week===cur.week),prev=idx>0?weeks[idx-1]:null;const set=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v};set("weeklyReportWeek",cur.week);
+ const ops=document.getElementById("weeklyOpsDashboard");if(ops){const curMove=prev?cur.finalCash-prev.finalCash:0;ops.innerHTML=`<div class="weeklyOpsKpis"><div><span>Passengers</span><b>${cur.pax.toLocaleString()}</b></div><div><span>Fleet occupancy</span><b>${pct(cur.occ)}</b><div class="weeklyCompare">${varianceText(cur.occ,prev?.occ,"pct")}</div></div><div><span>Revenue</span><b>${statementMoney(cur.rev)}</b><div class="weeklyCompare">${varianceText(cur.rev,prev?.rev)}</div></div><div><span>EBITDA</span><b>${statementMoney(cur.ebitda)}</b><div class="weeklyCompare">${varianceText(cur.ebitda,prev?.ebitda)}</div></div><div><span>Net profit</span><b>${statementMoney(cur.net)}</b><div class="weeklyCompare">${varianceText(cur.net,prev?.net)}</div></div><div><span>Net cash flow</span><b>${statementMoney(curMove)}</b></div><div><span>Guest review</span><b>${cur.review?cur.review.toFixed(1)+" ★":"—"}</b><div class="weeklyCompare">${cur.review?varianceText(cur.review,prev?.review,"score"):""}</div></div><div><span>Fuel consumed/cost</span><b>${statementMoney(cur.fuel)}</b></div></div><div class="driverBox"><b>What drove the week?</b><div>${prev?`${cur.occ>prev.occ?"Higher":"Lower"} occupancy (${Math.abs((cur.occ-prev.occ)*100).toFixed(1)}pts) ${cur.rev>=prev.rev?"supported":"weighed on"} revenue. ${cur.fuel>prev.fuel?"Fuel costs increased":"Fuel costs reduced"} by ${statementMoney(Math.abs(cur.fuel-prev.fuel))}. Net profit ${cur.net>=prev.net?"improved":"fell"} ${statementMoney(Math.abs(cur.net-prev.net))}.`:"This is the first company week available for comparison."}</div></div><h3>Fleet performance</h3><div class="weeklyFleetRows">${cur.rows.map(r=>`<div class="weeklyFleetRow"><div><b>${r.shipName}</b><div class="label">${r.dryDock?"Dry dock":(r.route||[]).join(" → ")}</div></div><div>${r.dryDock?"Out of service":`${(r.pax||0).toLocaleString()} guests`}</div><div><span class="label">Occupancy</span><b>${r.dryDock?"—":pct(r.actualOcc||0)}</b></div><div><span class="label">EBITDA</span><b>${statementMoney(r.ebitda||0)}</b></div><div><span class="label">Net</span><b>${statementMoney(r.net||0)}</b></div><div><span class="label">Review</span><b>${r.reviewScore?r.reviewScore.toFixed(1)+"★":"—"}</b></div></div>`).join("")}</div>`}
+ const com=document.getElementById("weeklyCommercial");if(com){com.innerHTML=`<div class="weeklyOpsKpis"><div><span>Occupancy</span><b>${pct(cur.occ)}</b></div><div><span>Fare revenue</span><b>${statementMoney(cur.fare)}</b></div><div><span>Onboard revenue</span><b>${statementMoney(cur.onboard)}</b></div><div><span>Revenue / passenger</span><b>${cur.pax?money(cur.rev/cur.pax):"—"}</b></div></div><h3>Ships</h3><table><tr><th>Ship</th><th>Guests</th><th>Occupancy</th><th>Fare / guest</th><th>Onboard / guest</th></tr>${cur.sail.map(r=>`<tr><td>${r.shipName}</td><td>${(r.pax||0).toLocaleString()}</td><td>${pct(r.actualOcc||0)}</td><td>${r.pax?money((r.pnl?.fareRevenue||0)/r.pax):"—"}</td><td>${r.pax?money(((r.pnl?.totalRev||0)-(r.pnl?.fareRevenue||0))/r.pax):"—"}</td></tr>`).join("")}</table>`}
+ const dest=document.getElementById("weeklyDestinations");if(dest){const visits={};cur.sail.forEach(r=>(r.route||[]).slice(1).forEach(n=>visits[n]=(visits[n]||0)+1));dest.innerHTML=`<h3>Ports visited</h3><div class="destinationCards">${Object.entries(visits).map(([n,c])=>{const p=ports[n]||{},best=portBestSegment(n,seasonForGameWeek(cur.week));return `<div class="destinationCard"><b>${n}</b><span>${c} fleet call${c===1?"":"s"}</span><div style="margin-top:6px">Popularity ${plannerPortPopularity(n).toFixed(0)}/100</div><span>Strongest fit: ${best[0]} · ${best[1].toFixed(1)}/10</span><span>Base port fee ${statementMoney(p.fee||0)}</span></div>`}).join("")||'<div class="label">No port calls this week.</div>'}</div>`}
+ const guest=document.getElementById("weeklyGuestExperience");if(guest){const comments=cur.sail.flatMap(r=>[r.comments?.good,r.comments?.bad]).filter(Boolean);guest.innerHTML=`<div class="weeklyOpsKpis"><div><span>Fleet review</span><b>${cur.review?cur.review.toFixed(1)+" ★":"—"}</b></div><div><span>Ships reviewed</span><b>${cur.sail.filter(x=>x.reviewScore).length}</b></div></div><div class="driverBox"><b>Guest voice</b><div>${comments.length?`“${comments[0]}”`:"No comments recorded this week."}</div></div>`}
+ // Company P&L condensed
+ const pnl=document.getElementById("resultPnl");if(pnl)pnl.innerHTML=`<tr><th>Company P&amp;L</th><th>Week ${cur.week}</th><th>Previous week</th><th>Movement</th></tr>${[["Passenger fares",cur.fare,prev?.fare],["Onboard revenue",cur.onboard,prev?.onboard],["Total revenue",cur.rev,prev?.rev],["Crew",cur.crew,prev?.crew],["Food",cur.food,prev?.food],["Fuel",cur.fuel,prev?.fuel],["Port costs",cur.ports,prev?.ports],["Head office & marketing",cur.ho+cur.marketing,prev?(prev.ho+prev.marketing):null],["Total operating costs",cur.opex,prev?.opex],["EBITDA",cur.ebitda,prev?.ebitda],["Interest",cur.interest,prev?.interest],["Net profit",cur.net,prev?.net]].map(([l,v,pv])=>`<tr${["Total revenue","EBITDA","Net profit"].includes(l)?' class="total"':''}><td>${l}</td><td>${statementMoney(v||0)}</td><td>${pv==null?"—":statementMoney(pv)}</td><td>${pv==null?"—":statementMoney((v||0)-pv)}</td></tr>`).join("")}`;
+ const cash=document.getElementById("resultCash");if(cash){const prevCash=prev?.finalCash??(cur.finalCash);cash.innerHTML=`<tr><th>Company cash flow</th><th>Amount</th></tr><tr><td>Opening cash</td><td>${statementMoney(prevCash)}</td></tr><tr class="total"><td>Net cash movement</td><td>${statementMoney(cur.finalCash-prevCash)}</td></tr><tr class="total"><td>Closing cash</td><td>${statementMoney(cur.finalCash)}</td></tr>`}
+}
 function safeRenderPage(name,fn){
  try{
    fn();
@@ -6046,6 +6007,7 @@ function renderAll(){
  safeRenderPage("Cash Flow",renderCf);
  safeRenderPage("Balance Sheet",renderBs);
  safeRenderPage("Dashboard weekly result",renderLastWeekDashboard);
+ safeRenderPage("Dashboard control centre",renderDashboardControlCentre);
  safeRenderPage("Ports",renderPorts);
  safeRenderPage("Dashboard trends",renderGroupTrend);
  safeRenderPage("Review History",renderReviewHistory);
@@ -6061,16 +6023,9 @@ function renderAll(){
 document.getElementById("pnlHistoryShip")?.addEventListener("change",renderPnlHistory);
  document.getElementById("sailBtn").onclick=sail;
 function showResultPage(page){
- ["Summary","Pnl","Cash","Balance","Reviews"].forEach(k=>{
-   document.getElementById("resultPage"+k)?.classList.toggle("active",k===page);
-   document.getElementById("resultTab"+k)?.classList.toggle("active",k===page);
- });
+ ["Ops","Commercial","Destinations","Reviews","Pnl","Cash"].forEach(k=>{document.getElementById("resultPage"+k)?.classList.toggle("active",k===page);document.getElementById("resultTab"+k)?.classList.toggle("active",k===page);});
 }
-document.getElementById("resultTabSummary")?.addEventListener("click",()=>showResultPage("Summary"));
-document.getElementById("resultTabPnl")?.addEventListener("click",()=>showResultPage("Pnl"));
-document.getElementById("resultTabCash")?.addEventListener("click",()=>showResultPage("Cash"));
-document.getElementById("resultTabBalance")?.addEventListener("click",()=>showResultPage("Balance"));
-document.getElementById("resultTabReviews")?.addEventListener("click",()=>showResultPage("Reviews"));
+[["Ops","Ops"],["Commercial","Commercial"],["Destinations","Destinations"],["Reviews","Reviews"],["Pnl","Pnl"],["Cash","Cash"]].forEach(([id,page])=>document.getElementById("resultTab"+id)?.addEventListener("click",()=>showResultPage(page)));
 function engineWeekSnapshot(){
  const p=state.programme?.[0]||{};
  const sch=buildSchedule(p.route||state.route,state.speed||17.5);
@@ -6087,7 +6042,7 @@ function engineWeekSnapshot(){
 }
 function advanceGameWeek({render=true,closeResult=true}={}){
  if(closeResult)document.getElementById("resultModal")?.classList.remove("show");
- const sm=document.getElementById("selectedRouteMap");if(sm)sm.style.display="block";
+ for(const id of ["draftRouteMap","reviewRouteMap"]){const sm=document.getElementById(id);if(sm)sm.style.display="block";}
  state.week++;
  tickUsedShipMarket();
  state.weather=generateWeather(seasonForGameWeek(state.week));
