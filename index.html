@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Cruise Tycoon v5.0</title>
+<title>Cruise Tycoon v5.0 — 10 Aug 2026 17:22</title>
 <style>
 :root{
   --navy:#102c46;--navy2:#173e61;--bg:#edf3f7;--card:#fff;--ink:#17324a;
@@ -663,7 +663,7 @@ input[type="range"]{width:100%}
 .selectedPortCard>*{position:relative;z-index:1}.selectedPortCard b{display:block;font-size:13px;margin-top:24px}.selectedPortCard span{display:block;font-size:9px;opacity:.88;margin-top:3px}.selectedPortCard.empty{background:linear-gradient(135deg,#dce9ee,#eef5f7);color:#365b6c;box-shadow:none;border:1px dashed #a9c4cf}.selectedPortCard.empty:after{display:none}.selectedPortCard.empty b{margin-top:14px}
 
 .portMapCard{background-color:#dbe7eb!important;background-size:cover!important;background-position:center!important}
-.portMapCard:before{content:"";position:absolute;left:var(--pin-x,50%);top:var(--pin-y,50%);width:15px;height:15px;border-radius:50% 50% 50% 0;background:#e9b73f;border:2px solid #fff;box-shadow:0 2px 7px rgba(0,0,0,.38);transform:translate(-50%,-100%) rotate(-45deg);z-index:3;pointer-events:none}
+.portMapCard:before{display:none!important}
 .portMapCard:after{z-index:1}.portMapCard>*{z-index:2!important}
 .timedStartPort{display:grid;grid-template-columns:56px minmax(170px,1fr) 120px 120px 125px;gap:8px;align-items:end;padding:10px;border:1px solid #b9d7e1;border-radius:15px;background:linear-gradient(160deg,#edf8fb,#fff)}
 .timedStartPort .startLabel{font-weight:900;color:#0d6689}.timedStartPort .startMeta{font-size:10px;color:#6d818d}.startPortVisualCard{position:relative;min-height:80px;border-radius:12px;overflow:hidden;background-size:cover;background-position:center;color:#fff;padding:10px;box-shadow:0 6px 14px rgba(5,49,63,.12)}
@@ -690,7 +690,7 @@ input[type="range"]{width:100%}
   <div><b>CRUISE<br>TYCOON</b><span>BUILD YOUR FLEET</span></div>
  </div>
  <div class="toprow">
-  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v5.0</span></div><div class="sub">One brand. £5m. No ship. Build from there. · Global ports expansion</div></div>
+  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v5.0 — 10 Aug 2026 17:22</span></div><div class="sub">One brand. £5m. No ship. Build from there. · Global ports expansion</div></div>
   <div class="pills">
    <div class="pill">Week <b id="weekPill">1</b></div>
    <div class="pill">Group cash <b id="cashPill">£5.0m</b></div>
@@ -2841,19 +2841,47 @@ function fullSeaRoute(route){
 const mapInstances={};
 
 const SEA_WAYPOINTS={
- "NorthSea":[55.5,3.0],"ChannelE":[50.8,1.2],"ChannelW":[49.4,-5.0],"BiscayN":[47.0,-8.5],"BiscayS":[43.3,-9.5],
- "GibraltarW":[36.0,-7.0],"GibraltarE":[36.0,-4.5],"MedW":[38.0,1.0],"MedCentral":[38.0,8.0],"MedEast":[37.0,16.0],
+ "NorthSea":[55.5,3.0],"ChannelE":[50.65,0.2],"ChannelW":[49.25,-5.6],
+ "BiscayN":[47.0,-8.8],"BiscayMid":[45.2,-8.8],"BiscayS":[43.5,-9.8],
+ "GirondeOuter":[45.55,-2.4],"GirondeMouth":[45.55,-1.35],
+ "PortugalN":[41.0,-10.2],"PortugalS":[37.0,-9.7],
+ "GibraltarW":[35.85,-6.3],"GibraltarE":[36.0,-4.5],
+ "MedW":[37.4,-1.2],"BalearicSea":[38.5,4.2],"MedCentral":[38.2,8.4],"TyrrhenianW":[39.0,10.2],"TyrrhenianE":[40.0,12.4],"MedEast":[37.0,16.0],
  "Skagerrak":[57.5,9.5],"BalticGate":[55.7,12.0]
 };
 function portLatLon(name){const p=ports[name];return p?.lat!=null&&p?.lon!=null?[p.lat,p.lon]:null}
+function isBordeauxGateway(name,lat,lon){return /Bordeaux|Le Verdon|La Rochelle/i.test(name||"")||(lat>=44&&lat<=47&&lon>-2.5&&lon<0.5)}
 function seaRouteWaypoints(a,b){
  const A=portLatLon(a),B=portLatLon(b);if(!A||!B)return [];
- const [alat,alon]=A,[blat,blon]=B,pts=[];
- const northA=alat>50&&alon>-10, northB=blat>50&&blon>-10, medA=alat<45&&alon>-6,medB=blat<45&&blon>-6,atlIberiaA=alat>=35&&alat<=45&&alon<=-6,atlIberiaB=blat>=35&&blat<=45&&blon<=-6;
- if((northA&&medB)||(northB&&medA)){const seq=["NorthSea","ChannelE","ChannelW","BiscayN","BiscayS","GibraltarW","GibraltarE","MedW"],arr=seq.map(k=>SEA_WAYPOINTS[k]);return northA?arr:arr.slice().reverse()}
- if((atlIberiaA&&medB)||(atlIberiaB&&medA)){const arr=["GibraltarW","GibraltarE","MedW"].map(k=>SEA_WAYPOINTS[k]);return atlIberiaA?arr:arr.slice().reverse()}
- if((northA&&atlIberiaB)||(northB&&atlIberiaA)){const arr=["ChannelE","ChannelW","BiscayN","BiscayS"].map(k=>SEA_WAYPOINTS[k]);return northA?arr:arr.slice().reverse()}
- return []
+ const [alat,alon]=A,[blat,blon]=B;
+ const northA=alat>49.7&&alon>-11, northB=blat>49.7&&blon>-11;
+ const medA=alat<45&&alon>-6,medB=blat<45&&blon>-6;
+ const atlIberiaA=alat>=35&&alat<=46.5&&alon<=-5.5,atlIberiaB=blat>=35&&blat<=46.5&&blon<=-5.5;
+ const bordA=isBordeauxGateway(a,alat,alon),bordB=isBordeauxGateway(b,blat,blon);
+ const W=k=>SEA_WAYPOINTS[k];
+ // English Channel / Bay of Biscay to Gironde. Avoids a straight segment across Brittany/France.
+ if((northA&&bordB)||(northB&&bordA)){
+   const arr=[W("ChannelW"),W("BiscayN"),W("BiscayMid"),W("GirondeOuter"),W("GirondeMouth")];
+   return northA?arr:arr.slice().reverse();
+ }
+ // Gironde/Bordeaux to Mediterranean must go out into Biscay, around Iberia and through Gibraltar.
+ if((bordA&&medB)||(bordB&&medA)){
+   const arr=[W("GirondeMouth"),W("GirondeOuter"),W("BiscayMid"),W("BiscayS"),W("PortugalN"),W("PortugalS"),W("GibraltarW"),W("GibraltarE"),W("MedW"),W("BalearicSea"),W("MedCentral"),W("TyrrhenianW"),W("TyrrhenianE")];
+   return bordA?arr:arr.slice().reverse();
+ }
+ if((northA&&medB)||(northB&&medA)){
+   const arr=[W("ChannelW"),W("BiscayN"),W("BiscayMid"),W("BiscayS"),W("PortugalN"),W("PortugalS"),W("GibraltarW"),W("GibraltarE"),W("MedW"),W("BalearicSea"),W("MedCentral")];
+   return northA?arr:arr.slice().reverse();
+ }
+ if((atlIberiaA&&medB)||(atlIberiaB&&medA)){
+   const arr=[W("PortugalS"),W("GibraltarW"),W("GibraltarE"),W("MedW"),W("BalearicSea"),W("MedCentral")];
+   return atlIberiaA?arr:arr.slice().reverse();
+ }
+ if((northA&&atlIberiaB)||(northB&&atlIberiaA)){
+   const arr=[W("ChannelW"),W("BiscayN"),W("BiscayMid"),W("BiscayS"),W("PortugalN")];
+   return northA?arr:arr.slice().reverse();
+ }
+ return [];
 }
 function seaRoutePolyline(route){
  const out=[];for(let i=0;i<route.length;i++){if(i)out.push(...seaRouteWaypoints(route[i-1],route[i]));const ll=portLatLon(route[i]);if(ll)out.push(ll)}return out
@@ -5190,13 +5218,21 @@ function renderWorldScene(ts=0){
  document.getElementById("worldScenePort")&&(document.getElementById("worldScenePort").textContent=port);document.getElementById("worldSceneWeather")&&(document.getElementById("worldSceneWeather").textContent=`${state.weather?.icon||""} ${weather}`);
  worldAnim.raf=requestAnimationFrame(renderWorldScene)
 }
+function portMapZoom(name,requested=5){
+ const region=String(portRegion(name)||"");
+ if(/Alaska|Canada|USA|United States|Australia|New Zealand|South America|Africa/i.test(region))return 4;
+ if(/Caribbean|Pacific|Indian Ocean|Atlantic Islands|Canaries|Azores|Bermuda|Bahamas/i.test(region))return 6;
+ return Math.max(4,Math.min(6,requested|0));
+}
 function portMapTileMeta(name,zoom=5){
  const p=ports[name];if(!p)return {url:"",x:50,y:50,zoom};
- const z=Math.max(2,Math.min(8,zoom|0)),n=Math.pow(2,z),lat=Math.max(-85.0511,Math.min(85.0511,p.lat)),lon=p.lon,latRad=lat*Math.PI/180;
- const xf=(lon+180)/360*n,yf=(1-Math.log(Math.tan(latRad)+1/Math.cos(latRad))/Math.PI)/2*n,x=Math.floor(xf),y=Math.floor(yf);
- return {url:`https://tile.openstreetmap.org/${z}/${x}/${y}.png`,x:(xf-x)*100,y:(yf-y)*100,zoom:z};
+ const z=portMapZoom(name,zoom),lat=Math.max(-85,Math.min(85,p.lat)),lon=p.lon;
+ // Use a composed static map rather than one raw OSM tile. The port stays centred
+ // and the wide card no longer crops the marker toward a tile edge.
+ const url=`https://staticmap.openstreetmap.de/staticmap.php?center=${lat.toFixed(5)},${lon.toFixed(5)}&zoom=${z}&size=520x220&maptype=mapnik&markers=${lat.toFixed(5)},${lon.toFixed(5)},ol-marker`;
+ return {url,x:50,y:50,zoom:z};
 }
-function portMapStyle(name,zoom=5){const m=portMapTileMeta(name,zoom);return `background-image:url('${m.url}');--pin-x:${m.x.toFixed(1)}%;--pin-y:${m.y.toFixed(1)}%`; }
+function portMapStyle(name,zoom=5){const m=portMapTileMeta(name,zoom);return `background-image:url('${m.url}');--pin-x:50%;--pin-y:50%`; }
 function portSceneDataUri(name){
  const s=portVisualStyle(name),kind=s.kind,label=String(name).replace(/&/g,"&amp;").replace(/</g,"&lt;");
  const landmark=kind==="cranes"?`<path d="M35 85V28h4v18h34v4H39" stroke="${s.accent}" stroke-width="4" fill="none"/><path d="M70 49l-18 29" stroke="${s.accent}" stroke-width="3"/>`:kind==="mountain"?`<path d="M0 75L30 35 52 58 78 22 120 75Z" fill="${s.land}"/>`:kind==="oldtown"?`<path d="M5 76V47h22v29M31 76V34h25v42M60 76V44h22v32M86 76V29h28v47" fill="${s.accent}"/><path d="M3 47l13-10 13 10M29 34l14-12 15 12M84 29l16-14 16 14" stroke="#9b6845" stroke-width="4" fill="none"/>`:`<path d="M5 76V48h25v28M34 76V33h29v43M67 76V42h20v34M91 76V29h24v47" fill="${s.accent}"/>`;
