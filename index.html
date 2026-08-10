@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Cruise Tycoon v5.0 — 10 Aug 2026 20:35</title>
+<title>Cruise Tycoon v5.0 — 10 Aug 2026 20:52</title>
 <style>
 :root{
   --navy:#102c46;--navy2:#173e61;--bg:#edf3f7;--card:#fff;--ink:#17324a;
@@ -789,6 +789,12 @@ input[type="range"]{width:100%}
 
 /* v5.0 usability pass */
 .schedulerStickyContext{position:sticky;top:8px;z-index:30;margin:0 0 12px;padding:11px 14px;border:1px solid #cfe0e7;border-radius:14px;background:rgba(247,251,252,.96);backdrop-filter:blur(8px);box-shadow:0 5px 18px rgba(22,62,78,.08)}.schedulerStickyContext .contextTop{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.schedulerStickyContext .contextTitle{font-size:18px;font-weight:900;color:#173f52}.schedulerStickyContext .contextMeta{display:flex;gap:8px;flex-wrap:wrap;margin-top:7px}.contextChip{padding:5px 8px;border-radius:999px;background:#edf4f7;font-size:11px;font-weight:800;color:#35576b}.contextChip.good{background:#e8f4ec;color:#1b704a}.contextChip.warn{background:#fff4d7;color:#7a6116}.contextChip.bad{background:#fde8e8;color:#9a3030}.pricingSummary,.onboardSummary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-bottom:12px}.pricingSummary>div,.onboardSummary>div{border:1px solid #dce7ec;border-radius:12px;padding:10px;background:#f8fbfc}.pricingSummary span,.onboardSummary span{display:block;font-size:10px;color:#6e8290}.pricingSummary b,.onboardSummary b{font-size:16px;color:#173f52}.quickPriceBar{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0 14px}.fareGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:12px}.fareControl{border:1px solid #dce7ec;border-radius:13px;padding:11px;background:#fbfdfe}.fareControlHead{display:flex;justify-content:space-between;gap:10px}.fareControl .last{font-size:11px;color:#6e8290}.fareControl input{width:100%;margin:10px 0 5px}.fareValue{font-size:18px;font-weight:900;color:#173f52}.weeklyDriverStrap{padding:11px 13px;border-radius:12px;margin:0 0 12px;border-left:5px solid #8799a3;background:#f5f8f9}.weeklyDriverStrap.good{border-left-color:#2d8a5d;background:#eef8f2}.weeklyDriverStrap.bad{border-left-color:#b94b4b;background:#fdf0f0}.reviewHeat{min-width:560px;border-collapse:separate;border-spacing:4px}.reviewHeat td{border-radius:8px;text-align:center;padding:9px 6px;font-weight:900}.reviewHeat .rowHead{text-align:left;background:transparent;color:#35576b}.score5{background:#dff3e7;color:#17643f}.score4{background:#edf6df;color:#456a22}.score3{background:#fff2c9;color:#765c10}.score2{background:#fde2ce;color:#8b4a1f}.score1{background:#f8d4d4;color:#8d2d2d}@media(max-width:750px){.pricingSummary,.onboardSummary{grid-template-columns:repeat(2,1fr)}.fareGrid{grid-template-columns:1fr}}
+
+/* v5.0 post-report fleet replay */
+.fleetReplayLabel{background:rgba(11,45,61,.92);color:#fff;border-radius:10px;padding:7px 10px;font-size:12px;font-weight:800;box-shadow:0 3px 10px rgba(0,0,0,.18)}
+.fleetReplayShipLabel{white-space:nowrap;background:#173f52;color:#fff;border:2px solid #fff;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:900;box-shadow:0 2px 8px rgba(0,0,0,.22)}
+.fleetReplayPort{background:#fff;color:#173f52;border:1px solid #bfd1d9;border-radius:8px;padding:3px 6px;font-size:10px;font-weight:800;box-shadow:0 2px 5px rgba(0,0,0,.12)}
+
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -802,7 +808,7 @@ input[type="range"]{width:100%}
   <div><b>CRUISE<br>TYCOON</b><span>BUILD YOUR FLEET</span></div>
  </div>
  <div class="toprow">
-  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v5.0 — 10 Aug 2026 20:35</span></div><div class="sub">One brand. £5m. No ship. Build from there. · Global ports expansion</div></div>
+  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v5.0 — 10 Aug 2026 20:52</span></div><div class="sub">One brand. £5m. No ship. Build from there. · Global ports expansion</div></div>
   <div class="pills">
    <div class="pill">Week <b id="weekPill">1</b></div>
    <div class="pill">Group cash <b id="cashPill">£5.0m</b></div>
@@ -2039,7 +2045,76 @@ function processDryDockWeek(){
 }
 function worldXY(lat,lon,w=900,h=390){return {x:(lon+180)/360*w,y:(90-lat)/180*h}}
 let dashboardMapHorizon=1;
+
+let fleetReplayTimer=null;
+let fleetReplayRunning=false;
+function routePointDistance(a,b){
+ const R=3440.065,lat1=a[0]*Math.PI/180,lat2=b[0]*Math.PI/180,dlat=(b[0]-a[0])*Math.PI/180,dlon=(b[1]-a[1])*Math.PI/180;
+ const x=Math.sin(dlat/2)**2+Math.cos(lat1)*Math.cos(lat2)*Math.sin(dlon/2)**2;
+ return 2*R*Math.asin(Math.sqrt(Math.min(1,x)));
+}
+function routeCumulative(points){
+ const cum=[0];for(let i=1;i<points.length;i++)cum.push(cum[i-1]+routePointDistance(points[i-1],points[i]));return cum;
+}
+function pointAlongRoute(points,cum,f){
+ if(!points.length)return null;if(points.length===1)return points[0];const total=cum[cum.length-1]||1,target=Math.max(0,Math.min(1,f))*total;
+ let i=1;while(i<cum.length&&cum[i]<target)i++;if(i>=cum.length)return points[points.length-1];
+ const prev=cum[i-1],span=Math.max(.0001,cum[i]-prev),q=(target-prev)/span;return [points[i-1][0]+(points[i][0]-points[i-1][0])*q,points[i-1][1]+(points[i][1]-points[i-1][1])*q];
+}
+function completedFleetSailings(week){
+ return (state.performanceHistory||[]).filter(x=>x.week===week&&!x.dryDock&&Array.isArray(x.route)&&x.route.length>1).map(x=>({hist:x,ship:(state.fleet||{})[x.shipId]})).filter(x=>x.ship);
+}
+function stopFleetWeekReplay({restore=true}={}){
+ if(fleetReplayTimer){cancelAnimationFrame(fleetReplayTimer);fleetReplayTimer=null}fleetReplayRunning=false;
+ if(restore&&document.getElementById('dashboardFleetMap'))renderDashboardFleetMap();
+}
+function startFleetWeekReplay(completedWeek){
+ const el=document.getElementById('dashboardFleetMap');if(!el||typeof L==='undefined')return;
+ const sailings=completedFleetSailings(completedWeek);if(!sailings.length){renderDashboardFleetMap();return}
+ stopFleetWeekReplay({restore:false});fleetReplayRunning=true;
+ if(mapInstances.dashboardFleetMap){mapInstances.dashboardFleetMap.remove();delete mapInstances.dashboardFleetMap}
+ const map=L.map('dashboardFleetMap',{zoomControl:true,attributionControl:true});mapInstances.dashboardFleetMap=map;
+ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:9,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+ const bounds=[],replays=[];
+ sailings.forEach(({hist,ship},si)=>{
+   const col=si%3===0?'#0d6284':si%3===1?'#628897':'#9d7930',route=[...hist.route],points=fullSeaRoute(route);
+   if(points.length<2)return;points.forEach(p=>bounds.push(p));
+   L.polyline(points,{color:col,weight:4,opacity:.34}).addTo(map);
+   route.forEach((name,idx)=>{const p=ports[name];if(!p)return;bounds.push([p.lat,p.lon]);L.circleMarker([p.lat,p.lon],{radius:5,weight:2,color:col,fillColor:idx===0?'#e0ac45':'#fff',fillOpacity:1}).addTo(map).bindTooltip(`${name} · ${idx===0?'Start':idx===route.length-1?'Finish':`Call ${idx}`}`,{direction:'top'})});
+   const icon=L.divIcon({className:'',html:`<div class="fleetReplayShipLabel">🚢 ${ship.name}</div>`,iconSize:[150,28],iconAnchor:[20,14]});
+   const marker=L.marker(points[0],{icon,zIndexOffset:1000+si}).addTo(map);replays.push({ship,hist,route,points,cum:routeCumulative(points),marker,col});
+ });
+ if(!replays.length){fleetReplayRunning=false;renderDashboardFleetMap();return}
+ if(bounds.length)map.fitBounds(L.latLngBounds(bounds).pad(.08),{maxZoom:6});setTimeout(()=>map.invalidateSize(),80);
+ const ctrl=L.control({position:'topleft'});ctrl.onAdd=()=>{const d=L.DomUtil.create('div','fleetReplayLabel');d.id='fleetReplayStatus';d.textContent=`Replaying Week ${completedWeek} voyages`;return d};ctrl.addTo(map);
+ // 35 seconds total. Reserve short pauses at each intermediate port by easing each leg separately.
+ const duration=35000,start=performance.now();
+ const legData=replays.map(r=>{const legs=[];let total=0;for(let i=0;i<r.route.length-1;i++){const pts=fullSeaRoute([r.route[i],r.route[i+1]]),cum=routeCumulative(pts),dist=cum[cum.length-1]||1;legs.push({from:r.route[i],to:r.route[i+1],pts,cum,dist});total+=dist}return {...r,legs,total};});
+ function frame(now){
+   const global=Math.min(1,(now-start)/duration);let status=[];
+   legData.forEach(r=>{
+     // Map 0..1 through voyage legs with a 3% dwell after each intermediate arrival.
+     const dwell=Math.min(.025, .12/Math.max(2,r.legs.length));const travelShare=1-dwell*Math.max(0,r.legs.length-1);let cursor=0,pos=null,label='';
+     for(let i=0;i<r.legs.length;i++){
+       const leg=r.legs[i],share=travelShare*(leg.dist/Math.max(1,r.total)),travelEnd=cursor+share;
+       if(global<=travelEnd||i===r.legs.length-1){const q=Math.max(0,Math.min(1,(global-cursor)/Math.max(.0001,share)));pos=pointAlongRoute(leg.pts,leg.cum,q);label=q>.96?leg.to:`${leg.from} → ${leg.to}`;break}
+       cursor=travelEnd;
+       if(i<r.legs.length-1){const dwellEnd=cursor+dwell;if(global<=dwellEnd){const p=ports[leg.to];pos=p?[p.lat,p.lon]:leg.pts[leg.pts.length-1];label=`${leg.to} · port call`;break}cursor=dwellEnd}
+     }
+     if(pos)r.marker.setLatLng(pos);status.push(`${r.ship.name}: ${label}`);
+   });
+   const s=document.getElementById('fleetReplayStatus');if(s)s.textContent=status.join('  •  ');
+   if(global<1&&fleetReplayRunning){fleetReplayTimer=requestAnimationFrame(frame)}else{
+     fleetReplayTimer=null;fleetReplayRunning=false;
+     // Keep the completed positions visible briefly, then switch to the normal future-route map.
+     setTimeout(()=>{if(!fleetReplayRunning)renderDashboardFleetMap()},1400);
+   }
+ }
+ fleetReplayTimer=requestAnimationFrame(frame);
+}
+
 function renderDashboardFleetMap(){
+ if(fleetReplayRunning)return;
  const el=document.getElementById("dashboardFleetMap");if(!el)return;
  const ships=fleetShips();if(!ships.length){el.innerHTML='<div class="fleetMapEmpty">No ships owned yet.</div>';return}
  if(typeof L==="undefined"){el.innerHTML='<div class="fleetMapEmpty">Map unavailable. Fleet data is still valid.</div>';return}
@@ -6098,7 +6173,11 @@ function advanceGameWeek({render=true,closeResult=true}={}){
  }
  return {week:state.week,current:state.programme[0],programme:state.programme}
 }
-document.getElementById("confirmWeekBtn").onclick=()=>advanceGameWeek({render:true,closeResult:true});
+document.getElementById("confirmWeekBtn").onclick=()=>{
+ const completedWeek=state.week;
+ advanceGameWeek({render:true,closeResult:true});
+ setTimeout(()=>{document.querySelector('nav button[data-tab="dashboard"]')?.click();setTimeout(()=>startFleetWeekReplay(completedWeek),320)},120);
+};
 
 document.getElementById("newLoanProfile")?.addEventListener("change",renderFinancing);
 document.getElementById("takeLoanBtn")?.addEventListener("click",()=>{
