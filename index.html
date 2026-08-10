@@ -652,6 +652,23 @@ input[type="range"]{width:100%}
 
 /* v5.0 itinerary, fuel and fleet controls */
 .timedPortSlots{display:grid;gap:9px;margin:10px 0}.timedPortSlot{display:grid;grid-template-columns:56px minmax(170px,1fr) 120px 120px 125px;gap:8px;align-items:end;padding:10px;border:1px solid #d6e4e9;border-radius:12px;background:#f8fbfc}.timedPortSlot .slotNo{font-weight:900;color:#0d6689}.timedPortSlot .reach{font-size:10px;color:#6d818d}.timedPortSlot.unreachable{background:#fff1f1;border-color:#e1b1b1}.bunkerControls{display:grid;grid-template-columns:1fr auto auto;gap:7px;align-items:center;margin-top:9px}.fuelShortfall{color:var(--bad);font-weight:800}.fuelReady{color:var(--good);font-weight:800}@media(max-width:760px){.timedPortSlot{grid-template-columns:1fr 1fr}.timedPortSlot .slotPort{grid-column:1/-1}.bunkerControls{grid-template-columns:1fr 1fr}.bunkerControls input{grid-column:1/-1}}
+
+/* v5.0 visual reachable-port picker */
+.timedPortSlots{display:flex;flex-direction:column;gap:12px}
+.timedPortSlot{border:1px solid #d5e3e9;border-radius:15px;padding:12px;background:linear-gradient(160deg,#fff,#f7fbfc)}
+.timedPortHead{display:grid;grid-template-columns:78px minmax(190px,1fr) 90px 112px 112px 105px;gap:10px;align-items:end}
+.timedPortHead .slotNo{font-weight:900;color:#123c56}.timedPortHead .reach{font-size:10px;color:#718691;font-weight:600;margin-top:3px}
+.selectedPortCard{position:relative;min-height:80px;border-radius:12px;overflow:hidden;background-size:cover;background-position:center;box-shadow:0 6px 14px rgba(5,49,63,.12);color:#fff;padding:10px;cursor:pointer}
+.selectedPortCard:after,.schedulerPortChoice:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,34,45,.86),rgba(3,34,45,.08) 72%);pointer-events:none}
+.selectedPortCard>*{position:relative;z-index:1}.selectedPortCard b{display:block;font-size:13px;margin-top:24px}.selectedPortCard span{display:block;font-size:9px;opacity:.88;margin-top:3px}.selectedPortCard.empty{background:linear-gradient(135deg,#dce9ee,#eef5f7);color:#365b6c;box-shadow:none;border:1px dashed #a9c4cf}.selectedPortCard.empty:after{display:none}.selectedPortCard.empty b{margin-top:14px}
+.portChoicePanel{margin-top:11px;padding-top:11px;border-top:1px solid #e0e9ed}.portChoiceToolbar{display:grid;grid-template-columns:minmax(170px,1fr) 160px auto;gap:8px;align-items:center;margin-bottom:9px}.portChoiceToolbar input,.portChoiceToolbar select{width:100%}.portChoiceCount{font-size:10px;color:#718691;white-space:nowrap}
+.schedulerPortChoiceGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.schedulerPortChoice{position:relative;height:120px;border:0;border-radius:13px;overflow:hidden;background-size:cover;background-position:center;color:#fff;text-align:left;padding:9px;box-shadow:0 6px 16px rgba(5,49,63,.13);cursor:pointer;touch-action:manipulation}.schedulerPortChoice>*{position:relative;z-index:1;pointer-events:none}.schedulerPortChoice .choiceRegion{position:absolute;top:8px;left:8px;font-size:8px;font-weight:850;letter-spacing:.06em;background:rgba(5,43,57,.58);padding:3px 5px;border-radius:5px}.schedulerPortChoice b{position:absolute;left:9px;right:9px;bottom:37px;font-size:12px}.schedulerPortChoice .choiceMeta{position:absolute;left:9px;right:9px;bottom:9px;font-size:8.5px;line-height:1.25;opacity:.93}.schedulerPortChoice .infoDot{position:absolute;right:8px;top:8px;width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.9);color:#0d607f;font-size:12px;font-weight:900;z-index:2;pointer-events:auto}
+.schedulerPortChoice.contract{box-shadow:inset 0 0 0 3px rgba(64,184,143,.8),0 6px 16px rgba(5,49,63,.13)}.schedulerPortChoice.selected{box-shadow:inset 0 0 0 3px #f0c15a,0 8px 19px rgba(5,49,63,.17)}
+.portPickerMore{margin-top:9px;width:100%}.portPressHint{font-size:10px;color:#718691;margin-top:6px}
+.portInfoOverlay{position:fixed;inset:0;z-index:180;background:rgba(4,27,40,.62);display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(4px)}.portInfoOverlay.show{display:flex}.portInfoCard{width:min(720px,96vw);max-height:88vh;overflow:auto;background:#fff;border-radius:19px;padding:17px;box-shadow:0 24px 65px rgba(0,0,0,.28)}.portInfoHero{height:160px;border-radius:14px;background-size:cover;background-position:center;position:relative;overflow:hidden;margin-bottom:12px}.portInfoHero:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,31,44,.82),transparent 68%)}.portInfoHero h2,.portInfoHero span{position:absolute;z-index:1;left:14px;color:#fff}.portInfoHero h2{bottom:25px;margin:0;font-size:24px}.portInfoHero span{bottom:10px;font-size:10px;opacity:.9}.portInfoGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.portInfoGrid>div{padding:10px;border:1px solid #dce7eb;border-radius:11px;background:#f8fbfc}.portInfoGrid span{display:block;font-size:9px;color:#728792;text-transform:uppercase}.portInfoGrid b{display:block;margin-top:3px}.seasonAppealGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:10px 0}.seasonAppealGrid>div{padding:9px;border-radius:10px;background:#eef5f7;text-align:center}.seasonAppealGrid span{display:block;font-size:9px;color:#6f838d}.segmentAppealTable td:nth-child(2){font-weight:850}.portInfoClose{float:right}
+@media(max-width:950px){.timedPortHead{grid-template-columns:70px minmax(160px,1fr) 82px 100px 100px}.timedPortHead .slotSpeed{grid-column:2/-1}.schedulerPortChoiceGrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.timedPortHead{grid-template-columns:1fr 1fr}.timedPortHead .slotNo,.timedPortHead .slotPort{grid-column:1/-1}.schedulerPortChoiceGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.portChoiceToolbar{grid-template-columns:1fr}.portInfoGrid{grid-template-columns:1fr 1fr}.seasonAppealGrid{grid-template-columns:1fr 1fr}}
+
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -855,13 +872,13 @@ input[type="range"]{width:100%}
         <div class="span12"><h3 style="margin-top:8px">Itinerary</h3><div class="label">Start port is fixed by where the previous sailing ends.</div></div>
         <div class="span4"><div class="label">Start port</div><div class="kpi" id="selStartPort" style="font-size:20px"></div></div>
         <div class="span4"><label class="label">Destination port calls · <b id="selPortCountLabel">3</b></label><input id="selPortCount" type="range" min="1" max="6" step="1" value="3"><div class="label">Choose how many ports you want to visit. Sea days are created automatically.</div></div>
-        <div class="span4"><div class="label">Required sailing speed</div><div class="kpi" id="selAutoSpeed" style="font-size:22px">—</div><div class="label">Calculated from distance and the arrival/departure times below. You no longer choose speed manually.</div></div>
+        <div class="span4"><div class="label">Required sailing speed</div><div class="kpi" id="selAutoSpeed" style="font-size:22px">—</div><div class="label">Calculated separately for each leg from distance, selected port day and arrival/departure times. You no longer choose speed manually.</div></div>
         <div class="span4"><div class="label">Default port day</div><div class="row" style="gap:6px"><label class="label">Arrive <input id="defaultArrivalTime" type="time" value="08:00"></label><label class="label">Leave <input id="defaultDepartureTime" type="time" value="17:00"></label></div></div>
         <div id="timedPortSlots" class="span12"></div>
         <select id="selSpeed" style="display:none" aria-hidden="true"><option value="17.5">17.5 kn</option></select>
         <div class="span12 schedulerPortAccess">
-<label><input type="checkbox" id="showOneOffPorts"> <b>Show one-off ports</b></label>
-<span class="label">Contracted ports are shown by default. Turn this on only when you want an uncontracted stop.</span>
+<label><input type="checkbox" id="showOneOffPorts"> <b>Include all one-off ports</b></label>
+<span class="label">Reachable contracted ports are prioritised. If you have none, the best reachable one-off choices appear automatically.</span>
 </div><div class="visualBuilderWrap"><div class="row" style="justify-content:space-between"><div><div class="eyebrow">7-DAY ITINERARY BUILDER</div><b>Sea days are inserted automatically from your port-call plan</b></div><div class="label">Committed weeks are read-only</div></div><div id="visualDayBuilder" class="visualDayBuilder"></div><div id="visualPortPicker" class="visualPortPicker" hidden></div></div>
 <div id="selectedPortSelectors" class="legacyPortSelectors span12 planGrid"></div>
         <div class="span12"><div id="selectedRouteMap" class="realMap" aria-label="Selected cruise route map"></div></div>
@@ -2233,7 +2250,7 @@ function timeToHours(v,def){const m=String(v||def).match(/^(\d{1,2}):(\d{2})$/);
 function timedPortPlan(item,ship=activeShip()){
  const route=Array.isArray(item?.route)?item.route:[],n=Math.max(1,route.length-1),times=item?.portTimes||{};
  if(route.length<2)return {valid:false,requiredSpeed:0,maxSpeed:shipMaxSpeed(ship),calls:[],days:[],reason:"Add at least one destination port."};
- const callDays=[0];for(let i=1;i<=n;i++)callDays.push(Math.max(1,Math.min(6,Math.round(i*6/n))));
+ const callDays=[0];for(let i=1;i<=n;i++){const fallback=Math.max(1,Math.min(6,Math.round(i*6/n))),chosen=Number(times[i]?.day);callDays.push(Number.isFinite(chosen)&&chosen>=1&&chosen<=6?Math.round(chosen):fallback);}
  const calls=route.map((port,i)=>({port,day:callDays[i],arrival:i===0?"08:00":(times[i]?.arrival||"08:00"),departure:times[i]?.departure||(i===0?"17:00":"17:00")}));
  let requiredSpeed=0,totalNm=0,legs=[];
  for(let i=1;i<calls.length;i++){
@@ -2241,12 +2258,14 @@ function timedPortPlan(item,ship=activeShip()){
    const hours=(cur.day-prev.day)*24+arrive-depart;
    const req=hours>0?dist/hours:999;requiredSpeed=Math.max(requiredSpeed,req);totalNm+=dist;legs.push({from:prev.port,to:cur.port,dist,hours,requiredSpeed:req});
  }
+ const chronological=calls.every((c,i)=>i===0||c.day>calls[i-1].day);
  const maxSpeed=shipMaxSpeed(ship),days=Array.from({length:7},(_,d)=>{const c=calls.find(x=>x.day===d);return c?{type:"port",name:c.port,arrival:c.arrival,departure:c.departure,where:`In port: ${c.port} · ${c.arrival}–${c.departure}`}:{type:"sea",name:"SEA DAY",where:"At sea"}});
- return {valid:requiredSpeed<=maxSpeed+.001,requiredSpeed,totalNm,maxSpeed,calls,legs,days,seaDays:days.filter(x=>x.type==="sea").length,portDays:calls.length,voyageDays:7,reason:requiredSpeed<=maxSpeed+.001?"":`Needs ${requiredSpeed.toFixed(1)} kn; ${ship.name} can make about ${maxSpeed.toFixed(1)} kn.`};
+ const valid=chronological&&requiredSpeed<=maxSpeed+.001,reason=!chronological?"Each port call must be on a later day than the previous call.":(requiredSpeed<=maxSpeed+.001?"":`Needs ${requiredSpeed.toFixed(1)} kn; ${ship.name} can make about ${maxSpeed.toFixed(1)} kn.`);
+ return {valid,requiredSpeed,totalNm,maxSpeed,calls,legs,days,seaDays:days.filter(x=>x.type==="sea").length,portDays:calls.length,voyageDays:7,reason};
 }
 function reachablePortForTimedSlot(candidate,item,slotIndex,ship=activeShip()){
  const r=[...(item.route||[])],prev=r[slotIndex]||programmeStartPort(selectedPlanWeek);if(!prev||!ports[prev]||!ports[candidate])return false;
- const n=Math.max(1,item.portCount||Math.max(1,r.length-1)),prevDay=slotIndex===0?0:Math.max(1,Math.min(6,Math.round(slotIndex*6/n))),curDay=Math.max(1,Math.min(6,Math.round((slotIndex+1)*6/n)));
+ const n=Math.max(1,item.portCount||Math.max(1,r.length-1)),prevFallback=slotIndex===0?0:Math.max(1,Math.min(6,Math.round(slotIndex*6/n))),curFallback=Math.max(1,Math.min(6,Math.round((slotIndex+1)*6/n))),prevChosen=Number(item.portTimes?.[slotIndex]?.day),curChosen=Number(item.portTimes?.[slotIndex+1]?.day),prevDay=slotIndex===0?0:(Number.isFinite(prevChosen)?prevChosen:prevFallback),curDay=Number.isFinite(curChosen)?curChosen:curFallback;
  const prevDep=timeToHours(item.portTimes?.[slotIndex]?.departure,slotIndex===0?"17:00":"17:00"),arr=timeToHours(item.portTimes?.[slotIndex+1]?.arrival,"08:00"),hours=(curDay-prevDay)*24+arr-prevDep,dist=seaLegDistanceNm(prev,candidate);
  return hours>0&&(dist/hours)<=shipMaxSpeed(ship)+.001;
 }
@@ -2822,11 +2841,10 @@ function portLatLon(name){const p=ports[name];return p?.lat!=null&&p?.lon!=null?
 function seaRouteWaypoints(a,b){
  const A=portLatLon(a),B=portLatLon(b);if(!A||!B)return [];
  const [alat,alon]=A,[blat,blon]=B,pts=[];
- const northA=alat>50&&alon>-10, northB=blat>50&&blon>-10, medA=alat<45&&alon>-6,medB=blat<45&&blon>-6;
- if((northA&&medB)||(northB&&medA)){
-   const seq=["NorthSea","ChannelE","ChannelW","BiscayN","BiscayS","GibraltarW","GibraltarE","MedW"];
-   const arr=seq.map(k=>SEA_WAYPOINTS[k]);return northA?arr:arr.slice().reverse()
- }
+ const northA=alat>50&&alon>-10, northB=blat>50&&blon>-10, medA=alat<45&&alon>-6,medB=blat<45&&blon>-6,atlIberiaA=alat>=35&&alat<=45&&alon<=-6,atlIberiaB=blat>=35&&blat<=45&&blon<=-6;
+ if((northA&&medB)||(northB&&medA)){const seq=["NorthSea","ChannelE","ChannelW","BiscayN","BiscayS","GibraltarW","GibraltarE","MedW"],arr=seq.map(k=>SEA_WAYPOINTS[k]);return northA?arr:arr.slice().reverse()}
+ if((atlIberiaA&&medB)||(atlIberiaB&&medA)){const arr=["GibraltarW","GibraltarE","MedW"].map(k=>SEA_WAYPOINTS[k]);return atlIberiaA?arr:arr.slice().reverse()}
+ if((northA&&atlIberiaB)||(northB&&atlIberiaA)){const arr=["ChannelE","ChannelW","BiscayN","BiscayS"].map(k=>SEA_WAYPOINTS[k]);return northA?arr:arr.slice().reverse()}
  return []
 }
 function seaRoutePolyline(route){
@@ -4031,25 +4049,74 @@ function selectedProgrammeSnapshot(){
 }
 
 
+function plannerSeasonFactor(name,segment,season){
+ const p=ports[name]||{};let f=1;
+ if(season==="Summer"){if(segment==="Families"||segment==="Young")f*=1+((p.beach||0)-5)*.025;if(segment==="Seniors")f*=.97}
+ if(season==="Winter"){if(segment==="Seniors"||segment==="Couples")f*=1+((p.culture||0)-5)*.018;if(segment==="Families"||segment==="Young")f*=.92}
+ if(season==="Spring"||season==="Autumn"){if(segment==="Couples"||segment==="Seniors")f*=1.04}
+ return f;
+}
+function plannerPortSegmentAppeal(name,segment,season=seasonForWeek(selectedPlanWeek+1)){
+ const p=ports[name],def=segmentDefs[segment];if(!p||!def)return 0;let weighted=0,wt=0;
+ Object.entries(def.weights).forEach(([k,w])=>{let v=p[k]||0;if(k==="luxury")v+=contractLuxuryBoost(name);weighted+=v*w;wt+=w});
+ return clamp((weighted/Math.max(.01,wt))*plannerSeasonFactor(name,segment,season),1,10);
+}
+function plannerPortPopularity(name){const p=ports[name]||{};return clamp(((p.culture||5)+(p.scenic||5)+(p.family||5)+(p.luxury||5)+(p.beach||5))/50*100,20,100)}
+function plannerPortRank(name,prev,ship,sortMode="recommended"){
+ const dist=seaLegDistanceNm(prev,name),cost=portAccessMode(name,ship)==="contract"?portCallCost(name,ship):oneOffPortCost(name,ship),season=seasonForWeek(selectedPlanWeek+1);
+ const segs=Object.keys(segmentDefs),appeal=segs.reduce((a,seg)=>a+plannerPortSegmentAppeal(name,seg,season)*(segmentDefs[seg].base||.1),0),pop=plannerPortPopularity(name),contract=portAccessMode(name,ship)==="contract";
+ if(sortMode.startsWith("segment:"))return plannerPortSegmentAppeal(name,sortMode.split(":")[1],season)*20-(dist/180);
+ if(sortMode==="nearest")return -dist;if(sortMode==="popular")return pop;if(sortMode==="cheapest")return -cost;
+ return appeal*12+pop*.35+(contract?28:0)-dist/150-cost/60000;
+}
+function portBestSegment(name,season=seasonForWeek(selectedPlanWeek+1)){return Object.keys(segmentDefs).map(s=>[s,plannerPortSegmentAppeal(name,s,season)]).sort((a,b)=>b[1]-a[1])[0]||["—",0]}
+function ensurePortInfoOverlay(){
+ let o=document.getElementById("portInfoOverlay");if(o)return o;o=document.createElement("div");o.id="portInfoOverlay";o.className="portInfoOverlay";o.innerHTML='<div class="portInfoCard" id="portInfoCard"></div>';document.body.appendChild(o);o.addEventListener("click",e=>{if(e.target===o)o.classList.remove("show")});return o;
+}
+function showPlannerPortInfo(name,prev){
+ const o=ensurePortInfoOverlay(),box=o.querySelector("#portInfoCard"),ship=activeShip(),season=seasonForWeek(selectedPlanWeek+1),dist=prev&&ports[prev]?seaLegDistanceNm(prev,name):0,access=portAccessMode(name,ship),cost=access==="contract"?portCallCost(name,ship):oneOffPortCost(name,ship),best=portBestSegment(name,season),profile=PORT_TERMINAL_PROFILES[name];
+ const seasons=["Winter","Spring","Summer","Autumn"],segs=Object.keys(segmentDefs),avgForSeason=ss=>segs.reduce((a,x)=>a+plannerPortSegmentAppeal(name,x,ss)*(segmentDefs[x].base||.1),0);
+ box.innerHTML=`<button class="btn secondary portInfoClose" type="button">Close</button><div class="portInfoHero" style="background-image:url('${portSceneDataUri(name)}')"><h2>${name}</h2><span>${portRegion(name)} · ${profile?.mode||portTerminalMode(name)}</span></div>
+ <div class="portInfoGrid"><div><span>Popularity</span><b>${Math.round(plannerPortPopularity(name))}/100</b></div><div><span>Best audience</span><b>${best[0]} · ${best[1].toFixed(1)}/10</b></div><div><span>${access==="contract"?"Contract call":"One-off call"}</span><b>${statementMoney(cost)}</b></div>${prev?`<div><span>From ${prev}</span><b>${Math.round(dist)} nm</b></div>`:""}<div><span>This sailing</span><b>${season}</b></div><div><span>Ship access</span><b>${access==="unavailable"?"Unavailable":access==="contract"?"Contracted":"One-off"}</b></div></div>
+ <h3 style="margin-top:14px">Seasonal appeal</h3><div class="seasonAppealGrid">${seasons.map(ss=>`<div><span>${ss}</span><b>${avgForSeason(ss).toFixed(1)}/10</b></div>`).join("")}</div>
+ <h3>Passenger segment appeal · ${season}</h3><table class="segmentAppealTable"><tr><th>Segment</th><th>Appeal</th><th>What matters here</th></tr>${segs.map(seg=>{const d=segmentDefs[seg],top=Object.entries(d.weights).sort((a,b)=>b[1]-a[1]).slice(0,2).map(x=>x[0]).join(" + ");return `<tr><td>${seg}</td><td>${plannerPortSegmentAppeal(name,seg,season).toFixed(1)} / 10</td><td>${top}</td></tr>`}).join("")}</table>
+ <div class="notice" style="margin-top:12px">Long-press a port card in the scheduler to open this information. A normal tap selects the port.</div>`;
+ box.querySelector(".portInfoClose").onclick=()=>o.classList.remove("show");o.classList.add("show");
+}
 function renderTimedPortSlots(item){
  const host=document.getElementById("timedPortSlots"),slider=document.getElementById("selPortCount"),label=document.getElementById("selPortCountLabel"),auto=document.getElementById("selAutoSpeed");if(!host||!slider)return;
  const locked=!!item.committed,start=programmeStartPort(selectedPlanWeek),existing=Math.max(1,item.portCount||Math.max(1,(item.route?.length||1)-1));slider.value=existing;slider.disabled=locked;if(label)label.textContent=existing;
  const n=+slider.value,route=[start,...(item.route||[]).slice(1,n+1)];while(route.length<n+1)route.push("");item.portCount=n;
- const defArr=document.getElementById("defaultArrivalTime")?.value||"08:00",defDep=document.getElementById("defaultDepartureTime")?.value||"17:00";
- host.className="span12 timedPortSlots";host.innerHTML="";
- for(let i=0;i<n;i++){
-   const prev=route[i]||start,current=route[i+1]||"",tmp={...item,route:route.slice(0,i+1),portTimes:item.portTimes||{}};
-   const names=availablePortNames().filter(p=>p!==prev).filter(p=>reachablePortForTimedSlot(p,{...tmp,route:[...tmp.route,p]},i,activeShip()));
-   const t=item.portTimes?.[i+1]||{},row=document.createElement("div");row.className="timedPortSlot";
-   row.innerHTML=`<div class="slotNo">Call ${i+1}<div class="reach">from ${prev}</div></div><div class="slotPort"><label class="label">Port</label><select class="slotPortSelect" data-slot="${i}" ${locked?"disabled":""}><option value="">Choose reachable port…</option>${names.map(p=>`<option value="${p}" ${p===current?"selected":""}>${p} · ${Math.round(seaLegDistanceNm(prev,p))} nm</option>`).join("")}</select></div><div><label class="label">Arrive</label><input class="slotArrival" data-slot="${i+1}" type="time" value="${t.arrival||defArr}" ${locked?"disabled":""}></div><div><label class="label">Leave</label><input class="slotDeparture" data-slot="${i+1}" type="time" value="${t.departure||defDep}" ${locked?"disabled":""}></div><div class="slotSpeed"><span class="label">Leg speed</span><b>—</b></div>`;
-   host.appendChild(row);
- }
+ const defArr=document.getElementById("defaultArrivalTime")?.value||"08:00",defDep=document.getElementById("defaultDepartureTime")?.value||"17:00";host.className="span12 timedPortSlots";host.innerHTML="";
  const refresh=()=>{
-   const r=[start];host.querySelectorAll(".slotPortSelect").forEach(x=>{if(x.value)r.push(x.value)});item.route=r;item.portTimes=item.portTimes||{};host.querySelectorAll(".slotArrival").forEach(x=>{item.portTimes[+x.dataset.slot]={...(item.portTimes[+x.dataset.slot]||{}),arrival:x.value}});host.querySelectorAll(".slotDeparture").forEach(x=>{item.portTimes[+x.dataset.slot]={...(item.portTimes[+x.dataset.slot]||{}),departure:x.value}});
+   const r=[start];host.querySelectorAll(".selectedPortCard[data-port]").forEach(x=>{if(x.dataset.port)r.push(x.dataset.port)});item.route=r;item.portTimes=item.portTimes||{};host.querySelectorAll(".slotDay").forEach(x=>{item.portTimes[+x.dataset.slot]={...(item.portTimes[+x.dataset.slot]||{}),day:+x.value}});host.querySelectorAll(".slotArrival").forEach(x=>{item.portTimes[+x.dataset.slot]={...(item.portTimes[+x.dataset.slot]||{}),arrival:x.value}});host.querySelectorAll(".slotDeparture").forEach(x=>{item.portTimes[+x.dataset.slot]={...(item.portTimes[+x.dataset.slot]||{}),departure:x.value}});
    const tp=timedPortPlan(item,activeShip());item.speed=Math.max(12,tp.requiredSpeed||12);item.days=tp.days;const speedEl=document.getElementById("selSpeed");if(speedEl){speedEl.innerHTML=`<option value="${item.speed}">${item.speed.toFixed(1)}</option>`;speedEl.value=item.speed}if(auto)auto.textContent=tp.requiredSpeed?`${tp.requiredSpeed.toFixed(1)} kn`:`—`;host.querySelectorAll(".slotSpeed b").forEach((b,j)=>b.textContent=tp.legs[j]?`${tp.legs[j].requiredSpeed.toFixed(1)} kn`:"—");
    item.routeApplied=false;item.appliedDraft=null;renderVisualDayBuilder();renderVisualRouteTimeline();renderSchedulerPortScenes();drawRouteMap("selectedRouteMap",item.route);const warn=document.getElementById("selectedRouteWarning");if(warn)warn.textContent=tp.valid?`Reachable at ${tp.requiredSpeed.toFixed(1)} kn · ship maximum ${tp.maxSpeed.toFixed(1)} kn · ${tp.seaDays} sea day${tp.seaDays===1?"":"s"}`:tp.reason;
  };
- if(!locked){host.querySelectorAll("select,input").forEach(x=>x.addEventListener("change",()=>{refresh();renderTimedPortSlots(item)}));slider.oninput=()=>{item.portCount=+slider.value;if(label)label.textContent=slider.value;item.route=[start,...(item.route||[]).slice(1,+slider.value+1)];renderTimedPortSlots(item)};}refresh();
+ const openPicker=(slot,row)=>{
+   if(locked)return;host.querySelectorAll(".portChoicePanel").forEach(x=>{if(x!==row.querySelector(".portChoicePanel"))x.hidden=true});const panel=row.querySelector(".portChoicePanel");panel.hidden=!panel.hidden;if(panel.hidden)return;
+   const draw=()=>{
+     const prev=slot===0?start:(host.children[slot-1]?.querySelector(".selectedPortCard")?.dataset.port||route[slot]||start),tmpRoute=[start];for(let k=0;k<slot;k++){const q=host.children[k]?.querySelector(".selectedPortCard")?.dataset.port;if(q)tmpRoute.push(q)}
+     const q=(panel.querySelector(".portChoiceSearch")?.value||"").trim().toLowerCase(),sort=panel.querySelector(".portChoiceSort")?.value||"recommended",showAll=panel.dataset.showAll==="1",current=row.querySelector(".selectedPortCard")?.dataset.port||"";
+     let names=availablePortNames().filter(p=>p!==prev).filter(p=>reachablePortForTimedSlot(p,{...item,route:[...tmpRoute,p]},slot,activeShip()));
+     const reachableContracted=names.filter(p=>portAccessMode(p,activeShip())==="contract");
+     if(!state.schedulerShowOneOff&&reachableContracted.length)names=names.filter(p=>portAccessMode(p,activeShip())==="contract"||p===current);
+     if(q)names=names.filter(p=>(p+" "+portRegion(p)).toLowerCase().includes(q));names.sort((a,b)=>plannerPortRank(b,prev,activeShip(),sort)-plannerPortRank(a,prev,activeShip(),sort)||a.localeCompare(b));
+     const visible=q||showAll?names:names.slice(0,12),grid=panel.querySelector(".schedulerPortChoiceGrid"),count=panel.querySelector(".portChoiceCount");if(count)count.textContent=`${names.length} reachable · showing ${visible.length}`;
+     grid.innerHTML=visible.map(p=>{const dist=seaLegDistanceNm(prev,p),best=portBestSegment(p),access=portAccessMode(p,activeShip()),cost=access==="contract"?portCallCost(p,activeShip()):oneOffPortCost(p,activeShip());return `<button type="button" class="schedulerPortChoice ${access} ${p===current?"selected":""}" data-port="${p}" style="background-image:url('${portSceneDataUri(p)}')"><span class="choiceRegion">${portRegion(p)}</span><span class="infoDot" data-info="${p}">i</span><b>${p}</b><span class="choiceMeta">${Math.round(dist)} nm · ${access==="contract"?"contract":"one-off"} ${statementMoney(cost)}<br>Best: ${best[0]} ${best[1].toFixed(1)}/10 · Pop ${Math.round(plannerPortPopularity(p))}</span></button>`}).join("")||'<div class="notice" style="grid-column:1/-1">No reachable ports match these filters. Try enabling one-off ports or reducing the number of calls.</div>';
+     const more=panel.querySelector(".portPickerMore");if(more){more.hidden=!!q||names.length<=12;more.textContent=showAll?"Show recommended only":`Show all ${names.length} reachable ports`}
+     grid.querySelectorAll(".schedulerPortChoice").forEach(btn=>{
+       let timer=null,longPressed=false;const info=()=>{longPressed=true;showPlannerPortInfo(btn.dataset.port,prev)};btn.addEventListener("pointerdown",e=>{if(e.target.closest(".infoDot"))return;longPressed=false;timer=setTimeout(info,600)});["pointerup","pointercancel","pointerleave"].forEach(ev=>btn.addEventListener(ev,()=>{clearTimeout(timer)}));btn.addEventListener("click",e=>{if(e.target.closest(".infoDot")){e.preventDefault();showPlannerPortInfo(btn.dataset.port,prev);return}if(longPressed){e.preventDefault();return}const selected=btn.dataset.port,card=row.querySelector(".selectedPortCard");card.dataset.port=selected;card.classList.remove("empty");card.style.backgroundImage=`url('${portSceneDataUri(selected)}')`;card.innerHTML=`<b>${selected}</b><span>${portRegion(selected)} · tap to change · hold for detail</span>`;panel.hidden=true;refresh();renderTimedPortSlots(item)});});
+     grid.querySelectorAll(".infoDot").forEach(i=>i.onclick=e=>{e.stopPropagation();showPlannerPortInfo(i.dataset.info,prev)});
+   };
+   panel.querySelector(".portChoiceSearch").oninput=draw;panel.querySelector(".portChoiceSort").onchange=draw;const more=panel.querySelector(".portPickerMore");if(more)more.onclick=()=>{panel.dataset.showAll=panel.dataset.showAll==="1"?"0":"1";draw()};draw();
+ };
+ for(let i=0;i<n;i++){
+   const prev=route[i]||start,current=route[i+1]||"",t=item.portTimes?.[i+1]||{},row=document.createElement("div");row.className="timedPortSlot";
+   row.innerHTML=`<div class="timedPortHead"><div class="slotNo">Call ${i+1}<div class="reach">from ${prev}</div></div><div class="slotPort"><label class="label">Port</label><div class="selectedPortCard ${current?"":"empty"}" data-slot="${i}" data-port="${current}" ${current?`style="background-image:url('${portSceneDataUri(current)}')"`:""}><b>${current||"Choose a reachable port"}</b><span>${current?`${portRegion(current)} · tap to change · hold for detail`:"Ranked recommendations, not a giant dropdown"}</span></div></div><div><label class="label">Day</label><select class="slotDay" data-slot="${i+1}" ${locked?"disabled":""}>${[1,2,3,4,5,6].map(d=>`<option value="${d}" ${(+(t.day||Math.max(1,Math.min(6,Math.round((i+1)*6/Math.max(1,n))))))===d?"selected":""}>Day ${d+1}</option>`).join("")}</select></div><div><label class="label">Arrive</label><input class="slotArrival" data-slot="${i+1}" type="time" value="${t.arrival||defArr}" ${locked?"disabled":""}></div><div><label class="label">Leave</label><input class="slotDeparture" data-slot="${i+1}" type="time" value="${t.departure||defDep}" ${locked?"disabled":""}></div><div class="slotSpeed"><span class="label">Leg speed</span><b>—</b></div></div><div class="portChoicePanel" hidden><div class="portChoiceToolbar"><input class="portChoiceSearch" placeholder="Search reachable ports or region…"><select class="portChoiceSort"><option value="recommended">Recommended</option><option value="popular">Most popular</option><option value="nearest">Nearest</option><option value="cheapest">Lowest port cost</option><option value="segment:Families">Best for families</option><option value="segment:Couples">Best for couples</option><option value="segment:Seniors">Best for seniors</option><option value="segment:Young">Best for younger guests</option><option value="segment:Luxury">Best for luxury</option></select><span class="portChoiceCount"></span></div><div class="schedulerPortChoiceGrid"></div><button type="button" class="btn secondary portPickerMore" hidden>Show more</button><div class="portPressHint">Tap a card to select it. Hold for about half a second, or tap the i, for popularity, season and passenger-segment detail.</div></div>`;
+   host.appendChild(row);const card=row.querySelector(".selectedPortCard");if(!locked){card.dataset.longPressed="0";card.onclick=()=>{if(card.dataset.longPressed==="1"){card.dataset.longPressed="0";return}openPicker(i,row)};if(current){let timer=null;card.addEventListener("pointerdown",()=>{card.dataset.longPressed="0";timer=setTimeout(()=>{card.dataset.longPressed="1";showPlannerPortInfo(current,prev)},600)});["pointerup","pointercancel","pointerleave"].forEach(ev=>card.addEventListener(ev,()=>clearTimeout(timer)));}}
+ }
+ if(!locked){host.querySelectorAll(".slotDay,.slotArrival,.slotDeparture").forEach(x=>x.addEventListener("change",()=>{refresh();renderTimedPortSlots(item)}));slider.oninput=()=>{item.portCount=+slider.value;if(label)label.textContent=slider.value;item.route=[start,...(item.route||[]).slice(1,+slider.value+1)];renderTimedPortSlots(item)};}refresh();
 }
 function renderSelectedPlan(){
  try{
@@ -5420,7 +5487,7 @@ function collectSelectedWeekDraft(){
  const totalBerths=Object.values(ship.berths).reduce((a,b)=>a+b,0);
  const fare=(cabinPrices.inside*ship.berths.inside+cabinPrices.oceanview*ship.berths.oceanview+cabinPrices.balcony*ship.berths.balcony+cabinPrices.suite*ship.berths.suite)/totalBerths;
  const portCount=Math.max(1,+document.getElementById("selPortCount")?.value||Math.max(1,route.length-1));
- const portTimes={};document.querySelectorAll(".slotArrival").forEach(el=>{const i=+el.dataset.slot;portTimes[i]={...(portTimes[i]||{}),arrival:el.value||"08:00"}});document.querySelectorAll(".slotDeparture").forEach(el=>{const i=+el.dataset.slot;portTimes[i]={...(portTimes[i]||{}),departure:el.value||"17:00"}});
+ const portTimes={};document.querySelectorAll(".slotDay").forEach(el=>{const i=+el.dataset.slot;portTimes[i]={...(portTimes[i]||{}),day:+el.value}});document.querySelectorAll(".slotArrival").forEach(el=>{const i=+el.dataset.slot;portTimes[i]={...(portTimes[i]||{}),arrival:el.value||"08:00"}});document.querySelectorAll(".slotDeparture").forEach(el=>{const i=+el.dataset.slot;portTimes[i]={...(portTimes[i]||{}),departure:el.value||"17:00"}});
  const timed=timedPortPlan({...old,route,portTimes},activeShip());
  return {...old,route,cabinPrices,fare,portCount,portTimes,
    service:+document.getElementById("selService").value||3,
