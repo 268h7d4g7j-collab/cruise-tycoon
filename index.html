@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Cruise Tycoon v0.28.3</title>
+<title>Cruise Tycoon v5.0</title>
 <style>
 :root{
   --navy:#102c46;--navy2:#173e61;--bg:#edf3f7;--card:#fff;--ink:#17324a;
@@ -196,7 +196,7 @@ nav button{white-space:nowrap}
 .saveActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .saveMeta{padding:10px 12px;border-radius:12px;background:#f2f6f9;margin-top:10px;color:var(--muted)}
 
-/* v0.28.3 scheduler/readability and finance UI */
+/* v0.29.1 scheduler/readability and finance UI */
 .weekBtn.active.committed{background:#dfe3e6!important;color:#26343d!important;border:2px solid #53636e!important;box-shadow:0 0 0 3px rgba(83,99,110,.14)!important}
 .weekBtn.active.urgent{background:#f8caca!important;color:#651717!important;border:2px solid #b63636!important;box-shadow:0 0 0 3px rgba(182,54,54,.14)!important}
 .weekBtn.active.future{background:#ffe99a!important;color:#4e3d00!important;border:2px solid #a88300!important;box-shadow:0 0 0 3px rgba(168,131,0,.14)!important}
@@ -208,7 +208,7 @@ nav button{white-space:nowrap}
 .reviewScoreCell{white-space:nowrap}.nextSailingTable td{vertical-align:top}
 
 
-/* v0.28.3 visual refresh */
+/* v0.29.1 visual refresh */
 :root{--navy:#092b46;--navy2:#0d4769;--ocean:#137ea5;--ocean2:#42a6bf;--teal:#16837d;--bg:#f2f6f8;--card:#fff;--ink:#163247;--muted:#6e8290;--line:#dce7ec;--lineStrong:#c8d8e0;--good:#18734c;--bad:#aa3b42;--gold:#b78524;--shadow:0 10px 30px rgba(17,53,75,.075);--shadowStrong:0 18px 46px rgba(13,55,79,.13)}
 html{background:#eaf1f5}
 body{background:radial-gradient(circle at 8% 0%,rgba(54,151,181,.08),transparent 30%),linear-gradient(180deg,#edf4f7 0,#f5f8fa 290px,#f2f6f8 100%);min-height:100vh}
@@ -254,7 +254,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:650px){.title{font-size:20px}.pill{padding:6px 9px}.heroKpi .kpi{font-size:27px}.card{padding:13px;border-radius:15px}}
 
 
-/* v0.28.3 graphics expansion */
+/* v0.29.1 graphics expansion */
 .cruiseHero{
  position:relative;
  overflow:hidden;
@@ -302,7 +302,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 }
 
 
-/* v0.28.3 ship/deck management */
+/* v0.29.1 ship/deck management */
 .shipMgmtHeader{background:linear-gradient(145deg,#fff,#f4fafc)}
 .shipMgmtKpis{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:14px}.shipMgmtKpis>div,.deckSpaceSummary>div,.facilityMetrics>div{border:1px solid #d9e6eb;border-radius:12px;padding:10px;background:#f8fbfc}.shipMgmtKpis span,.deckSpaceSummary span,.facilityMetrics span{display:block;color:#748995;font-size:10px;text-transform:uppercase;letter-spacing:.05em}.shipMgmtKpis b{display:block;margin-top:4px;font-size:17px;color:#12364e}
 .deckSidebar{max-height:760px;overflow:auto}.deckList{display:flex;flex-direction:column;gap:6px;margin-top:10px}.deckListBtn{text-align:left;border:1px solid #d7e3e8;background:#f8fbfc;border-radius:11px;padding:9px 10px;color:#17384f}.deckListBtn span,.deckListBtn small{display:block;color:#718691}.deckListBtn.active{background:#0e5579;color:#fff;border-color:#0e5579}.deckListBtn.active span,.deckListBtn.active small{color:#d5eaf2}
@@ -313,13 +313,13 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:1000px){.shipMgmtKpis{grid-template-columns:repeat(4,1fr)}}@media(max-width:700px){.shipMgmtKpis{grid-template-columns:repeat(2,1fr)}.deckSpaceSummary{grid-template-columns:1fr 1fr}}
 
 
-/* v0.28.3 editable ship planner */
+/* v0.29.1 editable ship planner */
 .deckPlanner{margin-top:14px;padding:13px;border:1px solid #cfe0e7;border-radius:14px;background:linear-gradient(145deg,#f5fafc,#fff)}
 .deckPlannerControls{display:grid;grid-template-columns:2fr 1fr 1.3fr auto;gap:9px;align-items:end;margin-top:10px}.deckPlannerControls label{font-size:11px;font-weight:750;color:#607887}.deckPlannerControls select,.deckPlannerControls input{display:block;width:100%;margin-top:4px}.plannerCost{font-weight:850;color:#0f668b;background:#e9f6fa;padding:7px 10px;border-radius:9px}.removeSpaceBtn{margin-top:14px;width:100%}
 .shipClassCards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.shipClassCard{border:1px solid #d4e2e8;border-radius:14px;padding:13px;background:linear-gradient(155deg,#f8fbfc,#fff)}.shipClassCard>b,.shipClassCard>span,.shipClassCard>small{display:block}.shipClassCard>span{color:#718692;margin:3px 0 10px}.shipClassCard>div{margin-top:5px}.shipClassCard>small{color:#718692;margin-top:7px}.shipClassSilhouette{font-size:15px;letter-spacing:-2px;color:#2a7c9d;opacity:.7;margin-bottom:7px!important}
 @media(max-width:850px){.deckPlannerControls{grid-template-columns:1fr 1fr}.shipClassCards{grid-template-columns:1fr}}
 
-/* v0.28.3 management-sim visual overhaul */
+/* v0.29.1 management-sim visual overhaul */
 @media(min-width:980px){
  body{padding-left:178px}
  header{left:0}
@@ -395,7 +395,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .deckQualityMini{grid-column:1/-1;display:flex;gap:5px;margin-top:4px;flex-wrap:wrap}.deckQualityMini em{font-style:normal;font-size:9px;padding:2px 5px;border-radius:5px;background:rgba(255,255,255,.11);color:#cce1ea}.deckConditionActions,.shipRefurbActions{display:flex;align-items:center;gap:10px;margin-top:11px;padding-top:10px;border-top:1px solid #dbe6eb}.facilityMetrics{grid-template-columns:repeat(auto-fit,minmax(82px,1fr))}
 
 
-/* v0.28.3 brand corner and capacity economics */
+/* v0.29.1 brand corner and capacity economics */
 .brandCorner{display:none}
 @media(min-width:980px){
  .brandCorner{
@@ -415,7 +415,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .capacityCallout b{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:#176786}.capacityCallout span{font-size:12px}
 
 
-/* v0.28.3 ship summary, luxury catalogue, landmark ports */
+/* v0.29.1 ship summary, luxury catalogue, landmark ports */
 .shipSummaryHero{display:grid;grid-template-columns:minmax(330px,42%) 1fr;min-height:275px;border-radius:17px;overflow:hidden;background:#082b45}
 .shipSummaryPhoto{position:relative;background-image:var(--ship-photo);background-size:cover;background-position:center;min-height:275px}
 .shipSummaryPhotoShade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,30,47,.72),transparent 58%)}
@@ -426,7 +426,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .upgradeCatalogue button:hover{border-color:#5ca8c1;background:#f5fbfd}.upgradeCatalogue button b,.upgradeCatalogue button small{display:block}.upgradeCatalogue button small{color:#718691;margin-top:3px}.upgradeCatalogue button:after{content:"＋";position:absolute;right:9px;top:50%;transform:translateY(-50%);width:25px;height:25px;border-radius:8px;background:#e7f3f8;display:grid;place-items:center;color:#11658a;font-weight:900}
 @media(max-width:900px){.shipSummaryHero{grid-template-columns:1fr}.shipSummaryPhoto{min-height:220px}.shipSummaryIntro .shipMgmtKpis{grid-template-columns:repeat(2,1fr)}}
 
-/* v0.28.3 deck picker and technical condition */
+/* v0.29.1 deck picker and technical condition */
 .deckListBtn{display:block;width:100%;position:relative;z-index:1;pointer-events:auto;cursor:pointer}
 .deckListBtn>*{pointer-events:none}
 .deckSidebar{position:relative;z-index:3}
@@ -438,7 +438,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:720px){.technicalConditionActions{grid-template-columns:1fr}}
 
 
-/* v0.28.3 deck planner disabled-state clarity */
+/* v0.29.1 deck planner disabled-state clarity */
 #addSpaceBtn:disabled,#addSpaceBtn.disabledBuild{
  opacity:.48;
  cursor:not-allowed;
@@ -451,7 +451,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 #addSpaceBtn:disabled:hover{filter:grayscale(.35)}
 
 
-/* v0.28.3 facility capacity summary */
+/* v0.29.1 facility capacity summary */
 .facilityCapacitySummary{display:flex;flex-direction:column;gap:8px;margin-top:12px}
 .capacityRow{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 11px;border:1px solid #d7e4e9;border-radius:11px;background:linear-gradient(180deg,#fbfdfe,#f6fafb)}
 .capacityRow b,.capacityRow span,.capacityRow small{display:block}
@@ -460,12 +460,12 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 .capacityRow strong{font-size:14px;color:#0d5e83;text-align:right}
 
 .fuelTitle{display:flex;justify-content:space-between;gap:10px;align-items:center}.fuelTitle span{display:block;font-size:10px;color:#718792}.fuelGauge{height:12px;background:#dce7eb;border-radius:99px;overflow:hidden;margin:10px 0}.fuelGauge div{height:100%;background:#167aa4}.fuelNumbers{font-size:11px;color:#536d79}.shipMarketGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}.marketShip{padding:13px;border:1px solid #d5e2e7;border-radius:13px;background:#fbfdfe}.marketShipHead{display:flex;justify-content:space-between;gap:10px}.marketShipHead span{display:block;font-size:10px;color:#718590}.marketShip p{font-size:11px;color:#607985}.marketSpecs{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}.marketSpecs span{font-size:9px;padding:4px 6px;border-radius:99px;background:#edf4f6}@media(max-width:760px){.shipMarketGrid{grid-template-columns:1fr}}
-/* v0.28.3 render isolation */
+/* v0.29.1 render isolation */
 .renderErrorNotice{margin:12px;padding:12px 14px;border:1px solid #e0b7b7;border-radius:12px;background:#fff1f1;color:#873b3f}
 .renderErrorNotice b,.renderErrorNotice span{display:block}.renderErrorNotice span{font-size:11px;margin-top:4px;color:#8d5b5e}
 
 .marketBuyActions{display:grid;grid-template-columns:1fr 1fr;gap:7px}.marketBuyActions button{width:100%}#selectedRouteWarning small{opacity:.78}
-/* v0.28.3 acquisition/finance/port economics */
+/* v0.29.1 acquisition/finance/port economics */
 .marketSectionTitle{grid-column:1/-1;margin:4px 0 0;padding:10px 12px;background:#eaf3f6;border-radius:12px}.marketSectionTitle h3{margin:0}.marketSectionTitle span{font-size:11px;color:#607784}.marketSectionTitle.newBuild{margin-top:18px;background:#eef6ef}.marketSubGrid{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.newShipName,.shipFinanceProfile{box-sizing:border-box}.headerSailBtn:disabled{opacity:.48;cursor:not-allowed}.marketShip input,.marketShip select{font-size:12px}
 @media(max-width:760px){.marketSubGrid{grid-template-columns:1fr}}
 
@@ -476,7 +476,7 @@ table{border-collapse:separate;border-spacing:0;font-size:13px}th{position:stick
 @media(max-width:760px){.starControl{grid-template-columns:1fr}.queueHeadline{display:block}}
 
 
-/* v0.28.3 port access usability */
+/* v0.29.1 port access usability */
 .schedulerPortAccess{display:flex;align-items:center;gap:10px;padding:9px 11px;background:#eef6f8;border:1px solid #d4e6eb;border-radius:10px;margin:4px 0 8px}
 .schedulerPortAccess label{white-space:nowrap}
 
@@ -514,7 +514,7 @@ body{background:linear-gradient(180deg,#eef7f8 0,#f7faf9 420px,#f4f6f5 100%)}.to
 @media(prefers-reduced-motion:reduce){.ctHeroShip,.ctWave{animation:none!important}}
 
 
-/* v0.28.3 iOS/mobile fixes */
+/* v0.29.1 iOS/mobile fixes */
 .mobileMenuBtn{display:none}
 @media(max-width:760px){
  .mobileMenuBtn{display:flex;align-items:center;justify-content:center;position:sticky;top:0;z-index:51;width:calc(100% - 20px);margin:8px 10px 0;padding:11px 14px;border:0;border-radius:13px;background:#083b50;color:#fff;font-weight:800;font-size:14px;box-shadow:0 8px 20px rgba(4,49,65,.18)}
@@ -557,7 +557,7 @@ input[type="range"]{width:100%}
 .scheduleSubTabs button.locked{opacity:.42;cursor:not-allowed;filter:grayscale(.5)}
 .scheduleSubTabs button.locked,.scheduleSubTabs button:disabled{opacity:.42;cursor:not-allowed;filter:grayscale(.5)}
 
-/* v0.28.3 Scheduler hotfix */
+/* v0.29.1 Scheduler hotfix */
 .visualBuilderWrap{display:block;width:100%;min-width:0;overflow:visible;grid-column:1/-1!important}
 .visualDayBuilder{
  display:grid!important;
@@ -615,7 +615,7 @@ input[type="range"]{width:100%}
 .marketDeckPreview{display:grid;gap:7px;margin:10px 0}.marketPreviewDeck{display:grid;grid-template-columns:48px 1fr;gap:6px;align-items:center}.marketPreviewDeck>span{font-size:9px;font-weight:800;color:#607984}.marketPreviewDeck>div{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:5px 12px 5px 5px;border:1px solid #c9dbe1;border-radius:12px 4px 12px 4px;background:#edf4f5}.marketPreviewSpace{min-width:0}.marketPreviewSpace .miniRoom{height:36px}.marketPreviewSpace small{display:block;font-size:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#526b74}.marketFacilityList{display:flex;gap:5px;flex-wrap:wrap}.marketFacilityList span{font-size:8px;padding:4px 6px;border-radius:8px;background:#edf4f5;color:#47616b}
 
 
-/* v0.28.3 dashboard + committed scheduler hotfix */
+/* v0.29.1 dashboard + committed scheduler hotfix */
 .worldActions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
 .worldActions button{white-space:nowrap}
 #dashboard .ctHero{margin-bottom:14px}
@@ -635,12 +635,12 @@ input[type="range"]{width:100%}
 @media(max-width:750px){.funnelKpis{grid-template-columns:repeat(2,1fr)}.funnelTables{grid-template-columns:1fr}}
 
 
-/* v0.28.3 audience reviews */
+/* v0.29.1 audience reviews */
 .audReviewHead{margin:14px 0 7px;color:#35576b}.audReviewGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}.audReview{border:1px solid #dce7ec;border-radius:11px;padding:10px;background:#f8fbfc}.audReview span{display:block;font-size:10px;color:#6e8290}.audReview b{font-size:12px;color:#b17d2b}.audMatrixWrap{overflow-x:auto;margin-top:14px}.audMatrixWrap table{width:100%;font-size:10px}.audMatrixWrap td{text-align:center}.audMatrixWrap td:first-child{text-align:left}
 @media(max-width:750px){.audReviewGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 
-/* v0.28.3 weekly forward bookings */
+/* v0.29.1 weekly forward bookings */
 #resultForwardBookings th,#resultForwardBookings td{white-space:nowrap;vertical-align:top}
 #resultForwardBookings td:nth-child(2){white-space:normal;min-width:220px}
 
@@ -649,6 +649,9 @@ input[type="range"]{width:100%}
 #resultForwardBookings th,#resultForwardBookings td{white-space:nowrap;vertical-align:top}
 #resultForwardBookings td:nth-child(2){white-space:normal;min-width:220px}
 
+
+/* v5.0 itinerary, fuel and fleet controls */
+.timedPortSlots{display:grid;gap:9px;margin:10px 0}.timedPortSlot{display:grid;grid-template-columns:56px minmax(170px,1fr) 120px 120px 125px;gap:8px;align-items:end;padding:10px;border:1px solid #d6e4e9;border-radius:12px;background:#f8fbfc}.timedPortSlot .slotNo{font-weight:900;color:#0d6689}.timedPortSlot .reach{font-size:10px;color:#6d818d}.timedPortSlot.unreachable{background:#fff1f1;border-color:#e1b1b1}.bunkerControls{display:grid;grid-template-columns:1fr auto auto;gap:7px;align-items:center;margin-top:9px}.fuelShortfall{color:var(--bad);font-weight:800}.fuelReady{color:var(--good);font-weight:800}@media(max-width:760px){.timedPortSlot{grid-template-columns:1fr 1fr}.timedPortSlot .slotPort{grid-column:1/-1}.bunkerControls{grid-template-columns:1fr 1fr}.bunkerControls input{grid-column:1/-1}}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -662,7 +665,7 @@ input[type="range"]{width:100%}
   <div><b>CRUISE<br>TYCOON</b><span>BUILD YOUR FLEET</span></div>
  </div>
  <div class="toprow">
-  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v0.28.3</span></div><div class="sub">One brand. £5m. No ship. Build from there.</div></div>
+  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v5.0</span></div><div class="sub">One brand. £5m. No ship. Build from there. · Global ports expansion</div></div>
   <div class="pills">
    <div class="pill">Week <b id="weekPill">1</b></div>
    <div class="pill">Group cash <b id="cashPill">£5.0m</b></div>
@@ -829,7 +832,7 @@ input[type="range"]{width:100%}
       <div>
        <h3 id="planTitle" style="margin-bottom:4px">Week 1 plan</h3>
        <div class="label" id="planStatus"></div>
-       <div class="label">Fare, service, marketing and speed are set per sailing here.</div>
+       <div class="label">Fare, service and marketing are set per sailing. Sailing speed is calculated automatically from the itinerary timing.</div>
       </div>
       <div class="row">
         <button class="btn secondary" id="applyWeekRoute">Apply & save route</button>
@@ -851,11 +854,15 @@ input[type="range"]{width:100%}
         <div class="span12"><div id="routeApplyStatus" class="notice">Choose the route, then press Apply route & preview to calculate costs and booking position before committing.</div></div>
         <div class="span12"><h3 style="margin-top:8px">Itinerary</h3><div class="label">Start port is fixed by where the previous sailing ends.</div></div>
         <div class="span4"><div class="label">Start port</div><div class="kpi" id="selStartPort" style="font-size:20px"></div></div>
-        <div class="span4"><label class="label">Planned speed</label><select id="selSpeed" style="width:100%"></select><div class="label">Higher speed can make longer routes possible, but increases fuel use and machinery wear.</div></div>
+        <div class="span4"><label class="label">Destination port calls · <b id="selPortCountLabel">3</b></label><input id="selPortCount" type="range" min="1" max="6" step="1" value="3"><div class="label">Choose how many ports you want to visit. Sea days are created automatically.</div></div>
+        <div class="span4"><div class="label">Required sailing speed</div><div class="kpi" id="selAutoSpeed" style="font-size:22px">—</div><div class="label">Calculated from distance and the arrival/departure times below. You no longer choose speed manually.</div></div>
+        <div class="span4"><div class="label">Default port day</div><div class="row" style="gap:6px"><label class="label">Arrive <input id="defaultArrivalTime" type="time" value="08:00"></label><label class="label">Leave <input id="defaultDepartureTime" type="time" value="17:00"></label></div></div>
+        <div id="timedPortSlots" class="span12"></div>
+        <select id="selSpeed" style="display:none" aria-hidden="true"><option value="17.5">17.5 kn</option></select>
         <div class="span12 schedulerPortAccess">
 <label><input type="checkbox" id="showOneOffPorts"> <b>Show one-off ports</b></label>
 <span class="label">Contracted ports are shown by default. Turn this on only when you want an uncontracted stop.</span>
-</div><div class="visualBuilderWrap"><div class="row" style="justify-content:space-between"><div><div class="eyebrow">7-DAY ITINERARY BUILDER</div><b>Tap a day to choose a port or sea day</b></div><div class="label">Committed weeks are read-only</div></div><div id="visualDayBuilder" class="visualDayBuilder"></div><div id="visualPortPicker" class="visualPortPicker" hidden></div></div>
+</div><div class="visualBuilderWrap"><div class="row" style="justify-content:space-between"><div><div class="eyebrow">7-DAY ITINERARY BUILDER</div><b>Sea days are inserted automatically from your port-call plan</b></div><div class="label">Committed weeks are read-only</div></div><div id="visualDayBuilder" class="visualDayBuilder"></div><div id="visualPortPicker" class="visualPortPicker" hidden></div></div>
 <div id="selectedPortSelectors" class="legacyPortSelectors span12 planGrid"></div>
         <div class="span12"><div id="selectedRouteMap" class="realMap" aria-label="Selected cruise route map"></div></div>
         <div class="span12"><div class="timeline" id="selectedTimeline"></div></div>
@@ -938,12 +945,47 @@ input[type="range"]{width:100%}
    <div class="row" style="justify-content:space-between">
     <div><h3>Port contracts</h3><div id="portsShipContext" class="shipContext"></div><div class="label">Each port has two access choices: <b>Contract</b> — pay an upfront fee for cheaper calls, or <b>One-off stop</b> — no upfront commitment but a higher call charge. Contracts expire after a limited number of weeks.</div></div>
     <div class="row">
-      <select id="portFilter"><option value="all">All ports</option><option value="active">Contracted</option><option value="available">Available to contract</option></select><select id="portRegionFilter" aria-label="Filter ports by world region">
-<option value="all">All regions</option>
-<option>Northern Europe</option><option>Mediterranean</option><option>Canaries & Atlantic</option>
-<option>Caribbean</option><option>North America</option><option>Asia</option>
-<option>Middle East</option><option>Australia & New Zealand</option>
-</select>
+      <select id="portFilter"><option value="all">All ports</option><option value="active">Contracted</option><option value="available">Available to contract</option></select><select id="portRegionFilter" aria-label="Filter ports by world region"><option value="all">All regions</option>
+<option>UK & Ireland</option>
+<option>Norway & Fjords</option>
+<option>Baltic</option>
+<option>Northern Continental Europe</option>
+<option>Atlantic Europe</option>
+<option>Spain & Portugal</option>
+<option>Atlantic Islands</option>
+<option>Western Mediterranean</option>
+<option>Central Mediterranean</option>
+<option>Italy & Tyrrhenian</option>
+<option>Adriatic</option>
+<option>Eastern Med & Greek Islands</option>
+<option>Turkey & Cyprus</option>
+<option>North America</option>
+<option>Caribbean</option>
+<option>Bermuda</option>
+<option>Greenland & North Atlantic</option>
+<option>Canada & New England</option>
+<option>US East Coast</option>
+<option>US Gulf Coast</option>
+<option>Central America</option>
+<option>Central America Pacific</option>
+<option>Mexico Pacific</option>
+<option>US West Coast</option>
+<option>Canada West Coast</option>
+<option>Hawaii</option>
+<option>South Pacific</option>
+<option>South America Atlantic</option>
+<option>South America South</option>
+<option>South America Pacific</option>
+<option>Southeast Asia</option>
+<option>East Asia</option>
+<option>Indian Ocean</option>
+<option>India</option>
+<option>Red Sea</option>
+<option>Southern Africa</option>
+<option>Eastern Mediterranean</option>
+<option>Asia</option>
+<option>Middle East</option>
+<option>Australia & New Zealand</option></select>
       <select id="portSort" aria-label="Sort ports">
         <option value="name">Sort: Name</option>
         <option value="popularityDesc">Popularity: high to low</option>
@@ -1212,6 +1254,45 @@ const ports = {
  "Yokohama": {lat:35.44, lon:139.64, fee:95000, culture:9, beach:5, family:8, nightlife:8, scenic:9, luxury:9, excursion:9},
  "Dubai": {lat:25.2, lon:55.27, fee:115000, culture:7, beach:8, family:9, nightlife:10, scenic:8, luxury:10, excursion:9}
 };
+
+const EUROPE_PORT_EXPANSION_ROWS=[["Dover",51.13,1.31,62000,"Northern Europe","heritage"],["Portsmouth",50.8,-1.09,65000,"Northern Europe","heritage"],["Portland (Dorset)",50.57,-2.45,48000,"Northern Europe","scenic"],["Liverpool",53.41,-3.0,72000,"Northern Europe","city"],["Belfast",54.6,-5.93,65000,"Northern Europe","heritage"],["Greenock (Glasgow)",55.95,-4.76,62000,"Northern Europe","city"],["Newcastle (Tyne)",55.01,-1.44,60000,"Northern Europe","city"],["Edinburgh (Leith)",55.98,-3.17,70000,"Northern Europe","heritage"],["Invergordon",57.69,-4.17,52000,"Northern Europe","scenic"],["Kirkwall",58.98,-2.96,47000,"Northern Europe","scenic"],["Lerwick",60.15,-1.14,48000,"Northern Europe","scenic"],["Stornoway",58.21,-6.39,45000,"Northern Europe","scenic"],["Falmouth",50.15,-5.07,50000,"Northern Europe","scenic"],["Plymouth",50.37,-4.14,55000,"Northern Europe","heritage"],["Cork (Cobh)",51.85,-8.3,58000,"Northern Europe","heritage"],["Dublin",53.35,-6.21,76000,"Northern Europe","city"],["Galway",53.27,-9.05,50000,"Northern Europe","heritage"],["Waterford",52.26,-7.11,46000,"Northern Europe","heritage"],["Holyhead",53.31,-4.63,45000,"Northern Europe","scenic"],["Bristol (Royal Portbury)",51.51,-2.7,60000,"Northern Europe","city"],["Cherbourg",49.64,-1.62,56000,"Northern Europe","heritage"],["Honfleur",49.42,0.23,52000,"Northern Europe","heritage"],["La Rochelle",46.16,-1.15,54000,"Canaries & Atlantic","mixed"],["Brest",48.39,-4.49,53000,"Northern Europe","heritage"],["Saint-Malo",48.65,-2.02,56000,"Northern Europe","heritage"],["Dunkirk",51.04,2.38,52000,"Northern Europe","heritage"],["Calais",50.96,1.85,50000,"Northern Europe","mixed"],["Antwerp",51.23,4.4,76000,"Northern Europe","city"],["Amsterdam (IJmuiden)",52.46,4.61,84000,"Northern Europe","city"],["Bremerhaven",53.54,8.58,65000,"Northern Europe","city"],["Kiel",54.32,10.14,72000,"Northern Europe","city"],["Warnemünde (Rostock)",54.18,12.09,66000,"Northern Europe","heritage"],["Lübeck (Travemünde)",53.96,10.87,58000,"Northern Europe","heritage"],["Bordeaux (Le Verdon)",45.55,-1.06,62000,"Canaries & Atlantic","luxury"],["Oslo",59.91,10.75,82000,"Northern Europe","city"],["Kristiansand",58.15,8.0,59000,"Northern Europe","mixed"],["Stavanger",58.97,5.73,68000,"Northern Europe","scenic"],["Flåm",60.86,7.11,65000,"Northern Europe","scenic"],["Ålesund",62.47,6.15,62000,"Northern Europe","scenic"],["Tromsø",69.65,18.96,69000,"Northern Europe","scenic"],["Honningsvåg (North Cape)",70.98,25.97,65000,"Northern Europe","scenic"],["Trondheim",63.43,10.4,65000,"Northern Europe","heritage"],["Molde",62.74,7.16,56000,"Northern Europe","scenic"],["Olden",61.84,6.81,59000,"Northern Europe","scenic"],["Skjolden",61.49,7.6,57000,"Northern Europe","scenic"],["Eidfjord",60.47,7.07,57000,"Northern Europe","scenic"],["Gothenburg",57.71,11.97,72000,"Northern Europe","city"],["Aarhus",56.16,10.21,64000,"Northern Europe","city"],["Aalborg",57.05,9.92,57000,"Northern Europe","heritage"],["Visby",57.64,18.3,60000,"Northern Europe","heritage"],["Riga",56.95,24.11,61000,"Northern Europe","heritage"],["Klaipėda",55.7,21.14,55000,"Northern Europe","mixed"],["Gdańsk",54.35,18.65,65000,"Northern Europe","heritage"],["Gdynia",54.52,18.54,60000,"Northern Europe","city"],["Turku",60.45,22.27,58000,"Northern Europe","heritage"],["Mariehamn",60.1,19.94,50000,"Northern Europe","scenic"],["Porto (Leixões)",41.18,-8.7,60000,"Canaries & Atlantic","heritage"],["Vigo",42.24,-8.72,56000,"Canaries & Atlantic","mixed"],["A Coruña",43.36,-8.4,57000,"Canaries & Atlantic","heritage"],["Bilbao",43.26,-2.93,65000,"Canaries & Atlantic","city"],["Santander",43.46,-3.8,56000,"Canaries & Atlantic","mixed"],["Gijón",43.54,-5.66,54000,"Canaries & Atlantic","mixed"],["Málaga",36.72,-4.42,72000,"Mediterranean","beach"],["Cartagena (Spain)",37.6,-0.99,56000,"Mediterranean","heritage"],["Alicante",38.35,-0.48,58000,"Mediterranean","beach"],["Valencia",39.47,-0.32,72000,"Mediterranean","city"],["Tarragona",41.12,1.25,56000,"Mediterranean","heritage"],["Ibiza",38.91,1.44,68000,"Mediterranean","beach"],["Mahon (Menorca)",39.89,4.27,56000,"Mediterranean","beach"],["Huelva",37.26,-6.95,50000,"Canaries & Atlantic","mixed"],["La Spezia",44.1,9.82,65000,"Mediterranean","scenic"],["Livorno (Florence/Pisa)",43.55,10.3,76000,"Mediterranean","heritage"],["Ravenna",44.42,12.2,65000,"Mediterranean","heritage"],["Trieste",45.65,13.77,68000,"Mediterranean","heritage"],["Venice (Marghera)",45.47,12.26,88000,"Mediterranean","luxury"],["Bari",41.12,16.87,62000,"Mediterranean","heritage"],["Brindisi",40.64,17.95,52000,"Mediterranean","mixed"],["Messina",38.19,15.56,60000,"Mediterranean","scenic"],["Palermo",38.12,13.36,68000,"Mediterranean","heritage"],["Catania",37.5,15.09,62000,"Mediterranean","scenic"],["Syracuse",37.07,15.29,57000,"Mediterranean","heritage"],["Salerno",40.68,14.76,60000,"Mediterranean","scenic"],["Olbia (Sardinia)",40.92,9.5,58000,"Mediterranean","beach"],["Zadar",44.12,15.23,56000,"Mediterranean","heritage"],["Rijeka",45.33,14.44,54000,"Mediterranean","mixed"],["Pula",44.87,13.85,52000,"Mediterranean","heritage"],["Šibenik",43.73,15.89,50000,"Mediterranean","heritage"],["Koper",45.55,13.73,52000,"Mediterranean","heritage"],["Durrës",41.31,19.44,50000,"Mediterranean","mixed"],["Thessaloniki",40.64,22.94,62000,"Mediterranean","city"],["Volos",39.36,22.94,52000,"Mediterranean","scenic"],["Heraklion (Crete)",35.34,25.14,62000,"Mediterranean","heritage"],["Chania (Souda)",35.49,24.07,56000,"Mediterranean","beach"],["Rhodes",36.45,28.23,66000,"Mediterranean","heritage"],["Kuşadası (Ephesus)",37.86,27.26,64000,"Mediterranean","heritage"],["Bodrum",37.03,27.43,65000,"Mediterranean","luxury"],["Marmaris",36.85,28.27,61000,"Mediterranean","beach"],["Limassol",34.68,33.04,65000,"Mediterranean","mixed"],["Larnaca",34.92,33.64,56000,"Mediterranean","beach"],["Katakolon (Olympia)",37.64,21.32,54000,"Mediterranean","heritage"]];
+const EUROPE_PORT_PROFILES={
+ heritage:{culture:9,beach:4,family:6,nightlife:5,scenic:8,luxury:7,excursion:9},
+ city:{culture:8,beach:3,family:7,nightlife:8,scenic:6,luxury:8,excursion:8},
+ scenic:{culture:6,beach:3,family:7,nightlife:3,scenic:10,luxury:9,excursion:10},
+ beach:{culture:6,beach:9,family:9,nightlife:8,scenic:8,luxury:8,excursion:8},
+ luxury:{culture:8,beach:6,family:6,nightlife:7,scenic:9,luxury:10,excursion:9},
+ mixed:{culture:7,beach:6,family:7,nightlife:6,scenic:8,luxury:7,excursion:8}
+};
+EUROPE_PORT_EXPANSION_ROWS.forEach(([name,lat,lon,fee,region,profile])=>{
+ const p=EUROPE_PORT_PROFILES[profile]||EUROPE_PORT_PROFILES.mixed;
+ ports[name]={lat,lon,fee,...p};
+});
+
+// v5.0 global port network — real-world cruise gateways selected to create a continuous
+// small-ship route around the world as well as richer regional cruise markets.
+const GLOBAL_PORT_EXPANSION_ROWS=[
+ ["Ponta Delgada (Azores)",37.74,-25.67,62000,"Atlantic Islands","scenic"],["Horta (Azores)",38.54,-28.63,48000,"Atlantic Islands","scenic"],["Praia da Vitória (Azores)",38.73,-27.07,47000,"Atlantic Islands","scenic"],
+ ["Nuuk",64.18,-51.72,65000,"Greenland & North Atlantic","scenic"],["Qaqortoq",60.72,-46.04,50000,"Greenland & North Atlantic","scenic"],
+ ["St. John's (Newfoundland)",47.56,-52.71,62000,"Canada & New England","heritage"],["Corner Brook",48.95,-57.95,52000,"Canada & New England","scenic"],["Halifax",44.65,-63.57,76000,"Canada & New England","city"],["Sydney (Nova Scotia)",46.14,-60.19,58000,"Canada & New England","heritage"],["Charlottetown",46.24,-63.13,52000,"Canada & New England","heritage"],["Quebec City",46.82,-71.2,76000,"Canada & New England","heritage"],
+ ["Boston",42.35,-71.04,95000,"US East Coast","city"],["Portland (Maine)",43.66,-70.25,62000,"US East Coast","heritage"],["Bar Harbor",44.39,-68.2,56000,"US East Coast","scenic"],["Bermuda (Royal Naval Dockyard)",32.33,-64.83,85000,"Bermuda","beach"],["Norfolk",36.85,-76.29,68000,"US East Coast","heritage"],["Charleston",32.78,-79.93,72000,"US East Coast","heritage"],["Port Canaveral",28.41,-80.61,115000,"US East Coast","family"],["Fort Lauderdale (Port Everglades)",26.09,-80.12,120000,"US East Coast","beach"],["Tampa",27.94,-82.45,85000,"US Gulf Coast","city"],["Key West",24.56,-81.81,72000,"US Gulf Coast","beach"],["New Orleans",29.95,-90.06,95000,"US Gulf Coast","city"],
+ ["St. Thomas (Charlotte Amalie)",18.34,-64.93,78000,"Caribbean","beach"],["Tortola (Road Town)",18.42,-64.62,68000,"Caribbean","beach"],["St. Maarten (Philipsburg)",18.02,-63.05,80000,"Caribbean","beach"],["Antigua (St. John's)",17.12,-61.84,70000,"Caribbean","beach"],["Bridgetown (Barbados)",13.1,-59.62,76000,"Caribbean","beach"],["Castries (St. Lucia)",14.01,-60.99,68000,"Caribbean","scenic"],["Fort-de-France (Martinique)",14.6,-61.07,66000,"Caribbean","heritage"],["Aruba (Oranjestad)",12.52,-70.04,74000,"Caribbean","beach"],["Curaçao (Willemstad)",12.11,-68.94,76000,"Caribbean","heritage"],["Cartagena (Colombia)",10.4,-75.53,76000,"Caribbean","heritage"],["Puerto Limón",10.0,-83.03,62000,"Central America","scenic"],["Colón 2000",9.36,-79.89,76000,"Central America","city"],["Panama City (Amador)",8.94,-79.55,82000,"Central America","city"],
+ ["Puntarenas",9.98,-84.84,60000,"Central America Pacific","scenic"],["Puerto Quetzal",13.92,-90.79,58000,"Central America Pacific","heritage"],["Huatulco",15.76,-96.13,56000,"Mexico Pacific","beach"],["Puerto Vallarta",20.65,-105.24,68000,"Mexico Pacific","beach"],["Cabo San Lucas",22.88,-109.91,72000,"Mexico Pacific","beach"],["Ensenada",31.86,-116.62,62000,"Mexico Pacific","city"],
+ ["San Diego",32.72,-117.17,90000,"US West Coast","city"],["Los Angeles (San Pedro)",33.74,-118.28,110000,"US West Coast","city"],["San Francisco",37.81,-122.4,105000,"US West Coast","city"],["Astoria",46.19,-123.83,56000,"US West Coast","scenic"],["Seattle",47.6,-122.34,105000,"US West Coast","city"],["Victoria (BC)",48.42,-123.38,82000,"Canada West Coast","heritage"],
+ ["Honolulu",21.31,-157.87,98000,"Hawaii","city"],["Hilo",19.73,-155.06,66000,"Hawaii","scenic"],["Kahului (Maui)",20.9,-156.47,72000,"Hawaii","beach"],["Nawiliwili (Kauai)",21.96,-159.35,68000,"Hawaii","scenic"],
+ ["Papeete (Tahiti)",-17.54,-149.57,82000,"South Pacific","luxury"],["Moorea",-17.49,-149.83,56000,"South Pacific","scenic"],["Bora Bora",-16.5,-151.75,62000,"South Pacific","luxury"],["Rarotonga",-21.21,-159.78,52000,"South Pacific","scenic"],["Pago Pago",-14.28,-170.7,54000,"South Pacific","scenic"],["Apia",-13.83,-171.76,56000,"South Pacific","heritage"],["Suva",-18.14,178.43,62000,"South Pacific","heritage"],["Lautoka",-17.61,177.45,58000,"South Pacific","scenic"],["Nouméa",-22.27,166.44,68000,"South Pacific","city"],["Port Vila",-17.74,168.31,56000,"South Pacific","scenic"],
+ ["Brisbane",-27.38,153.17,90000,"Australia & New Zealand","city"],["Melbourne",-37.84,144.93,95000,"Australia & New Zealand","city"],["Hobart",-42.88,147.33,68000,"Australia & New Zealand","heritage"],["Adelaide",-34.84,138.5,78000,"Australia & New Zealand","city"],["Fremantle (Perth)",-32.05,115.74,88000,"Australia & New Zealand","city"],["Cairns",-16.92,145.78,76000,"Australia & New Zealand","scenic"],["Darwin",-12.47,130.85,72000,"Australia & New Zealand","city"],["Bay of Islands",-35.23,174.09,56000,"Australia & New Zealand","scenic"],["Tauranga",-37.65,176.18,76000,"Australia & New Zealand","scenic"],["Wellington",-41.29,174.78,76000,"Australia & New Zealand","city"],["Lyttelton (Christchurch)",-43.61,172.72,72000,"Australia & New Zealand","heritage"],["Dunedin (Port Chalmers)",-45.82,170.62,68000,"Australia & New Zealand","heritage"],
+ ["Benoa (Bali)",-8.75,115.21,70000,"Southeast Asia","luxury"],["Lembar (Lombok)",-8.73,116.07,54000,"Southeast Asia","scenic"],["Phuket",7.88,98.39,72000,"Southeast Asia","beach"],["Penang",5.42,100.35,68000,"Southeast Asia","heritage"],["Port Klang (Kuala Lumpur)",3.0,101.39,78000,"Southeast Asia","city"],["Laem Chabang (Bangkok)",13.08,100.88,82000,"Southeast Asia","city"],["Phu My (Ho Chi Minh City)",10.58,107.02,72000,"Southeast Asia","heritage"],["Chan May (Da Nang)",16.33,107.98,66000,"Southeast Asia","scenic"],["Nha Trang",12.25,109.19,62000,"Southeast Asia","beach"],["Sihanoukville",10.62,103.5,58000,"Southeast Asia","beach"],["Manila",14.59,120.97,76000,"East Asia","city"],["Cebu",10.3,123.91,64000,"East Asia","heritage"],["Keelung (Taipei)",25.13,121.74,82000,"East Asia","city"],["Kaohsiung",22.62,120.29,76000,"East Asia","city"],["Busan",35.1,129.04,82000,"East Asia","city"],["Nagasaki",32.74,129.87,76000,"East Asia","heritage"],["Kobe",34.68,135.19,82000,"East Asia","city"],["Osaka",34.66,135.43,86000,"East Asia","city"],["Naha (Okinawa)",26.21,127.68,70000,"East Asia","beach"],["Shanghai",31.23,121.49,100000,"East Asia","city"],
+ ["Colombo",6.94,79.84,78000,"Indian Ocean","heritage"],["Kochi",9.97,76.26,68000,"India","heritage"],["Mumbai",18.95,72.84,85000,"India","city"],["Mormugao (Goa)",15.41,73.8,64000,"India","beach"],["Malé",4.18,73.51,62000,"Indian Ocean","luxury"],["Port Victoria (Seychelles)",-4.62,55.45,65000,"Indian Ocean","luxury"],["Port Louis (Mauritius)",-20.16,57.5,72000,"Indian Ocean","city"],["Le Port (Réunion)",-20.94,55.29,66000,"Indian Ocean","scenic"],
+ ["Muscat",23.62,58.57,82000,"Middle East","heritage"],["Abu Dhabi",24.53,54.38,105000,"Middle East","luxury"],["Doha",25.29,51.55,100000,"Middle East","luxury"],["Salalah",16.95,54.0,70000,"Middle East","scenic"],["Jeddah",21.49,39.17,90000,"Red Sea","heritage"],["Aqaba",29.53,35.01,72000,"Red Sea","scenic"],["Alexandria",31.2,29.89,76000,"Eastern Mediterranean","heritage"],["Port Said",31.26,32.3,68000,"Eastern Mediterranean","heritage"],
+ ["Durban",-29.87,31.03,78000,"Southern Africa","beach"],["Cape Town",-33.92,18.44,95000,"Southern Africa","luxury"],["Walvis Bay",-22.95,14.51,68000,"Southern Africa","scenic"],
+ ["Rio de Janeiro",-22.9,-43.18,90000,"South America Atlantic","city"],["Santos (São Paulo)",-23.96,-46.31,85000,"South America Atlantic","city"],["Salvador",-12.97,-38.51,72000,"South America Atlantic","heritage"],["Recife",-8.05,-34.87,68000,"South America Atlantic","heritage"],["Montevideo",-34.9,-56.21,76000,"South America Atlantic","heritage"],["Buenos Aires",-34.6,-58.37,90000,"South America Atlantic","city"],["Ushuaia",-54.81,-68.31,72000,"South America South","scenic"],["Punta Arenas",-53.16,-70.91,68000,"South America South","scenic"],["Valparaíso",-33.04,-71.63,78000,"South America Pacific","heritage"],["Callao (Lima)",-12.06,-77.15,82000,"South America Pacific","heritage"],["Manta",-0.95,-80.72,62000,"South America Pacific","beach"]
+];
+const GLOBAL_PORT_PROFILES={
+ heritage:{culture:9,beach:4,family:7,nightlife:6,scenic:8,luxury:7,excursion:9},city:{culture:8,beach:4,family:8,nightlife:9,scenic:7,luxury:8,excursion:8},scenic:{culture:6,beach:6,family:8,nightlife:4,scenic:10,luxury:8,excursion:10},beach:{culture:6,beach:10,family:9,nightlife:8,scenic:9,luxury:8,excursion:9},luxury:{culture:8,beach:8,family:7,nightlife:7,scenic:10,luxury:10,excursion:9},family:{culture:6,beach:8,family:10,nightlife:7,scenic:7,luxury:7,excursion:8}
+};
+GLOBAL_PORT_EXPANSION_ROWS.forEach(([name,lat,lon,fee,region,profile])=>{const q=GLOBAL_PORT_PROFILES[profile]||GLOBAL_PORT_PROFILES.city;ports[name]={lat,lon,fee,...q,region};});
+
 const excursionCatalog={
  culture:[
   {name:"Historic city highlights",basePrice:79,flatCost:4200,perPaxCost:28,maxPax:180,appeal:{segment:{Seniors:1.15,Couples:1.08,Luxury:1.05},wealth:{Budget:.92,Mainstream:1.00,Affluent:1.10,Luxury:1.15}}},
@@ -1428,10 +1509,10 @@ Object.keys(state.contracts).forEach(n=>{state.contracts[n].excursions=defaultEx
 
 const SAVE_STORAGE_KEY="cruiseTycoon.save.v1";
 const SAVE_SCHEMA_VERSION=1;
-const GAME_VERSION="0.28.3";
+const GAME_VERSION="5.0";
 
 function makeStarterProgramme(){
- return Array.from({length:6},()=>({startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,marketingTargetSegment:"Broad",marketingTargetWealth:"Broad",speed:17.5,booked:0,lastBooked:0,committed:false,planned:false,routeApplied:false,appliedDraft:null,excursionSelection:{},excursionPricing:{}}));
+ return Array.from({length:6},()=>({startPort:"Southampton",route:[],fare:0,cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,marketing:0,marketingTargetSegment:"Broad",marketingTargetWealth:"Broad",speed:17.5,booked:0,lastBooked:0,committed:false,planned:false,routeApplied:false,appliedDraft:null,excursionSelection:{},excursionPricing:{},portCount:3,portTimes:{}}));
 }
 function makeFirstShipProgramme(){
  return [
@@ -1462,6 +1543,7 @@ function mergeSaveDefaults(base,incoming){
  return incoming===undefined?base:incoming;
 }
 function makeSavePayload(){
+ persistActiveShipState();
  return {saveSchemaVersion:SAVE_SCHEMA_VERSION,gameVersion:GAME_VERSION,savedAt:new Date().toISOString(),state:cloneJson(state)};
 }
 function setSaveStatus(text){const el=document.getElementById("saveStatus");if(el)el.textContent=text;}
@@ -1491,7 +1573,7 @@ function hydrateFromPayload(payload){
  if(!state.loans.length && (state.debt||0)>0){state.loans=[{id:`legacy_${Date.now()}`,purpose:"Legacy bank borrowing",principal:state.debt,originalPrincipal:state.debt,rate:state.loanRate,weeksRemaining:Math.max(1,Math.round(state.debt/Math.max(1,state.scheduledLoanRepayment||125000))),weeklyPrincipal:state.scheduledLoanRepayment||125000,createdWeek:state.week}];}
  state.fleet=state.fleet||cloneJson(INITIAL_GAME_STATE.fleet);
  if(!state.fleet[state.activeShipId])state.activeShipId=Object.keys(state.fleet)[0];
- if(!state.programme || !state.programme.length)state.programme=cloneJson(INITIAL_GAME_STATE.programme);
+ if(!state.programme || !state.programme.length)state.programme=cloneJson(INITIAL_GAME_STATE.programme);if(state.fleet?.[state.activeShipId]){if(!state.fleet[state.activeShipId].programme?.some(x=>x.planned))state.fleet[state.activeShipId].programme=state.programme;state.programme=state.fleet[state.activeShipId].programme;}
  // Recover valid routes from old saves before scheduler normalisation runs.
  state.programme.forEach(item=>{item.marketingTargetSegment=item.marketingTargetSegment||"Broad";item.marketingTargetWealth=item.marketingTargetWealth||"Broad";
    const savedRoute=Array.isArray(item.route)&&item.route.length>1;
@@ -1511,7 +1593,7 @@ function hydrateFromPayload(payload){
      item.planned=true;item.routeApplied=true;
    }
  });
- Object.values(state.fleet||{}).forEach(s=>{
+ Object.values(state.fleet||{}).forEach(s=>{ensureShipProgramme(s);
    if(!s.marketClass)s.marketClass=(s.decks||3)<=3?"coaster":(s.decks||3)<=8?"classic":(s.decks||3)<=12?"modern":(s.decks||3)<=17?"resort":"mega";
    const spec=shipMarketSpec(s);
    s.grossTonnage=s.grossTonnage||spec.gt;
@@ -1529,7 +1611,7 @@ function hydrateFromPayload(payload){
  // pay-after-sailing logic. Cruise guests pay by departure, so convert that
  // legacy balance to cash once when an older save is opened.
  const savedVersion=String(payload.gameVersion||"0");
- if(savedVersion!=="0.28.3"){
+ if(savedVersion!=="0.29.1"){
    const legacyRec=Math.max(0,ledgerBalances().receivables||0);
    if(legacyRec>.5){
      state.cash=(state.cash||0)+legacyRec;
@@ -1543,7 +1625,7 @@ function hydrateFromPayload(payload){
    const ledgerCashNow=ledgerBalances().cash||0;
    const missingDepositCash=Math.max(0,(state.cash||0)-ledgerCashNow);
    if(missingDepositCash>.5){
-     postJournal("v0.28.3 migration · restore future customer deposits",[
+     postJournal("v0.29.1 migration · restore future customer deposits",[
        {account:"cash",debit:missingDepositCash,credit:0},
        {account:"customerDeposits",debit:0,credit:missingDepositCash}
      ]);
@@ -1646,16 +1728,51 @@ function hasOwnedShip(){return Object.keys(state.fleet||{}).length>0}
 
 
 const PORT_REGIONS={
- "Southampton":"Northern Europe","Le Havre":"Northern Europe","Hamburg":"Northern Europe","Rotterdam":"Northern Europe","Bruges (Zeebrugge)":"Northern Europe",
- "Reykjavik":"Northern Europe","Bergen":"Northern Europe","Geiranger":"Northern Europe","Copenhagen":"Northern Europe","Stockholm":"Northern Europe","Helsinki":"Northern Europe","Tallinn":"Northern Europe",
- "Barcelona":"Mediterranean","Palma":"Mediterranean","Marseille":"Mediterranean","Genoa":"Mediterranean","Civitavecchia (Rome)":"Mediterranean","Naples":"Mediterranean","Valletta":"Mediterranean","Corfu":"Mediterranean","Dubrovnik":"Mediterranean","Kotor":"Mediterranean","Split":"Mediterranean","Santorini":"Mediterranean","Piraeus (Athens)":"Mediterranean","Mykonos":"Mediterranean","Istanbul":"Mediterranean",
- "Lisbon":"Canaries & Atlantic","Cadiz":"Canaries & Atlantic","Madeira":"Canaries & Atlantic","Las Palmas":"Canaries & Atlantic","Santa Cruz de Tenerife":"Canaries & Atlantic",
+ "Southampton":"UK & Ireland","Dover":"UK & Ireland","Portsmouth":"UK & Ireland","Portland (Dorset)":"UK & Ireland","Liverpool":"UK & Ireland","Belfast":"UK & Ireland","Greenock (Glasgow)":"UK & Ireland","Newcastle (Tyne)":"UK & Ireland","Edinburgh (Leith)":"UK & Ireland","Invergordon":"UK & Ireland","Kirkwall":"UK & Ireland","Lerwick":"UK & Ireland","Stornoway":"UK & Ireland","Falmouth":"UK & Ireland","Plymouth":"UK & Ireland","Cork (Cobh)":"UK & Ireland","Dublin":"UK & Ireland","Galway":"UK & Ireland","Waterford":"UK & Ireland","Holyhead":"UK & Ireland","Bristol (Royal Portbury)":"UK & Ireland",
+
+ "Bergen":"Norway & Fjords","Geiranger":"Norway & Fjords","Oslo":"Norway & Fjords","Kristiansand":"Norway & Fjords","Stavanger":"Norway & Fjords","Flåm":"Norway & Fjords","Ålesund":"Norway & Fjords","Tromsø":"Norway & Fjords","Honningsvåg (North Cape)":"Norway & Fjords","Trondheim":"Norway & Fjords","Molde":"Norway & Fjords","Olden":"Norway & Fjords","Skjolden":"Norway & Fjords","Eidfjord":"Norway & Fjords",
+
+ "Copenhagen":"Baltic","Stockholm":"Baltic","Helsinki":"Baltic","Tallinn":"Baltic","Gothenburg":"Baltic","Aarhus":"Baltic","Aalborg":"Baltic","Visby":"Baltic","Riga":"Baltic","Klaipėda":"Baltic","Gdańsk":"Baltic","Gdynia":"Baltic","Turku":"Baltic","Mariehamn":"Baltic",
+
+ "Le Havre":"Northern Continental Europe","Hamburg":"Northern Continental Europe","Rotterdam":"Northern Continental Europe","Bruges (Zeebrugge)":"Northern Continental Europe","Cherbourg":"Northern Continental Europe","Honfleur":"Northern Continental Europe","Brest":"Northern Continental Europe","Saint-Malo":"Northern Continental Europe","Dunkirk":"Northern Continental Europe","Calais":"Northern Continental Europe","Antwerp":"Northern Continental Europe","Amsterdam (IJmuiden)":"Northern Continental Europe","Bremerhaven":"Northern Continental Europe","Kiel":"Northern Continental Europe","Warnemünde (Rostock)":"Northern Continental Europe","Lübeck (Travemünde)":"Northern Continental Europe",
+
+ "Lisbon":"Spain & Portugal","Cadiz":"Spain & Portugal","Porto (Leixões)":"Spain & Portugal","Vigo":"Spain & Portugal","A Coruña":"Spain & Portugal","Bilbao":"Spain & Portugal","Santander":"Spain & Portugal","Gijón":"Spain & Portugal","Málaga":"Spain & Portugal","Cartagena (Spain)":"Spain & Portugal","Alicante":"Spain & Portugal","Valencia":"Spain & Portugal","Tarragona":"Spain & Portugal","Huelva":"Spain & Portugal",
+
+ "Barcelona":"Western Mediterranean","Palma":"Western Mediterranean","Marseille":"Western Mediterranean","Ibiza":"Western Mediterranean","Mahon (Menorca)":"Western Mediterranean",
+
+ "Genoa":"Italy & Tyrrhenian","Civitavecchia (Rome)":"Italy & Tyrrhenian","Naples":"Italy & Tyrrhenian","La Spezia":"Italy & Tyrrhenian","Livorno (Florence/Pisa)":"Italy & Tyrrhenian","Messina":"Italy & Tyrrhenian","Palermo":"Italy & Tyrrhenian","Catania":"Italy & Tyrrhenian","Syracuse":"Italy & Tyrrhenian","Salerno":"Italy & Tyrrhenian","Olbia (Sardinia)":"Italy & Tyrrhenian",
+
+ "Ravenna":"Adriatic","Trieste":"Adriatic","Venice (Marghera)":"Adriatic","Bari":"Adriatic","Brindisi":"Adriatic","Dubrovnik":"Adriatic","Kotor":"Adriatic","Split":"Adriatic","Zadar":"Adriatic","Rijeka":"Adriatic","Pula":"Adriatic","Šibenik":"Adriatic","Koper":"Adriatic","Durrës":"Adriatic",
+
+ "Corfu":"Eastern Med & Greek Islands","Santorini":"Eastern Med & Greek Islands","Piraeus (Athens)":"Eastern Med & Greek Islands","Mykonos":"Eastern Med & Greek Islands","Thessaloniki":"Eastern Med & Greek Islands","Volos":"Eastern Med & Greek Islands","Heraklion (Crete)":"Eastern Med & Greek Islands","Chania (Souda)":"Eastern Med & Greek Islands","Rhodes":"Eastern Med & Greek Islands","Katakolon (Olympia)":"Eastern Med & Greek Islands",
+
+ "Istanbul":"Turkey & Cyprus","Kuşadası (Ephesus)":"Turkey & Cyprus","Bodrum":"Turkey & Cyprus","Marmaris":"Turkey & Cyprus","Limassol":"Turkey & Cyprus","Larnaca":"Turkey & Cyprus",
+
+ "Valletta":"Central Mediterranean",
+
+ "Madeira":"Atlantic Islands","Las Palmas":"Atlantic Islands","Santa Cruz de Tenerife":"Atlantic Islands","Reykjavik":"Atlantic Islands",
+
+ "La Rochelle":"Atlantic Europe","Bordeaux (Le Verdon)":"Atlantic Europe",
+
  "Miami":"North America","New York":"North America","Vancouver":"North America","Juneau":"North America",
  "Nassau":"Caribbean","Cozumel":"Caribbean","San Juan":"Caribbean",
  "Singapore":"Asia","Hong Kong":"Asia","Yokohama":"Asia","Dubai":"Middle East","Sydney":"Australia & New Zealand","Auckland":"Australia & New Zealand"
+}
+GLOBAL_PORT_EXPANSION_ROWS.forEach(r=>PORT_REGIONS[r[0]]=r[4]);
+
+// Real-world access character. Tender ports remain useful to small ships but are not treated as identical to a major terminal.
+const PORT_TERMINAL_PROFILES={
+ "Bristol (Royal Portbury)":{mode:"Dedicated cruise terminal — Royal Portbury Dock",maxGT:140000},
+ "Galway":{mode:"Tender / anchorage call",maxGT:120000},"Saint-Malo":{mode:"Tender / small-ship access",maxGT:120000},"Honfleur":{mode:"Small-ship Seine cruise access",maxGT:100000},
+ "Edinburgh (Leith)":{mode:"Leith berth; larger calls may use alternative Forth anchorages",maxGT:120000},"Geiranger":{mode:"SeaWalk / tender-style fjord call",maxGT:200000},
+ "Santorini":{mode:"Tender anchorage",maxGT:300000},"Mykonos":{mode:"Cruise berth / tender depending on allocation",maxGT:220000},"Kotor":{mode:"Berth / tender depending on ship and berth",maxGT:200000},
+ "Venice (Marghera)":{mode:"Porto Marghera passenger berth",maxGT:200000},"Bar Harbor":{mode:"Tender anchorage",maxGT:180000},"Cabo San Lucas":{mode:"Tender anchorage",maxGT:250000},
+ "Moorea":{mode:"Tender anchorage",maxGT:180000},"Bora Bora":{mode:"Tender anchorage",maxGT:180000},"Rarotonga":{mode:"Tender anchorage",maxGT:120000},"Malé":{mode:"Anchorage / tender",maxGT:220000},
+ "Bay of Islands":{mode:"Tender anchorage",maxGT:180000},"Qaqortoq":{mode:"Small berth / tender",maxGT:120000}
 };
-function portRegion(name){return PORT_REGIONS[name]||"Other"}
-function portPhysicalMaxGT(name){return 300000}
+function portRegion(name){return PORT_REGIONS[name]||ports[name]?.region||"Other"}
+function portPhysicalMaxGT(name){return PORT_TERMINAL_PROFILES[name]?.maxGT||300000}
+function portTerminalMode(name){return PORT_TERMINAL_PROFILES[name]?.mode||"Cruise berth / passenger port"}
 function oneOffPortCost(name,ship=activeShip()){
  const base=ports[name]?.fee||0;
  // One-off calls deliberately cost more than a contract, but no longer make small ships unplayable.
@@ -1788,7 +1905,9 @@ function refitWeeksRequired(s=activeShip()){
  const area=q.reduce((a,x)=>a+(x.area||0),0),cost=q.reduce((a,x)=>a+(x.cost||0),0);
  return clamp(Math.ceil(Math.max(area/900,cost/4500000,q.length/4)),1,6);
 }
-function refitTotalCost(s=activeShip()){return refitQueue(s).reduce((a,x)=>a+(x.cost||0),0)}
+function refitWorkCost(s=activeShip()){return refitQueue(s).reduce((a,x)=>a+(x.cost||0),0)}
+function dryDockDailyCost(s=activeShip()){return Math.round(30000*Math.max(.75,Math.min(2.2,(s?.grossTonnage||60000)/90000)))}
+function refitTotalCost(s=activeShip()){const weeks=refitWeeksRequired(s);return refitWorkCost(s)+weeks*7*dryDockDailyCost(s)}
 function earliestDryDockStart(weeks=refitWeeksRequired(activeShip()),preferred=selectedPlanWeek){
  if(!(weeks>0)||!Array.isArray(state.programme))return -1;
  const canUse=i=>i>=0&&i+weeks<=state.programme.length&&state.programme.slice(i,i+weeks).every(x=>!x?.committed||x?.dryDock);
@@ -1801,10 +1920,10 @@ function scheduleDryDockForQueue(startIdx=selectedPlanWeek){
  const requested=startIdx;
  startIdx=earliestDryDockStart(weeks,startIdx);
  if(startIdx<0)return alert(`This refit needs ${weeks} dry-dock week${weeks===1?"":"s"}, but there is no available flexible block in the current six-week schedule. Let the schedule roll forward or free a later week.`);
- const batch=`dd_${Date.now()}`,cost=refitTotalCost(s);
+ const batch=`dd_${Date.now()}`,cost=refitTotalCost(s),workCost=refitWorkCost(s),dockCost=weeks*7*dryDockDailyCost(s);
  for(let i=0;i<weeks;i++){
    const existing=state.programme[startIdx+i]||{};
-   state.programme[startIdx+i]={...existing,startPort:programmeStartPort(startIdx+i),route:[],days:[],planned:true,committed:true,dryDock:true,dryDockBatchId:batch,dryDockPart:i+1,dryDockWeeks:weeks,dryDockTotalCost:cost,booked:0,lastBooked:0,routeApplied:false,appliedDraft:null,excursionSelection:{},excursionPricing:{}};
+   state.programme[startIdx+i]={...existing,startPort:programmeStartPort(startIdx+i),route:[],days:[],planned:true,committed:true,dryDock:true,dryDockBatchId:batch,dryDockPart:i+1,dryDockWeeks:weeks,dryDockTotalCost:cost,dryDockWorkCost:workCost,dryDockDailyCost:dryDockDailyCost(s),dryDockDockCost:dockCost,booked:0,lastBooked:0,routeApplied:false,appliedDraft:null,excursionSelection:{},excursionPricing:{}};
  }
  q.forEach(x=>x.batchId=batch);
  selectedPlanWeek=startIdx;
@@ -1826,7 +1945,8 @@ function processDryDockWeek(){
  state.lastPnl={fareRevenue:0,totalRev:0,opex:0,ebitda:0,depreciation:0,operating:0,interest:0,pbt:0,tax:0,net:0,actualOcc:0,pax:0,reviewScore:0,dryDock:true,refitSpend:spend};
  state.lastCf={opening,newDeposits:0,finalBalances:0,onboardCash:0,supplierCash:0,supplierDetail:{},payroll:0,fuelCash:0,commissionsCash:0,marketingCash:0,hoCash:0,taxCash:0,operatingCF:0,investing:-spend,principal:0,interestCash:0,financing:0,closing:state.cash};
  state.performanceHistory=state.performanceHistory||[];state.performanceHistory.push({week:state.week,shipId:s.id,shipName:s.name,season:seasonForGameWeek(state.week),weather:`${state.weather.icon} ${state.weather.kind}`,route:[],reviewScore:0,pax:0,actualOcc:0,ebitda:0,net:0,cashClosing:state.cash,pnl:JSON.parse(JSON.stringify(state.lastPnl)),dryDock:true});
- state.lastEvent=`${s.name} spent week ${state.week} in dry dock. Refit spend ${statementMoney(spend)}${part===weeks?". Queued work is now complete.":` — ${weeks-part} week(s) remain.`}`;
+ s.lastPnl=state.lastPnl;s.lastProcessedWeek=state.week;s.programme=state.programme;const activeId=s.id,others=[];fleetShips().filter(x=>x.id!==activeId).forEach(x=>{const r=processSecondaryShipWeek(x);if(r)others.push(r)});bindShipContext(activeId);if(state.lastCf)state.lastCf.closing=state.cash;
+ state.lastEvent=`${s.name} spent week ${state.week} in dry dock. Refit spend ${statementMoney(spend)}${part===weeks?". Queued work is now complete.":` — ${weeks-part} week(s) remain.`}${others.length?` ${others.length} other ship${others.length===1?"":"s"} also completed the week.`:""}`;
  renderAll();showVoyageResult({txt:state.lastEvent,rep:0,demand:0,fuel:1,cost:0});
 }
 function worldXY(lat,lon,w=900,h=390){return {x:(lon+180)/360*w,y:(90-lat)/180*h}}
@@ -1870,16 +1990,46 @@ function renderDashboardFleetMap(){
 
 function fleetShips(){return Object.values(state.fleet||{});}
 function fleetSize(){return fleetShips().length;}
+function ensureShipProgramme(ship){
+ if(!ship||ship.placeholder)return makeStarterProgramme();
+ if(!Array.isArray(ship.programme)||!ship.programme.length){
+   ship.programme=makeStarterProgramme();
+   const start=ship.currentPort||"Southampton";
+   ship.programme.forEach(x=>{x.startPort=start;x.route=[]});
+ }
+ while(ship.programme.length<6)ship.programme.push({...makeStarterProgramme()[0],startPort:ship.currentPort||"Southampton"});
+ if(ship.programme.length>6)ship.programme=ship.programme.slice(0,6);
+ return ship.programme;
+}
+function persistActiveShipState(){
+ const ship=state.fleet?.[state.activeShipId];if(!ship)return;
+ ship.programme=state.programme;
+ ship.lastPnl=state.lastPnl||ship.lastPnl||null;
+ }
+function bindShipContext(id){
+ persistActiveShipState();
+ const ship=state.fleet?.[id];if(!ship)return false;
+ state.activeShipId=id;
+ state.programme=ensureShipProgramme(ship);
+ state.lastPnl=ship.lastPnl||null;
+ const cur=state.programme[0]||{};
+ state.route=Array.isArray(cur.route)?[...cur.route]:[];state.fare=cur.fare||0;state.service=cur.service??3;state.marketing=cur.marketing??0;state.speed=cur.speed??17.5;
+ return true;
+}
+function shipMaxSpeed(ship=activeShip()){
+ if(!ship||ship.placeholder)return 0;
+ if(ship.maxSpeedKn)return ship.maxSpeedKn;
+ const gt=ship.grossTonnage||60000;
+ return gt<30000?19.5:gt<70000?21:gt<140000?22.5:23;
+}
 function fleetLatestOccupancy(){
- // Until multiple ships have separate result stores, use available completed ship results.
- const vals=[];
- if(state.lastPnl?.actualOcc!==undefined)vals.push(state.lastPnl.actualOcc);
- return vals.length?vals.reduce((a,b)=>a+b,0)/vals.length:null;
+ const hist=(state.performanceHistory||[]).filter(x=>!x.dryDock);if(!hist.length)return null;
+ const w=Math.max(...hist.map(x=>x.week||0)),rows=hist.filter(x=>x.week===w);
+ const pax=rows.reduce((a,x)=>a+(x.pax||0),0),cap=rows.reduce((a,x)=>a+(state.fleet?.[x.shipId]?.capacity||0),0);
+ return cap?pax/cap:null;
 }
 function fleetLatestEbitda(){
- const vals=[];
- if(state.lastPnl?.ebitda!==undefined)vals.push(state.lastPnl.ebitda);
- return vals.length?vals.reduce((a,b)=>a+b,0):null;
+ const hist=(state.performanceHistory||[]);if(!hist.length)return null;const w=Math.max(...hist.map(x=>x.week||0));return hist.filter(x=>x.week===w).reduce((a,x)=>a+(x.ebitda||0),0);
 }
 
 function activeShip(){return state.fleet?.[state.activeShipId]||EMPTY_SHIP}
@@ -2079,6 +2229,27 @@ function nm(a,b){
  return 2*R*Math.asin(Math.sqrt(q));
 }
 
+function timeToHours(v,def){const m=String(v||def).match(/^(\d{1,2}):(\d{2})$/);return m?(+m[1]+(+m[2])/60):timeToHours(def,"08:00")}
+function timedPortPlan(item,ship=activeShip()){
+ const route=Array.isArray(item?.route)?item.route:[],n=Math.max(1,route.length-1),times=item?.portTimes||{};
+ if(route.length<2)return {valid:false,requiredSpeed:0,maxSpeed:shipMaxSpeed(ship),calls:[],days:[],reason:"Add at least one destination port."};
+ const callDays=[0];for(let i=1;i<=n;i++)callDays.push(Math.max(1,Math.min(6,Math.round(i*6/n))));
+ const calls=route.map((port,i)=>({port,day:callDays[i],arrival:i===0?"08:00":(times[i]?.arrival||"08:00"),departure:times[i]?.departure||(i===0?"17:00":"17:00")}));
+ let requiredSpeed=0,totalNm=0,legs=[];
+ for(let i=1;i<calls.length;i++){
+   const prev=calls[i-1],cur=calls[i],dist=seaLegDistanceNm(prev.port,cur.port),depart=timeToHours(prev.departure,"17:00"),arrive=timeToHours(cur.arrival,"08:00");
+   const hours=(cur.day-prev.day)*24+arrive-depart;
+   const req=hours>0?dist/hours:999;requiredSpeed=Math.max(requiredSpeed,req);totalNm+=dist;legs.push({from:prev.port,to:cur.port,dist,hours,requiredSpeed:req});
+ }
+ const maxSpeed=shipMaxSpeed(ship),days=Array.from({length:7},(_,d)=>{const c=calls.find(x=>x.day===d);return c?{type:"port",name:c.port,arrival:c.arrival,departure:c.departure,where:`In port: ${c.port} · ${c.arrival}–${c.departure}`}:{type:"sea",name:"SEA DAY",where:"At sea"}});
+ return {valid:requiredSpeed<=maxSpeed+.001,requiredSpeed,totalNm,maxSpeed,calls,legs,days,seaDays:days.filter(x=>x.type==="sea").length,portDays:calls.length,voyageDays:7,reason:requiredSpeed<=maxSpeed+.001?"":`Needs ${requiredSpeed.toFixed(1)} kn; ${ship.name} can make about ${maxSpeed.toFixed(1)} kn.`};
+}
+function reachablePortForTimedSlot(candidate,item,slotIndex,ship=activeShip()){
+ const r=[...(item.route||[])],prev=r[slotIndex]||programmeStartPort(selectedPlanWeek);if(!prev||!ports[prev]||!ports[candidate])return false;
+ const n=Math.max(1,item.portCount||Math.max(1,r.length-1)),prevDay=slotIndex===0?0:Math.max(1,Math.min(6,Math.round(slotIndex*6/n))),curDay=Math.max(1,Math.min(6,Math.round((slotIndex+1)*6/n)));
+ const prevDep=timeToHours(item.portTimes?.[slotIndex]?.departure,slotIndex===0?"17:00":"17:00"),arr=timeToHours(item.portTimes?.[slotIndex+1]?.arrival,"08:00"),hours=(curDay-prevDay)*24+arr-prevDep,dist=seaLegDistanceNm(prev,candidate);
+ return hours>0&&(dist/hours)<=shipMaxSpeed(ship)+.001;
+}
 function buildSchedule(route=state.route, speedOverride=null){
  const speed=speedOverride??state.speed;
  if(!route || route.length<2){
@@ -2089,7 +2260,7 @@ function buildSchedule(route=state.route, speedOverride=null){
  for(let i=0;i<route.length-1;i++){
    const from=route[i],to=route[i+1],dist=nm(from,to);
    const sailingHours=dist/speed;
-   const minimumTravelDays=Math.max(1,Math.ceil(sailingHours/18));
+   const minimumTravelDays=Math.max(1,Math.ceil(sailingHours/24));
    legs.push({from,to,dist,sailingHours,travelDays:minimumTravelDays});
    totalNm+=dist; maxLeg=Math.max(maxLeg,dist);
  }
@@ -3219,7 +3390,25 @@ function conditionAverage(){
  return ((c.hull??80)+(c.machinery??80)+hotelBlend+interiorBlend)/4;
 }
 
-function sail(){ if(hasOwnedShip()&&state.programme?.[0]?.dryDock){processDryDockWeek();return;}
+function fleetFuelBlockers(){
+ const out=[];persistActiveShipState();for(const ship of fleetShips()){const prog=ensureShipProgramme(ship),item=prog[0];if(!item?.planned||item?.dryDock||!item.route?.length)continue;const rf=routeFuelEstimate(item,ship),fm=ensureFuelModel(ship);if(!rf.rangeOk)out.push({ship,required:rf.tonnes,onboard:fm.currentTonnes,short:Math.max(0,rf.tonnes-fm.currentTonnes)});}return out;
+}
+function rollShipProgramme(ship){
+ const p=ensureShipProgramme(ship);p.shift();const last=p[p.length-1]||{startPort:ship.currentPort||"Southampton",route:[]},lr=last.route||[],start=lr.length?lr[lr.length-1]:(last.startPort||ship.currentPort||"Southampton");p.push({...makeStarterProgramme()[0],startPort:start});p.forEach((x,idx)=>{if(idx<=2&&x.planned)x.committed=true});ship.programme=p;
+}
+function processSecondaryShipWeek(ship){
+ const saved={id:state.activeShipId,programme:state.programme,lastPnl:state.lastPnl,route:[...(state.route||[])],fare:state.fare,service:state.service,marketing:state.marketing,speed:state.speed,sel:selectedPlanWeek};
+ state.activeShipId=ship.id;state.programme=ensureShipProgramme(ship);selectedPlanWeek=0;const item=state.programme[0];
+ if(item?.dryDock){const weeks=item.dryDockWeeks||1,part=item.dryDockPart||1,total=item.dryDockTotalCost||refitTotalCost(ship),spend=total/weeks;if(state.cash<spend){Object.assign(state,{activeShipId:saved.id,programme:saved.programme,lastPnl:saved.lastPnl,route:saved.route,fare:saved.fare,service:saved.service,marketing:saved.marketing,speed:saved.speed});selectedPlanWeek=saved.sel;return {ship,error:`${ship.name} dry dock needs ${statementMoney(spend)} cash.`};}const opening=state.cash;state.cash-=spend;state.shipBook=(state.shipBook||0)+spend;ship.capitalizedRefits=(ship.capitalizedRefits||0)+spend;postJournal(`Dry-dock refit — ${ship.name} (${part}/${weeks})`,[{account:"refitAssets",debit:spend,credit:0},{account:"cash",debit:0,credit:spend}]);if(part===weeks)applyRefitQueue(ship,item.dryDockBatchId);const pnl={fareRevenue:0,totalRev:0,opex:0,ebitda:0,depreciation:0,operating:0,interest:0,pbt:0,tax:0,net:0,actualOcc:0,pax:0,reviewScore:0,dryDock:true,refitSpend:spend};ship.lastPnl=pnl;ship.lastProcessedWeek=state.week;state.performanceHistory.push({week:state.week,shipId:ship.id,shipName:ship.name,season:seasonForGameWeek(state.week),weather:`${state.weather.icon} ${state.weather.kind}`,route:[],reviewScore:0,pax:0,actualOcc:0,ebitda:0,net:0,cashClosing:state.cash,pnl:cloneJson(pnl),dryDock:true});rollShipProgramme(ship);Object.assign(state,{activeShipId:saved.id,programme:saved.programme,lastPnl:saved.lastPnl,route:saved.route,fare:saved.fare,service:saved.service,marketing:saved.marketing,speed:saved.speed});selectedPlanWeek=saved.sel;return {ship,pnl,cf:{opening,closing:state.cash}};}
+ if(!item?.planned||!item.route?.length){rollShipProgramme(ship);Object.assign(state,{activeShipId:saved.id,programme:saved.programme,lastPnl:saved.lastPnl,route:saved.route,fare:saved.fare,service:saved.service,marketing:saved.marketing,speed:saved.speed});selectedPlanWeek=saved.sel;return null;}
+ state.route=[...item.route];state.fare=item.fare||0;state.service=item.service??3;state.marketing=item.marketing??0;state.speed=item.speed??17.5;
+ const target=clamp(Math.max(item.booked||0,programmeDemandTarget(item,state.week)*.94)+(Math.random()-.5)*.04,.25,1),econ=estimateVoyageEconomics(item,target),rf=routeFuelEstimate(item,ship),fm=ensureFuelModel(ship);fm.currentTonnes=Math.max(0,fm.currentTonnes-rf.tonnes);
+ const dep=assetDepreciationWeekly(ship),oper=econ.ebitda-dep,net=oper;const pnl={...econ,fareRevenue:econ.fareRev,depreciation:dep,operating:oper,interest:0,pbt:oper,tax:0,net,actualOcc:target,pax:econ.pax,reviewScore:clamp(3.5+(target-.7)*.35+(conditionAverage()-75)/100,2.5,5),maintenancePolicy:ensureShipStandards(ship).maintenance};
+ const cashBefore=state.cash,currentFareCash=Math.max(0,econ.fareRev-Math.min(state.customerDeposits||0,econ.fareRev)),cashExpenses=Math.max(0,econ.opex-(econ.fuel||0)),cashMove=currentFareCash+econ.onboardRev-cashExpenses;state.cash+=cashMove;const release=Math.min(state.customerDeposits||0,econ.fareRev);state.customerDeposits=Math.max(0,(state.customerDeposits||0)-release);const cf={opening:cashBefore,currentFareCash,newDeposits:0,finalBalances:0,onboardCash:econ.onboardRev,supplierCash:-cashExpenses,supplierDetail:{},payroll:0,fuelCash:0,commissionsCash:0,marketingCash:0,hoCash:0,taxCash:0,operatingCF:cashMove,investing:0,principal:0,interestCash:0,financing:0,closing:state.cash};
+ postSailingAccounting(pnl,cf);ship.lastPnl=pnl;ship.lastCf=cf;ship.lastProcessedWeek=state.week;ship.currentPort=item.route[item.route.length-1]||ship.currentPort;state.performanceHistory.push({week:state.week,shipId:ship.id,shipName:ship.name,season:seasonForGameWeek(state.week),weather:`${state.weather.icon} ${state.weather.kind}`,route:[...item.route],reviewScore:pnl.reviewScore,pax:pnl.pax,actualOcc:pnl.actualOcc,ebitda:pnl.ebitda,net:pnl.net,cashClosing:state.cash,pnl:cloneJson(pnl),sailingPlan:cloneJson(item)});deteriorateCondition();rollShipProgramme(ship);
+ Object.assign(state,{activeShipId:saved.id,programme:saved.programme,lastPnl:saved.lastPnl,route:saved.route,fare:saved.fare,service:saved.service,marketing:saved.marketing,speed:saved.speed});selectedPlanWeek=saved.sel;return {ship,pnl,cf};
+}
+function sail(){ persistActiveShipState();const blockers=fleetFuelBlockers();if(blockers.length){const b=blockers[0];bindShipContext(b.ship.id);renderAll();tab("ships");alert(`${b.ship.name} needs about ${Math.ceil(b.required)}t of fuel for this week but has ${Math.floor(b.onboard)}t onboard. Bunker at least ${Math.ceil(b.short)}t before advancing the week.`);return;} if(hasOwnedShip()&&state.programme?.[0]?.dryDock){processDryDockWeek();return;}
  if(!hasOwnedShip()){tab("ships");setShipView("market");renderMyShips();alert("Buy a ship before sailing.");return;}
 
  const sch=buildSchedule();
@@ -3384,6 +3573,9 @@ function sail(){ if(hasOwnedShip()&&state.programme?.[0]?.dryDock){processDryDoc
  // Mark next programme sailing as the one just sailed; roll forward after results are accepted.
  deteriorateCondition();
  state.lastEvent=ev.txt+` Actual occupancy was ${pct(actualOcc)} with ${pax.toLocaleString()} guests. Ship condition is now ${conditionAverage().toFixed(0)}%.`;
+ activeShip().lastPnl=state.lastPnl;activeShip().lastCf=state.lastCf;activeShip().lastProcessedWeek=state.week;activeShip().programme=state.programme;
+ const activeId=state.activeShipId,secondary=[];fleetShips().filter(x=>x.id!==activeId).forEach(x=>{const r=processSecondaryShipWeek(x);if(r)secondary.push(r)});bindShipContext(activeId);if(state.lastCf)state.lastCf.closing=state.cash;activeShip().lastCf=state.lastCf;
+ if(secondary.length)state.lastEvent+=` ${secondary.length} other ship${secondary.length===1?"":"s"} also completed this week and contributed to group results.`;
  renderAll();
  showVoyageAnimation(()=>showVoyageResult(ev));
 }
@@ -3397,7 +3589,7 @@ setTimeout(()=>{
  const schedShip=document.getElementById("scheduleShipSelect");
  const switchShip=(id)=>{
    if(!state.fleet[id])return;
-   state.activeShipId=id;
+   if(!bindShipContext(id))return;
    selectedPlanWeek=0;
    renderAll();
  };
@@ -3459,6 +3651,7 @@ function renderPorts(){
     <div class="portBody">
       <div class="row" style="justify-content:space-between"><h3 style="margin:0">${name}</h3><span class="${active?"contractActive":"contractInactive"}">${active?`${c.weeksLeft} wks left`:"No contract"}</span></div>
       <div class="label" style="margin-top:5px">${portRegion(name)} · Culture ${p.culture}/10 · Scenic ${p.scenic}/10 · Family ${p.family}/10 · Luxury ${p.luxury}/10</div>
+      <div class="label" style="margin-top:4px"><b>Real-world access:</b> ${portTerminalMode(name)}</div>
       <div class="label" style="margin-top:8px">Current appeal · ${seasonForGameWeek(state.week)} · ${state.weather.icon} ${state.weather.kind}</div><div class="label">Port demand index: <b>${portDemandIndex(name).toFixed(2)}×</b></div>
       <table>
        <tr><th>Segment</th><th>Appeal</th></tr>
@@ -3838,6 +4031,26 @@ function selectedProgrammeSnapshot(){
 }
 
 
+function renderTimedPortSlots(item){
+ const host=document.getElementById("timedPortSlots"),slider=document.getElementById("selPortCount"),label=document.getElementById("selPortCountLabel"),auto=document.getElementById("selAutoSpeed");if(!host||!slider)return;
+ const locked=!!item.committed,start=programmeStartPort(selectedPlanWeek),existing=Math.max(1,item.portCount||Math.max(1,(item.route?.length||1)-1));slider.value=existing;slider.disabled=locked;if(label)label.textContent=existing;
+ const n=+slider.value,route=[start,...(item.route||[]).slice(1,n+1)];while(route.length<n+1)route.push("");item.portCount=n;
+ const defArr=document.getElementById("defaultArrivalTime")?.value||"08:00",defDep=document.getElementById("defaultDepartureTime")?.value||"17:00";
+ host.className="span12 timedPortSlots";host.innerHTML="";
+ for(let i=0;i<n;i++){
+   const prev=route[i]||start,current=route[i+1]||"",tmp={...item,route:route.slice(0,i+1),portTimes:item.portTimes||{}};
+   const names=availablePortNames().filter(p=>p!==prev).filter(p=>reachablePortForTimedSlot(p,{...tmp,route:[...tmp.route,p]},i,activeShip()));
+   const t=item.portTimes?.[i+1]||{},row=document.createElement("div");row.className="timedPortSlot";
+   row.innerHTML=`<div class="slotNo">Call ${i+1}<div class="reach">from ${prev}</div></div><div class="slotPort"><label class="label">Port</label><select class="slotPortSelect" data-slot="${i}" ${locked?"disabled":""}><option value="">Choose reachable port…</option>${names.map(p=>`<option value="${p}" ${p===current?"selected":""}>${p} · ${Math.round(seaLegDistanceNm(prev,p))} nm</option>`).join("")}</select></div><div><label class="label">Arrive</label><input class="slotArrival" data-slot="${i+1}" type="time" value="${t.arrival||defArr}" ${locked?"disabled":""}></div><div><label class="label">Leave</label><input class="slotDeparture" data-slot="${i+1}" type="time" value="${t.departure||defDep}" ${locked?"disabled":""}></div><div class="slotSpeed"><span class="label">Leg speed</span><b>—</b></div>`;
+   host.appendChild(row);
+ }
+ const refresh=()=>{
+   const r=[start];host.querySelectorAll(".slotPortSelect").forEach(x=>{if(x.value)r.push(x.value)});item.route=r;item.portTimes=item.portTimes||{};host.querySelectorAll(".slotArrival").forEach(x=>{item.portTimes[+x.dataset.slot]={...(item.portTimes[+x.dataset.slot]||{}),arrival:x.value}});host.querySelectorAll(".slotDeparture").forEach(x=>{item.portTimes[+x.dataset.slot]={...(item.portTimes[+x.dataset.slot]||{}),departure:x.value}});
+   const tp=timedPortPlan(item,activeShip());item.speed=Math.max(12,tp.requiredSpeed||12);item.days=tp.days;const speedEl=document.getElementById("selSpeed");if(speedEl){speedEl.innerHTML=`<option value="${item.speed}">${item.speed.toFixed(1)}</option>`;speedEl.value=item.speed}if(auto)auto.textContent=tp.requiredSpeed?`${tp.requiredSpeed.toFixed(1)} kn`:`—`;host.querySelectorAll(".slotSpeed b").forEach((b,j)=>b.textContent=tp.legs[j]?`${tp.legs[j].requiredSpeed.toFixed(1)} kn`:"—");
+   item.routeApplied=false;item.appliedDraft=null;renderVisualDayBuilder();renderVisualRouteTimeline();renderSchedulerPortScenes();drawRouteMap("selectedRouteMap",item.route);const warn=document.getElementById("selectedRouteWarning");if(warn)warn.textContent=tp.valid?`Reachable at ${tp.requiredSpeed.toFixed(1)} kn · ship maximum ${tp.maxSpeed.toFixed(1)} kn · ${tp.seaDays} sea day${tp.seaDays===1?"":"s"}`:tp.reason;
+ };
+ if(!locked){host.querySelectorAll("select,input").forEach(x=>x.addEventListener("change",()=>{refresh();renderTimedPortSlots(item)}));slider.oninput=()=>{item.portCount=+slider.value;if(label)label.textContent=slider.value;item.route=[start,...(item.route||[]).slice(1,+slider.value+1)];renderTimedPortSlots(item)};}refresh();
+}
 function renderSelectedPlan(){
  try{
    renderSelectedPlanCore();
@@ -4078,6 +4291,7 @@ function renderSelectedPlanCore(){
  document.getElementById("occupancyProfitTable").innerHTML=`<table><tr><th>Occupancy</th><th>Guests</th><th>Fare revenue</th><th>Onboard revenue</th><th>Total revenue</th><th>Operating cost</th><th>Potential EBITDA</th><th>Margin</th></tr>`+occs.map(o=>{const x=estimateVoyageEconomics(previewItem,o);return `<tr><td>${pct(o)}</td><td>${x.pax.toLocaleString()}</td><td>${statementMoney(x.fareRev)}</td><td>${statementMoney(x.onboardRev)}</td><td>${statementMoney(x.totalRev)}</td><td>${statementMoney(x.opex)}</td><td class="${x.ebitda<0?"neg":""}">${statementMoney(x.ebitda)}</td><td>${x.totalRev?pct(x.ebitda/x.totalRev):"—"}</td></tr>`}).join("")+`</table>`;
 
  document.getElementById("selStartPort").textContent=programmeStartPort(selectedPlanWeek);
+ renderTimedPortSlots(item);
  const holder=document.getElementById("selectedPortSelectors");holder.innerHTML="";
  const inner=previewItem.route.slice(1);while(inner.length<5)inner.push("");
  const oneOffToggle=document.getElementById("showOneOffPorts");
@@ -4244,13 +4458,13 @@ function ensureFuelModel(s){
 function routeFuelEstimate(item,s=activeShip()){
  const f=ensureFuelModel(s),r=Array.isArray(item?.route)?item.route:[];let distanceNm=0,valid=true;
  for(let i=1;i<r.length;i++){const from=r[i-1],to=r[i];if(!ports[from]||!ports[to]){valid=false;continue;}try{distanceNm+=nm(from,to)}catch(e){valid=false;}}
- const speed=item?.speed??state.speed??17.5,perNm=effectiveFuelTPerNm(s,speed),seaFuel=distanceNm*perNm,hotelFuel=r.length>1?7*effectiveHotelFuelTDay(s):0,tonnes=seaFuel+hotelFuel;
- return {nm:distanceNm,seaFuel,hotelFuel,tonnes,perNm,costPerNm:perNm*(state.fuelUSD||690)*.79,tankPct:f.tankTonnes?100*tonnes/f.tankTonnes:0,rangeOk:valid&&tonnes<=f.currentTonnes,valid};
+ const auto=item?.portTimes?timedPortPlan(item,s):null,speed=auto?.requiredSpeed?Math.max(12,auto.requiredSpeed):(item?.speed??state.speed??17.5),perNm=effectiveFuelTPerNm(s,speed),seaFuel=distanceNm*perNm,hotelFuel=r.length>1?7*effectiveHotelFuelTDay(s):0,tonnes=seaFuel+hotelFuel;
+ return {nm:distanceNm,seaFuel,hotelFuel,tonnes,speed,perNm,costPerNm:perNm*(state.fuelUSD||690)*.79,tankPct:f.tankTonnes?100*tonnes/f.tankTonnes:0,tankOk:valid&&tonnes<=f.tankTonnes,rangeOk:valid&&tonnes<=f.currentTonnes,valid};
 }
-function refuelShip(s=activeShip()){
- const f=ensureFuelModel(s),qty=f.tankTonnes-f.currentTonnes;if(qty<=.1)return;
- const cost=qty*(state.fuelUSD||690)*.79;if(state.cash<cost)return alert("Insufficient cash to bunker to full.");
- state.cash-=cost;f.currentTonnes=f.tankTonnes;postJournal(`Bunker fuel — ${s.name}`,[{account:"fuelInventory",debit:cost,credit:0},{account:"cash",debit:0,credit:cost}]);queueAutoSave();renderAll();
+function refuelShip(s=activeShip(),requestedQty=null){
+ const f=ensureFuelModel(s),space=Math.max(0,f.tankTonnes-f.currentTonnes),qty=clamp(requestedQty==null?space:+requestedQty||0,0,space);if(qty<=.1)return;
+ const cost=qty*(state.fuelUSD||690)*.79;if(state.cash<cost)return alert(`Insufficient cash to bunker ${Math.round(qty)} tonnes.`);
+ state.cash-=cost;f.currentTonnes+=qty;postJournal(`Bunker fuel — ${s.name} · ${Math.round(qty)}t`,[{account:"fuelInventory",debit:cost,credit:0},{account:"cash",debit:0,credit:cost}]);queueAutoSave();renderAll();
 }
 function createPurchasedShip(x,customName=null){
  const id2=`ship_${Date.now()}_${Math.floor(Math.random()*1000)}`,cab=Math.floor(x.capacity/2);
@@ -4262,7 +4476,7 @@ function createPurchasedShip(x,customName=null){
  facilities:[],yearBuilt:2026-x.age,lengthM:x.lengthM,grossTonnage:x.gt,decks:x.decks,purchasePrice:x.price,
  fuelTankTonnes:x.tankTonnes,fuelTPerNm:x.fuelTPerNm,hotelFuelTDay:x.hotelFuelTDay,
  fuel:{tankTonnes:x.tankTonnes,currentTonnes:x.tankTonnes,fuelTPerNm:x.fuelTPerNm,hotelFuelTDay:x.hotelFuelTDay},
- condition:{machinery:x.condition,hull:x.condition,hotel:x.condition,interiors:x.condition},standards:{staffing:3,service:3,maintenance:3},refitQueue:[],currentPort:"Southampton",spaceModel:null};
+ condition:{machinery:x.condition,hull:x.condition,hotel:x.condition,interiors:x.condition},standards:{staffing:3,service:3,maintenance:3},refitQueue:[],currentPort:"Southampton",programme:makeStarterProgramme(),lastPnl:null,lastCf:null,spaceModel:null};
  state.fleet[id2]=ship;state.activeShipId=id2;
  const model=ensureShipSpaceModel(ship);model.decks.forEach(d=>d.spaces.forEach(sp=>sp.condition=x.condition));applyUsedFacilityVariant(ship,x);syncShipFromSpaceModel(ship);
  state.shipBook=(state.shipBook||0)+x.price;
@@ -4281,7 +4495,7 @@ function buyMarketShip(id,profileId=null,customName=null){
  createPurchasedShip(x,customName);
  postShipPurchaseAccounting(x,deposit,loan,activeShip().name);
  if(firstShip){
-   state.programme=makeFirstShipProgramme();state.route=[...state.programme[0].route];state.fare=state.programme[0].fare;state.marketing=state.programme[0].marketing;
+   state.programme=makeFirstShipProgramme();activeShip().programme=state.programme;state.route=[...state.programme[0].route];state.fare=state.programme[0].fare;state.marketing=state.programme[0].marketing;
    state.lastEvent=`${activeShip().name} has joined the fleet. The first three sailings are committed so you can start operating immediately.`;
  }
  queueAutoSave();renderAll();
@@ -4390,7 +4604,7 @@ function onboardCapacityUtilisation(s,pax,sch,ob){
  };
 }
 
-function plannerBuildCost(type,count){const d=SPACE_TYPES[type];return d?Math.round((d.capex||0)*Math.max(1,count)):0}
+function plannerBuildCost(type,count){const d=SPACE_TYPES[type];if(!d)return 0;const mult=d.kind==="cabin"?.55:.25;return Math.round((d.capex||0)*Math.max(1,count)*mult)}
 function plannerSpaceArea(type,count){const d=SPACE_TYPES[type];return d?Math.round(d.area*Math.max(1,count)):0}
 function selectedDeckModel(){const s=activeShip(),m=ensureShipSpaceModel(s);return m.decks.find(d=>d.number===m.selectedDeck)||m.decks[0]}
 function updateDeckPlannerPreview(){
@@ -4538,7 +4752,7 @@ function renderFacilityInspector(sp){
 function technicalRepairCost(kind){
  const c=activeCondition(),v=clamp(Number(c[kind]??80),0,100);
  const ship=activeShip(),scale=Math.max(.65,(ship.grossTonnage||90000)/90000);
- const base=kind==="hull"?1800000:3200000;
+ const base=kind==="hull"?900000:1600000;
  return Math.round(base*scale*(.35+(100-v)/55));
 }
 function repairTechnicalCondition(kind){
@@ -4795,7 +5009,7 @@ function renderMyShips(){
  const all=m.decks.flatMap(d=>d.spaces).filter(x=>SPACE_TYPES[x.type]?.kind==="facility");
  document.getElementById("shipFacilitiesTable").innerHTML=`<tr><th>Facility</th><th>Deck</th><th>Luxury</th><th>Condition</th></tr>${all.map(sp=>{const dd=m.decks.find(d=>d.spaces.includes(sp));return `<tr><td>${sp.label}</td><td>${dd.number}</td><td>${sp.luxury.toFixed(1)}</td><td>${sp.condition.toFixed(0)}%</td></tr>`}).join("")}`; const syncedFacilities=(ship.facilities||[]).reduce((a,x)=>a+(x.count||0),0),deckFacilities=all.reduce((a,x)=>a+(x.count||1),0);document.getElementById("shipFacilitiesTable").insertAdjacentHTML("afterend",`<div class="accountingIntegrity"><b>${syncedFacilities===deckFacilities?"✓":"⚠"} Facility integrity</b> · deck plan ${deckFacilities} units · ship summary ${syncedFacilities} units · deck plan is the source of truth.</div>`);
  const fm=ensureFuelModel(ship),fh=document.getElementById("shipFuelPanel");
- if(fh){const age=2026-(ship.yearBuilt||2026);let rf=null;try{rf=state.programme?.[0]?.route?.length>1?routeFuelEstimate(state.programme[0],ship):null}catch(e){console.error("Fuel estimate failed",e)}fh.innerHTML=`<div class="fuelTitle"><div><b>${Math.round(fm.currentTonnes).toLocaleString()} / ${fm.tankTonnes.toLocaleString()} tonnes fuel</b><span>${age} years old · ${ship.grossTonnage.toLocaleString()} GT</span></div><button class="btn" id="bunkerFullBtn">Bunker to full</button></div><div class="fuelGauge"><div style="width:${100*fm.currentTonnes/fm.tankTonnes}%"></div></div><div class="fuelNumbers">Base ship fuel model · ${effectiveFuelTPerNm(ship,17.5).toFixed(3)} t/nm at 17.5 kn · ${priceMoney(fuelCostPerNm(ship,17.5))}/nm · hotel load ${effectiveHotelFuelTDay(ship).toFixed(1)} t/day${rf?`<br>This week's route: ${Math.round(rf.nm).toLocaleString()} nm · ${Math.round(rf.tonnes)} t (${rf.tankPct.toFixed(0)}% tank) ${rf.valid===false?"✕ route data error":rf.rangeOk?"✓":"✕ insufficient fuel"}`:""}</div>`;document.getElementById("bunkerFullBtn").onclick=()=>refuelShip(ship);}
+ if(fh){const age=2026-(ship.yearBuilt||2026);let rf=null;try{rf=state.programme?.[0]?.route?.length>1?routeFuelEstimate(state.programme[0],ship):null}catch(e){console.error("Fuel estimate failed",e)}const short=rf?Math.max(0,rf.tonnes-fm.currentTonnes):0;fh.innerHTML=`<div class="fuelTitle"><div><b>${Math.round(fm.currentTonnes).toLocaleString()} / ${fm.tankTonnes.toLocaleString()} tonnes fuel</b><span>${age} years old · ${ship.grossTonnage.toLocaleString()} GT</span></div></div><div class="fuelGauge"><div style="width:${100*fm.currentTonnes/fm.tankTonnes}%"></div></div><div class="fuelNumbers">Base ship fuel model · ${effectiveFuelTPerNm(ship,17.5).toFixed(3)} t/nm at 17.5 kn · hotel load ${effectiveHotelFuelTDay(ship).toFixed(1)} t/day${rf?`<br>This week's route: ${Math.round(rf.nm).toLocaleString()} nm · ${Math.round(rf.tonnes)} t (${rf.tankPct.toFixed(0)}% tank) · <span class="${rf.rangeOk?"fuelReady":"fuelShortfall"}">${rf.rangeOk?"Ready to sail":`Short ${Math.ceil(short)}t`}</span>`:""}</div><div class="bunkerControls"><input id="bunkerQty" type="number" min="1" max="${Math.floor(fm.tankTonnes-fm.currentTonnes)}" step="10" value="${Math.max(0,Math.min(Math.floor(fm.tankTonnes-fm.currentTonnes),Math.ceil(short||100)))}" aria-label="Fuel tonnes to bunker"><button class="btn secondary" id="bunkerQtyBtn">Bunker amount</button><button class="btn" id="bunkerFullBtn">Fill tank</button></div>`;document.getElementById("bunkerQtyBtn").onclick=()=>refuelShip(ship,+document.getElementById("bunkerQty").value||0);document.getElementById("bunkerFullBtn").onclick=()=>refuelShip(ship);}
  renderShipMarket();
  const cap=facilityCapacityMetrics(ship,ship.capacity||Object.values(ship.berths||{}).reduce((a,b)=>a+b,0));
  const capHost=document.getElementById("facilityCapacitySummary");
@@ -4942,7 +5156,7 @@ function updateItineraryBuilderVisibility(){
 }
 function renderVisualDayBuilder(){
  const box=document.getElementById("visualDayBuilder");if(!box)return;
- const plan=state.programme?.[selectedPlanWeek]||{},days=normalizeSevenDayPlan(plan),locked=!!plan.committed;
+ const plan=state.programme?.[selectedPlanWeek]||{},days=normalizeSevenDayPlan(plan),locked=!!plan.committed||!!plan.portCount;
  box.innerHTML=days.map((d,i)=>{
    const sea=d.type==="sea"||!d.port,img=sea?seaDayDataUri():portSceneDataUri(d.port),title=sea?"Sea Day":d.port;
    return `<button type="button" class="visualDayCard ${sea?"sea":""}" data-day="${i}" ${locked?"disabled":""} style="background-image:url('${img}')"><span>DAY ${i+1}</span><b>${title}</b><small>${sea?"At sea":"Port call"}</small></button>`
@@ -5205,13 +5419,16 @@ function collectSelectedWeekDraft(){
  const ship=activeShip();
  const totalBerths=Object.values(ship.berths).reduce((a,b)=>a+b,0);
  const fare=(cabinPrices.inside*ship.berths.inside+cabinPrices.oceanview*ship.berths.oceanview+cabinPrices.balcony*ship.berths.balcony+cabinPrices.suite*ship.berths.suite)/totalBerths;
- return {...old,route,cabinPrices,fare,
+ const portCount=Math.max(1,+document.getElementById("selPortCount")?.value||Math.max(1,route.length-1));
+ const portTimes={};document.querySelectorAll(".slotArrival").forEach(el=>{const i=+el.dataset.slot;portTimes[i]={...(portTimes[i]||{}),arrival:el.value||"08:00"}});document.querySelectorAll(".slotDeparture").forEach(el=>{const i=+el.dataset.slot;portTimes[i]={...(portTimes[i]||{}),departure:el.value||"17:00"}});
+ const timed=timedPortPlan({...old,route,portTimes},activeShip());
+ return {...old,route,cabinPrices,fare,portCount,portTimes,
    service:+document.getElementById("selService").value||3,
    foodSpendPpd:+document.getElementById("selFoodSpend").value||18,
    hotelConsumablesPpd:+document.getElementById("selHotelSpend").value||7,
    entertainmentSpendPpd:+document.getElementById("selEntertainmentSpend").value||0,
    marketing:+document.getElementById("selMarketing").value||0,marketingTargetSegment:document.getElementById("selMarketingSegment")?.value||"Broad",marketingTargetWealth:document.getElementById("selMarketingWealth")?.value||"Broad",
-   speed:+document.getElementById("selSpeed").value||17.5,
+   speed:Math.max(12,timed.requiredSpeed||17.5),days:timed.days,
    planned:true,committed:false};
 }
 
@@ -5220,10 +5437,12 @@ document.getElementById("applyWeekRoute").onclick=()=>{
  if(old.committed)return;
  try{
    const draft=collectSelectedWeekDraft();
+   const fuelCheck=routeFuelEstimate(draft,activeShip()),timed=timedPortPlan(draft,activeShip());
+   if(!fuelCheck.tankOk){alert(`This route needs about ${Math.round(fuelCheck.tonnes)} tonnes of fuel, more than ${activeShip().name}'s ${Math.round(ensureFuelModel(activeShip()).tankTonnes)}-tonne tank capacity.`);return;}
+   if(!timed.valid){alert(timed.reason);return;}
+   draft.speed=Math.max(12,timed.requiredSpeed);draft.days=timed.days;
    const test=planScheduleForItem(draft);
-   const fuelCheck=routeFuelEstimate(draft,activeShip());
-   if(!fuelCheck.rangeOk){alert(`Route needs about ${Math.round(fuelCheck.tonnes)} tonnes of fuel; only ${Math.round(ensureFuelModel(activeShip()).currentTonnes)} tonnes are onboard. Bunker or shorten the itinerary.`);return;}
-   if(!test.sch.valid){
+   if(!test.sch.valid && !draft.portTimes){
      alert(test.sch.reason||"This itinerary does not fit a valid 7-day sailing.");
      return;
    }
@@ -5237,7 +5456,7 @@ document.getElementById("applyWeekRoute").onclick=()=>{
      hotelConsumablesPpd:draft.hotelConsumablesPpd,
      entertainmentSpendPpd:draft.entertainmentSpendPpd,
      marketing:draft.marketing,
-     speed:draft.speed,
+     portCount:draft.portCount,portTimes:cloneJson(draft.portTimes||{}),days:cloneJson(draft.days||[]),speed:draft.speed,
      excursionSelection:draft.excursionSelection||old.excursionSelection||{},
      excursionPricing:draft.excursionPricing||old.excursionPricing||{},
      planned:true,
@@ -5284,14 +5503,14 @@ document.getElementById("saveCommitWeek").onclick=()=>{
  const marketingTargetSegment=applied.marketingTargetSegment||"Broad";
  const marketingTargetWealth=applied.marketingTargetWealth||"Broad";
  const entertainmentSpendPpd=applied.entertainmentSpendPpd??4;
- const speed=applied.speed;
-
- const os=state.speed;state.speed=speed;const sch=buildSchedule(route);state.speed=os;
+ const timed=timedPortPlan(applied,activeShip()),speed=Math.max(12,timed.requiredSpeed||applied.speed||17.5);applied.speed=speed;applied.days=timed.days;
+ if(!timed.valid){alert(timed.reason);return;}
+ const sch=timed;
  if(!sch.valid){alert(sch.reason||"Itinerary must fit exactly 7 days.");return;}
 
  if(!confirm(`Save and commit Week ${state.week+i}? Route, cabin prices and operating settings will lock. Excursion prices can still be changed afterwards.`))return;
 
- state.programme[i]={...old,route,days:normalizeSevenDayPlan(applied),fare,cabinPrices,excursionPricing:{},excursionSelection:{},service,foodSpendPpd,hotelConsumablesPpd,entertainmentSpendPpd,marketing,marketingTargetSegment,marketingTargetWealth,speed,planned:true,committed:true,routeApplied:false,appliedDraft:null};
+ state.programme[i]={...old,route,days:timed.days,portCount:applied.portCount||Math.max(1,route.length-1),portTimes:cloneJson(applied.portTimes||{}),fare,cabinPrices,excursionPricing:{},excursionSelection:{},service,foodSpendPpd,hotelConsumablesPpd,entertainmentSpendPpd,marketing,marketingTargetSegment,marketingTargetWealth,speed,planned:true,committed:true,routeApplied:false,appliedDraft:null};
  state.programme[i].excursionsInitialised=true;
  enforceProgrammeContinuity();
  queueAutoSave();
@@ -5425,6 +5644,7 @@ function safeRenderPage(name,fn){
 
 function initMobileNav(){const btn=document.getElementById("mobileMenuBtn"),nav=document.getElementById("mainNav");if(!btn||!nav)return;btn.onclick=()=>{const o=nav.classList.toggle("mobileOpen");btn.setAttribute("aria-expanded",o?"true":"false");btn.textContent=o?"✕ Close":"☰ Menu"};nav.querySelectorAll("button[data-tab]").forEach(b=>b.addEventListener("click",()=>{if(window.innerWidth<=760){nav.classList.remove("mobileOpen");btn.setAttribute("aria-expanded","false");btn.textContent="☰ Menu"}}))}
 function renderAll(){
+ if(state.fleet?.[state.activeShipId])state.fleet[state.activeShipId].programme=state.programme;
  document.getElementById("weekPill").textContent=state.week;
  document.getElementById("cashPill").textContent=money(state.cash);
  document.getElementById("repPill").textContent=Math.round(state.rep);
@@ -5452,7 +5672,7 @@ function renderAll(){
  document.getElementById("condInteriors").textContent=hasOwnedShip()?`${Number(ac.interiors??ac.interior??80).toFixed(0)}%`:"—";
  const weekFuel=document.getElementById("weekFuelPill");if(weekFuel)weekFuel.textContent=hasOwnedShip()?money(routeCosts(state.route,state.speed).fuel):"—";
  normaliseLoans();const ir=document.getElementById("interestRatePill"),br=document.getElementById("baseRatePill"),cr=document.getElementById("creditScorePill"),cm=creditMetrics();if(br)br.textContent=`${(gameBaseRate()*100).toFixed(2)}%`;if(cr)cr.textContent=`${starText(cm.stars)} · ${cm.grade}`;if(ir)ir.textContent=state.debt?`${((state.loanRate||0)*100).toFixed(2)}%`:`New ${(offeredLoanRate()*100).toFixed(2)}%`;
- const sailBtn=document.getElementById("sailBtn");if(sailBtn){sailBtn.disabled=!hasOwnedShip();sailBtn.title=hasOwnedShip()?"":"Buy a ship before sailing.";sailBtn.textContent=state.programme?.[0]?.dryDock?"Advance dry-dock week":"Sail this week";}
+ const sailBtn=document.getElementById("sailBtn");if(sailBtn){const blockers=hasOwnedShip()?fleetFuelBlockers():[];sailBtn.disabled=!hasOwnedShip()||blockers.length>0;sailBtn.title=!hasOwnedShip()?"Buy a ship before sailing.":blockers.length?`${blockers[0].ship.name} is short ${Math.ceil(blockers[0].short)}t fuel for this week.`:"All scheduled ships have enough fuel.";sailBtn.textContent=blockers.length?`FUEL NEEDED · ${blockers[0].ship.name}`:(state.programme?.[0]?.dryDock?"Advance dry-dock week":"Sail this week");}
  const sn=document.getElementById("shipName");if(sn)sn.textContent=ship.name;
  const smeta=document.getElementById("shipSummaryMeta");if(smeta)smeta.textContent=`${(ship.capacity||0).toLocaleString()} guests · ${(ship.crew?.total||0).toLocaleString()} crew · ${ship.status||"In service"}`;
  const sloc=document.getElementById("shipLocationKpi");if(sloc)sloc.textContent=(state.route?.[0]||"—");
@@ -5517,26 +5737,10 @@ function advanceGameWeek({render=true,closeResult=true}={}){
  state.weather=generateWeather(seasonForGameWeek(state.week));
  tickPortContracts();
 
- if(!Array.isArray(state.programme)||!state.programme.length)throw new Error("Programme is missing.");
- state.programme.shift();
-
- let last=state.programme[state.programme.length-1];
- if(!last){
-   last={startPort:activeShip()?.currentPort||"Southampton",route:[]};
-   state.programme.push(last)
- }
- state.programme.forEach((x,idx)=>{if(idx<=2)x.committed=true});
-
- const lastRoute=Array.isArray(last.route)?last.route:[];
- const newStart=lastRoute.length?lastRoute[lastRoute.length-1]:(last.startPort||activeShip()?.currentPort||"Southampton");
- state.programme.push({
-   startPort:newStart,route:[],fare:0,
-   cabinPrices:{inside:0,oceanview:0,balcony:0,suite:0},
-   service:3,foodSpendPpd:18,hotelConsumablesPpd:7,entertainmentSpendPpd:4,
-   marketing:0,marketingTargetSegment:"Broad",marketingTargetWealth:"Broad",
-   speed:17.5,booked:0,lastBooked:0,committed:false,planned:false
- });
-
+ persistActiveShipState();
+ const activeId=state.activeShipId;
+ fleetShips().forEach(ship=>{if(ship.lastProcessedWeek===state.week-1){if(ship.id===activeId)rollShipProgramme(ship);}else if(ship.id===activeId)rollShipProgramme(ship);});
+ bindShipContext(activeId);
  enforceProgrammeContinuity();
 
  const current=state.programme[0]||{};
