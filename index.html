@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>Cruise Tycoon v5.0 — 10 Aug 2026 18:11</title>
+<title>Cruise Tycoon v5.0 — 10 Aug 2026 18:18</title>
 <style>
 :root{
   --navy:#102c46;--navy2:#173e61;--bg:#edf3f7;--card:#fff;--ink:#17324a;
@@ -773,6 +773,13 @@ input[type="range"]{width:100%}
 /* v5.0 18:11 scheduler cleanup */
 .schedulerModeBar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;margin:0 0 14px;border:1px solid #cfe0e7;border-radius:14px;background:#f7fbfc}.schedulerModeBar label{font-weight:850}.schedulerModeBar select{min-width:180px}.sailingPlannerPanel[hidden],.dryDockModePanel[hidden]{display:none!important}.sailingPlannerPanel{display:block}.dryDockModePanel{margin-top:10px}.routeReviewCard{margin-top:14px;padding:14px;border:1px solid #cfe0e7;border-radius:15px;background:linear-gradient(180deg,#fbfdfe,#f5fafb)}.routeReviewHead{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:10px}.routeReviewHead h3{margin:0}.routeCommitRow{display:flex;justify-content:flex-end;gap:10px;margin-top:12px}.routeCommitRow .btn.good{min-width:180px}.schedulerLegacyHidden{display:none!important}#schedulerPortScenes,.visualRouteCard,.visualBuilderWrap,#selectedPortSelectors,#selectedTimeline{display:none!important}.itineraryIntro{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:8px}.itineraryIntro h3{margin:0}.itineraryHelper{max-width:620px}.dryDockPlanner{margin:0}.dryDockPlanner h3{margin-top:0}.routeAppliedBadge{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;background:#e8f4ec;color:#1b704a;font-size:11px;font-weight:850}.routeDraftBadge{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;background:#fff4d7;color:#7a6116;font-size:11px;font-weight:850}
 @media(max-width:700px){.schedulerModeBar{align-items:flex-start;flex-direction:column}.schedulerModeBar select{width:100%}.routeReviewHead{flex-direction:column}.routeCommitRow{justify-content:stretch}.routeCommitRow .btn{width:100%}}
+
+/* v5.0 18:18 review-and-commit workflow */
+.reviewCommercialSummary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0}
+.reviewCommercialSummary>div{padding:10px 11px;border:1px solid var(--line);border-radius:12px;background:#f7fafb}
+.reviewCommercialSummary span{display:block;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.reviewCommercialSummary b{display:block;margin-top:4px;font-size:15px}
+@media(max-width:800px){.reviewCommercialSummary{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -786,7 +793,7 @@ input[type="range"]{width:100%}
   <div><b>CRUISE<br>TYCOON</b><span>BUILD YOUR FLEET</span></div>
  </div>
  <div class="toprow">
-  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v5.0 — 10 Aug 2026 18:11</span></div><div class="sub">One brand. £5m. No ship. Build from there. · Global ports expansion</div></div>
+  <div><div class="title">Cruise Tycoon <span style="font-size:13px;opacity:.7">v5.0 — 10 Aug 2026 18:18</span></div><div class="sub">One brand. £5m. No ship. Build from there. · Global ports expansion</div></div>
   <div class="pills">
    <div class="pill">Week <b id="weekPill">1</b></div>
    <div class="pill">Group cash <b id="cashPill">£5.0m</b></div>
@@ -963,6 +970,7 @@ input[type="range"]{width:100%}
       <button type="button" data-schedule-page="options">Onboard options</button>
       <button type="button" data-schedule-page="excursions">Excursions</button>
       <button type="button" data-schedule-page="costs">Operating costs</button>
+      <button type="button" data-schedule-page="review">Review &amp; commit</button>
     </div>
     <div id="schedulerPortScenes" class="schedulerPortScenes schedulerLegacyHidden"></div><div class="visualRouteCard schedulerLegacyHidden"><div class="visualRouteHead"><div><div class="eyebrow">THIS SAILING</div><b>Visual itinerary</b></div><div id="visualRouteDistance" class="visualRouteDistance">Route preview</div></div><div id="visualRouteTimeline" class="visualRouteTimeline"></div></div>
 
@@ -993,14 +1001,6 @@ input[type="range"]{width:100%}
           <div id="visualDayBuilder" class="visualDayBuilder schedulerLegacyHidden"></div><div id="visualPortPicker" class="visualPortPicker schedulerLegacyHidden" hidden></div><div id="selectedPortSelectors" class="legacyPortSelectors span12 planGrid"></div>
           <div class="span12"><button class="btn secondary" id="applyWeekRoute">Apply &amp; save route</button></div>
 
-          <div class="span12 routeReviewCard">
-            <div class="routeReviewHead"><div><h3>Review route</h3><div class="label">Apply the route to lock the current route draft for review. Commercial settings can still be changed before commitment.</div></div><div id="selAutoSpeed" class="kpi" style="font-size:20px">—</div></div>
-            <div id="selectedRouteMap" class="realMap" aria-label="Selected cruise route map"></div>
-            <div id="selectedTimeline" class="timeline schedulerLegacyHidden"></div>
-            <div id="selectedRouteWarning" class="notice" style="margin-top:10px"></div>
-            <div id="schedulerCostStrip" class="schedulerCostStrip pending">Apply the route to calculate the estimated total voyage cost.</div>
-            <div class="routeCommitRow"><button class="btn good" id="saveCommitWeek">Commit itinerary</button></div>
-          </div>
         </div>
       </div>
     </div>
@@ -1043,6 +1043,20 @@ input[type="range"]{width:100%}
         <div class="span12"><div id="routeEconomicsBox" class="notice"></div></div>
         <div class="span12"><h3 style="margin-top:10px">Estimated full itinerary cost</h3><div class="label">Planning estimate using the same core cost drivers as the sailing P&amp;L.</div><div id="routeCostBreakdown"></div></div>
         <div class="span12"><h3 style="margin-top:10px">Commercial judgement</h3><div class="label">Future profit is deliberately hidden. Use bookings, route cost and your own pricing judgement.</div><div id="occupancyProfitTable"></div></div>
+      </div>
+    </div>
+    <div id="schedulePageReview" class="scheduleSubPage">
+      <div class="planGrid">
+        <div class="span12 routeReviewCard">
+          <div class="routeReviewHead"><div><h3>Review &amp; commit</h3><div class="label">Apply the route first, then use the other tabs to refine pricing, service, marketing and onboard settings. Return here when you are ready to lock the week.</div></div><div id="selAutoSpeed" class="kpi" style="font-size:20px">—</div></div>
+          <div id="reviewRouteStatus" class="notice" style="margin-bottom:10px">Route not yet applied.</div>
+          <div id="selectedRouteMap" class="realMap" aria-label="Selected cruise route map"></div>
+          <div id="selectedTimeline" class="timeline schedulerLegacyHidden"></div>
+          <div id="selectedRouteWarning" class="notice" style="margin-top:10px"></div>
+          <div id="schedulerCostStrip" class="schedulerCostStrip pending">Apply the route to calculate the estimated total voyage cost.</div>
+          <div id="reviewCommercialSummary" class="reviewCommercialSummary"></div>
+          <div class="routeCommitRow"><button class="btn good" id="saveCommitWeek">Commit itinerary</button></div>
+        </div>
       </div>
     </div>
    </div>
@@ -4207,6 +4221,11 @@ function showScheduleSubPage(page){
  document.querySelectorAll(".scheduleSubPage").forEach(x=>x.classList.toggle("active",x.id==="schedulePage"+selectedScheduleSubPage[0].toUpperCase()+selectedScheduleSubPage.slice(1)));
  document.querySelectorAll("#scheduleSubTabs button").forEach(b=>b.classList.toggle("active",b.dataset.schedulePage===selectedScheduleSubPage));
  enforceSchedulerExcursionGate();
+ if(selectedScheduleSubPage==="review") {
+   refreshSchedulerEconomicsFromDom();
+   updateReviewCommitSummary();
+   setTimeout(()=>{const m=mapInstances?.selectedRouteMap;if(m)m.invalidateSize();},60);
+ }
 }
 function bindScheduleSubTabs(){
  enforceSchedulerExcursionGate();
@@ -4262,10 +4281,10 @@ function renderTimedPortSlots(item){
  const defArr=document.getElementById("defaultArrivalTime")?.value||"08:00",defDep=document.getElementById("defaultDepartureTime")?.value||"17:00";host.className="span12 timedPortSlots";host.innerHTML="";
  const startDeparture=item.portTimes?.[0]?.departure||defDep;
  host.insertAdjacentHTML("beforeend",`<div class="timedStartPort"><div class="startLabel">START<div class="startMeta">Day 1</div></div><div class="startPortWrap"><label class="label">Turnaround port</label><div class="startPortVisualCard portMapCard" style="${portMapStyle(start,5)}">${portMapMarkup(start,5)}<div class="portCardFooter"><b>${start}</b><span>${portRegion(start)} · starting port</span></div></div></div><div><label class="label">Day</label><div><b>Day 1</b></div></div><div><label class="label">Arrive</label><div><b>08:00</b></div></div><div><label class="label">Leave</label><input class="startDeparture" type="time" value="${startDeparture}" ${locked?"disabled":""}></div></div>`);
- const refresh=()=>{
+ const refresh=(invalidateApplied=false)=>{
    const r=[start];host.querySelectorAll(".timedPortSlot .selectedPortCard[data-port]").forEach(x=>{if(x.dataset.port)r.push(x.dataset.port)});item.route=r;item.portTimes=item.portTimes||{};const sd=host.querySelector(".startDeparture");item.portTimes[0]={...(item.portTimes[0]||{}),departure:sd?.value||defDep};host.querySelectorAll(".slotDay").forEach(x=>{item.portTimes[+x.dataset.slot]={...(item.portTimes[+x.dataset.slot]||{}),day:+x.value}});host.querySelectorAll(".slotArrival").forEach(x=>{item.portTimes[+x.dataset.slot]={...(item.portTimes[+x.dataset.slot]||{}),arrival:x.value}});host.querySelectorAll(".slotDeparture").forEach(x=>{item.portTimes[+x.dataset.slot]={...(item.portTimes[+x.dataset.slot]||{}),departure:x.value}});
    const tp=timedPortPlan(item,activeShip());item.speed=Math.max(12,tp.requiredSpeed||12);item.days=tp.days;const speedEl=document.getElementById("selSpeed");if(speedEl){speedEl.innerHTML=`<option value="${item.speed}">${item.speed.toFixed(1)}</option>`;speedEl.value=item.speed}if(auto)auto.textContent=tp.requiredSpeed?`${tp.requiredSpeed.toFixed(1)} kn`:`—`;host.querySelectorAll(".slotSpeed b").forEach((b,j)=>b.textContent=tp.legs[j]?`${tp.legs[j].requiredSpeed.toFixed(1)} kn`:"—");
-   item.routeApplied=false;item.appliedDraft=null;drawRouteMap("selectedRouteMap",item.route);const warn=document.getElementById("selectedRouteWarning");if(warn)warn.textContent=tp.valid?`Reachable at ${tp.requiredSpeed.toFixed(1)} kn · ship maximum ${tp.maxSpeed.toFixed(1)} kn · ${tp.seaDays} sea day${tp.seaDays===1?"":"s"}`:tp.reason;
+   if(invalidateApplied){item.routeApplied=false;item.appliedDraft=null;item.routeAppliedAt=null;}drawRouteMap("selectedRouteMap",item.route);const warn=document.getElementById("selectedRouteWarning");if(warn)warn.textContent=tp.valid?`Reachable at ${tp.requiredSpeed.toFixed(1)} kn · ship maximum ${tp.maxSpeed.toFixed(1)} kn · ${tp.seaDays} sea day${tp.seaDays===1?"":"s"}`:tp.reason;
  };
  const openPicker=(slot,row)=>{
    if(locked)return;host.querySelectorAll(".portChoicePanel").forEach(x=>{if(x!==row.querySelector(".portChoicePanel"))x.hidden=true});const panel=row.querySelector(".portChoicePanel");panel.hidden=!panel.hidden;if(panel.hidden)return;
@@ -4292,7 +4311,7 @@ function renderTimedPortSlots(item){
      grid.innerHTML=visible.map(p=>{const dist=approxSeaLegDistanceNm(prev,p),best=portBestSegment(p),access=portAccessMode(p,activeShip()),cost=access==="contract"?portCallCost(p,activeShip()):oneOffPortCost(p,activeShip());return `<button type="button" class="schedulerPortChoice portMapCard ${access} ${p===current?"selected":""}" data-port="${p}" style="${portMapStyle(p,5)}">${portMapMarkup(p,5)}<span class="choiceRegion">${portRegion(p)}</span><span class="infoDot" data-info="${p}">i</span><div class="portCardFooter"><b>${p}</b><span>${Math.round(dist)} nm · ${access==="contract"?"contract":"one-off"} ${statementMoney(cost)} · Best ${best[0]} ${best[1].toFixed(1)}/10 · Pop ${Math.round(plannerPortPopularity(p))}</span></div></button>`}).join("")||'<div class="notice" style="grid-column:1/-1">No reachable ports match these filters. Try enabling one-off ports or reducing the number of calls.</div>';
      const more=panel.querySelector(".portPickerMore");if(more){more.hidden=!!q||names.length<=12;more.textContent=showAll?"Show recommended only":`Show all ${names.length} reachable ports`}
      grid.querySelectorAll(".schedulerPortChoice").forEach(btn=>{
-       let timer=null,longPressed=false;const info=()=>{longPressed=true;showPlannerPortInfo(btn.dataset.port,prev)};btn.addEventListener("pointerdown",e=>{if(e.target.closest(".infoDot"))return;longPressed=false;timer=setTimeout(info,600)});["pointerup","pointercancel","pointerleave"].forEach(ev=>btn.addEventListener(ev,()=>{clearTimeout(timer)}));btn.addEventListener("click",e=>{if(e.target.closest(".infoDot")){e.preventDefault();showPlannerPortInfo(btn.dataset.port,prev);return}if(longPressed){e.preventDefault();return}const selected=btn.dataset.port,card=row.querySelector(".selectedPortCard");card.dataset.port=selected;card.classList.remove("empty");card.classList.add('portMapCard');card.setAttribute('style',portMapStyle(selected,5));card.innerHTML=`${portMapMarkup(selected,5)}<div class="portCardFooter"><b>${selected}</b><span>${portRegion(selected)} · tap to change · hold for detail</span></div>`;panel.hidden=true;refresh();renderTimedPortSlots(item)});});
+       let timer=null,longPressed=false;const info=()=>{longPressed=true;showPlannerPortInfo(btn.dataset.port,prev)};btn.addEventListener("pointerdown",e=>{if(e.target.closest(".infoDot"))return;longPressed=false;timer=setTimeout(info,600)});["pointerup","pointercancel","pointerleave"].forEach(ev=>btn.addEventListener(ev,()=>{clearTimeout(timer)}));btn.addEventListener("click",e=>{if(e.target.closest(".infoDot")){e.preventDefault();showPlannerPortInfo(btn.dataset.port,prev);return}if(longPressed){e.preventDefault();return}const selected=btn.dataset.port,card=row.querySelector(".selectedPortCard");card.dataset.port=selected;card.classList.remove("empty");card.classList.add('portMapCard');card.setAttribute('style',portMapStyle(selected,5));card.innerHTML=`${portMapMarkup(selected,5)}<div class="portCardFooter"><b>${selected}</b><span>${portRegion(selected)} · tap to change · hold for detail</span></div>`;panel.hidden=true;refresh(true);renderTimedPortSlots(item)});});
      grid.querySelectorAll(".infoDot").forEach(i=>i.onclick=e=>{e.stopPropagation();showPlannerPortInfo(i.dataset.info,prev)});
    };
    panel.querySelector(".portChoiceSearch").oninput=draw;panel.querySelector(".portChoiceSort").onchange=draw;const more=panel.querySelector(".portPickerMore");if(more)more.onclick=()=>{panel.dataset.showAll=panel.dataset.showAll==="1"?"0":"1";draw()};draw();
@@ -4302,7 +4321,7 @@ function renderTimedPortSlots(item){
    row.innerHTML=`<div class="timedPortHead"><div class="slotNo">Call ${i+1}<div class="reach">from ${prev}</div></div><div class="slotPort"><label class="label">Port</label><div class="selectedPortCard ${current?"portMapCard":"empty"}" data-slot="${i}" data-port="${current}" ${current?`style="${portMapStyle(current,5)}"`:""}>${current?portMapMarkup(current,5):""}${current?`<div class="portCardFooter"><b>${current}</b><span>${portRegion(current)} · tap to change · hold for detail</span></div>`:`<b>${"Choose a reachable port"}</b><span>${"Ranked recommendations, not a giant dropdown"}</span>`}</div></div><div><label class="label">Day</label><select class="slotDay" data-slot="${i+1}" ${locked?"disabled":""}>${[1,2,3,4,5,6].map(d=>`<option value="${d}" ${(+(t.day||Math.max(1,Math.min(6,Math.round((i+1)*6/Math.max(1,n))))))===d?"selected":""}>Day ${d+1}</option>`).join("")}</select></div><div><label class="label">Arrive</label><input class="slotArrival" data-slot="${i+1}" type="time" value="${t.arrival||defArr}" ${locked?"disabled":""}></div><div><label class="label">Leave</label><input class="slotDeparture" data-slot="${i+1}" type="time" value="${t.departure||defDep}" ${locked?"disabled":""}></div><div class="slotSpeed"><span class="label">Leg speed</span><b>—</b></div></div><div class="portChoicePanel" hidden><div class="portChoiceToolbar"><input class="portChoiceSearch" placeholder="Search reachable ports or region…"><select class="portChoiceSort"><option value="recommended">Recommended</option><option value="popular">Most popular</option><option value="nearest">Nearest</option><option value="cheapest">Lowest port cost</option><option value="segment:Families">Best for families</option><option value="segment:Couples">Best for couples</option><option value="segment:Seniors">Best for seniors</option><option value="segment:Young">Best for younger guests</option><option value="segment:Luxury">Best for luxury</option></select><span class="portChoiceCount"></span></div><div class="schedulerPortChoiceGrid"></div><button type="button" class="btn secondary portPickerMore" hidden>Show more</button><div class="portPressHint">Tap a card to select it. Hold for about half a second, or tap the i, for popularity, season and passenger-segment detail.</div></div>`;
    host.appendChild(row);const card=row.querySelector(".selectedPortCard");if(!locked){card.dataset.longPressed="0";card.onclick=()=>{if(card.dataset.longPressed==="1"){card.dataset.longPressed="0";return}openPicker(i,row)};if(current){let timer=null;card.addEventListener("pointerdown",()=>{card.dataset.longPressed="0";timer=setTimeout(()=>{card.dataset.longPressed="1";showPlannerPortInfo(current,prev)},600)});["pointerup","pointercancel","pointerleave"].forEach(ev=>card.addEventListener(ev,()=>clearTimeout(timer)));}}
  }
- if(!locked){host.querySelectorAll(".startDeparture,.slotDay,.slotArrival,.slotDeparture").forEach(x=>x.addEventListener("change",()=>{refresh();renderTimedPortSlots(item)}));slider.oninput=()=>{item.portCount=+slider.value;if(label)label.textContent=slider.value;item.route=[start,...(item.route||[]).slice(1,+slider.value+1)];renderTimedPortSlots(item)};}refresh();
+ if(!locked){host.querySelectorAll(".startDeparture,.slotDay,.slotArrival,.slotDeparture").forEach(x=>x.addEventListener("change",()=>{refresh(true);renderTimedPortSlots(item)}));slider.oninput=()=>{item.routeApplied=false;item.appliedDraft=null;item.routeAppliedAt=null;item.portCount=+slider.value;if(label)label.textContent=slider.value;item.route=[start,...(item.route||[]).slice(1,+slider.value+1)];renderTimedPortSlots(item)};}refresh();
 }
 function renderSelectedPlan(){
  try{
@@ -4454,6 +4473,7 @@ function renderSelectedPlanCore(){
        ?"Route saved as a flexible plan. Review the map, schedule and costs before committing."
        :"Draft only — press Apply & save route to keep this flexible schedule before committing.");
  }
+ updateReviewCommitSummary();
  const previewItem=(!item.committed && item.routeApplied && item.appliedDraft)?item.appliedDraft:item;
  const cp=previewItem.cabinPrices||{inside:Math.max(399,(previewItem.fare||899)-180),oceanview:previewItem.fare||899,balcony:(previewItem.fare||899)+260,suite:(previewItem.fare||899)+850};
  document.getElementById("selInsideFare").value=cp.inside;
@@ -4613,6 +4633,22 @@ function renderSelectedPlanCore(){
  const liveIds=["selInsideFare","selOceanFare","selBalconyFare","selSuiteFare","selService","selFoodSpend","selHotelSpend","selEntertainmentSpend","selMarketing","selSpeed",...Array.from({length:5},(_,j)=>`selPort${j}`)];
  liveIds.forEach(id=>{const el=document.getElementById(id);if(el){el.addEventListener("input",refreshSchedulerEconomicsFromDom);el.addEventListener("change",refreshSchedulerEconomicsFromDom)}});
  refreshSchedulerEconomicsFromDom();
+ updateReviewCommitSummary();
+}
+
+function updateReviewCommitSummary(){
+ const item=state.programme?.[selectedPlanWeek];if(!item)return;
+ const st=document.getElementById("reviewRouteStatus"),sum=document.getElementById("reviewCommercialSummary"),btn=document.getElementById("saveCommitWeek");
+ if(st){
+   if(item.committed){st.className="notice";st.innerHTML="✓ <b>Itinerary committed.</b> Route and commercial settings are locked.";}
+   else if(item.routeApplied){st.className="notice";st.innerHTML="✓ <b>Route applied — ready for review.</b> You can still change pricing, marketing, service and onboard settings before committing.";}
+   else {st.className="notice";st.innerHTML="Route is still a draft. Return to <b>Itinerary</b> and press <b>Apply & save route</b> before committing.";}
+ }
+ if(sum){
+   const live=liveSchedulerDraft(item),cp=live.cabinPrices||{},avg=live.fare||0;
+   sum.innerHTML=`<div><span>Average fare / guest</span><b>${priceMoney(avg)}</b></div><div><span>Cabin fares</span><b>${priceMoney(cp.inside||0)} / ${priceMoney(cp.oceanview||0)} / ${priceMoney(cp.balcony||0)} / ${priceMoney(cp.suite||0)}</b></div><div><span>Service level</span><b>${live.service||3} / 5</b></div><div><span>Marketing / week</span><b>${statementMoney(live.marketing||0)}</b></div>`;
+ }
+ if(btn&&!item.committed)btn.disabled=!item.routeApplied;
 }
 
 function renderCalendar(){
@@ -5741,6 +5777,7 @@ document.getElementById("applyWeekRoute").onclick=()=>{
    enforceProgrammeContinuity();
    queueAutoSave();
    renderSchedule();
+   showScheduleSubPage("review");
    setSaveStatus("Schedule saved");
  }catch(e){ alert(e.message||String(e)); }
 };
@@ -5768,15 +5805,17 @@ document.getElementById("saveCommitWeek").onclick=()=>{
  }
  const applied=old.appliedDraft || {...old,route:[...(old.route||[])],days:cloneJson(old.days||[]),cabinPrices:{...(old.cabinPrices||{})},portTimes:cloneJson(old.portTimes||{})};
  const route=[...applied.route];
- const cabinPrices={...applied.cabinPrices};
- const fare=applied.fare;
- const service=applied.service;
- const foodSpendPpd=applied.foodSpendPpd??18;
- const hotelConsumablesPpd=applied.hotelConsumablesPpd??7;
- const marketing=applied.marketing;
- const marketingTargetSegment=applied.marketingTargetSegment||"Broad";
- const marketingTargetWealth=applied.marketingTargetWealth||"Broad";
- const entertainmentSpendPpd=applied.entertainmentSpendPpd??4;
+ const liveCommercial=liveSchedulerDraft(old);
+ const cabinPrices={...(liveCommercial.cabinPrices||applied.cabinPrices)};
+ const shipForFare=activeShip(),berthsForFare=shipForFare?.berths||{},totalBerthsForFare=Object.values(berthsForFare).reduce((a,b)=>a+b,0)||1;
+ const fare=Object.entries(berthsForFare).reduce((a,[k,b])=>a+b*(cabinPrices[k]||0),0)/totalBerthsForFare;
+ const service=liveCommercial.service??applied.service??3;
+ const foodSpendPpd=liveCommercial.foodSpendPpd??applied.foodSpendPpd??18;
+ const hotelConsumablesPpd=liveCommercial.hotelConsumablesPpd??applied.hotelConsumablesPpd??7;
+ const marketing=liveCommercial.marketing??applied.marketing??0;
+ const marketingTargetSegment=document.getElementById("selMarketingSegment")?.value||applied.marketingTargetSegment||"Broad";
+ const marketingTargetWealth=document.getElementById("selMarketingWealth")?.value||applied.marketingTargetWealth||"Broad";
+ const entertainmentSpendPpd=liveCommercial.entertainmentSpendPpd??applied.entertainmentSpendPpd??4;
  const timed=timedPortPlan(applied,activeShip()),speed=Math.max(12,timed.requiredSpeed||applied.speed||17.5);applied.speed=speed;applied.days=timed.days;
  if(!timed.valid){alert(timed.reason);return;}
  const sch=timed;
@@ -5794,7 +5833,7 @@ document.getElementById("saveCommitWeek").onclick=()=>{
  }
  renderAll();
   setSaveStatus("Itinerary committed");
-  showScheduleSubPage("itinerary");
+  showScheduleSubPage("review");
 };
 function renderLastWeekDashboard(){
  const p=state.lastPnl, bar=document.getElementById("lastSegBar"), tbl=document.getElementById("lastSegmentTable");
